@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		863C95A3EE332A25BFAD119C /* Pods_uSell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0CC35EB4FAE8E2B39B6F81 /* Pods_uSell.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CA00C1B51B794132003F6DA8 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */; };
+		CA00C1B91B794BD9003F6DA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */; };
 		CA23D5D31B7449A100515812 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */; };
 		CA8B37E51B74578100813C1C /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B37E41B74578100813C1C /* LoginPageViewController.swift */; };
 		CAFB578C1B743366006791EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB578B1B743366006791EC /* AppDelegate.swift */; };
@@ -32,6 +34,8 @@
 		4F0CC35EB4FAE8E2B39B6F81 /* Pods_uSell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uSell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E10F49539A97BE4CE80743 /* Pods-uSell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uSell/Pods-uSell.debug.xcconfig"; sourceTree = "<group>"; };
 		5CF8D96BC705FDB58C5228C9 /* Pods-uSell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSell.release.xcconfig"; path = "Pods/Target Support Files/Pods-uSell/Pods-uSell.release.xcconfig"; sourceTree = "<group>"; };
+		CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		CA8B37E41B74578100813C1C /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		CAFB57861B743366006791EC /* uSell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uSell.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +82,8 @@
 			children = (
 				CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */,
 				CA8B37E41B74578100813C1C /* LoginPageViewController.swift */,
+				CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */,
+				CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -300,8 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA00C1B51B794132003F6DA8 /* CreatePostViewController.swift in Sources */,
 				CAFB578E1B743366006791EC /* ViewController.swift in Sources */,
 				CA8B37E51B74578100813C1C /* LoginPageViewController.swift in Sources */,
+				CA00C1B91B794BD9003F6DA8 /* MainViewController.swift in Sources */,
 				CAFB578C1B743366006791EC /* AppDelegate.swift in Sources */,
 				CA23D5D31B7449A100515812 /* RegisterPageViewController.swift in Sources */,
 			);
@@ -431,6 +439,7 @@
 			baseConfigurationReference = 58E10F49539A97BE4CE80743 /* Pods-uSell.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = uSell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -442,6 +451,7 @@
 			baseConfigurationReference = 5CF8D96BC705FDB58C5228C9 /* Pods-uSell.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = uSell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -91,7 +91,7 @@
                                 <rect key="frame" x="16" y="72" width="568" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="27" id="m3X-Jd-Zlu">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="27" id="m3X-Jd-Zlu">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m3X-Jd-Zlu" id="Ei9-KD-mGh">
@@ -99,6 +99,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JsX-4n-PHc" id="YZM-c3-4zh"/>
+                                    <outlet property="delegate" destination="JsX-4n-PHc" id="3Jb-kq-Vzu"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,29 +131,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yeo-xM-EMb">
-                                <rect key="frame" x="140" y="119" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yeo-xM-EMb">
+                                <rect key="frame" x="99" y="119" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="Gbx-fr-da9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="edition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDH-qW-B4E">
-                                <rect key="frame" x="140" y="201" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="edition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDH-qW-B4E">
+                                <rect key="frame" x="99" y="201" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="class" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z24-Qw-4Qz">
-                                <rect key="frame" x="364" y="119" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="class" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z24-Qw-4Qz">
+                                <rect key="frame" x="440" y="119" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="Ruv-So-UxT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GoC-Fs-n4c">
-                                <rect key="frame" x="364" y="201" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -177,15 +176,18 @@
                                     <action selector="postButtonTouch:" destination="3Zr-kk-GTx" eventType="touchUpInside" id="Jxd-4I-v4K"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GoC-Fs-n4c">
+                                <rect key="frame" x="440" y="201" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="top" secondItem="zbP-bM-TZK" secondAttribute="bottom" constant="99" id="2tU-Y9-a0e"/>
                             <constraint firstItem="IU0-E6-UgW" firstAttribute="top" secondItem="Bpg-aL-rr4" secondAttribute="bottom" constant="186" id="9Eg-2u-Nqt"/>
                             <constraint firstAttribute="trailing" secondItem="Z24-Qw-4Qz" secondAttribute="trailing" constant="139" id="CoL-bZ-AZW"/>
-                            <constraint firstItem="yeo-xM-EMb" firstAttribute="baseline" secondItem="Z24-Qw-4Qz" secondAttribute="baseline" id="MJy-ZI-Pc9"/>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="trailing" secondItem="RDH-qW-B4E" secondAttribute="trailing" id="MOd-LH-G6Y"/>
-                            <constraint firstItem="GoC-Fs-n4c" firstAttribute="baseline" secondItem="RDH-qW-B4E" secondAttribute="baseline" id="MSn-YS-j6a"/>
                             <constraint firstItem="Z24-Qw-4Qz" firstAttribute="leading" secondItem="GoC-Fs-n4c" secondAttribute="leading" id="OeN-wn-Vh9"/>
                             <constraint firstAttribute="trailing" secondItem="pVe-n8-eaJ" secondAttribute="trailing" constant="165" id="Quc-VA-R3X"/>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="leading" secondItem="hPr-qZ-ga0" secondAttribute="leading" constant="140" id="RpA-lR-yAr"/>

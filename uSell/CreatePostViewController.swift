@@ -27,19 +27,13 @@ class CreatePostViewController: UIViewController {
     }
     
     @IBAction func postButtonTouch(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-    }
-
-    @IBAction func cancelButtonTouch(sender: AnyObject) {
-        
         let postTitle = titleTextField.text
         let postClass = classTextField.text
         let postEdition = editionTextField.text
         let postCost = costTextField.text
         
         if (postClass != "" && postTitle != "" && postCost != "") {
-        
+            
             var newPost = PFObject(className: "post")
             newPost.setObject(postTitle, forKey: "postTitle")
             newPost.setObject(postClass, forKey: "postClass")
@@ -59,7 +53,13 @@ class CreatePostViewController: UIViewController {
             
             
         }
+
+    }
+
+    @IBAction func cancelButtonTouch(sender: AnyObject) {
         
+        self.dismissViewControllerAnimated(true, completion: nil)
+
     }
     /*
     // MARK: - Navigation

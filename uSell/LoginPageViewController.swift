@@ -17,6 +17,15 @@ class LoginPageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if (PFUser.currentUser()?.username != nil) {
+            self.performSegueWithIdentifier("loginToMainSegue", sender: nil)
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        usernameTextField.text = ""
+        passwordTextField.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,13 +37,18 @@ class LoginPageViewController: UIViewController {
         
         let username = usernameTextField.text
         let password = passwordTextField.text
-        PFUser.logInWithUsernameInBackground(username, password: password) { (user: PFUser?, error: NSError?) -> Void in
-            if(PFUser.currentUser() != nil) {
-                self.performSegueWithIdentifier("loginToMainSegue", sender: self)
+        if (username != "" && password != "") {
+            PFUser.logInWithUsernameInBackground(username, password: password) { (user: PFUser?, error: NSError?) -> Void in
+                if(PFUser.currentUser()?.username != nil) {
+                    self.performSegueWithIdentifier("loginToMainSegue", sender: nil)
+                }
+                else {
+                    
+                }
             }
-            else {
-                
-            }
+        }
+        else {
+            //show some alert saying they're dumb
         }
         
     }

@@ -42,7 +42,7 @@ class EditPostViewController: UIViewController {
                 object!.saveInBackgroundWithBlock { (success, error) -> Void in
                     if (success == true) {
                         if (error == nil) {
-                            self.dismissViewControllerAnimated(true, completion: nilq)
+                            self.dismissViewControllerAnimated(true, completion: nil)
                         }
                     }
                     else {

@@ -20,6 +20,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.getPosts()
         var rightItem:UIBarButtonItem = UIBarButtonItem(title: "post", style: .Plain, target: self, action: "postSegue")
         self.navigationItem.rightBarButtonItem = rightItem
+        var leftItem:UIBarButtonItem = UIBarButtonItem(title: "logout", style: .Plain, target: self, action: "logoutUser")
+        self.navigationItem.leftBarButtonItem = leftItem
         // Do any additional setup after loading the view.
     }
 
@@ -46,6 +48,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func postSegue() {
         performSegueWithIdentifier("mainToMyPostsSegue", sender: self)
+    }
+    
+    func logoutUser() {
+        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+            if error == nil {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
     }
     
     private func getPosts() {

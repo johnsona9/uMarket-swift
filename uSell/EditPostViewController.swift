@@ -31,6 +31,34 @@ class EditPostViewController: UIViewController {
     }
     
 
+    @IBAction func saveButtonTouch(sender: AnyObject) {
+        
+        PFQuery(className: "post").getObjectInBackgroundWithId(self.initialObject.objectId!, block: { (object, error) -> Void in
+            if (error == nil) {
+                object!["postTitle"] = self.titleTextField.text
+                object!["postEdition"] = self.editionTextField.text
+                object!["postClass"] = self.classTextField.text
+                object!["postCost"] = self.costTextField.text
+                object!.saveInBackgroundWithBlock { (success, error) -> Void in
+                    if (success == true) {
+                        if (error == nil) {
+                            self.dismissViewControllerAnimated(true, completion: nilq)
+                        }
+                    }
+                    else {
+                        println("error updating object")
+                    }
+                    
+                }
+            }
+        })
+    }
+    
+    
+    @IBAction func cancelButtonTouch(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

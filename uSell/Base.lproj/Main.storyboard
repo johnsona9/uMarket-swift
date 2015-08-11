@@ -260,6 +260,52 @@
             </objects>
             <point key="canvasLocation" x="3164" y="-515"/>
         </scene>
+        <!--Edit Post View Controller-->
+        <scene sceneID="f3c-Fu-UZv">
+            <objects>
+                <viewController id="uAU-2n-vr2" customClass="EditPostViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZFw-oq-IiZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="okg-AC-KUg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fOc-J2-uao">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-Yo-GmB">
+                                <rect key="frame" x="106" y="91" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9lE-6H-pYV">
+                                <rect key="frame" x="106" y="214" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MaQ-8h-xOk">
+                                <rect key="frame" x="106" y="272" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nn-Vu-GcW">
+                                <rect key="frame" x="106" y="150" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="classTextField" destination="9lE-6H-pYV" id="GYl-K3-zTG"/>
+                        <outlet property="costTextField" destination="MaQ-8h-xOk" id="qSS-jv-A61"/>
+                        <outlet property="editionTextField" destination="6nn-Vu-GcW" id="44I-dk-hX1"/>
+                        <outlet property="titleTextField" destination="K9f-Yo-GmB" id="LXd-iP-1On"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggv-sA-OjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3170" y="-1261"/>
+        </scene>
         <!--My Posts View Controller-->
         <scene sceneID="EtX-3K-BxC">
             <objects>
@@ -271,10 +317,31 @@
                     <view key="view" contentMode="scaleToFill" id="7LB-v1-hB9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qUl-UE-y2X">
+                                <rect key="frame" x="0.0" y="72" width="600" height="476"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Gdu-mK-mw0">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gdu-mK-mw0" id="PgE-wg-CSg">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2Bm-HW-e0W" id="q5e-lp-5QQ"/>
+                                    <outlet property="delegate" destination="2Bm-HW-e0W" id="EFL-fJ-zJM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="myPostsTableView" destination="qUl-UE-y2X" id="nPS-Zd-gJP"/>
                         <segue destination="3Zr-kk-GTx" kind="presentation" identifier="myPostsToCreatePostSegue" id="z89-Lu-ahb"/>
+                        <segue destination="uAU-2n-vr2" kind="presentation" identifier="myPostsToEditPostSegue" id="4Pa-c5-1Nf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nbh-g8-gAb" userLabel="First Responder" sceneMemberID="firstResponder"/>

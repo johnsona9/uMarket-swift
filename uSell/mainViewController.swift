@@ -35,7 +35,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        println(postsList[indexPath.row]["postTitle"]!)
         cell.textLabel?.text = postsList[indexPath.row]["postTitle"] as? String
         return cell
     }

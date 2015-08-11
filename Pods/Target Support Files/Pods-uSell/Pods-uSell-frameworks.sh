@@ -53,17 +53,9 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-uSell/Bolts.framework'
-  install_framework 'Pods-uSell/CMDQueryStringSerialization.framework'
   install_framework 'Pods-uSell/Parse.framework'
-  install_framework 'Pods-uSell/SSKeychain.framework'
-  install_framework 'Pods-uSell/VENCore.framework'
-  install_framework 'Pods-uSell/Venmo_iOS_SDK.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-uSell/Bolts.framework'
-  install_framework 'Pods-uSell/CMDQueryStringSerialization.framework'
   install_framework 'Pods-uSell/Parse.framework'
-  install_framework 'Pods-uSell/SSKeychain.framework'
-  install_framework 'Pods-uSell/VENCore.framework'
-  install_framework 'Pods-uSell/Venmo_iOS_SDK.framework'
 fi

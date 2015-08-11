@@ -114,6 +114,7 @@
                         <outlet property="tableView" destination="ZS6-Br-0TI" id="QYB-Wt-HrW"/>
                         <segue destination="3Zr-kk-GTx" kind="presentation" identifier="mainToPostSegue" id="uod-qQ-bAe"/>
                         <segue destination="eQ9-7e-mpW" kind="show" identifier="mainToPostDetailsSegue" id="8oV-Cf-auQ"/>
+                        <segue destination="2Bm-HW-e0W" kind="show" identifier="mainToMyPostsSegue" id="fdE-V2-QaE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0t-7z-mY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -258,7 +259,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9XR-af-wne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2352" y="-537"/>
+            <point key="canvasLocation" x="3164" y="-515"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EtX-3K-BxC">
+            <objects>
+                <viewController id="2Bm-HW-e0W" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UDp-yc-vcT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rpt-NG-yBn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7LB-v1-hB9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="3Zr-kk-GTx" kind="presentation" identifier="myPostsToCreatePostSegue" id="z89-Lu-ahb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbh-g8-gAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2352" y="-515"/>
         </scene>
         <!--Register Page View Controller-->
         <scene sceneID="r5C-Ts-dnq">
@@ -366,4 +388,7 @@
             <point key="canvasLocation" x="2352" y="315"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="z89-Lu-ahb"/>
+    </inferredMetricsTieBreakers>
 </document>

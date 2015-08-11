@@ -9,8 +9,13 @@
 import UIKit
 import Parse
 
+protocol CreatePostViewControllerDelegate {
+    func updateTableView(controller: CreatePostViewController, object: PFObject)
+}
+
 class CreatePostViewController: UIViewController {
 
+    var delegate: CreatePostViewControllerDelegate?
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var classTextField: UITextField!
     @IBOutlet weak var editionTextField: UITextField!
@@ -43,6 +48,7 @@ class CreatePostViewController: UIViewController {
             newPost.saveInBackgroundWithBlock({ (success: Bool, error: NSError? ) -> Void in
                 
                 if (error == nil) {
+                    self.delegate!.updateTableView(self, object: newPost)
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }
                 else {

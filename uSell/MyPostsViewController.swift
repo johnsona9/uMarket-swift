@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CreatePostViewControllerDelegate {
     var postsList = [PFObject]()
 
     @IBOutlet weak var myPostsTableView: UITableView!
@@ -26,6 +26,7 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewWillAppear(animated)
         myPostsTableView.reloadData() 
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,12 +51,11 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == .Delete) {
-            
-            postsList[indexPath.row].deleteInBackgroundWithBlock({ (success, error) -> Void in
-                if (error == nil) {
-                    self.myPostsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-                }
-            })
+            let itemToDelete = postsList[indexPath.row]
+            //self.myPostsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            itemToDelete.deleteInBackground()
+
+
         }
     }
     
@@ -77,13 +77,21 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "myPostsToCreatePostSegue") {
-            
+            var svc = segue.destinationViewController as! CreatePostViewController
+            svc.delegate = self
         }
         else if (segue.identifier == "myPostsToEditPostSegue") {
             var svc = segue.destinationViewController as! EditPostViewController
             svc.initialObject = self.postsList[(sender as! NSIndexPath).row]
         }
         
+    }
+    
+    // MARK - CreatePostViewControllerDelegate
+    
+    func updateTableView(controller: CreatePostViewController, object: PFObject) {
+        self.postsList.append(object)
+        self.myPostsTableView.reloadData()
     }
 
     private func getPosts() {

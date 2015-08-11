@@ -51,9 +51,11 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == .Delete) {
-            let itemToDelete = postsList[indexPath.row]
-            //self.myPostsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            itemToDelete.deleteInBackground()
+        
+            postsList[indexPath.row].deleteInBackground()
+            postsList.removeAtIndex(indexPath.row)
+            self.myPostsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+
 
 
         }

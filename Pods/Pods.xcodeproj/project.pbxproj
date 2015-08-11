@@ -7,278 +7,723 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00534490C99797D4E27D3EFC60BFF7CD /* PFSubclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 002BEB2FF2981FC7178ABD544A785EA2 /* PFSubclassing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00CD1C96BE40564A0C3469F8A41CB5F5 /* PFAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = E78202FA46AEC40E2C744954301A6C60 /* PFAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0709BC1E75D53DCAE56C2464C18BEC64 /* PFPush.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F6856ED3D51DBE56C595698B01D0872 /* PFPush.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D73029F1B7201492B1AEF45433635CC /* PFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = FED59F12A5B3E90E0E8094C51E1489E4 /* PFConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DAE45F87A3AA66C9B00E85842EF5180 /* PFProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = BF18BC9E216EC43C791E599AC96774BA /* PFProduct.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0FF501BF6CE0A4A82B616C7F93C7E9E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D1FB512335A708402FA41D9989DA05 /* CoreGraphics.framework */; };
-		1115F851A236D4DA4520D5FC3B76C179 /* Bolts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFFBCA8FE3A2406676694C6E2554F9B /* Bolts-dummy.m */; };
-		113DD1AF0FFF653D4E6FE2B4675F252F /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 715A85D1BA0CE8F3E45F0D37A2F4E3EE /* Empty.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		28ADEE3996B03675C5BE7B03F9B0AD7D /* Parse-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E46668371958F1CC0DE82D00914D614 /* Parse-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2F120CADCDAA15F9D326894AB61526AC /* PFCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 45495EE76581CF025AB605C40B921B41 /* PFCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		30E523A03537BD6EEF3667C3C6BF9FA2 /* BFCancellationTokenRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = AA52B98866FBFD30ADD051A7B690EF42 /* BFCancellationTokenRegistration.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3395373D17A0A30F256960959ACA466B /* PFObject+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = C654FB79236F301DD08478D762FF7A0F /* PFObject+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AD91816636A6F55A21253AE93B83464 /* Parse.h in Headers */ = {isa = PBXBuildFile; fileRef = 7043E1AD2D0EAFB589BE1C606A5A451A /* Parse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3DC24C76063E318119C44ABFC849830E /* BFTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 38B42E87DC79F639F67192C841BA6A88 /* BFTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FFFE03799FEA86C3AF5A6CE5C95924A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A46C0F450B93E08925036B54CA38CB /* AudioToolbox.framework */; };
-		427E12F842F3F618FB3960D764C3B8E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88836D7A2EA50635AEA76EAE0FA45A6 /* Foundation.framework */; };
-		4715B32F7E0D0EDDF3C53BD7149A9CF4 /* PFQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 17AFAC72216895047FCB33CA65B7C1C8 /* PFQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47E36B6841689805B5DF0708A6D57B05 /* Pods-uSell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6862F8B7EA1C1565DBBCE6741AD01BFE /* Pods-uSell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4918B13A9DC2D93A2FC6BA997FF19118 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA939BEFC2FC15D3A7ADE02680CB71BD /* QuartzCore.framework */; };
-		4D5EA5998196BAD3F10D32368F417483 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1757E52BD76B9ECAA557812C5C9D6D6 /* CoreLocation.framework */; };
-		4E7B7220B66598BD54B9289C43176C98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88836D7A2EA50635AEA76EAE0FA45A6 /* Foundation.framework */; };
-		5924EAC583C8725F5393053A3147CF3C /* BFExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D30F5DC2BFF4BDB24FCAF792F0843EE /* BFExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B715AF70E1B9C7E92F8C05AA439A02F /* PFSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 15069E4125DDEB3FA9D8ADAF026CF908 /* PFSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		669A1D340BCF116ED22328DF0A2E5436 /* Parse-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 181D3C5A49E150DC58B8325D7FD0D6EF /* Parse-dummy.m */; };
-		6BA3FDE82A8F78DB372A4890A20D771F /* PFTwitterUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 35D8CCC9D0FDB3B594D335E3520AFB10 /* PFTwitterUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		726667BE9BE67FC10733BD871FF8F3DC /* PFPurchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 615F65457DE18939C37079EA0BCB8DDF /* PFPurchase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7388F0EBAB688554A1695D4293FE1E61 /* PFAnonymousUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 445448D8ABD7E8F14CA2AB1D73DEF80A /* PFAnonymousUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		790BE87E690DCBBA526FE949D833F7A7 /* PFACL.h in Headers */ = {isa = PBXBuildFile; fileRef = FE3DC755536585F114114CFB8B4445B1 /* PFACL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8191D9D1BE1EC68467E11026BA5B186B /* Bolts.h in Headers */ = {isa = PBXBuildFile; fileRef = C082F992079314833EE06A1AB9A2C052 /* Bolts.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		840026746760B39923CAF6675D49D9C1 /* BFCancellationTokenRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 537E1A71CBD1A8EBF07FD967B8ADA475 /* BFCancellationTokenRegistration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84C7D291A744D56D62484272111F978B /* PFGeoPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5630B20D5152008742B4B3D3518E2F /* PFGeoPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		915A60532147E8BF92133D1C35915DB9 /* BFCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 041E2B1C8B6E48F0AFF5DF2A233CE828 /* BFCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		96025F227B2A5D48F6809C14DCD484F8 /* PFUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D742E9A1E75CDDEAFE10762DDD8CE0 /* PFUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		980225836D2AF4CCDB710A40111F8D4E /* Bolts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15E7BF01CEE81EDB87F6E3DD1EBEEBC0 /* Bolts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		993A2A88A642D302E2949B5BD64724EA /* BFCancellationTokenSource.h in Headers */ = {isa = PBXBuildFile; fileRef = A7387906169F2D54F1F11F21CC45D8B1 /* BFCancellationTokenSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9E5678DDEAB96E46BF593C31AC89200E /* BFCancellationTokenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05494A25CFACFCE5F984799A2A69A3 /* BFCancellationTokenSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A17E8E71726E111FC48FA0776A6F3649 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88836D7A2EA50635AEA76EAE0FA45A6 /* Foundation.framework */; };
-		A4B30C59594B36684F91CEB0CBB7A9D5 /* PFNullability.h in Headers */ = {isa = PBXBuildFile; fileRef = BF32C270400EA8380209B46FA3962A56 /* PFNullability.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A70476648ADE80C3EA0E03B262F68849 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFCB316BDD98E67282B68B05AC483BE /* StoreKit.framework */; };
-		AA505EAB02AF19BA777D98898572772D /* Pods-uSell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93D3D2F06E7989DF78CC73664ECD52 /* Pods-uSell-dummy.m */; };
-		AE4CA5A0D7EFF4268D3DFE657FFA1911 /* BoltsVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = BD7CDF36269D078AE342F380291E5D3C /* BoltsVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE5EBD3C1AEE9250E228D1E61A5C669D /* BFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 508208D09EBDBB57A16F062D59DC7C0B /* BFTask.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B899CC0BEEE529117EB4BBDA9C63BEF7 /* PFRelation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91C52BA8E0327D63034D24F7D5BBE022 /* PFRelation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B95ACA691CF98C7CA9FFBDB58A07814A /* BFExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED464A4DB0958E508C34BD78491BB00 /* BFExecutor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		BC4BE52A9A6DF9EB6BB61EC126490A88 /* Bolts.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CB2138542AE115FCEE64D49F73713 /* Bolts.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C036DF7443F47DFCDA9FA42239A26E07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1567A7EAC3CE12D07B3FC0E0EA1A4AF7 /* Security.framework */; };
-		C055591288A7F89B2D087A566D7B1608 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F28D07F863AAA4E44976A842C69F058 /* CFNetwork.framework */; };
-		C4D44846A8F8D0F04747CC25D4503FA4 /* PFInstallation.h in Headers */ = {isa = PBXBuildFile; fileRef = C87E1B9F959BFAA35C98C109C9413522 /* PFInstallation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF1E294FB96F09C1CB0719CCD1590616 /* PFRole.h in Headers */ = {isa = PBXBuildFile; fileRef = F5C5FCDDC9E53F24D8B9F502C4E92B8F /* PFRole.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF915546C729A2BC169112AFFF313806 /* PFFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 38482B8F2F0A3017B1DA8440AF4F0ED7 /* PFFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7F94D95D9A851A86A7EDF72612AF7AD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A220AA1169D43679E5F4F579A6D08891 /* Bolts.framework */; };
-		E252071BC0AAE1C7CF981C800503B8D7 /* BFCancellationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B161C78BCB05BBA771832EC022790 /* BFCancellationToken.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E98F3C731DA49F03CD2B71F5DA0A079C /* PFConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 76ACC0D9466FF2ABA6F15F554E4A57A0 /* PFConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EBA0326EA3F1E81727AD25682AE89B4E /* PFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F068A43657A16D0B545F378F567736E8 /* PFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED7BD89DECEBA9F59807D28D8DC665FF /* PFObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E7832FFCBDF257503962BEB5C1553DF /* PFObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EFAEF387B7DA4401A4015076481EA9C3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22378F004F9CCB116A074C9C8120FDEA /* SystemConfiguration.framework */; };
-		F28248A29BBAE5EE2F0F0D52EA2A2652 /* PF_Twitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 598400BA01044191B1562A8D7E7EB57E /* PF_Twitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FBC1F5349B154910EB62077283A086F2 /* BFTaskCompletionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F95145153C53B869F235B76E79EAC327 /* BFTaskCompletionSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FF5DE28A9756114E59025FBE319DC1C7 /* BFTaskCompletionSource.h in Headers */ = {isa = PBXBuildFile; fileRef = EED78D18970B84387C2125C564D3E6B4 /* BFTaskCompletionSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00E8CCF3FC42FCCC9A6DD498295BEC8B /* NSString+MD5Addition.h in Headers */ = {isa = PBXBuildFile; fileRef = 69A5A3E6E73BCC55AB8B837663D43FD9 /* NSString+MD5Addition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04111F74A8AB98A469DE037C59FD94B5 /* BFCancellationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 224511591A6FE59BC941D5F4F0F79778 /* BFCancellationToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05D839BCD88BE5A19427256F6D88E54A /* VENCore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 098109DDAC7DE4349101FDDAB468AF63 /* VENCore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0902DC3E35246C0E57D62CD4B964704E /* VENTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE03C2D4EDEEBADBEDBE853058D1BE8 /* VENTransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		093CB2601A0079EC3772FB3EA94CC84C /* CMDQueryStringReader.m in Sources */ = {isa = PBXBuildFile; fileRef = D53D1C4BD92EE692E53DB2A4B61E6C9F /* CMDQueryStringReader.m */; };
+		0C24F5D61855BF263B904E66EA44D578 /* VENTransaction+VenmoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BBEAD342D94F85B2F531351F3F7D898 /* VENTransaction+VenmoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EC7461F6B37D89F87C95A02F4477FC5 /* PFUser.h in Headers */ = {isa = PBXBuildFile; fileRef = E563914FD80F585867240360A2889FAB /* PFUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EEC8F1CA049A096D8A0C40AFC408BD7 /* Venmo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED1CF151A76F6CCB3F9FC5EAC07542E /* Venmo.m */; };
+		1021ECAFA200C307AA71D2C0CB0F47CF /* VENCore.m in Sources */ = {isa = PBXBuildFile; fileRef = D21AD6041AF5B3AC30BDEBD2284BBBFE /* VENCore.m */; };
+		10850A350E9AD258CAE69ED3C0D8BBA2 /* Venmo.h in Headers */ = {isa = PBXBuildFile; fileRef = E6A175A40FE337C6F50EF8BBA14F8008 /* Venmo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10A9B2D1FC38906C2AC8BE7334A3B4E2 /* Bolts.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D80C16C40C8B6F5F5A4124843BDE7ED /* Bolts.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1216A147302BEA0450594C8EF762EC9D /* SSKeychain-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E33C6CCDA4DEDCCDE168418FD4CED88 /* SSKeychain-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		136D91AE082028889C7D95CED67CEBBF /* VENURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C7971A0D6B471EED3A61E17482BA64 /* VENURLProtocol.m */; };
+		138C126763DD10CD6E20B461440F94A1 /* Bolts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E01E6CF24033A64F36572AFBF3802A5 /* Bolts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		157826038FDC9CF9E2DD2942EEE755C8 /* VENTransactionTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 272FA498E92BD9381A6C2C870E51F8CF /* VENTransactionTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1749AC11A79A33CD65B40D298718F62D /* SSKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D94E59636AB79BF90804220FD21E1DE /* SSKeychainQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		181799580B3C32A22E2B125A8FE9A083 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288262C215BD93D9C32EA7DC4342E4A9 /* SystemConfiguration.framework */; };
+		1978A610E07912A1829FEAA880EFAD31 /* VENRequestDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9B9BE44C4B3B7A8A3D10068697BD72 /* VENRequestDecoder.m */; };
+		1A85C82203C012543F93F5B9513EA7AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E0029B5EC039D681CCCD93BA247533 /* Foundation.framework */; };
+		1AB9017678D2AB4C1D7C1CEB5ED8466F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E23AD6885E6245D7378DB3563D94448 /* AudioToolbox.framework */; };
+		1CE9EF23520E92C82463FF8E05B32B98 /* PFInstallation.h in Headers */ = {isa = PBXBuildFile; fileRef = AA4EED30D554E76480BB9D49C2EC4777 /* PFInstallation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DEC23E9CF67112A568709DDF9275494 /* CMDQueryStringSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BAF0CC4EB85EA8D24D90573BA4B6CDA /* CMDQueryStringSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2112A2FC549793B83139DED9E89D7D3F /* VENSession.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC9BE82A597DEAA7AEC7D5973304F54 /* VENSession.m */; };
+		2351C5CDA842DB061FE794DA43404AE6 /* Venmo-iOS-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF264BEA3209B8520ED711D6719B9D92 /* Venmo-iOS-SDK-dummy.m */; };
+		239835202463DD60401F90378EB3C5AD /* PFSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 22434763ED114208DD5C8A7515BC9074 /* PFSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25792EE3F15393F056FEA843887215AA /* NSError+VENCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 536BA54DCA4AF20DCC7FBF3A58A276D7 /* NSError+VENCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29527A82BC7358CC1E9BEDC2C2D8E2C9 /* CMDQueryStringStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E658CEE813D98CB4064FFD4EA1C57E /* CMDQueryStringStringTransformer.m */; };
+		2A8FA0317BFA8C2EB7470CEA421BF9FF /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCCB65BB420855B405583A4CDE389CA /* SSKeychain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2C0FE7C4EA9E9CB6A3145E4E71A6F5A2 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 409A039D8156B5E7A0BAB02DFD797A85 /* UIDevice+IdentifierAddition.m */; };
+		315BDEF15D83E3321F3515C06752B166 /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = F34905E9F104E75B02326D43ECA19704 /* SSKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31D9C36A07E3F9C2526F7D7EA44F10D8 /* VENErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1565DE0DE7F36624C0EF1D0A921053C0 /* VENErrors.m */; };
+		329B6FFD11745D32DCB8FD6CC33435B0 /* VENBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6131D816E708CEAE66023052240E68 /* VENBase64.m */; };
+		340352356E528ED6A2819C832425E498 /* UIDevice+VENCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4731C5562968D27BB688F29157149DC6 /* UIDevice+VENCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A534F4388F745D4CE6BE9982C49CCFA /* NSURL+VenmoSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 60687456AADEE638D4B4EFD9C1800B0E /* NSURL+VenmoSDK.m */; };
+		3A5632ABCB33C7388D9A896F75FC9F6A /* NSString+CMDQueryStringSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 12818606D55585EA0B7423AD1BA55CD6 /* NSString+CMDQueryStringSerialization.m */; };
+		3AE71BB7E7632F72001AB792C2847635 /* CMDQueryStringArrayTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F92D2EDEA0419630224D35FD07191B6D /* CMDQueryStringArrayTransformer.m */; };
+		3E961F675C85BE9E18CED680F1712D20 /* CMDQueryStringStringTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2052889236941A96135AB4514D893F1C /* CMDQueryStringStringTransformer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3EA8DDB485726BFB6374AEDD59779ED7 /* CMDQueryStringSerialization-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8486F299391050056C5BB4DB9B01A9 /* CMDQueryStringSerialization-dummy.m */; };
+		41DF13C07E36D8725AFF9D365A408C9C /* PF_Twitter.h in Headers */ = {isa = PBXBuildFile; fileRef = A8AD918AACA6BDDEC4EFE45E09F84331 /* PF_Twitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		436FBE6B59238E9050D12A66CF8CA5AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CD9B6EB245BBF8A4B1C3E1F4FC11AE /* StoreKit.framework */; };
+		44400769C49A7735A87AD2887E44D1DC /* VENTransactionTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 86084FB76074C95B28978214DA2CABC1 /* VENTransactionTarget.m */; };
+		455275D15C1AB6FFBD8FE0E8A4596723 /* CMDQueryStringDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E50552AC204F85F96E6F726216C04D1 /* CMDQueryStringDateTransformer.m */; };
+		48BE7EB79F16EEA8B9AE92936EE1BB98 /* PFACL.h in Headers */ = {isa = PBXBuildFile; fileRef = C24D5C64F941AEB71B82F219965BDD84 /* PFACL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48D39F90E3624CB4D30911E9F0F5726C /* PFNullability.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F0D4BC7719394CC613CD4FEFC7F1C47 /* PFNullability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49C575122B9AD1630954B44B1BF9CC51 /* VENCreateTransactionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F82DFB3C5C736E9C67F88A3FA3E080E0 /* VENCreateTransactionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B96A88D289D77CC70A6EAB09217E753 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B9E361039690D9901268F6172CD8DD0 /* Security.framework */; };
+		4D8225919FE78985C917F7EEB3396418 /* CMDQueryStringValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4DAF8967031C78D6F3667DA72A1056 /* CMDQueryStringValueTransformer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4E79D2E0E9FB3048889611D22E245C21 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = D3192AD05AA93DF3435137B76A2D2ADD /* Empty.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4E9C79AD56C7A83EA65A7A817BD9C5AA /* PFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B46425D756A1E817E9E4B159926DFE5 /* PFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		505C89AEEBE14B683710F49BA1016C8D /* NSURL+VenmoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = E0CC68716D980463BE5FFA78561253B9 /* NSURL+VenmoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		507A191BC049B2C926CF78F9F2DCC981 /* VENHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 776E0F25B7CE3B38BBEF452D6CA86FA3 /* VENHTTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		509BC0DD5BF410B07A5F78A695356288 /* NSString+VENCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4526D68B912E5137F7F6C56B3D6B5787 /* NSString+VENCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51363598E5A78BF7C1921A47B59FEBCE /* CMDQueryStringWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D333AE0623CB8AC57347E1B63ED400E4 /* CMDQueryStringWriter.m */; };
+		5250EA9ACCA1E03A735BC195E90EDD39 /* VENSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 590FECD7A9AB329DAF23F2CB316A66B9 /* VENSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5282053CA90C3DEFC27893FE6F6E5543 /* VENUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 123CAAC7BE74903E647C22A01F6699AB /* VENUser.m */; };
+		52B24B80EA200D889CFE71C390DA0D60 /* BFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8BF2C265224E5C60D8397CDD42C865 /* BFTask.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		557E57BF9CD0868E39D7C50C1E60F715 /* PFAnonymousUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 676F5E5086C714D6794A509AD6CD1D35 /* PFAnonymousUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		563D68CED71B90E29A8BC85BAD738307 /* UIDevice+IdentifierAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 328C218D75D7B6C02B6450CA95FEC4A2 /* UIDevice+IdentifierAddition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56AEAE6CF3D87416FD9D470C6721D54D /* VENTransactionPayloadKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = B1B7523A1042E231F4A2E4FCF2D49ABE /* VENTransactionPayloadKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AFEC486929294F9955F212BC5E624FB /* Parse.h in Headers */ = {isa = PBXBuildFile; fileRef = 6365587D51B94C66F3EAAAC46BE69653 /* Parse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EF642D6B5BCC8F4E6B038AAEF3C529E /* VENBase64_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 372ADC89901ACD61140A276C70325292 /* VENBase64_Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6284716D5A112EEA4B4E70A00B900804 /* Pods-uSell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 107D74F8CA685F458971FFC8A0DB13F6 /* Pods-uSell-dummy.m */; };
+		6287F781561196C7BDFD2D49FA8AA13E /* CMDQueryStringDateTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A6C06E59126AE6CED10782168F599B1 /* CMDQueryStringDateTransformer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6333BD8088129958432E90E666FAC29B /* VENPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = E06C7D3669CDAE7898037EDC0FEF1B6F /* VENPermission.m */; };
+		634B43476D5B4C4DBD08A9821C8ACE54 /* PFRole.h in Headers */ = {isa = PBXBuildFile; fileRef = D5A44E1BFD528082B9CA67AE59C77059 /* PFRole.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64CDEFE21CD132E9D2BDACB288DD7E54 /* BFCancellationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E89ADA0DEA0C27913AA5B1B5640D4D /* BFCancellationToken.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		650147FA1B31B820B5B020BE1D27E012 /* VENUser+VenmoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = D582B86734B7ABDD6124BAA14762C82F /* VENUser+VenmoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		672A4D2580760C91F0B57418068EFE6B /* SSKeychain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B82E15956D8E313ADDE02AE72508F665 /* SSKeychain-dummy.m */; };
+		67A2C408316FD9660ECFE28ADCADFC1B /* VENHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DC8648BDB54830E1632905D29DA099 /* VENHTTP.m */; };
+		680672D703E1887D103FC47210266C3A /* VENURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A46D71B30A2F8D970651ACCF7482C7 /* VENURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D88BAFD433EFD2E57AD88055E5E4A99 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B9E361039690D9901268F6172CD8DD0 /* Security.framework */; };
+		71C60C64BDD1CB18CFF777DE9959E1AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EBB7E252A68C78FBC8A0311CFFE0C3 /* QuartzCore.framework */; };
+		729C60AF834AD51DC767CCF97768ED5E /* BFCancellationTokenRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 488B72CBE25680227363B262F1B07DF0 /* BFCancellationTokenRegistration.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7569CEA8E1039ABE10611052DEB0BFEB /* BFTaskCompletionSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 522657C27A8656989CAD3D5A541A4428 /* BFTaskCompletionSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		772AF439B5A011DD43DBA87F4D12AD6E /* NSError+VENCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C52A8C3E9C96372C3793B17BFCDD78C /* NSError+VENCore.m */; };
+		785B64EBA8031B0623E868912827B6B1 /* PFTwitterUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AC026F5B7321E248119D2BC904AD15 /* PFTwitterUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A5F7CC81DA236B2998A88EFD1091D20 /* Bolts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9890A0B59519D78C4D2488ABBC8DD89D /* Bolts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B3F3DE1EFF0EE46E320855ADFF75A07 /* CMDQueryStringSerialization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00AA5F318D4AEF10F216C61F136BE74 /* CMDQueryStringSerialization.framework */; };
+		801339E70198BB413B75B0BE4BAC5F31 /* PFPurchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E5657CF7FFE70DA06E713ECD39771F9 /* PFPurchase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80547CAE2A1EF400471323503D1E4B82 /* NSString+VENCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DD4E0D67D51DEFDFEB187FD2D8ED /* NSString+VENCore.m */; };
+		86D22974BF50506E49731DD86025D22D /* BFTaskCompletionSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 800345CE78DDDE4A42E0B35C152A27B3 /* BFTaskCompletionSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		88894664241771A55B472F7963B28435 /* VENHMAC_SHA256_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 64E1A86D21B53CA72B37F85BF55A0616 /* VENHMAC_SHA256_Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		889B8D265254A101FAC6D86E5A608803 /* VENUserPayloadKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E4D7719639B5301E48DB934EBE9CF13 /* VENUserPayloadKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88F56B34B6189F21700E281065930D13 /* PFObject+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A1CAD2FBDAED591B51999BD3984763 /* PFObject+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89C9BB1004BACD994F379F655F31B903 /* NSString+VenmoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C7AB586A891F00B99D6460CD0BD742 /* NSString+VenmoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89DB2E17F93535E5BF8BBEFCE6D64046 /* NSArray+VENCore.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA45D59CB43EA0E44BB73B4CF169584 /* NSArray+VENCore.m */; };
+		8A2306CC7942DC8B817E662287175EAF /* NSDictionary+VENCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6548661C7A477DD1C893D3BE2F6AE602 /* NSDictionary+VENCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BE92B62689BD3C9F453CBC511F43DB5 /* UIDevice+VENCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F45208B9C67E393398B03A75E2645 /* UIDevice+VENCore.m */; };
+		8EDC82946F55C632CF851E326DA4C1D2 /* PFSubclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B85996E62EB6660BE843BD57A80BB51 /* PFSubclassing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EEA99485EC802460C0A87C6DCAA5BF1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C4D76B33C9E0182E8EE9483B70A9A2 /* CoreGraphics.framework */; };
+		91D7ECCBD1DCA1FF971F6E5BBBD57F65 /* BFCancellationTokenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A37EB8CA44A4C95F707BBC8CCAAA0 /* BFCancellationTokenSource.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		923C372AF008533EF87A07763ADD839F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95AE57311B58DC1479169E65AD17C32 /* CFNetwork.framework */; };
+		95FE12F5621C2D86C1D94536FA7703B0 /* VENPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C95A3BA7284540B0A3466119A4E18A8 /* VENPermission.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		973FEE28E4A2BEAAA7103D568DEECC64 /* BFCancellationTokenRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 89B47ED463C4892E24E5E67F7509BE5B /* BFCancellationTokenRegistration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98863D2D1FB734A17BC36D8C4C8F2976 /* CMDQueryStringNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3C13534B801E97F55ADB554E8BD49 /* CMDQueryStringNumberTransformer.m */; };
+		9CE2C34038E06C0C0EA09C27511D3AFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E0029B5EC039D681CCCD93BA247533 /* Foundation.framework */; };
+		9D6E840B430D63FCD7B2D825D8791CB8 /* BFCancellationTokenSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CB4B698E7F52EBDB541AC870A42E34B /* BFCancellationTokenSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F34C645068A3741FF3368072C0DA08E /* PFConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = DC465F0F4E4E60EDFA75CA0C7C982AB6 /* PFConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A013718212946157566365656B5250CF /* BFExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = C216B84936859FB66B2940945C4884DA /* BFExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A060C6CDAE24DE91C2E4113472C84AAA /* NSDictionary+VenmoSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B66475F8BBF5E7E8C711C56CB08A8E /* NSDictionary+VenmoSDK.m */; };
+		A2781ADE68B115616F927F3D7B69F105 /* NSError+VenmoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = BF63B61D7E3C5D8468D3ADB3BB22C81A /* NSError+VenmoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3FE21B414F254A6BB2B7B42D243FD37 /* NSDictionary+VENCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E17AD1BAFA8896D12392F202B0DAC10 /* NSDictionary+VENCore.m */; };
+		A479E4041CBC9DB77E10FF09FF20DE7C /* PFObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A4660587C514E14018256D8FC0999EA /* PFObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A573E5C76F7EC17AEE7B6B43DA9ABA16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E0029B5EC039D681CCCD93BA247533 /* Foundation.framework */; };
+		A687221732F64209C30F80C2523C8EE5 /* SSKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356D8E79E65B0678BE73A35447A083E5 /* SSKeychain.framework */; };
+		A6CB25BE21211B793E2DDEE878A4197A /* NSError+VenmoSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B0BB4624212123CA89BDCEE936F06B /* NSError+VenmoSDK.m */; };
+		A7CF97962836D97E8E4AA4A6F8FA6F8F /* VENCreateTransactionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FAD09C100645196C12D28D906557A /* VENCreateTransactionRequest.m */; };
+		AAF0589E0C5F3910300A823BEEE05E18 /* CMDQueryStringArrayTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = A297E41D26484BC4A7E4CC5786C10D4C /* CMDQueryStringArrayTransformer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AE85AB476259CE9FE6D50373E5C34084 /* NSString+CMDQueryStringSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 1541795E5AE186F1330C156D89339239 /* NSString+CMDQueryStringSerialization.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AF0E43B9AE5AB670D35FAA345FEA373C /* VENDefines_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F15679359FC57503D19DC0FE437F36BE /* VENDefines_Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B479613888B3B06644F60AFF6B1B4732 /* Bolts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EDAB90BB029FDB9E3B2D1B9988DA2D /* Bolts-dummy.m */; };
+		B4B938A8D9247ED97014E6A42EA464E9 /* VENPermissionConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 324ECF2F349B14F3B1410DCF3835AF49 /* VENPermissionConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6B24935097A711695518F5C50C62A4B /* Parse-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53417A79276C3B8786AB0B20634B277B /* Parse-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6BD50BCFAE52BF0C9274DBF6B489F72 /* CMDQueryStringNumberTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = E15B60A6C0405F3F9E3E0AA8C9E7EAA2 /* CMDQueryStringNumberTransformer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B789AD9BC1B76DB172018AB289C9B20C /* PFProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = 708A11B2C9BC8F0430E4CAA2786BE97B /* PFProduct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDF8489B557FBB34FA92F0314C50F77B /* PFQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = FE10264C3A03FDE214E74DD9081D45CE /* PFQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF5C64A8426C422652786788F216C22F /* Venmo-iOS-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 48DC997CC8DBB5020D0DC906F4978517 /* Venmo-iOS-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFAF6D21F999E4B197906A1225C7F584 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E0029B5EC039D681CCCD93BA247533 /* Foundation.framework */; };
+		C1E96AAC6B41E98D0AE6F84D0D247526 /* VENHMAC_SHA256.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8B7514C3BAEBD6EB422203AC394F47 /* VENHMAC_SHA256.m */; };
+		C6B9CC3707F435C62956DF24050C0BD1 /* CMDQueryStringSerialization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00AA5F318D4AEF10F216C61F136BE74 /* CMDQueryStringSerialization.framework */; };
+		C7037F15443EC386AF2A7A9BA806ADCC /* BFExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E2930ED2550955DE3F063E3A2049BE /* BFExecutor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C77E19F1940360B637A4CF1A022B5EB1 /* VENCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FADE314A034718F03FC6A44B46B9AE /* VENCore-dummy.m */; };
+		C821DC02EF4CFDEE8CE3E98345DCDBF3 /* NSString+VenmoSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE6CBF56F94BFD2DE71A24444161C03 /* NSString+VenmoSDK.m */; };
+		C89A4018D9B142CC59CEE914540CB9CA /* PFAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B61CA5560405729DA5A0804803F1F00 /* PFAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC5CF889A9AC75C90D15D47471F48416 /* PFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FAF70045F93B97E899DBA934D49D66D /* PFConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCCE8CA3BECB8191A932A22B5002E341 /* CMDQueryStringSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CE9AC7F1D7E8455E16E59C4218C7E2 /* CMDQueryStringSerialization.m */; };
+		CFA62F9EB39E8C25DC410ED6F8BFC98C /* NSBundle+VenmoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = EEB84488762CE7BB04375391E44B6059 /* NSBundle+VenmoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0E741D2BB1150A6D0BFA98E7E963AF9 /* VENTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5182CFFD22BF35CDCD3888A91340B3 /* VENTransaction.m */; };
+		D1DF5BD051E99C1620E047444904549A /* PFGeoPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 09AA745B8BD51D27F3C2C17628295B7F /* PFGeoPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D458761FCFE8B6AB12C50FCCA0D78D35 /* NSArray+VENCore.h in Headers */ = {isa = PBXBuildFile; fileRef = FB9F117BC937BBB72FA7D438647B78DE /* NSArray+VENCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D69062C277AF49E3DF5B2DDD5ED526A2 /* CMDQueryStringReader.h in Headers */ = {isa = PBXBuildFile; fileRef = EB73A6803EA98E6599CD176A99E60314 /* CMDQueryStringReader.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D77B935C9F730013F6FA4AA3DD263CAD /* BFTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 53B0F0F15FF0A9B5184D20D703587A6C /* BFTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7CED332B81E487C89671F92364D7302 /* CMDQueryStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FFDA92EA3866A8E8424C5BB944E76F /* CMDQueryStringValueTransformer.m */; };
+		D8E5C9947CBF904881BAEAD010504405 /* VENUser+VenmoSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 537F9120C4E1FE01CB1055D0C8571B18 /* VENUser+VenmoSDK.m */; };
+		DB564294E0A588E5186D62767CB4891A /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAD2FE343ADC8DFB0514CDD43C7F9D4 /* SSKeychainQuery.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DC170B7CF2773A48A6E0C26B06B04FF1 /* VENRequestDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B406FC570D18A4C79EEC989382AF59A9 /* VENRequestDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDD88A947B2481F1018AB32EDD2ACAAE /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F3B49D5336C729570A18AE3D5E5141 /* NSString+MD5Addition.m */; };
+		DE0404ECF0D4375CC0EB431B8CB1B0A9 /* CMDQueryStringSerialization-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C9216A78E6BC53857FCA6CBC65F10F4 /* CMDQueryStringSerialization-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E05BFCB5139EFDF441F28CEA163BE901 /* NSBundle+VenmoSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A29EA6499E46D6DB61CA60DAE93E53 /* NSBundle+VenmoSDK.m */; };
+		E0F1294E142D2881D8B05CEE2A82186C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E0029B5EC039D681CCCD93BA247533 /* Foundation.framework */; };
+		E19BD69AA2E8A5B81A8745112D939A60 /* VENErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = F7B5AE7443C87B4B3956816CAEFBCEDF /* VENErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E28F2013BEF9257EA24F99F5A8D88456 /* VENCore.h in Headers */ = {isa = PBXBuildFile; fileRef = E0D2741A378BE4C20CF2EAD6B8F39BEF /* VENCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E43E28DE217F8E423AD0814BDC8C1428 /* VENHTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 924941A2B5725A2311A30D008CB47C02 /* VENHTTPResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E51E6F63E76499171F74A98C0F9280B2 /* PFFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB5FD60791B58C4FC8A65E559944990 /* PFFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E59FEAC221D4BFB7B64ABBC071624A2C /* NSDictionary+VenmoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2203FCB64738C430507101A68AB173 /* NSDictionary+VenmoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E61CAC8BDD3EB24DD2BE07E4934514E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E0029B5EC039D681CCCD93BA247533 /* Foundation.framework */; };
+		E6B98FEBB0BB71D372ED7D264E5670DD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C51145D60C8C8AF8B2E46E00EC05DC3 /* Bolts.framework */; };
+		E73C1937DD81657A3C580DA549ACF4FB /* VENUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FBE2701D51C6C0DC6C95DA38A9D861E /* VENUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8486B85DE994BAEED5A227547AE8B87 /* PFCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 31958B61488EC603B93CF844EAD26D7F /* PFCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB7DC254F7849B2309182C54C7A620BC /* CMDQueryStringWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = C5849C4D092A213761F6EEF282A77076 /* CMDQueryStringWriter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EEE18DDD5F2A4E37EEE116735B70E375 /* VENCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E13E2CD1B74B172CA3C39E77450304 /* VENCore.framework */; };
+		F124CC6278FF4362212E11B6F36A221F /* VENHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C223C608C13210260632FD0E8C661 /* VENHTTPResponse.m */; };
+		F1CBB54FEA7130273C94BD5F5CACB97E /* VENTransaction+VenmoSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A3E69E62872673CCCA10952D1E83CB /* VENTransaction+VenmoSDK.m */; };
+		F2CC602F176B680982BDB6E8F2B2F314 /* Parse-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC41C2F4CB96EE81B1D32E86070172B /* Parse-dummy.m */; };
+		F70B3ED6D8EC957479292F08EBA8B712 /* PFRelation.h in Headers */ = {isa = PBXBuildFile; fileRef = 031F0B03D1F7695B87CC5F301F8E2A37 /* PFRelation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F970DDA3B5D9F0C622C0379C15D15F98 /* Pods-uSell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A00D115D62D70E924F10DF0A9413A9A /* Pods-uSell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F99CBA0DDADA7BF7542B1ED631FAA1A6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D94792776400E94FBE4DE53D882DAC /* CoreLocation.framework */; };
+		FA7BE7C7B7D59BCDF23699B6E65A5366 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E0029B5EC039D681CCCD93BA247533 /* Foundation.framework */; };
+		FB92AAF715E1FF75C8E3E2D30D32B685 /* PFPush.h in Headers */ = {isa = PBXBuildFile; fileRef = 1510409A2635A161F31FDB47FDF2ACBB /* PFPush.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEDA8706E9DEBAB092861A73D032EFE4 /* BoltsVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = D8E83490BE442F80439824A491FC3C8E /* BoltsVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4421C4161E17C8C521F95970B08B2739 /* PBXContainerItemProxy */ = {
+		0540414C6DF39A121464FF1B8052F827 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B1E794783C7E7925A3AA1354B19D4B91;
+			remoteGlobalIDString = 627E1DD8BE6720B2B7BEB5F4AF99114B;
+			remoteInfo = CMDQueryStringSerialization;
+		};
+		149C3D8701F2A93156DEAD059723793E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D090B2DC1CA6472ADFFB771E5C640E1;
+			remoteInfo = "Venmo-iOS-SDK";
+		};
+		1630EE0BAD7C670BB80F7BDF2A1806CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E7CB72C96163B00609C671FCF3DC2C8;
 			remoteInfo = Bolts;
 		};
-		C050599B964E806C96BFD1828E4C568D /* PBXContainerItemProxy */ = {
+		354C2818ED45776E0067FA614958CE49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B1E794783C7E7925A3AA1354B19D4B91;
+			remoteGlobalIDString = 518EBA6CFAF98CC6281F09C17FFA94BD;
+			remoteInfo = VENCore;
+		};
+		40E48804805E2665078720E5B17D593B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E7CB72C96163B00609C671FCF3DC2C8;
 			remoteInfo = Bolts;
 		};
-		C2CCDE24BD4B993F613D545ACFCB9224 /* PBXContainerItemProxy */ = {
+		78146B7677220E45F6DCEB86BEEE1909 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 23E000C4DC578FA98ABD3FB4ACAC1469;
+			remoteGlobalIDString = 518EBA6CFAF98CC6281F09C17FFA94BD;
+			remoteInfo = VENCore;
+		};
+		8394929F9482A5AF52CF1EA58BAF5502 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 627E1DD8BE6720B2B7BEB5F4AF99114B;
+			remoteInfo = CMDQueryStringSerialization;
+		};
+		866225D1D73DEDD8F446E3B470440D3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDBFC77CECFE46AA49DFDBD8A12E06FF;
 			remoteInfo = Parse;
+		};
+		8F587D42531DF15D15F480C641CF8533 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 627E1DD8BE6720B2B7BEB5F4AF99114B;
+			remoteInfo = CMDQueryStringSerialization;
+		};
+		C4172AFF5ADA3EFBC6CD9BC491CC39E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB2AAD02A07866A64E4F7F9973B1FF6B;
+			remoteInfo = SSKeychain;
+		};
+		E6C0FAEB4DC29A9D1D6BA12E56A53AB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB2AAD02A07866A64E4F7F9973B1FF6B;
+			remoteInfo = SSKeychain;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		002BEB2FF2981FC7178ABD544A785EA2 /* PFSubclassing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFSubclassing.h; sourceTree = "<group>"; };
-		00D742E9A1E75CDDEAFE10762DDD8CE0 /* PFUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFUser.h; sourceTree = "<group>"; };
-		041E2B1C8B6E48F0AFF5DF2A233CE828 /* BFCancellationToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationToken.h; path = Bolts/Common/BFCancellationToken.h; sourceTree = "<group>"; };
-		0E38A55032DDA740C40E021D9E4D36E6 /* Bolts-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Bolts-Private.xcconfig"; sourceTree = "<group>"; };
-		0E3C14F7675B36294D88647C348A2BD7 /* Pods-uSell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-uSell.debug.xcconfig"; sourceTree = "<group>"; };
-		0E46668371958F1CC0DE82D00914D614 /* Parse-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parse-umbrella.h"; sourceTree = "<group>"; };
-		15069E4125DDEB3FA9D8ADAF026CF908 /* PFSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFSession.h; sourceTree = "<group>"; };
-		1567A7EAC3CE12D07B3FC0E0EA1A4AF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		15E7BF01CEE81EDB87F6E3DD1EBEEBC0 /* Bolts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-umbrella.h"; sourceTree = "<group>"; };
-		17AFAC72216895047FCB33CA65B7C1C8 /* PFQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFQuery.h; sourceTree = "<group>"; };
-		181D3C5A49E150DC58B8325D7FD0D6EF /* Parse-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Parse-dummy.m"; sourceTree = "<group>"; };
-		22378F004F9CCB116A074C9C8120FDEA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		2BD6053364D6F14C99BF0D245379C068 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3115A7D65521AC1875AFB0E3A9C33EC4 /* Parse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Parse.xcconfig; sourceTree = "<group>"; };
-		35D8CCC9D0FDB3B594D335E3520AFB10 /* PFTwitterUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFTwitterUtils.h; sourceTree = "<group>"; };
-		38482B8F2F0A3017B1DA8440AF4F0ED7 /* PFFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFFile.h; sourceTree = "<group>"; };
-		38B42E87DC79F639F67192C841BA6A88 /* BFTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTask.h; path = Bolts/Common/BFTask.h; sourceTree = "<group>"; };
-		3A6A61627EBD68257B26E6DED78732C8 /* Bolts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bolts.xcconfig; sourceTree = "<group>"; };
-		3E05494A25CFACFCE5F984799A2A69A3 /* BFCancellationTokenSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenSource.m; path = Bolts/Common/BFCancellationTokenSource.m; sourceTree = "<group>"; };
-		3E5535520A7455DC46643696CA579173 /* Bolts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bolts.modulemap; sourceTree = "<group>"; };
-		3F6856ED3D51DBE56C595698B01D0872 /* PFPush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFPush.h; sourceTree = "<group>"; };
-		3FFFBCA8FE3A2406676694C6E2554F9B /* Bolts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bolts-dummy.m"; sourceTree = "<group>"; };
-		445448D8ABD7E8F14CA2AB1D73DEF80A /* PFAnonymousUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFAnonymousUtils.h; sourceTree = "<group>"; };
-		45495EE76581CF025AB605C40B921B41 /* PFCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFCloud.h; sourceTree = "<group>"; };
+		031F0B03D1F7695B87CC5F301F8E2A37 /* PFRelation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFRelation.h; sourceTree = "<group>"; };
+		05A1CAD2FBDAED591B51999BD3984763 /* PFObject+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PFObject+Subclass.h"; sourceTree = "<group>"; };
+		08EDAB90BB029FDB9E3B2D1B9988DA2D /* Bolts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bolts-dummy.m"; sourceTree = "<group>"; };
+		098109DDAC7DE4349101FDDAB468AF63 /* VENCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VENCore-umbrella.h"; sourceTree = "<group>"; };
+		09AA745B8BD51D27F3C2C17628295B7F /* PFGeoPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFGeoPoint.h; sourceTree = "<group>"; };
+		0B9E361039690D9901268F6172CD8DD0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		0BAF0CC4EB85EA8D24D90573BA4B6CDA /* CMDQueryStringSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CMDQueryStringSerialization.h; path = CMDQueryStringSerialization/CMDQueryStringSerialization.h; sourceTree = "<group>"; };
+		0C51145D60C8C8AF8B2E46E00EC05DC3 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C8BF2C265224E5C60D8397CDD42C865 /* BFTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTask.m; path = Bolts/Common/BFTask.m; sourceTree = "<group>"; };
+		0C9F45208B9C67E393398B03A75E2645 /* UIDevice+VENCore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+VENCore.m"; path = "VENCore/Categories/UIDevice+VENCore.m"; sourceTree = "<group>"; };
+		0E5EC29749E408F79D6351795ACF6E96 /* Bolts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bolts.modulemap; sourceTree = "<group>"; };
+		0E9B9BE44C4B3B7A8A3D10068697BD72 /* VENRequestDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENRequestDecoder.m; path = "venmo-sdk/Encryption/VENRequestDecoder.m"; sourceTree = "<group>"; };
+		0F0D4BC7719394CC613CD4FEFC7F1C47 /* PFNullability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFNullability.h; sourceTree = "<group>"; };
+		0FAF70045F93B97E899DBA934D49D66D /* PFConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFConstants.h; sourceTree = "<group>"; };
+		107D74F8CA685F458971FFC8A0DB13F6 /* Pods-uSell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-uSell-dummy.m"; sourceTree = "<group>"; };
+		123CAAC7BE74903E647C22A01F6699AB /* VENUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENUser.m; path = VENCore/Models/Users/VENUser.m; sourceTree = "<group>"; };
+		12818606D55585EA0B7423AD1BA55CD6 /* NSString+CMDQueryStringSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+CMDQueryStringSerialization.m"; path = "CMDQueryStringSerialization/NSString+CMDQueryStringSerialization.m"; sourceTree = "<group>"; };
+		13286FB5585313B402F4BEE96E5500FA /* VENCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VENCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		144F5A26D923F85E359BE4A555840E24 /* SSKeychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SSKeychain.modulemap; sourceTree = "<group>"; };
+		1510409A2635A161F31FDB47FDF2ACBB /* PFPush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFPush.h; sourceTree = "<group>"; };
+		1541795E5AE186F1330C156D89339239 /* NSString+CMDQueryStringSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+CMDQueryStringSerialization.h"; path = "CMDQueryStringSerialization/NSString+CMDQueryStringSerialization.h"; sourceTree = "<group>"; };
+		1565DE0DE7F36624C0EF1D0A921053C0 /* VENErrors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENErrors.m; path = "venmo-sdk/Supporting Files/VENErrors.m"; sourceTree = "<group>"; };
+		18CD9B6EB245BBF8A4B1C3E1F4FC11AE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		1910C2582AEF8CB53E1462D0311B930E /* CMDQueryStringSerialization-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CMDQueryStringSerialization-Private.xcconfig"; sourceTree = "<group>"; };
+		1A1A37EB8CA44A4C95F707BBC8CCAAA0 /* BFCancellationTokenSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenSource.m; path = Bolts/Common/BFCancellationTokenSource.m; sourceTree = "<group>"; };
+		1D2203FCB64738C430507101A68AB173 /* NSDictionary+VenmoSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+VenmoSDK.h"; path = "venmo-sdk/Categories/NSDictionary+VenmoSDK.h"; sourceTree = "<group>"; };
+		1D94E59636AB79BF90804220FD21E1DE /* SSKeychainQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSKeychainQuery.h; path = SSKeychain/SSKeychainQuery.h; sourceTree = "<group>"; };
+		1E17AD1BAFA8896D12392F202B0DAC10 /* NSDictionary+VENCore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+VENCore.m"; path = "VENCore/Categories/NSDictionary+VENCore.m"; sourceTree = "<group>"; };
+		1E33C6CCDA4DEDCCDE168418FD4CED88 /* SSKeychain-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSKeychain-umbrella.h"; sourceTree = "<group>"; };
+		1FBE2701D51C6C0DC6C95DA38A9D861E /* VENUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENUser.h; path = VENCore/Models/Users/VENUser.h; sourceTree = "<group>"; };
+		2052889236941A96135AB4514D893F1C /* CMDQueryStringStringTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CMDQueryStringStringTransformer.h; path = CMDQueryStringSerialization/CMDQueryStringStringTransformer.h; sourceTree = "<group>"; };
+		22434763ED114208DD5C8A7515BC9074 /* PFSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFSession.h; sourceTree = "<group>"; };
+		224511591A6FE59BC941D5F4F0F79778 /* BFCancellationToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationToken.h; path = Bolts/Common/BFCancellationToken.h; sourceTree = "<group>"; };
+		22A3E69E62872673CCCA10952D1E83CB /* VENTransaction+VenmoSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "VENTransaction+VenmoSDK.m"; path = "venmo-sdk/Categories/VENTransaction+VenmoSDK.m"; sourceTree = "<group>"; };
+		22FD838D96309B36BBB0CB7230BC7EA6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		272FA498E92BD9381A6C2C870E51F8CF /* VENTransactionTarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENTransactionTarget.h; path = VENCore/Models/Transactions/VENTransactionTarget.h; sourceTree = "<group>"; };
+		27B0BB4624212123CA89BDCEE936F06B /* NSError+VenmoSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+VenmoSDK.m"; path = "venmo-sdk/Categories/NSError+VenmoSDK.m"; sourceTree = "<group>"; };
+		288262C215BD93D9C32EA7DC4342E4A9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		28D94792776400E94FBE4DE53D882DAC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		2B15B71740E93F4407B595AF7AA00A5E /* Venmo-iOS-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Venmo-iOS-SDK.modulemap"; sourceTree = "<group>"; };
+		2E4D7719639B5301E48DB934EBE9CF13 /* VENUserPayloadKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENUserPayloadKeys.h; path = VENCore/Models/Users/VENUserPayloadKeys.h; sourceTree = "<group>"; };
+		31958B61488EC603B93CF844EAD26D7F /* PFCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFCloud.h; sourceTree = "<group>"; };
+		324ECF2F349B14F3B1410DCF3835AF49 /* VENPermissionConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENPermissionConstants.h; path = "venmo-sdk/Supporting Files/VENPermissionConstants.h"; sourceTree = "<group>"; };
+		328C218D75D7B6C02B6450CA95FEC4A2 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+IdentifierAddition.h"; path = "venmo-sdk/Categories/UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
+		33E89ADA0DEA0C27913AA5B1B5640D4D /* BFCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationToken.m; path = Bolts/Common/BFCancellationToken.m; sourceTree = "<group>"; };
+		33FAFB6C5556FAF2B990F1631C01EDC6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356D8E79E65B0678BE73A35447A083E5 /* SSKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35C394D46AA6A9D55B5B28FAE78D3B77 /* Bolts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bolts.xcconfig; sourceTree = "<group>"; };
+		36CE9AC7F1D7E8455E16E59C4218C7E2 /* CMDQueryStringSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CMDQueryStringSerialization.m; path = CMDQueryStringSerialization/CMDQueryStringSerialization.m; sourceTree = "<group>"; };
+		372ADC89901ACD61140A276C70325292 /* VENBase64_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENBase64_Internal.h; path = "venmo-sdk/Encryption/VENBase64_Internal.h"; sourceTree = "<group>"; };
+		3C9216A78E6BC53857FCA6CBC65F10F4 /* CMDQueryStringSerialization-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CMDQueryStringSerialization-umbrella.h"; sourceTree = "<group>"; };
+		3D9E4D3A215669D2A03F439F6B16A806 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E23AD6885E6245D7378DB3563D94448 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		409A039D8156B5E7A0BAB02DFD797A85 /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+IdentifierAddition.m"; path = "venmo-sdk/Categories/UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
+		4308DD4E0D67D51DEFDFEB187FD2D8ED /* NSString+VENCore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+VENCore.m"; path = "VENCore/Categories/NSString+VENCore.m"; sourceTree = "<group>"; };
+		4526D68B912E5137F7F6C56B3D6B5787 /* NSString+VENCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+VENCore.h"; path = "VENCore/Categories/NSString+VENCore.h"; sourceTree = "<group>"; };
+		46A46D71B30A2F8D970651ACCF7482C7 /* VENURLProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENURLProtocol.h; path = "venmo-sdk/URL Handling/VENURLProtocol.h"; sourceTree = "<group>"; };
+		4731C5562968D27BB688F29157149DC6 /* UIDevice+VENCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+VENCore.h"; path = "VENCore/Categories/UIDevice+VENCore.h"; sourceTree = "<group>"; };
+		488B72CBE25680227363B262F1B07DF0 /* BFCancellationTokenRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenRegistration.m; path = Bolts/Common/BFCancellationTokenRegistration.m; sourceTree = "<group>"; };
+		48DC997CC8DBB5020D0DC906F4978517 /* Venmo-iOS-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Venmo-iOS-SDK-umbrella.h"; sourceTree = "<group>"; };
+		4A4660587C514E14018256D8FC0999EA /* PFObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFObject.h; sourceTree = "<group>"; };
 		4A5F5FA1B41C03163AB94A87963DB280 /* Pods-uSell-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-uSell-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4E7832FFCBDF257503962BEB5C1553DF /* PFObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFObject.h; sourceTree = "<group>"; };
-		4ECD87985C2424AA892C5A19D4F19B4C /* libParseLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libParseLib.a; sourceTree = "<group>"; };
-		508208D09EBDBB57A16F062D59DC7C0B /* BFTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTask.m; path = Bolts/Common/BFTask.m; sourceTree = "<group>"; };
-		537E1A71CBD1A8EBF07FD967B8ADA475 /* BFCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenRegistration.h; path = Bolts/Common/BFCancellationTokenRegistration.h; sourceTree = "<group>"; };
-		598400BA01044191B1562A8D7E7EB57E /* PF_Twitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PF_Twitter.h; sourceTree = "<group>"; };
-		5B8FEE8B9D384A43A8465D17BE812854 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		615F65457DE18939C37079EA0BCB8DDF /* PFPurchase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFPurchase.h; sourceTree = "<group>"; };
+		4B46425D756A1E817E9E4B159926DFE5 /* PFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		4B5F533B8476E82D6E54B463EE586632 /* Pods-uSell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-uSell.release.xcconfig"; sourceTree = "<group>"; };
+		4B69E569C1B0223DA94A9AF017ACE5CE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BB3C13534B801E97F55ADB554E8BD49 /* CMDQueryStringNumberTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CMDQueryStringNumberTransformer.m; path = CMDQueryStringSerialization/CMDQueryStringNumberTransformer.m; sourceTree = "<group>"; };
+		4BCCB65BB420855B405583A4CDE389CA /* SSKeychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = SSKeychain/SSKeychain.m; sourceTree = "<group>"; };
+		4C203C2EB2D5D008234ED284F785A929 /* CMDQueryStringSerialization-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CMDQueryStringSerialization-prefix.pch"; sourceTree = "<group>"; };
+		4D80C16C40C8B6F5F5A4124843BDE7ED /* Bolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bolts.m; path = Bolts/Common/Bolts.m; sourceTree = "<group>"; };
+		4ED1CF151A76F6CCB3F9FC5EAC07542E /* Venmo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Venmo.m; path = "venmo-sdk/Venmo.m"; sourceTree = "<group>"; };
+		4F5182CFFD22BF35CDCD3888A91340B3 /* VENTransaction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENTransaction.m; path = VENCore/Models/Transactions/VENTransaction.m; sourceTree = "<group>"; };
+		4F9DE229875D13E5A7AA988491729005 /* Venmo-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Venmo-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
+		522657C27A8656989CAD3D5A541A4428 /* BFTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTaskCompletionSource.h; path = Bolts/Common/BFTaskCompletionSource.h; sourceTree = "<group>"; };
+		53417A79276C3B8786AB0B20634B277B /* Parse-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parse-umbrella.h"; sourceTree = "<group>"; };
+		536BA54DCA4AF20DCC7FBF3A58A276D7 /* NSError+VENCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+VENCore.h"; path = "VENCore/Categories/NSError+VENCore.h"; sourceTree = "<group>"; };
+		537F9120C4E1FE01CB1055D0C8571B18 /* VENUser+VenmoSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "VENUser+VenmoSDK.m"; path = "venmo-sdk/Categories/VENUser+VenmoSDK.m"; sourceTree = "<group>"; };
+		53B0F0F15FF0A9B5184D20D703587A6C /* BFTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTask.h; path = Bolts/Common/BFTask.h; sourceTree = "<group>"; };
+		54E2930ED2550955DE3F063E3A2049BE /* BFExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFExecutor.m; path = Bolts/Common/BFExecutor.m; sourceTree = "<group>"; };
+		590FECD7A9AB329DAF23F2CB316A66B9 /* VENSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENSession.h; path = "venmo-sdk/Models/VENSession.h"; sourceTree = "<group>"; };
+		59DD4CB49FF54CEA985A3A63CC6E0D27 /* Parse-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parse-prefix.pch"; sourceTree = "<group>"; };
+		5A00D115D62D70E924F10DF0A9413A9A /* Pods-uSell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-uSell-umbrella.h"; sourceTree = "<group>"; };
+		5A6C06E59126AE6CED10782168F599B1 /* CMDQueryStringDateTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CMDQueryStringDateTransformer.h; path = CMDQueryStringSerialization/CMDQueryStringDateTransformer.h; sourceTree = "<group>"; };
+		5BC618040C569024910B706D207C8BDA /* Parse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Parse.xcconfig; sourceTree = "<group>"; };
+		5C01AB478F0F6962CB3E284AB2D0D1B8 /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C65ABD7E4FA39B6AD3E5A875048C8C5 /* libParseLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libParseLib.a; sourceTree = "<group>"; };
+		5CB4B698E7F52EBDB541AC870A42E34B /* BFCancellationTokenSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenSource.h; path = Bolts/Common/BFCancellationTokenSource.h; sourceTree = "<group>"; };
+		5E50552AC204F85F96E6F726216C04D1 /* CMDQueryStringDateTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CMDQueryStringDateTransformer.m; path = CMDQueryStringSerialization/CMDQueryStringDateTransformer.m; sourceTree = "<group>"; };
+		5E6C223C608C13210260632FD0E8C661 /* VENHTTPResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENHTTPResponse.m; path = VENCore/Networking/VENHTTPResponse.m; sourceTree = "<group>"; };
+		5F1C9414563DC7CEFD4ABA38ED52C74E /* VENCore-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "VENCore-Private.xcconfig"; sourceTree = "<group>"; };
+		60687456AADEE638D4B4EFD9C1800B0E /* NSURL+VenmoSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURL+VenmoSDK.m"; path = "venmo-sdk/Categories/NSURL+VenmoSDK.m"; sourceTree = "<group>"; };
+		6365587D51B94C66F3EAAAC46BE69653 /* Parse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Parse.h; sourceTree = "<group>"; };
+		63C7AB586A891F00B99D6460CD0BD742 /* NSString+VenmoSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+VenmoSDK.h"; path = "venmo-sdk/Categories/NSString+VenmoSDK.h"; sourceTree = "<group>"; };
+		64E1A86D21B53CA72B37F85BF55A0616 /* VENHMAC_SHA256_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENHMAC_SHA256_Internal.h; path = "venmo-sdk/Encryption/VENHMAC_SHA256_Internal.h"; sourceTree = "<group>"; };
+		6548661C7A477DD1C893D3BE2F6AE602 /* NSDictionary+VENCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+VENCore.h"; path = "VENCore/Categories/NSDictionary+VENCore.h"; sourceTree = "<group>"; };
 		672557F4FE398B8EE8DDFAA44C2CD8B5 /* Pods-uSell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-uSell.modulemap"; sourceTree = "<group>"; };
-		6862F8B7EA1C1565DBBCE6741AD01BFE /* Pods-uSell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-uSell-umbrella.h"; sourceTree = "<group>"; };
-		6E93D3D2F06E7989DF78CC73664ECD52 /* Pods-uSell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-uSell-dummy.m"; sourceTree = "<group>"; };
-		6F28D07F863AAA4E44976A842C69F058 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		7043E1AD2D0EAFB589BE1C606A5A451A /* Parse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Parse.h; sourceTree = "<group>"; };
-		715A85D1BA0CE8F3E45F0D37A2F4E3EE /* Empty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
-		76ACC0D9466FF2ABA6F15F554E4A57A0 /* PFConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFConfig.h; sourceTree = "<group>"; };
-		7EFCB316BDD98E67282B68B05AC483BE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
-		8D30F5DC2BFF4BDB24FCAF792F0843EE /* BFExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFExecutor.h; path = Bolts/Common/BFExecutor.h; sourceTree = "<group>"; };
-		8E6628D8C4B7B9F786F7FFFC2D2CB307 /* Parse-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Parse-Private.xcconfig"; sourceTree = "<group>"; };
-		8ED464A4DB0958E508C34BD78491BB00 /* BFExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFExecutor.m; path = Bolts/Common/BFExecutor.m; sourceTree = "<group>"; };
-		91C52BA8E0327D63034D24F7D5BBE022 /* PFRelation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFRelation.h; sourceTree = "<group>"; };
-		9250DEE47D9286E5A1075E5680FF9EC3 /* Pods_uSell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uSell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		676F5E5086C714D6794A509AD6CD1D35 /* PFAnonymousUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFAnonymousUtils.h; sourceTree = "<group>"; };
+		69A5A3E6E73BCC55AB8B837663D43FD9 /* NSString+MD5Addition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5Addition.h"; path = "venmo-sdk/Categories/NSString+MD5Addition.h"; sourceTree = "<group>"; };
+		6B61CA5560405729DA5A0804803F1F00 /* PFAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFAnalytics.h; sourceTree = "<group>"; };
+		6E01E6CF24033A64F36572AFBF3802A5 /* Bolts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-umbrella.h"; sourceTree = "<group>"; };
+		708A11B2C9BC8F0430E4CAA2786BE97B /* PFProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFProduct.h; sourceTree = "<group>"; };
+		7149CB02A8CFF356B14C048D60C22AA2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71C7971A0D6B471EED3A61E17482BA64 /* VENURLProtocol.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENURLProtocol.m; path = "venmo-sdk/URL Handling/VENURLProtocol.m"; sourceTree = "<group>"; };
+		7285BA428A7142CCA0BF53AA492FB0B8 /* CMDQueryStringSerialization.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CMDQueryStringSerialization.xcconfig; sourceTree = "<group>"; };
+		75DC8648BDB54830E1632905D29DA099 /* VENHTTP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENHTTP.m; path = VENCore/Networking/VENHTTP.m; sourceTree = "<group>"; };
+		776E0F25B7CE3B38BBEF452D6CA86FA3 /* VENHTTP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENHTTP.h; path = VENCore/Networking/VENHTTP.h; sourceTree = "<group>"; };
+		77C1D5E36B998BC944E7C35B97EA6DDE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A530FEA5E8740CDCC614DB926ACE0A2 /* VENCore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VENCore-prefix.pch"; sourceTree = "<group>"; };
+		7BBEAD342D94F85B2F531351F3F7D898 /* VENTransaction+VenmoSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "VENTransaction+VenmoSDK.h"; path = "venmo-sdk/Categories/VENTransaction+VenmoSDK.h"; sourceTree = "<group>"; };
+		7EB5FD60791B58C4FC8A65E559944990 /* PFFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFFile.h; sourceTree = "<group>"; };
+		800345CE78DDDE4A42E0B35C152A27B3 /* BFTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTaskCompletionSource.m; path = Bolts/Common/BFTaskCompletionSource.m; sourceTree = "<group>"; };
+		80EBB7E252A68C78FBC8A0311CFFE0C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		86084FB76074C95B28978214DA2CABC1 /* VENTransactionTarget.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENTransactionTarget.m; path = VENCore/Models/Transactions/VENTransactionTarget.m; sourceTree = "<group>"; };
+		89B47ED463C4892E24E5E67F7509BE5B /* BFCancellationTokenRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenRegistration.h; path = Bolts/Common/BFCancellationTokenRegistration.h; sourceTree = "<group>"; };
+		8A8486F299391050056C5BB4DB9B01A9 /* CMDQueryStringSerialization-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CMDQueryStringSerialization-dummy.m"; sourceTree = "<group>"; };
+		8B6131D816E708CEAE66023052240E68 /* VENBase64.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENBase64.m; path = "venmo-sdk/Encryption/VENBase64.m"; sourceTree = "<group>"; };
+		8B85996E62EB6660BE843BD57A80BB51 /* PFSubclassing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFSubclassing.h; sourceTree = "<group>"; };
+		8C52A8C3E9C96372C3793B17BFCDD78C /* NSError+VENCore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+VENCore.m"; path = "VENCore/Categories/NSError+VENCore.m"; sourceTree = "<group>"; };
+		8C95A3BA7284540B0A3466119A4E18A8 /* VENPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENPermission.h; path = "venmo-sdk/Models/VENPermission.h"; sourceTree = "<group>"; };
+		8D4FAD09C100645196C12D28D906557A /* VENCreateTransactionRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENCreateTransactionRequest.m; path = VENCore/Models/Transactions/VENCreateTransactionRequest.m; sourceTree = "<group>"; };
+		8E5657CF7FFE70DA06E713ECD39771F9 /* PFPurchase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFPurchase.h; sourceTree = "<group>"; };
+		91E0029B5EC039D681CCCD93BA247533 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		924941A2B5725A2311A30D008CB47C02 /* VENHTTPResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENHTTPResponse.h; path = VENCore/Networking/VENHTTPResponse.h; sourceTree = "<group>"; };
+		9890A0B59519D78C4D2488ABBC8DD89D /* Bolts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bolts.h; path = Bolts/Common/Bolts.h; sourceTree = "<group>"; };
 		9A570253D1522C15C513F5B87BB1080D /* Pods-uSell-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-uSell-resources.sh"; sourceTree = "<group>"; };
-		9F3B161C78BCB05BBA771832EC022790 /* BFCancellationToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationToken.m; path = Bolts/Common/BFCancellationToken.m; sourceTree = "<group>"; };
-		A220AA1169D43679E5F4F579A6D08891 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2EB1C31FAF7D8D1A96D862E5D452310 /* Pods-uSell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-uSell.release.xcconfig"; sourceTree = "<group>"; };
-		A7387906169F2D54F1F11F21CC45D8B1 /* BFCancellationTokenSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFCancellationTokenSource.h; path = Bolts/Common/BFCancellationTokenSource.h; sourceTree = "<group>"; };
+		9E45C157553B7123AD27B2B7F78E7D54 /* SSKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A297E41D26484BC4A7E4CC5786C10D4C /* CMDQueryStringArrayTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CMDQueryStringArrayTransformer.h; path = CMDQueryStringSerialization/CMDQueryStringArrayTransformer.h; sourceTree = "<group>"; };
+		A3FFDA92EA3866A8E8424C5BB944E76F /* CMDQueryStringValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CMDQueryStringValueTransformer.m; path = CMDQueryStringSerialization/CMDQueryStringValueTransformer.m; sourceTree = "<group>"; };
 		A86F834A5A93884FB8305B07ADB1773C /* Pods-uSell-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-uSell-acknowledgements.plist"; sourceTree = "<group>"; };
-		A8FAE17834704E3402FC5900E710F567 /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA52B98866FBFD30ADD051A7B690EF42 /* BFCancellationTokenRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFCancellationTokenRegistration.m; path = Bolts/Common/BFCancellationTokenRegistration.m; sourceTree = "<group>"; };
+		A8AD918AACA6BDDEC4EFE45E09F84331 /* PF_Twitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PF_Twitter.h; sourceTree = "<group>"; };
+		AA4EED30D554E76480BB9D49C2EC4777 /* PFInstallation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFInstallation.h; sourceTree = "<group>"; };
+		ACBBE79B5E7E527ECA3876EC3A90019C /* CMDQueryStringSerialization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CMDQueryStringSerialization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC4769A08B575BDAFAAF0B2FF2B289A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2A46C0F450B93E08925036B54CA38CB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
-		B88836D7A2EA50635AEA76EAE0FA45A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B9D1FB512335A708402FA41D9989DA05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		B16A766A3899F71285867DD15ECF4890 /* Parse-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Parse-Private.xcconfig"; sourceTree = "<group>"; };
+		B1B7523A1042E231F4A2E4FCF2D49ABE /* VENTransactionPayloadKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENTransactionPayloadKeys.h; path = VENCore/Models/Transactions/VENTransactionPayloadKeys.h; sourceTree = "<group>"; };
+		B406FC570D18A4C79EEC989382AF59A9 /* VENRequestDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENRequestDecoder.h; path = "venmo-sdk/Encryption/VENRequestDecoder.h"; sourceTree = "<group>"; };
+		B4A29EA6499E46D6DB61CA60DAE93E53 /* NSBundle+VenmoSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+VenmoSDK.m"; path = "venmo-sdk/Categories/NSBundle+VenmoSDK.m"; sourceTree = "<group>"; };
+		B82E15956D8E313ADDE02AE72508F665 /* SSKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SSKeychain-dummy.m"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BD7CDF36269D078AE342F380291E5D3C /* BoltsVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BoltsVersion.h; path = Bolts/Common/BoltsVersion.h; sourceTree = "<group>"; };
-		BF18BC9E216EC43C791E599AC96774BA /* PFProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFProduct.h; sourceTree = "<group>"; };
-		BF32C270400EA8380209B46FA3962A56 /* PFNullability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFNullability.h; sourceTree = "<group>"; };
-		C082F992079314833EE06A1AB9A2C052 /* Bolts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Bolts.h; path = Bolts/Common/Bolts.h; sourceTree = "<group>"; };
-		C56CB60795D0BD4350833B6D868B07E9 /* Bolts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-prefix.pch"; sourceTree = "<group>"; };
-		C654FB79236F301DD08478D762FF7A0F /* PFObject+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PFObject+Subclass.h"; sourceTree = "<group>"; };
-		C7039AFAB4FF6B2B6402AE257E29EA11 /* Parse-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parse-prefix.pch"; sourceTree = "<group>"; };
-		C87E1B9F959BFAA35C98C109C9413522 /* PFInstallation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFInstallation.h; sourceTree = "<group>"; };
-		CF5630B20D5152008742B4B3D3518E2F /* PFGeoPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFGeoPoint.h; sourceTree = "<group>"; };
+		BAF77CF08776F8626A1E8E7418BC2161 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB053679F1630CD7E336ED7ACD43EC13 /* VENCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = VENCore.modulemap; sourceTree = "<group>"; };
+		BF264BEA3209B8520ED711D6719B9D92 /* Venmo-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Venmo-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
+		BF63B61D7E3C5D8468D3ADB3BB22C81A /* NSError+VenmoSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+VenmoSDK.h"; path = "venmo-sdk/Categories/NSError+VenmoSDK.h"; sourceTree = "<group>"; };
+		C216B84936859FB66B2940945C4884DA /* BFExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFExecutor.h; path = Bolts/Common/BFExecutor.h; sourceTree = "<group>"; };
+		C24D5C64F941AEB71B82F219965BDD84 /* PFACL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFACL.h; sourceTree = "<group>"; };
+		C4E13E2CD1B74B172CA3C39E77450304 /* VENCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VENCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FADE314A034718F03FC6A44B46B9AE /* VENCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VENCore-dummy.m"; sourceTree = "<group>"; };
+		C5849C4D092A213761F6EEF282A77076 /* CMDQueryStringWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CMDQueryStringWriter.h; path = CMDQueryStringSerialization/CMDQueryStringWriter.h; sourceTree = "<group>"; };
+		C65585C40A21CE4824E5A415A1E0ACDE /* Venmo-iOS-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Venmo-iOS-SDK.xcconfig"; sourceTree = "<group>"; };
+		C95AE57311B58DC1479169E65AD17C32 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		C9AC026F5B7321E248119D2BC904AD15 /* PFTwitterUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFTwitterUtils.h; sourceTree = "<group>"; };
+		CA94AE39AF29486BFB984DCE63B108FB /* Pods-uSell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-uSell.debug.xcconfig"; sourceTree = "<group>"; };
+		CBA45D59CB43EA0E44BB73B4CF169584 /* NSArray+VENCore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+VENCore.m"; path = "VENCore/Categories/NSArray+VENCore.m"; sourceTree = "<group>"; };
+		D1703F9E010A98A679D16757AADB40BA /* Parse.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Parse.modulemap; sourceTree = "<group>"; };
+		D21AD6041AF5B3AC30BDEBD2284BBBFE /* VENCore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENCore.m; path = VENCore/VENCore.m; sourceTree = "<group>"; };
+		D3192AD05AA93DF3435137B76A2D2ADD /* Empty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
+		D333AE0623CB8AC57347E1B63ED400E4 /* CMDQueryStringWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CMDQueryStringWriter.m; path = CMDQueryStringSerialization/CMDQueryStringWriter.m; sourceTree = "<group>"; };
+		D53D1C4BD92EE692E53DB2A4B61E6C9F /* CMDQueryStringReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CMDQueryStringReader.m; path = CMDQueryStringSerialization/CMDQueryStringReader.m; sourceTree = "<group>"; };
+		D582B86734B7ABDD6124BAA14762C82F /* VENUser+VenmoSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "VENUser+VenmoSDK.h"; path = "venmo-sdk/Categories/VENUser+VenmoSDK.h"; sourceTree = "<group>"; };
+		D5A44E1BFD528082B9CA67AE59C77059 /* PFRole.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFRole.h; sourceTree = "<group>"; };
+		D8C4D76B33C9E0182E8EE9483B70A9A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		D8E83490BE442F80439824A491FC3C8E /* BoltsVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BoltsVersion.h; path = Bolts/Common/BoltsVersion.h; sourceTree = "<group>"; };
+		D8EE894B3C17D08A969FA193B700B60D /* Bolts-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Bolts-Private.xcconfig"; sourceTree = "<group>"; };
+		DA219A99CF11C73C0F627D9EDA29AC5F /* VENCore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VENCore.xcconfig; sourceTree = "<group>"; };
+		DAE03C2D4EDEEBADBEDBE853058D1BE8 /* VENTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENTransaction.h; path = VENCore/Models/Transactions/VENTransaction.h; sourceTree = "<group>"; };
+		DAE6CBF56F94BFD2DE71A24444161C03 /* NSString+VenmoSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+VenmoSDK.m"; path = "venmo-sdk/Categories/NSString+VenmoSDK.m"; sourceTree = "<group>"; };
 		DBA829199034347E2CC60803E6D44BB6 /* Pods-uSell-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-uSell-frameworks.sh"; sourceTree = "<group>"; };
-		E38CB2138542AE115FCEE64D49F73713 /* Bolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bolts.m; path = Bolts/Common/Bolts.m; sourceTree = "<group>"; };
-		E78202FA46AEC40E2C744954301A6C60 /* PFAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFAnalytics.h; sourceTree = "<group>"; };
-		EED78D18970B84387C2125C564D3E6B4 /* BFTaskCompletionSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFTaskCompletionSource.h; path = Bolts/Common/BFTaskCompletionSource.h; sourceTree = "<group>"; };
-		F068A43657A16D0B545F378F567736E8 /* PFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		F1757E52BD76B9ECAA557812C5C9D6D6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		F5C5FCDDC9E53F24D8B9F502C4E92B8F /* PFRole.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFRole.h; sourceTree = "<group>"; };
-		F80301970B5B53EF0C6A61CDD6D69987 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F95145153C53B869F235B76E79EAC327 /* BFTaskCompletionSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFTaskCompletionSource.m; path = Bolts/Common/BFTaskCompletionSource.m; sourceTree = "<group>"; };
-		F957D84D7405AA16FB6388B90FB02AE7 /* Parse.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Parse.modulemap; sourceTree = "<group>"; };
-		FA939BEFC2FC15D3A7ADE02680CB71BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		FE3DC755536585F114114CFB8B4445B1 /* PFACL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFACL.h; sourceTree = "<group>"; };
-		FED59F12A5B3E90E0E8094C51E1489E4 /* PFConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFConstants.h; sourceTree = "<group>"; };
+		DC465F0F4E4E60EDFA75CA0C7C982AB6 /* PFConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFConfig.h; sourceTree = "<group>"; };
+		DCC41C2F4CB96EE81B1D32E86070172B /* Parse-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Parse-dummy.m"; sourceTree = "<group>"; };
+		DDFBE3B7F82A68402AE5E8F1B9838D3E /* Venmo-iOS-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Venmo-iOS-SDK-Private.xcconfig"; sourceTree = "<group>"; };
+		DF0B10F0C35BC9D108BFABBBB3C24BB5 /* Bolts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bolts-prefix.pch"; sourceTree = "<group>"; };
+		DF1F66C8952B9A221644C1017478B28B /* SSKeychain.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SSKeychain.xcconfig; sourceTree = "<group>"; };
+		DF32EEFDA5881E050B3CD592A4572CDB /* Pods_uSell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uSell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFCCE872D934D9C220F1DBCBE772CFB3 /* Venmo_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Venmo_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E00AA5F318D4AEF10F216C61F136BE74 /* CMDQueryStringSerialization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CMDQueryStringSerialization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E06C7D3669CDAE7898037EDC0FEF1B6F /* VENPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENPermission.m; path = "venmo-sdk/Models/VENPermission.m"; sourceTree = "<group>"; };
+		E0CC68716D980463BE5FFA78561253B9 /* NSURL+VenmoSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURL+VenmoSDK.h"; path = "venmo-sdk/Categories/NSURL+VenmoSDK.h"; sourceTree = "<group>"; };
+		E0D2741A378BE4C20CF2EAD6B8F39BEF /* VENCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENCore.h; path = VENCore/VENCore.h; sourceTree = "<group>"; };
+		E15B60A6C0405F3F9E3E0AA8C9E7EAA2 /* CMDQueryStringNumberTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CMDQueryStringNumberTransformer.h; path = CMDQueryStringSerialization/CMDQueryStringNumberTransformer.h; sourceTree = "<group>"; };
+		E3B66475F8BBF5E7E8C711C56CB08A8E /* NSDictionary+VenmoSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+VenmoSDK.m"; path = "venmo-sdk/Categories/NSDictionary+VenmoSDK.m"; sourceTree = "<group>"; };
+		E3BE2F583A9C464E8ED31FF5DB46BA72 /* SSKeychain-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SSKeychain-Private.xcconfig"; sourceTree = "<group>"; };
+		E563914FD80F585867240360A2889FAB /* PFUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFUser.h; sourceTree = "<group>"; };
+		E6A175A40FE337C6F50EF8BBA14F8008 /* Venmo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Venmo.h; path = "venmo-sdk/Venmo.h"; sourceTree = "<group>"; };
+		E8F3B49D5336C729570A18AE3D5E5141 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5Addition.m"; path = "venmo-sdk/Categories/NSString+MD5Addition.m"; sourceTree = "<group>"; };
+		EB73A6803EA98E6599CD176A99E60314 /* CMDQueryStringReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CMDQueryStringReader.h; path = CMDQueryStringSerialization/CMDQueryStringReader.h; sourceTree = "<group>"; };
+		ED8B7514C3BAEBD6EB422203AC394F47 /* VENHMAC_SHA256.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENHMAC_SHA256.m; path = "venmo-sdk/Encryption/VENHMAC_SHA256.m"; sourceTree = "<group>"; };
+		EEB84488762CE7BB04375391E44B6059 /* NSBundle+VenmoSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+VenmoSDK.h"; path = "venmo-sdk/Categories/NSBundle+VenmoSDK.h"; sourceTree = "<group>"; };
+		EF4AA00ABCA9F78D324627A46C7038ED /* SSKeychain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSKeychain-prefix.pch"; sourceTree = "<group>"; };
+		F15679359FC57503D19DC0FE437F36BE /* VENDefines_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENDefines_Internal.h; path = "venmo-sdk/Encryption/VENDefines_Internal.h"; sourceTree = "<group>"; };
+		F2BD0B4135128DD242056424DA8ECB78 /* CMDQueryStringSerialization.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CMDQueryStringSerialization.modulemap; sourceTree = "<group>"; };
+		F2E658CEE813D98CB4064FFD4EA1C57E /* CMDQueryStringStringTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CMDQueryStringStringTransformer.m; path = CMDQueryStringSerialization/CMDQueryStringStringTransformer.m; sourceTree = "<group>"; };
+		F34905E9F104E75B02326D43ECA19704 /* SSKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = SSKeychain/SSKeychain.h; sourceTree = "<group>"; };
+		F7B5AE7443C87B4B3956816CAEFBCEDF /* VENErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENErrors.h; path = "venmo-sdk/Supporting Files/VENErrors.h"; sourceTree = "<group>"; };
+		F82DFB3C5C736E9C67F88A3FA3E080E0 /* VENCreateTransactionRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENCreateTransactionRequest.h; path = VENCore/Models/Transactions/VENCreateTransactionRequest.h; sourceTree = "<group>"; };
+		F92D2EDEA0419630224D35FD07191B6D /* CMDQueryStringArrayTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CMDQueryStringArrayTransformer.m; path = CMDQueryStringSerialization/CMDQueryStringArrayTransformer.m; sourceTree = "<group>"; };
+		FAAD2FE343ADC8DFB0514CDD43C7F9D4 /* SSKeychainQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSKeychainQuery.m; path = SSKeychain/SSKeychainQuery.m; sourceTree = "<group>"; };
+		FB9F117BC937BBB72FA7D438647B78DE /* NSArray+VENCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+VENCore.h"; path = "VENCore/Categories/NSArray+VENCore.h"; sourceTree = "<group>"; };
+		FD4DAF8967031C78D6F3667DA72A1056 /* CMDQueryStringValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CMDQueryStringValueTransformer.h; path = CMDQueryStringSerialization/CMDQueryStringValueTransformer.h; sourceTree = "<group>"; };
+		FE10264C3A03FDE214E74DD9081D45CE /* PFQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PFQuery.h; sourceTree = "<group>"; };
+		FFC9BE82A597DEAA7AEC7D5973304F54 /* VENSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENSession.m; path = "venmo-sdk/Models/VENSession.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1FD3A3B11FC79C0F0189355DE32AF2D2 /* Frameworks */ = {
+		27DFA35BC830B6271E3F017F0271AA83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FFFE03799FEA86C3AF5A6CE5C95924A /* AudioToolbox.framework in Frameworks */,
-				D7F94D95D9A851A86A7EDF72612AF7AD /* Bolts.framework in Frameworks */,
-				C055591288A7F89B2D087A566D7B1608 /* CFNetwork.framework in Frameworks */,
-				0FF501BF6CE0A4A82B616C7F93C7E9E3 /* CoreGraphics.framework in Frameworks */,
-				4D5EA5998196BAD3F10D32368F417483 /* CoreLocation.framework in Frameworks */,
-				427E12F842F3F618FB3960D764C3B8E9 /* Foundation.framework in Frameworks */,
-				4918B13A9DC2D93A2FC6BA997FF19118 /* QuartzCore.framework in Frameworks */,
-				C036DF7443F47DFCDA9FA42239A26E07 /* Security.framework in Frameworks */,
-				A70476648ADE80C3EA0E03B262F68849 /* StoreKit.framework in Frameworks */,
-				EFAEF387B7DA4401A4015076481EA9C3 /* SystemConfiguration.framework in Frameworks */,
+				C6B9CC3707F435C62956DF24050C0BD1 /* CMDQueryStringSerialization.framework in Frameworks */,
+				A573E5C76F7EC17AEE7B6B43DA9ABA16 /* Foundation.framework in Frameworks */,
+				A687221732F64209C30F80C2523C8EE5 /* SSKeychain.framework in Frameworks */,
+				EEE18DDD5F2A4E37EEE116735B70E375 /* VENCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		21FE8C86775637AB5CEE7F0D9D0B32AC /* Frameworks */ = {
+		392F1079458BD33FF18AF1824848EA26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A17E8E71726E111FC48FA0776A6F3649 /* Foundation.framework in Frameworks */,
+				7B3F3DE1EFF0EE46E320855ADFF75A07 /* CMDQueryStringSerialization.framework in Frameworks */,
+				9CE2C34038E06C0C0EA09C27511D3AFE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9696D2966D3872A423DED6390DE60F76 /* Frameworks */ = {
+		4EFD213AC6A85CF447DC482E4029C557 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E7B7220B66598BD54B9289C43176C98 /* Foundation.framework in Frameworks */,
+				1AB9017678D2AB4C1D7C1CEB5ED8466F /* AudioToolbox.framework in Frameworks */,
+				E6B98FEBB0BB71D372ED7D264E5670DD /* Bolts.framework in Frameworks */,
+				923C372AF008533EF87A07763ADD839F /* CFNetwork.framework in Frameworks */,
+				8EEA99485EC802460C0A87C6DCAA5BF1 /* CoreGraphics.framework in Frameworks */,
+				F99CBA0DDADA7BF7542B1ED631FAA1A6 /* CoreLocation.framework in Frameworks */,
+				BFAF6D21F999E4B197906A1225C7F584 /* Foundation.framework in Frameworks */,
+				71C60C64BDD1CB18CFF777DE9959E1AE /* QuartzCore.framework in Frameworks */,
+				4B96A88D289D77CC70A6EAB09217E753 /* Security.framework in Frameworks */,
+				436FBE6B59238E9050D12A66CF8CA5AD /* StoreKit.framework in Frameworks */,
+				181799580B3C32A22E2B125A8FE9A083 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62596FB73DB0885178AC46D95376D794 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0F1294E142D2881D8B05CEE2A82186C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B6B8C75A077332095E401CE38967B59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA7BE7C7B7D59BCDF23699B6E65A5366 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83B0F54EA211FCD2FAF4476EA5EC5E06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E61CAC8BDD3EB24DD2BE07E4934514E0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96C210A80A8286A6CEDE27302FFE948F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A85C82203C012543F93F5B9513EA7AC /* Foundation.framework in Frameworks */,
+				6D88BAFD433EFD2E57AD88055E5E4A99 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2CE719B0D07282309D3976FB3F60EA2D /* Pods */ = {
+		03F28C3D20462A6DFAF7EBB4F700350F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B297BAD351E716AD483CB31606459553 /* Bolts */,
-				BCF5086B27EF4CA8B50A0D6B29DF2189 /* Parse */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		33740B4F51329C8A5AE356DC096B346A /* Tasks */ = {
-			isa = PBXGroup;
-			children = (
-				041E2B1C8B6E48F0AFF5DF2A233CE828 /* BFCancellationToken.h */,
-				9F3B161C78BCB05BBA771832EC022790 /* BFCancellationToken.m */,
-				537E1A71CBD1A8EBF07FD967B8ADA475 /* BFCancellationTokenRegistration.h */,
-				AA52B98866FBFD30ADD051A7B690EF42 /* BFCancellationTokenRegistration.m */,
-				A7387906169F2D54F1F11F21CC45D8B1 /* BFCancellationTokenSource.h */,
-				3E05494A25CFACFCE5F984799A2A69A3 /* BFCancellationTokenSource.m */,
-				8D30F5DC2BFF4BDB24FCAF792F0843EE /* BFExecutor.h */,
-				8ED464A4DB0958E508C34BD78491BB00 /* BFExecutor.m */,
-				38B42E87DC79F639F67192C841BA6A88 /* BFTask.h */,
-				508208D09EBDBB57A16F062D59DC7C0B /* BFTask.m */,
-				EED78D18970B84387C2125C564D3E6B4 /* BFTaskCompletionSource.h */,
-				F95145153C53B869F235B76E79EAC327 /* BFTaskCompletionSource.m */,
-				C082F992079314833EE06A1AB9A2C052 /* Bolts.h */,
-				E38CB2138542AE115FCEE64D49F73713 /* Bolts.m */,
-				BD7CDF36269D078AE342F380291E5D3C /* BoltsVersion.h */,
-			);
-			name = Tasks;
-			sourceTree = "<group>";
-		};
-		401D04ADA814FB090571C9A6DE30C698 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3E5535520A7455DC46643696CA579173 /* Bolts.modulemap */,
-				3A6A61627EBD68257B26E6DED78732C8 /* Bolts.xcconfig */,
-				0E38A55032DDA740C40E021D9E4D36E6 /* Bolts-Private.xcconfig */,
-				3FFFBCA8FE3A2406676694C6E2554F9B /* Bolts-dummy.m */,
-				C56CB60795D0BD4350833B6D868B07E9 /* Bolts-prefix.pch */,
-				15E7BF01CEE81EDB87F6E3DD1EBEEBC0 /* Bolts-umbrella.h */,
-				2BD6053364D6F14C99BF0D245379C068 /* Info.plist */,
+				33FAFB6C5556FAF2B990F1631C01EDC6 /* Info.plist */,
+				2B15B71740E93F4407B595AF7AA00A5E /* Venmo-iOS-SDK.modulemap */,
+				C65585C40A21CE4824E5A415A1E0ACDE /* Venmo-iOS-SDK.xcconfig */,
+				DDFBE3B7F82A68402AE5E8F1B9838D3E /* Venmo-iOS-SDK-Private.xcconfig */,
+				BF264BEA3209B8520ED711D6719B9D92 /* Venmo-iOS-SDK-dummy.m */,
+				4F9DE229875D13E5A7AA988491729005 /* Venmo-iOS-SDK-prefix.pch */,
+				48DC997CC8DBB5020D0DC906F4978517 /* Venmo-iOS-SDK-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Bolts";
+			path = "../Target Support Files/Venmo-iOS-SDK";
 			sourceTree = "<group>";
 		};
-		44E5CA6134C04B093AD8C39BAB4EFD8E /* Frameworks */ = {
+		213F3176C20AB56FFFA759A1BD5D8820 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A220AA1169D43679E5F4F579A6D08891 /* Bolts.framework */,
-				5333A1A21A92530B5DC3E45F3D0B2ADC /* iOS */,
+				BAF77CF08776F8626A1E8E7418BC2161 /* Info.plist */,
+				BB053679F1630CD7E336ED7ACD43EC13 /* VENCore.modulemap */,
+				DA219A99CF11C73C0F627D9EDA29AC5F /* VENCore.xcconfig */,
+				5F1C9414563DC7CEFD4ABA38ED52C74E /* VENCore-Private.xcconfig */,
+				C4FADE314A034718F03FC6A44B46B9AE /* VENCore-dummy.m */,
+				7A530FEA5E8740CDCC614DB926ACE0A2 /* VENCore-prefix.pch */,
+				098109DDAC7DE4349101FDDAB468AF63 /* VENCore-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/VENCore";
+			sourceTree = "<group>";
+		};
+		349E83DF7762CC853150EBEDDED066CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C51145D60C8C8AF8B2E46E00EC05DC3 /* Bolts.framework */,
+				E00AA5F318D4AEF10F216C61F136BE74 /* CMDQueryStringSerialization.framework */,
+				356D8E79E65B0678BE73A35447A083E5 /* SSKeychain.framework */,
+				C4E13E2CD1B74B172CA3C39E77450304 /* VENCore.framework */,
+				7C29C4B2C8EA065DFBB555941156B616 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5333A1A21A92530B5DC3E45F3D0B2ADC /* iOS */ = {
+		4433750E2A1AB40A99873B81CF98DC38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B2A46C0F450B93E08925036B54CA38CB /* AudioToolbox.framework */,
-				6F28D07F863AAA4E44976A842C69F058 /* CFNetwork.framework */,
-				B9D1FB512335A708402FA41D9989DA05 /* CoreGraphics.framework */,
-				F1757E52BD76B9ECAA557812C5C9D6D6 /* CoreLocation.framework */,
-				B88836D7A2EA50635AEA76EAE0FA45A6 /* Foundation.framework */,
-				FA939BEFC2FC15D3A7ADE02680CB71BD /* QuartzCore.framework */,
-				1567A7EAC3CE12D07B3FC0E0EA1A4AF7 /* Security.framework */,
-				7EFCB316BDD98E67282B68B05AC483BE /* StoreKit.framework */,
-				22378F004F9CCB116A074C9C8120FDEA /* SystemConfiguration.framework */,
+				5C65ABD7E4FA39B6AD3E5A875048C8C5 /* libParseLib.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		454791CCB6A09F59C0B0294D81CB0783 /* Bolts */ = {
+			isa = PBXGroup;
+			children = (
+				91906AAB987809D12240F5A748D566B3 /* Support Files */,
+				657E65E89B66DAC776D0E62E81DA31E0 /* Tasks */,
+			);
+			path = Bolts;
+			sourceTree = "<group>";
+		};
+		473ACFD12DBE6DC302FE024A23E74C01 /* VENCore */ = {
+			isa = PBXGroup;
+			children = (
+				FB9F117BC937BBB72FA7D438647B78DE /* NSArray+VENCore.h */,
+				CBA45D59CB43EA0E44BB73B4CF169584 /* NSArray+VENCore.m */,
+				6548661C7A477DD1C893D3BE2F6AE602 /* NSDictionary+VENCore.h */,
+				1E17AD1BAFA8896D12392F202B0DAC10 /* NSDictionary+VENCore.m */,
+				536BA54DCA4AF20DCC7FBF3A58A276D7 /* NSError+VENCore.h */,
+				8C52A8C3E9C96372C3793B17BFCDD78C /* NSError+VENCore.m */,
+				4526D68B912E5137F7F6C56B3D6B5787 /* NSString+VENCore.h */,
+				4308DD4E0D67D51DEFDFEB187FD2D8ED /* NSString+VENCore.m */,
+				4731C5562968D27BB688F29157149DC6 /* UIDevice+VENCore.h */,
+				0C9F45208B9C67E393398B03A75E2645 /* UIDevice+VENCore.m */,
+				E0D2741A378BE4C20CF2EAD6B8F39BEF /* VENCore.h */,
+				D21AD6041AF5B3AC30BDEBD2284BBBFE /* VENCore.m */,
+				F82DFB3C5C736E9C67F88A3FA3E080E0 /* VENCreateTransactionRequest.h */,
+				8D4FAD09C100645196C12D28D906557A /* VENCreateTransactionRequest.m */,
+				776E0F25B7CE3B38BBEF452D6CA86FA3 /* VENHTTP.h */,
+				75DC8648BDB54830E1632905D29DA099 /* VENHTTP.m */,
+				924941A2B5725A2311A30D008CB47C02 /* VENHTTPResponse.h */,
+				5E6C223C608C13210260632FD0E8C661 /* VENHTTPResponse.m */,
+				DAE03C2D4EDEEBADBEDBE853058D1BE8 /* VENTransaction.h */,
+				4F5182CFFD22BF35CDCD3888A91340B3 /* VENTransaction.m */,
+				B1B7523A1042E231F4A2E4FCF2D49ABE /* VENTransactionPayloadKeys.h */,
+				272FA498E92BD9381A6C2C870E51F8CF /* VENTransactionTarget.h */,
+				86084FB76074C95B28978214DA2CABC1 /* VENTransactionTarget.m */,
+				1FBE2701D51C6C0DC6C95DA38A9D861E /* VENUser.h */,
+				123CAAC7BE74903E647C22A01F6699AB /* VENUser.m */,
+				2E4D7719639B5301E48DB934EBE9CF13 /* VENUserPayloadKeys.h */,
+				213F3176C20AB56FFFA759A1BD5D8820 /* Support Files */,
+			);
+			path = VENCore;
+			sourceTree = "<group>";
+		};
+		4D4F3E630F4E9FAC22DDF2CDE81DD806 /* Venmo-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				EEB84488762CE7BB04375391E44B6059 /* NSBundle+VenmoSDK.h */,
+				B4A29EA6499E46D6DB61CA60DAE93E53 /* NSBundle+VenmoSDK.m */,
+				1D2203FCB64738C430507101A68AB173 /* NSDictionary+VenmoSDK.h */,
+				E3B66475F8BBF5E7E8C711C56CB08A8E /* NSDictionary+VenmoSDK.m */,
+				BF63B61D7E3C5D8468D3ADB3BB22C81A /* NSError+VenmoSDK.h */,
+				27B0BB4624212123CA89BDCEE936F06B /* NSError+VenmoSDK.m */,
+				69A5A3E6E73BCC55AB8B837663D43FD9 /* NSString+MD5Addition.h */,
+				E8F3B49D5336C729570A18AE3D5E5141 /* NSString+MD5Addition.m */,
+				63C7AB586A891F00B99D6460CD0BD742 /* NSString+VenmoSDK.h */,
+				DAE6CBF56F94BFD2DE71A24444161C03 /* NSString+VenmoSDK.m */,
+				E0CC68716D980463BE5FFA78561253B9 /* NSURL+VenmoSDK.h */,
+				60687456AADEE638D4B4EFD9C1800B0E /* NSURL+VenmoSDK.m */,
+				328C218D75D7B6C02B6450CA95FEC4A2 /* UIDevice+IdentifierAddition.h */,
+				409A039D8156B5E7A0BAB02DFD797A85 /* UIDevice+IdentifierAddition.m */,
+				8B6131D816E708CEAE66023052240E68 /* VENBase64.m */,
+				372ADC89901ACD61140A276C70325292 /* VENBase64_Internal.h */,
+				F15679359FC57503D19DC0FE437F36BE /* VENDefines_Internal.h */,
+				F7B5AE7443C87B4B3956816CAEFBCEDF /* VENErrors.h */,
+				1565DE0DE7F36624C0EF1D0A921053C0 /* VENErrors.m */,
+				ED8B7514C3BAEBD6EB422203AC394F47 /* VENHMAC_SHA256.m */,
+				64E1A86D21B53CA72B37F85BF55A0616 /* VENHMAC_SHA256_Internal.h */,
+				8C95A3BA7284540B0A3466119A4E18A8 /* VENPermission.h */,
+				E06C7D3669CDAE7898037EDC0FEF1B6F /* VENPermission.m */,
+				324ECF2F349B14F3B1410DCF3835AF49 /* VENPermissionConstants.h */,
+				B406FC570D18A4C79EEC989382AF59A9 /* VENRequestDecoder.h */,
+				0E9B9BE44C4B3B7A8A3D10068697BD72 /* VENRequestDecoder.m */,
+				590FECD7A9AB329DAF23F2CB316A66B9 /* VENSession.h */,
+				FFC9BE82A597DEAA7AEC7D5973304F54 /* VENSession.m */,
+				7BBEAD342D94F85B2F531351F3F7D898 /* VENTransaction+VenmoSDK.h */,
+				22A3E69E62872673CCCA10952D1E83CB /* VENTransaction+VenmoSDK.m */,
+				46A46D71B30A2F8D970651ACCF7482C7 /* VENURLProtocol.h */,
+				71C7971A0D6B471EED3A61E17482BA64 /* VENURLProtocol.m */,
+				D582B86734B7ABDD6124BAA14762C82F /* VENUser+VenmoSDK.h */,
+				537F9120C4E1FE01CB1055D0C8571B18 /* VENUser+VenmoSDK.m */,
+				E6A175A40FE337C6F50EF8BBA14F8008 /* Venmo.h */,
+				4ED1CF151A76F6CCB3F9FC5EAC07542E /* Venmo.m */,
+				03F28C3D20462A6DFAF7EBB4F700350F /* Support Files */,
+			);
+			path = "Venmo-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		657E65E89B66DAC776D0E62E81DA31E0 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				224511591A6FE59BC941D5F4F0F79778 /* BFCancellationToken.h */,
+				33E89ADA0DEA0C27913AA5B1B5640D4D /* BFCancellationToken.m */,
+				89B47ED463C4892E24E5E67F7509BE5B /* BFCancellationTokenRegistration.h */,
+				488B72CBE25680227363B262F1B07DF0 /* BFCancellationTokenRegistration.m */,
+				5CB4B698E7F52EBDB541AC870A42E34B /* BFCancellationTokenSource.h */,
+				1A1A37EB8CA44A4C95F707BBC8CCAAA0 /* BFCancellationTokenSource.m */,
+				C216B84936859FB66B2940945C4884DA /* BFExecutor.h */,
+				54E2930ED2550955DE3F063E3A2049BE /* BFExecutor.m */,
+				53B0F0F15FF0A9B5184D20D703587A6C /* BFTask.h */,
+				0C8BF2C265224E5C60D8397CDD42C865 /* BFTask.m */,
+				522657C27A8656989CAD3D5A541A4428 /* BFTaskCompletionSource.h */,
+				800345CE78DDDE4A42E0B35C152A27B3 /* BFTaskCompletionSource.m */,
+				9890A0B59519D78C4D2488ABBC8DD89D /* Bolts.h */,
+				4D80C16C40C8B6F5F5A4124843BDE7ED /* Bolts.m */,
+				D8E83490BE442F80439824A491FC3C8E /* BoltsVersion.h */,
+			);
+			name = Tasks;
+			sourceTree = "<group>";
+		};
+		66CEC785E8E7CF33634636458AE7DF92 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F2BD0B4135128DD242056424DA8ECB78 /* CMDQueryStringSerialization.modulemap */,
+				7285BA428A7142CCA0BF53AA492FB0B8 /* CMDQueryStringSerialization.xcconfig */,
+				1910C2582AEF8CB53E1462D0311B930E /* CMDQueryStringSerialization-Private.xcconfig */,
+				8A8486F299391050056C5BB4DB9B01A9 /* CMDQueryStringSerialization-dummy.m */,
+				4C203C2EB2D5D008234ED284F785A929 /* CMDQueryStringSerialization-prefix.pch */,
+				3C9216A78E6BC53857FCA6CBC65F10F4 /* CMDQueryStringSerialization-umbrella.h */,
+				7149CB02A8CFF356B14C048D60C22AA2 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CMDQueryStringSerialization";
+			sourceTree = "<group>";
+		};
+		6E30A80335AFBF3CE84C4887A2D2F84C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				454791CCB6A09F59C0B0294D81CB0783 /* Bolts */,
+				E13FA7D4BA0CA2EDB813C314973568AA /* CMDQueryStringSerialization */,
+				AF326E22E977ACB432104FC120064ECD /* Parse */,
+				C12E6FEF33E8ACCD3D238CDC8E0C8328 /* SSKeychain */,
+				473ACFD12DBE6DC302FE024A23E74C01 /* VENCore */,
+				4D4F3E630F4E9FAC22DDF2CDE81DD806 /* Venmo-iOS-SDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7C29C4B2C8EA065DFBB555941156B616 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E23AD6885E6245D7378DB3563D94448 /* AudioToolbox.framework */,
+				C95AE57311B58DC1479169E65AD17C32 /* CFNetwork.framework */,
+				D8C4D76B33C9E0182E8EE9483B70A9A2 /* CoreGraphics.framework */,
+				28D94792776400E94FBE4DE53D882DAC /* CoreLocation.framework */,
+				91E0029B5EC039D681CCCD93BA247533 /* Foundation.framework */,
+				80EBB7E252A68C78FBC8A0311CFFE0C3 /* QuartzCore.framework */,
+				0B9E361039690D9901268F6172CD8DD0 /* Security.framework */,
+				18CD9B6EB245BBF8A4B1C3E1F4FC11AE /* StoreKit.framework */,
+				288262C215BD93D9C32EA7DC4342E4A9 /* SystemConfiguration.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -287,26 +732,26 @@
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				44E5CA6134C04B093AD8C39BAB4EFD8E /* Frameworks */,
-				2CE719B0D07282309D3976FB3F60EA2D /* Pods */,
+				349E83DF7762CC853150EBEDDED066CA /* Frameworks */,
+				6E30A80335AFBF3CE84C4887A2D2F84C /* Pods */,
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				C8F0234B3F5D7632D6AEBEA2DDD61788 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		95F9ECB8BF2F2CDC88E860EF5F3B6409 /* Support Files */ = {
+		91906AAB987809D12240F5A748D566B3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F80301970B5B53EF0C6A61CDD6D69987 /* Info.plist */,
-				F957D84D7405AA16FB6388B90FB02AE7 /* Parse.modulemap */,
-				3115A7D65521AC1875AFB0E3A9C33EC4 /* Parse.xcconfig */,
-				8E6628D8C4B7B9F786F7FFFC2D2CB307 /* Parse-Private.xcconfig */,
-				181D3C5A49E150DC58B8325D7FD0D6EF /* Parse-dummy.m */,
-				C7039AFAB4FF6B2B6402AE257E29EA11 /* Parse-prefix.pch */,
-				0E46668371958F1CC0DE82D00914D614 /* Parse-umbrella.h */,
+				0E5EC29749E408F79D6351795ACF6E96 /* Bolts.modulemap */,
+				35C394D46AA6A9D55B5B28FAE78D3B77 /* Bolts.xcconfig */,
+				D8EE894B3C17D08A969FA193B700B60D /* Bolts-Private.xcconfig */,
+				08EDAB90BB029FDB9E3B2D1B9988DA2D /* Bolts-dummy.m */,
+				DF0B10F0C35BC9D108BFABBBB3C24BB5 /* Bolts-prefix.pch */,
+				6E01E6CF24033A64F36572AFBF3802A5 /* Bolts-umbrella.h */,
+				77C1D5E36B998BC944E7C35B97EA6DDE /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Parse";
+			path = "../Target Support Files/Bolts";
 			sourceTree = "<group>";
 		};
 		96C8D2DB4018B8DA4ACD77A39B5FE452 /* Pods-uSell */ = {
@@ -316,59 +761,77 @@
 				672557F4FE398B8EE8DDFAA44C2CD8B5 /* Pods-uSell.modulemap */,
 				4A5F5FA1B41C03163AB94A87963DB280 /* Pods-uSell-acknowledgements.markdown */,
 				A86F834A5A93884FB8305B07ADB1773C /* Pods-uSell-acknowledgements.plist */,
-				6E93D3D2F06E7989DF78CC73664ECD52 /* Pods-uSell-dummy.m */,
+				107D74F8CA685F458971FFC8A0DB13F6 /* Pods-uSell-dummy.m */,
 				DBA829199034347E2CC60803E6D44BB6 /* Pods-uSell-frameworks.sh */,
 				9A570253D1522C15C513F5B87BB1080D /* Pods-uSell-resources.sh */,
-				6862F8B7EA1C1565DBBCE6741AD01BFE /* Pods-uSell-umbrella.h */,
-				0E3C14F7675B36294D88647C348A2BD7 /* Pods-uSell.debug.xcconfig */,
-				A2EB1C31FAF7D8D1A96D862E5D452310 /* Pods-uSell.release.xcconfig */,
+				5A00D115D62D70E924F10DF0A9413A9A /* Pods-uSell-umbrella.h */,
+				CA94AE39AF29486BFB984DCE63B108FB /* Pods-uSell.debug.xcconfig */,
+				4B5F533B8476E82D6E54B463EE586632 /* Pods-uSell.release.xcconfig */,
 			);
 			name = "Pods-uSell";
 			path = "Target Support Files/Pods-uSell";
 			sourceTree = "<group>";
 		};
-		B297BAD351E716AD483CB31606459553 /* Bolts */ = {
+		A1BECEB0BC9AE3DE9BD18ABD6BF3BAC0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				401D04ADA814FB090571C9A6DE30C698 /* Support Files */,
-				33740B4F51329C8A5AE356DC096B346A /* Tasks */,
+				22FD838D96309B36BBB0CB7230BC7EA6 /* Info.plist */,
+				D1703F9E010A98A679D16757AADB40BA /* Parse.modulemap */,
+				5BC618040C569024910B706D207C8BDA /* Parse.xcconfig */,
+				B16A766A3899F71285867DD15ECF4890 /* Parse-Private.xcconfig */,
+				DCC41C2F4CB96EE81B1D32E86070172B /* Parse-dummy.m */,
+				59DD4CB49FF54CEA985A3A63CC6E0D27 /* Parse-prefix.pch */,
+				53417A79276C3B8786AB0B20634B277B /* Parse-umbrella.h */,
 			);
-			path = Bolts;
+			name = "Support Files";
+			path = "../Target Support Files/Parse";
 			sourceTree = "<group>";
 		};
-		BCF5086B27EF4CA8B50A0D6B29DF2189 /* Parse */ = {
+		AF326E22E977ACB432104FC120064ECD /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				715A85D1BA0CE8F3E45F0D37A2F4E3EE /* Empty.m */,
-				FE3DC755536585F114114CFB8B4445B1 /* PFACL.h */,
-				E78202FA46AEC40E2C744954301A6C60 /* PFAnalytics.h */,
-				445448D8ABD7E8F14CA2AB1D73DEF80A /* PFAnonymousUtils.h */,
-				45495EE76581CF025AB605C40B921B41 /* PFCloud.h */,
-				76ACC0D9466FF2ABA6F15F554E4A57A0 /* PFConfig.h */,
-				FED59F12A5B3E90E0E8094C51E1489E4 /* PFConstants.h */,
-				38482B8F2F0A3017B1DA8440AF4F0ED7 /* PFFile.h */,
-				CF5630B20D5152008742B4B3D3518E2F /* PFGeoPoint.h */,
-				C87E1B9F959BFAA35C98C109C9413522 /* PFInstallation.h */,
-				F068A43657A16D0B545F378F567736E8 /* PFNetworkActivityIndicatorManager.h */,
-				BF32C270400EA8380209B46FA3962A56 /* PFNullability.h */,
-				4E7832FFCBDF257503962BEB5C1553DF /* PFObject.h */,
-				C654FB79236F301DD08478D762FF7A0F /* PFObject+Subclass.h */,
-				BF18BC9E216EC43C791E599AC96774BA /* PFProduct.h */,
-				615F65457DE18939C37079EA0BCB8DDF /* PFPurchase.h */,
-				3F6856ED3D51DBE56C595698B01D0872 /* PFPush.h */,
-				17AFAC72216895047FCB33CA65B7C1C8 /* PFQuery.h */,
-				91C52BA8E0327D63034D24F7D5BBE022 /* PFRelation.h */,
-				F5C5FCDDC9E53F24D8B9F502C4E92B8F /* PFRole.h */,
-				15069E4125DDEB3FA9D8ADAF026CF908 /* PFSession.h */,
-				002BEB2FF2981FC7178ABD544A785EA2 /* PFSubclassing.h */,
-				35D8CCC9D0FDB3B594D335E3520AFB10 /* PFTwitterUtils.h */,
-				00D742E9A1E75CDDEAFE10762DDD8CE0 /* PFUser.h */,
-				598400BA01044191B1562A8D7E7EB57E /* PF_Twitter.h */,
-				7043E1AD2D0EAFB589BE1C606A5A451A /* Parse.h */,
-				DFC89D13754D0205F26761F1826C7DB8 /* Frameworks */,
-				95F9ECB8BF2F2CDC88E860EF5F3B6409 /* Support Files */,
+				D3192AD05AA93DF3435137B76A2D2ADD /* Empty.m */,
+				C24D5C64F941AEB71B82F219965BDD84 /* PFACL.h */,
+				6B61CA5560405729DA5A0804803F1F00 /* PFAnalytics.h */,
+				676F5E5086C714D6794A509AD6CD1D35 /* PFAnonymousUtils.h */,
+				31958B61488EC603B93CF844EAD26D7F /* PFCloud.h */,
+				DC465F0F4E4E60EDFA75CA0C7C982AB6 /* PFConfig.h */,
+				0FAF70045F93B97E899DBA934D49D66D /* PFConstants.h */,
+				7EB5FD60791B58C4FC8A65E559944990 /* PFFile.h */,
+				09AA745B8BD51D27F3C2C17628295B7F /* PFGeoPoint.h */,
+				AA4EED30D554E76480BB9D49C2EC4777 /* PFInstallation.h */,
+				4B46425D756A1E817E9E4B159926DFE5 /* PFNetworkActivityIndicatorManager.h */,
+				0F0D4BC7719394CC613CD4FEFC7F1C47 /* PFNullability.h */,
+				4A4660587C514E14018256D8FC0999EA /* PFObject.h */,
+				05A1CAD2FBDAED591B51999BD3984763 /* PFObject+Subclass.h */,
+				708A11B2C9BC8F0430E4CAA2786BE97B /* PFProduct.h */,
+				8E5657CF7FFE70DA06E713ECD39771F9 /* PFPurchase.h */,
+				1510409A2635A161F31FDB47FDF2ACBB /* PFPush.h */,
+				FE10264C3A03FDE214E74DD9081D45CE /* PFQuery.h */,
+				031F0B03D1F7695B87CC5F301F8E2A37 /* PFRelation.h */,
+				D5A44E1BFD528082B9CA67AE59C77059 /* PFRole.h */,
+				22434763ED114208DD5C8A7515BC9074 /* PFSession.h */,
+				8B85996E62EB6660BE843BD57A80BB51 /* PFSubclassing.h */,
+				C9AC026F5B7321E248119D2BC904AD15 /* PFTwitterUtils.h */,
+				E563914FD80F585867240360A2889FAB /* PFUser.h */,
+				A8AD918AACA6BDDEC4EFE45E09F84331 /* PF_Twitter.h */,
+				6365587D51B94C66F3EAAAC46BE69653 /* Parse.h */,
+				4433750E2A1AB40A99873B81CF98DC38 /* Frameworks */,
+				A1BECEB0BC9AE3DE9BD18ABD6BF3BAC0 /* Support Files */,
 			);
 			path = Parse;
+			sourceTree = "<group>";
+		};
+		C12E6FEF33E8ACCD3D238CDC8E0C8328 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				F34905E9F104E75B02326D43ECA19704 /* SSKeychain.h */,
+				4BCCB65BB420855B405583A4CDE389CA /* SSKeychain.m */,
+				1D94E59636AB79BF90804220FD21E1DE /* SSKeychainQuery.h */,
+				FAAD2FE343ADC8DFB0514CDD43C7F9D4 /* SSKeychainQuery.m */,
+				EEEFC2B9AB39365C9E79643DC0FC3A49 /* Support Files */,
+			);
+			path = SSKeychain;
 			sourceTree = "<group>";
 		};
 		C8F0234B3F5D7632D6AEBEA2DDD61788 /* Targets Support Files */ = {
@@ -382,128 +845,259 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B8FEE8B9D384A43A8465D17BE812854 /* Bolts.framework */,
-				A8FAE17834704E3402FC5900E710F567 /* Parse.framework */,
-				9250DEE47D9286E5A1075E5680FF9EC3 /* Pods_uSell.framework */,
+				3D9E4D3A215669D2A03F439F6B16A806 /* Bolts.framework */,
+				ACBBE79B5E7E527ECA3876EC3A90019C /* CMDQueryStringSerialization.framework */,
+				5C01AB478F0F6962CB3E284AB2D0D1B8 /* Parse.framework */,
+				DF32EEFDA5881E050B3CD592A4572CDB /* Pods_uSell.framework */,
+				9E45C157553B7123AD27B2B7F78E7D54 /* SSKeychain.framework */,
+				13286FB5585313B402F4BEE96E5500FA /* VENCore.framework */,
+				DFCCE872D934D9C220F1DBCBE772CFB3 /* Venmo_iOS_SDK.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DFC89D13754D0205F26761F1826C7DB8 /* Frameworks */ = {
+		E13FA7D4BA0CA2EDB813C314973568AA /* CMDQueryStringSerialization */ = {
 			isa = PBXGroup;
 			children = (
-				4ECD87985C2424AA892C5A19D4F19B4C /* libParseLib.a */,
+				A297E41D26484BC4A7E4CC5786C10D4C /* CMDQueryStringArrayTransformer.h */,
+				F92D2EDEA0419630224D35FD07191B6D /* CMDQueryStringArrayTransformer.m */,
+				5A6C06E59126AE6CED10782168F599B1 /* CMDQueryStringDateTransformer.h */,
+				5E50552AC204F85F96E6F726216C04D1 /* CMDQueryStringDateTransformer.m */,
+				E15B60A6C0405F3F9E3E0AA8C9E7EAA2 /* CMDQueryStringNumberTransformer.h */,
+				4BB3C13534B801E97F55ADB554E8BD49 /* CMDQueryStringNumberTransformer.m */,
+				EB73A6803EA98E6599CD176A99E60314 /* CMDQueryStringReader.h */,
+				D53D1C4BD92EE692E53DB2A4B61E6C9F /* CMDQueryStringReader.m */,
+				0BAF0CC4EB85EA8D24D90573BA4B6CDA /* CMDQueryStringSerialization.h */,
+				36CE9AC7F1D7E8455E16E59C4218C7E2 /* CMDQueryStringSerialization.m */,
+				2052889236941A96135AB4514D893F1C /* CMDQueryStringStringTransformer.h */,
+				F2E658CEE813D98CB4064FFD4EA1C57E /* CMDQueryStringStringTransformer.m */,
+				FD4DAF8967031C78D6F3667DA72A1056 /* CMDQueryStringValueTransformer.h */,
+				A3FFDA92EA3866A8E8424C5BB944E76F /* CMDQueryStringValueTransformer.m */,
+				C5849C4D092A213761F6EEF282A77076 /* CMDQueryStringWriter.h */,
+				D333AE0623CB8AC57347E1B63ED400E4 /* CMDQueryStringWriter.m */,
+				1541795E5AE186F1330C156D89339239 /* NSString+CMDQueryStringSerialization.h */,
+				12818606D55585EA0B7423AD1BA55CD6 /* NSString+CMDQueryStringSerialization.m */,
+				66CEC785E8E7CF33634636458AE7DF92 /* Support Files */,
 			);
-			name = Frameworks;
+			path = CMDQueryStringSerialization;
+			sourceTree = "<group>";
+		};
+		EEEFC2B9AB39365C9E79643DC0FC3A49 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B69E569C1B0223DA94A9AF017ACE5CE /* Info.plist */,
+				144F5A26D923F85E359BE4A555840E24 /* SSKeychain.modulemap */,
+				DF1F66C8952B9A221644C1017478B28B /* SSKeychain.xcconfig */,
+				E3BE2F583A9C464E8ED31FF5DB46BA72 /* SSKeychain-Private.xcconfig */,
+				B82E15956D8E313ADDE02AE72508F665 /* SSKeychain-dummy.m */,
+				EF4AA00ABCA9F78D324627A46C7038ED /* SSKeychain-prefix.pch */,
+				1E33C6CCDA4DEDCCDE168418FD4CED88 /* SSKeychain-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SSKeychain";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7CAC12A7E9831A0B945C472A59B9E2E3 /* Headers */ = {
+		2BB692000ECE23C6229C168E4CC40834 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				915A60532147E8BF92133D1C35915DB9 /* BFCancellationToken.h in Headers */,
-				840026746760B39923CAF6675D49D9C1 /* BFCancellationTokenRegistration.h in Headers */,
-				993A2A88A642D302E2949B5BD64724EA /* BFCancellationTokenSource.h in Headers */,
-				5924EAC583C8725F5393053A3147CF3C /* BFExecutor.h in Headers */,
-				3DC24C76063E318119C44ABFC849830E /* BFTask.h in Headers */,
-				FF5DE28A9756114E59025FBE319DC1C7 /* BFTaskCompletionSource.h in Headers */,
-				980225836D2AF4CCDB710A40111F8D4E /* Bolts-umbrella.h in Headers */,
-				8191D9D1BE1EC68467E11026BA5B186B /* Bolts.h in Headers */,
-				AE4CA5A0D7EFF4268D3DFE657FFA1911 /* BoltsVersion.h in Headers */,
+				AAF0589E0C5F3910300A823BEEE05E18 /* CMDQueryStringArrayTransformer.h in Headers */,
+				6287F781561196C7BDFD2D49FA8AA13E /* CMDQueryStringDateTransformer.h in Headers */,
+				B6BD50BCFAE52BF0C9274DBF6B489F72 /* CMDQueryStringNumberTransformer.h in Headers */,
+				D69062C277AF49E3DF5B2DDD5ED526A2 /* CMDQueryStringReader.h in Headers */,
+				DE0404ECF0D4375CC0EB431B8CB1B0A9 /* CMDQueryStringSerialization-umbrella.h in Headers */,
+				1DEC23E9CF67112A568709DDF9275494 /* CMDQueryStringSerialization.h in Headers */,
+				3E961F675C85BE9E18CED680F1712D20 /* CMDQueryStringStringTransformer.h in Headers */,
+				4D8225919FE78985C917F7EEB3396418 /* CMDQueryStringValueTransformer.h in Headers */,
+				EB7DC254F7849B2309182C54C7A620BC /* CMDQueryStringWriter.h in Headers */,
+				AE85AB476259CE9FE6D50373E5C34084 /* NSString+CMDQueryStringSerialization.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98AAB1CF85F5B17265000C8C58186D49 /* Headers */ = {
+		5D17B1BB16AA13EDD45C2B9E3EA1B4C6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47E36B6841689805B5DF0708A6D57B05 /* Pods-uSell-umbrella.h in Headers */,
+				F970DDA3B5D9F0C622C0379C15D15F98 /* Pods-uSell-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D14F417E2C11E50DF7706AEE1EC9D7EF /* Headers */ = {
+		67C614799778476F1C0D6CF782E8598A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				790BE87E690DCBBA526FE949D833F7A7 /* PFACL.h in Headers */,
-				00CD1C96BE40564A0C3469F8A41CB5F5 /* PFAnalytics.h in Headers */,
-				7388F0EBAB688554A1695D4293FE1E61 /* PFAnonymousUtils.h in Headers */,
-				2F120CADCDAA15F9D326894AB61526AC /* PFCloud.h in Headers */,
-				E98F3C731DA49F03CD2B71F5DA0A079C /* PFConfig.h in Headers */,
-				0D73029F1B7201492B1AEF45433635CC /* PFConstants.h in Headers */,
-				CF915546C729A2BC169112AFFF313806 /* PFFile.h in Headers */,
-				84C7D291A744D56D62484272111F978B /* PFGeoPoint.h in Headers */,
-				C4D44846A8F8D0F04747CC25D4503FA4 /* PFInstallation.h in Headers */,
-				EBA0326EA3F1E81727AD25682AE89B4E /* PFNetworkActivityIndicatorManager.h in Headers */,
-				A4B30C59594B36684F91CEB0CBB7A9D5 /* PFNullability.h in Headers */,
-				3395373D17A0A30F256960959ACA466B /* PFObject+Subclass.h in Headers */,
-				ED7BD89DECEBA9F59807D28D8DC665FF /* PFObject.h in Headers */,
-				0DAE45F87A3AA66C9B00E85842EF5180 /* PFProduct.h in Headers */,
-				726667BE9BE67FC10733BD871FF8F3DC /* PFPurchase.h in Headers */,
-				0709BC1E75D53DCAE56C2464C18BEC64 /* PFPush.h in Headers */,
-				4715B32F7E0D0EDDF3C53BD7149A9CF4 /* PFQuery.h in Headers */,
-				B899CC0BEEE529117EB4BBDA9C63BEF7 /* PFRelation.h in Headers */,
-				CF1E294FB96F09C1CB0719CCD1590616 /* PFRole.h in Headers */,
-				5B715AF70E1B9C7E92F8C05AA439A02F /* PFSession.h in Headers */,
-				00534490C99797D4E27D3EFC60BFF7CD /* PFSubclassing.h in Headers */,
-				6BA3FDE82A8F78DB372A4890A20D771F /* PFTwitterUtils.h in Headers */,
-				96025F227B2A5D48F6809C14DCD484F8 /* PFUser.h in Headers */,
-				F28248A29BBAE5EE2F0F0D52EA2A2652 /* PF_Twitter.h in Headers */,
-				28ADEE3996B03675C5BE7B03F9B0AD7D /* Parse-umbrella.h in Headers */,
-				3AD91816636A6F55A21253AE93B83464 /* Parse.h in Headers */,
+				1216A147302BEA0450594C8EF762EC9D /* SSKeychain-umbrella.h in Headers */,
+				315BDEF15D83E3321F3515C06752B166 /* SSKeychain.h in Headers */,
+				1749AC11A79A33CD65B40D298718F62D /* SSKeychainQuery.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F91E75DBB29C9BDE0D0715A08C94333 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04111F74A8AB98A469DE037C59FD94B5 /* BFCancellationToken.h in Headers */,
+				973FEE28E4A2BEAAA7103D568DEECC64 /* BFCancellationTokenRegistration.h in Headers */,
+				9D6E840B430D63FCD7B2D825D8791CB8 /* BFCancellationTokenSource.h in Headers */,
+				A013718212946157566365656B5250CF /* BFExecutor.h in Headers */,
+				D77B935C9F730013F6FA4AA3DD263CAD /* BFTask.h in Headers */,
+				7569CEA8E1039ABE10611052DEB0BFEB /* BFTaskCompletionSource.h in Headers */,
+				138C126763DD10CD6E20B461440F94A1 /* Bolts-umbrella.h in Headers */,
+				7A5F7CC81DA236B2998A88EFD1091D20 /* Bolts.h in Headers */,
+				FEDA8706E9DEBAB092861A73D032EFE4 /* BoltsVersion.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FCC9A454D2846190B11474B7E562177 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48BE7EB79F16EEA8B9AE92936EE1BB98 /* PFACL.h in Headers */,
+				C89A4018D9B142CC59CEE914540CB9CA /* PFAnalytics.h in Headers */,
+				557E57BF9CD0868E39D7C50C1E60F715 /* PFAnonymousUtils.h in Headers */,
+				E8486B85DE994BAEED5A227547AE8B87 /* PFCloud.h in Headers */,
+				9F34C645068A3741FF3368072C0DA08E /* PFConfig.h in Headers */,
+				CC5CF889A9AC75C90D15D47471F48416 /* PFConstants.h in Headers */,
+				E51E6F63E76499171F74A98C0F9280B2 /* PFFile.h in Headers */,
+				D1DF5BD051E99C1620E047444904549A /* PFGeoPoint.h in Headers */,
+				1CE9EF23520E92C82463FF8E05B32B98 /* PFInstallation.h in Headers */,
+				4E9C79AD56C7A83EA65A7A817BD9C5AA /* PFNetworkActivityIndicatorManager.h in Headers */,
+				48D39F90E3624CB4D30911E9F0F5726C /* PFNullability.h in Headers */,
+				88F56B34B6189F21700E281065930D13 /* PFObject+Subclass.h in Headers */,
+				A479E4041CBC9DB77E10FF09FF20DE7C /* PFObject.h in Headers */,
+				B789AD9BC1B76DB172018AB289C9B20C /* PFProduct.h in Headers */,
+				801339E70198BB413B75B0BE4BAC5F31 /* PFPurchase.h in Headers */,
+				FB92AAF715E1FF75C8E3E2D30D32B685 /* PFPush.h in Headers */,
+				BDF8489B557FBB34FA92F0314C50F77B /* PFQuery.h in Headers */,
+				F70B3ED6D8EC957479292F08EBA8B712 /* PFRelation.h in Headers */,
+				634B43476D5B4C4DBD08A9821C8ACE54 /* PFRole.h in Headers */,
+				239835202463DD60401F90378EB3C5AD /* PFSession.h in Headers */,
+				8EDC82946F55C632CF851E326DA4C1D2 /* PFSubclassing.h in Headers */,
+				785B64EBA8031B0623E868912827B6B1 /* PFTwitterUtils.h in Headers */,
+				0EC7461F6B37D89F87C95A02F4477FC5 /* PFUser.h in Headers */,
+				41DF13C07E36D8725AFF9D365A408C9C /* PF_Twitter.h in Headers */,
+				B6B24935097A711695518F5C50C62A4B /* Parse-umbrella.h in Headers */,
+				5AFEC486929294F9955F212BC5E624FB /* Parse.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B74F04AC7A7B818FC62041B8C40C8017 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFA62F9EB39E8C25DC410ED6F8BFC98C /* NSBundle+VenmoSDK.h in Headers */,
+				E59FEAC221D4BFB7B64ABBC071624A2C /* NSDictionary+VenmoSDK.h in Headers */,
+				A2781ADE68B115616F927F3D7B69F105 /* NSError+VenmoSDK.h in Headers */,
+				00E8CCF3FC42FCCC9A6DD498295BEC8B /* NSString+MD5Addition.h in Headers */,
+				89C9BB1004BACD994F379F655F31B903 /* NSString+VenmoSDK.h in Headers */,
+				505C89AEEBE14B683710F49BA1016C8D /* NSURL+VenmoSDK.h in Headers */,
+				563D68CED71B90E29A8BC85BAD738307 /* UIDevice+IdentifierAddition.h in Headers */,
+				5EF642D6B5BCC8F4E6B038AAEF3C529E /* VENBase64_Internal.h in Headers */,
+				AF0E43B9AE5AB670D35FAA345FEA373C /* VENDefines_Internal.h in Headers */,
+				E19BD69AA2E8A5B81A8745112D939A60 /* VENErrors.h in Headers */,
+				88894664241771A55B472F7963B28435 /* VENHMAC_SHA256_Internal.h in Headers */,
+				95FE12F5621C2D86C1D94536FA7703B0 /* VENPermission.h in Headers */,
+				B4B938A8D9247ED97014E6A42EA464E9 /* VENPermissionConstants.h in Headers */,
+				DC170B7CF2773A48A6E0C26B06B04FF1 /* VENRequestDecoder.h in Headers */,
+				5250EA9ACCA1E03A735BC195E90EDD39 /* VENSession.h in Headers */,
+				0C24F5D61855BF263B904E66EA44D578 /* VENTransaction+VenmoSDK.h in Headers */,
+				680672D703E1887D103FC47210266C3A /* VENURLProtocol.h in Headers */,
+				650147FA1B31B820B5B020BE1D27E012 /* VENUser+VenmoSDK.h in Headers */,
+				BF5C64A8426C422652786788F216C22F /* Venmo-iOS-SDK-umbrella.h in Headers */,
+				10850A350E9AD258CAE69ED3C0D8BBA2 /* Venmo.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3BF8DD9526E0D56A66BCFE54FD23DE0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D458761FCFE8B6AB12C50FCCA0D78D35 /* NSArray+VENCore.h in Headers */,
+				8A2306CC7942DC8B817E662287175EAF /* NSDictionary+VENCore.h in Headers */,
+				25792EE3F15393F056FEA843887215AA /* NSError+VENCore.h in Headers */,
+				509BC0DD5BF410B07A5F78A695356288 /* NSString+VENCore.h in Headers */,
+				340352356E528ED6A2819C832425E498 /* UIDevice+VENCore.h in Headers */,
+				05D839BCD88BE5A19427256F6D88E54A /* VENCore-umbrella.h in Headers */,
+				E28F2013BEF9257EA24F99F5A8D88456 /* VENCore.h in Headers */,
+				49C575122B9AD1630954B44B1BF9CC51 /* VENCreateTransactionRequest.h in Headers */,
+				507A191BC049B2C926CF78F9F2DCC981 /* VENHTTP.h in Headers */,
+				E43E28DE217F8E423AD0814BDC8C1428 /* VENHTTPResponse.h in Headers */,
+				0902DC3E35246C0E57D62CD4B964704E /* VENTransaction.h in Headers */,
+				56AEAE6CF3D87416FD9D470C6721D54D /* VENTransactionPayloadKeys.h in Headers */,
+				157826038FDC9CF9E2DD2942EEE755C8 /* VENTransactionTarget.h in Headers */,
+				E73C1937DD81657A3C580DA549ACF4FB /* VENUser.h in Headers */,
+				889B8D265254A101FAC6D86E5A608803 /* VENUserPayloadKeys.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		23E000C4DC578FA98ABD3FB4ACAC1469 /* Parse */ = {
+		518EBA6CFAF98CC6281F09C17FFA94BD /* VENCore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8A3A7E5112E19EF536061251067E148 /* Build configuration list for PBXNativeTarget "Parse" */;
+			buildConfigurationList = 50458C710A9AEF65B71A800476745CEB /* Build configuration list for PBXNativeTarget "VENCore" */;
 			buildPhases = (
-				3E377DC5A9D8640EF3ACD94A77854772 /* Sources */,
-				1FD3A3B11FC79C0F0189355DE32AF2D2 /* Frameworks */,
-				D14F417E2C11E50DF7706AEE1EC9D7EF /* Headers */,
+				D798A7F44CB84978B44E6F15C3D9B867 /* Sources */,
+				392F1079458BD33FF18AF1824848EA26 /* Frameworks */,
+				E3BF8DD9526E0D56A66BCFE54FD23DE0 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5C14A7D7D7CC750F1A62E459EB1F16F7 /* PBXTargetDependency */,
+				2F392C6DF022A9A089CBD1D58896394E /* PBXTargetDependency */,
 			);
-			name = Parse;
-			productName = Parse;
-			productReference = A8FAE17834704E3402FC5900E710F567 /* Parse.framework */;
+			name = VENCore;
+			productName = VENCore;
+			productReference = 13286FB5585313B402F4BEE96E5500FA /* VENCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		52C83C557C33072810D30F642E57907C /* Pods-uSell */ = {
+		5D090B2DC1CA6472ADFFB771E5C640E1 /* Venmo-iOS-SDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E443C223DF5DF73407FF93316D42A0B2 /* Build configuration list for PBXNativeTarget "Pods-uSell" */;
+			buildConfigurationList = 15E4416F46924F2033F624884FDC1862 /* Build configuration list for PBXNativeTarget "Venmo-iOS-SDK" */;
 			buildPhases = (
-				EE01B4193D6C96FC70A2DF6701FB2FBC /* Sources */,
-				21FE8C86775637AB5CEE7F0D9D0B32AC /* Frameworks */,
-				98AAB1CF85F5B17265000C8C58186D49 /* Headers */,
+				B0A5C1931FCBCCED82DBC08ADD621F63 /* Sources */,
+				27DFA35BC830B6271E3F017F0271AA83 /* Frameworks */,
+				B74F04AC7A7B818FC62041B8C40C8017 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				018110C99F13146CC11D9D64B8606FB7 /* PBXTargetDependency */,
-				A49FA6C813086E9DC78715A7D76D7993 /* PBXTargetDependency */,
+				5CCBDF685030660AC02ABBCCA9CCCF7F /* PBXTargetDependency */,
+				5C92FCDC23AA36FEAB5C2BAB0C04BC13 /* PBXTargetDependency */,
+				8D1FEA8E1F07EE9527F8B6154978E76A /* PBXTargetDependency */,
 			);
-			name = "Pods-uSell";
-			productName = "Pods-uSell";
-			productReference = 9250DEE47D9286E5A1075E5680FF9EC3 /* Pods_uSell.framework */;
+			name = "Venmo-iOS-SDK";
+			productName = "Venmo-iOS-SDK";
+			productReference = DFCCE872D934D9C220F1DBCBE772CFB3 /* Venmo_iOS_SDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B1E794783C7E7925A3AA1354B19D4B91 /* Bolts */ = {
+		627E1DD8BE6720B2B7BEB5F4AF99114B /* CMDQueryStringSerialization */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B4CF94C6B7E621B0D857A5A9EB683D0 /* Build configuration list for PBXNativeTarget "Bolts" */;
+			buildConfigurationList = 5C69306AF957752E0D252588B3CC2433 /* Build configuration list for PBXNativeTarget "CMDQueryStringSerialization" */;
 			buildPhases = (
-				D1839EFB4A9DBE6FA95B2F784E15491B /* Sources */,
-				9696D2966D3872A423DED6390DE60F76 /* Frameworks */,
-				7CAC12A7E9831A0B945C472A59B9E2E3 /* Headers */,
+				F54502577E2045A17E1D6DECEF065FFF /* Sources */,
+				83B0F54EA211FCD2FAF4476EA5EC5E06 /* Frameworks */,
+				2BB692000ECE23C6229C168E4CC40834 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CMDQueryStringSerialization;
+			productName = CMDQueryStringSerialization;
+			productReference = ACBBE79B5E7E527ECA3876EC3A90019C /* CMDQueryStringSerialization.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9E7CB72C96163B00609C671FCF3DC2C8 /* Bolts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39665CC94F93945115CE2ADDA25F7179 /* Build configuration list for PBXNativeTarget "Bolts" */;
+			buildPhases = (
+				D76663075343616E858153D6CC971097 /* Sources */,
+				6B6B8C75A077332095E401CE38967B59 /* Frameworks */,
+				6F91E75DBB29C9BDE0D0715A08C94333 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -511,7 +1105,65 @@
 			);
 			name = Bolts;
 			productName = Bolts;
-			productReference = 5B8FEE8B9D384A43A8465D17BE812854 /* Bolts.framework */;
+			productReference = 3D9E4D3A215669D2A03F439F6B16A806 /* Bolts.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DDBFC77CECFE46AA49DFDBD8A12E06FF /* Parse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50DD6D99FA1DAD0689506568CBDC361B /* Build configuration list for PBXNativeTarget "Parse" */;
+			buildPhases = (
+				BEC43A55C6AC16A9E982AA38212A7E29 /* Sources */,
+				4EFD213AC6A85CF447DC482E4029C557 /* Frameworks */,
+				6FCC9A454D2846190B11474B7E562177 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A878DAF7A6CD9BB2E35B7BEB5F68B878 /* PBXTargetDependency */,
+			);
+			name = Parse;
+			productName = Parse;
+			productReference = 5C01AB478F0F6962CB3E284AB2D0D1B8 /* Parse.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EB2AAD02A07866A64E4F7F9973B1FF6B /* SSKeychain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13A668718DB747525608B74385DF509F /* Build configuration list for PBXNativeTarget "SSKeychain" */;
+			buildPhases = (
+				B3053E4D2C549EF50889FE36B303411D /* Sources */,
+				96C210A80A8286A6CEDE27302FFE948F /* Frameworks */,
+				67C614799778476F1C0D6CF782E8598A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SSKeychain;
+			productName = SSKeychain;
+			productReference = 9E45C157553B7123AD27B2B7F78E7D54 /* SSKeychain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F7B53AE34A8B3342098B0FBE854C0C2D /* Pods-uSell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C961D0E57D306D12DCC945F06F1FBB96 /* Build configuration list for PBXNativeTarget "Pods-uSell" */;
+			buildPhases = (
+				798A0194B6E03AA871FFA122E846CA4D /* Sources */,
+				62596FB73DB0885178AC46D95376D794 /* Frameworks */,
+				5D17B1BB16AA13EDD45C2B9E3EA1B4C6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3CB1A9199BA6395E6FA8FB55B5DE37B8 /* PBXTargetDependency */,
+				DFBDDC8513DB42129F59B828FBEB20D3 /* PBXTargetDependency */,
+				D4F90A8579A79DEB2EC90FA4C59B39C4 /* PBXTargetDependency */,
+				99CF71CBD1C104CECF9DA344FE23DFB9 /* PBXTargetDependency */,
+				676591A9FB82EBCFF849D96F0CED653E /* PBXTargetDependency */,
+				FD53EE8B89ADDB5D14EE535DC7FF90A8 /* PBXTargetDependency */,
+			);
+			name = "Pods-uSell";
+			productName = "Pods-uSell";
+			productReference = DF32EEFDA5881E050B3CD592A4572CDB /* Pods_uSell.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -535,89 +1187,294 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B1E794783C7E7925A3AA1354B19D4B91 /* Bolts */,
-				23E000C4DC578FA98ABD3FB4ACAC1469 /* Parse */,
-				52C83C557C33072810D30F642E57907C /* Pods-uSell */,
+				9E7CB72C96163B00609C671FCF3DC2C8 /* Bolts */,
+				627E1DD8BE6720B2B7BEB5F4AF99114B /* CMDQueryStringSerialization */,
+				DDBFC77CECFE46AA49DFDBD8A12E06FF /* Parse */,
+				F7B53AE34A8B3342098B0FBE854C0C2D /* Pods-uSell */,
+				EB2AAD02A07866A64E4F7F9973B1FF6B /* SSKeychain */,
+				518EBA6CFAF98CC6281F09C17FFA94BD /* VENCore */,
+				5D090B2DC1CA6472ADFFB771E5C640E1 /* Venmo-iOS-SDK */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3E377DC5A9D8640EF3ACD94A77854772 /* Sources */ = {
+		798A0194B6E03AA871FFA122E846CA4D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				113DD1AF0FFF653D4E6FE2B4675F252F /* Empty.m in Sources */,
-				669A1D340BCF116ED22328DF0A2E5436 /* Parse-dummy.m in Sources */,
+				6284716D5A112EEA4B4E70A00B900804 /* Pods-uSell-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D1839EFB4A9DBE6FA95B2F784E15491B /* Sources */ = {
+		B0A5C1931FCBCCED82DBC08ADD621F63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E252071BC0AAE1C7CF981C800503B8D7 /* BFCancellationToken.m in Sources */,
-				30E523A03537BD6EEF3667C3C6BF9FA2 /* BFCancellationTokenRegistration.m in Sources */,
-				9E5678DDEAB96E46BF593C31AC89200E /* BFCancellationTokenSource.m in Sources */,
-				B95ACA691CF98C7CA9FFBDB58A07814A /* BFExecutor.m in Sources */,
-				AE5EBD3C1AEE9250E228D1E61A5C669D /* BFTask.m in Sources */,
-				FBC1F5349B154910EB62077283A086F2 /* BFTaskCompletionSource.m in Sources */,
-				1115F851A236D4DA4520D5FC3B76C179 /* Bolts-dummy.m in Sources */,
-				BC4BE52A9A6DF9EB6BB61EC126490A88 /* Bolts.m in Sources */,
+				E05BFCB5139EFDF441F28CEA163BE901 /* NSBundle+VenmoSDK.m in Sources */,
+				A060C6CDAE24DE91C2E4113472C84AAA /* NSDictionary+VenmoSDK.m in Sources */,
+				A6CB25BE21211B793E2DDEE878A4197A /* NSError+VenmoSDK.m in Sources */,
+				DDD88A947B2481F1018AB32EDD2ACAAE /* NSString+MD5Addition.m in Sources */,
+				C821DC02EF4CFDEE8CE3E98345DCDBF3 /* NSString+VenmoSDK.m in Sources */,
+				3A534F4388F745D4CE6BE9982C49CCFA /* NSURL+VenmoSDK.m in Sources */,
+				2C0FE7C4EA9E9CB6A3145E4E71A6F5A2 /* UIDevice+IdentifierAddition.m in Sources */,
+				329B6FFD11745D32DCB8FD6CC33435B0 /* VENBase64.m in Sources */,
+				31D9C36A07E3F9C2526F7D7EA44F10D8 /* VENErrors.m in Sources */,
+				C1E96AAC6B41E98D0AE6F84D0D247526 /* VENHMAC_SHA256.m in Sources */,
+				6333BD8088129958432E90E666FAC29B /* VENPermission.m in Sources */,
+				1978A610E07912A1829FEAA880EFAD31 /* VENRequestDecoder.m in Sources */,
+				2112A2FC549793B83139DED9E89D7D3F /* VENSession.m in Sources */,
+				F1CBB54FEA7130273C94BD5F5CACB97E /* VENTransaction+VenmoSDK.m in Sources */,
+				136D91AE082028889C7D95CED67CEBBF /* VENURLProtocol.m in Sources */,
+				D8E5C9947CBF904881BAEAD010504405 /* VENUser+VenmoSDK.m in Sources */,
+				2351C5CDA842DB061FE794DA43404AE6 /* Venmo-iOS-SDK-dummy.m in Sources */,
+				0EEC8F1CA049A096D8A0C40AFC408BD7 /* Venmo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE01B4193D6C96FC70A2DF6701FB2FBC /* Sources */ = {
+		B3053E4D2C549EF50889FE36B303411D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA505EAB02AF19BA777D98898572772D /* Pods-uSell-dummy.m in Sources */,
+				672A4D2580760C91F0B57418068EFE6B /* SSKeychain-dummy.m in Sources */,
+				2A8FA0317BFA8C2EB7470CEA421BF9FF /* SSKeychain.m in Sources */,
+				DB564294E0A588E5186D62767CB4891A /* SSKeychainQuery.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEC43A55C6AC16A9E982AA38212A7E29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E79D2E0E9FB3048889611D22E245C21 /* Empty.m in Sources */,
+				F2CC602F176B680982BDB6E8F2B2F314 /* Parse-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D76663075343616E858153D6CC971097 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64CDEFE21CD132E9D2BDACB288DD7E54 /* BFCancellationToken.m in Sources */,
+				729C60AF834AD51DC767CCF97768ED5E /* BFCancellationTokenRegistration.m in Sources */,
+				91D7ECCBD1DCA1FF971F6E5BBBD57F65 /* BFCancellationTokenSource.m in Sources */,
+				C7037F15443EC386AF2A7A9BA806ADCC /* BFExecutor.m in Sources */,
+				52B24B80EA200D889CFE71C390DA0D60 /* BFTask.m in Sources */,
+				86D22974BF50506E49731DD86025D22D /* BFTaskCompletionSource.m in Sources */,
+				B479613888B3B06644F60AFF6B1B4732 /* Bolts-dummy.m in Sources */,
+				10A9B2D1FC38906C2AC8BE7334A3B4E2 /* Bolts.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D798A7F44CB84978B44E6F15C3D9B867 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89DB2E17F93535E5BF8BBEFCE6D64046 /* NSArray+VENCore.m in Sources */,
+				A3FE21B414F254A6BB2B7B42D243FD37 /* NSDictionary+VENCore.m in Sources */,
+				772AF439B5A011DD43DBA87F4D12AD6E /* NSError+VENCore.m in Sources */,
+				80547CAE2A1EF400471323503D1E4B82 /* NSString+VENCore.m in Sources */,
+				8BE92B62689BD3C9F453CBC511F43DB5 /* UIDevice+VENCore.m in Sources */,
+				C77E19F1940360B637A4CF1A022B5EB1 /* VENCore-dummy.m in Sources */,
+				1021ECAFA200C307AA71D2C0CB0F47CF /* VENCore.m in Sources */,
+				A7CF97962836D97E8E4AA4A6F8FA6F8F /* VENCreateTransactionRequest.m in Sources */,
+				67A2C408316FD9660ECFE28ADCADFC1B /* VENHTTP.m in Sources */,
+				F124CC6278FF4362212E11B6F36A221F /* VENHTTPResponse.m in Sources */,
+				D0E741D2BB1150A6D0BFA98E7E963AF9 /* VENTransaction.m in Sources */,
+				44400769C49A7735A87AD2887E44D1DC /* VENTransactionTarget.m in Sources */,
+				5282053CA90C3DEFC27893FE6F6E5543 /* VENUser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F54502577E2045A17E1D6DECEF065FFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE71BB7E7632F72001AB792C2847635 /* CMDQueryStringArrayTransformer.m in Sources */,
+				455275D15C1AB6FFBD8FE0E8A4596723 /* CMDQueryStringDateTransformer.m in Sources */,
+				98863D2D1FB734A17BC36D8C4C8F2976 /* CMDQueryStringNumberTransformer.m in Sources */,
+				093CB2601A0079EC3772FB3EA94CC84C /* CMDQueryStringReader.m in Sources */,
+				3EA8DDB485726BFB6374AEDD59779ED7 /* CMDQueryStringSerialization-dummy.m in Sources */,
+				CCCE8CA3BECB8191A932A22B5002E341 /* CMDQueryStringSerialization.m in Sources */,
+				29527A82BC7358CC1E9BEDC2C2D8E2C9 /* CMDQueryStringStringTransformer.m in Sources */,
+				D7CED332B81E487C89671F92364D7302 /* CMDQueryStringValueTransformer.m in Sources */,
+				51363598E5A78BF7C1921A47B59FEBCE /* CMDQueryStringWriter.m in Sources */,
+				3A5632ABCB33C7388D9A896F75FC9F6A /* NSString+CMDQueryStringSerialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		018110C99F13146CC11D9D64B8606FB7 /* PBXTargetDependency */ = {
+		2F392C6DF022A9A089CBD1D58896394E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CMDQueryStringSerialization;
+			target = 627E1DD8BE6720B2B7BEB5F4AF99114B /* CMDQueryStringSerialization */;
+			targetProxy = 0540414C6DF39A121464FF1B8052F827 /* PBXContainerItemProxy */;
+		};
+		3CB1A9199BA6395E6FA8FB55B5DE37B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Bolts;
-			target = B1E794783C7E7925A3AA1354B19D4B91 /* Bolts */;
-			targetProxy = C050599B964E806C96BFD1828E4C568D /* PBXContainerItemProxy */;
+			target = 9E7CB72C96163B00609C671FCF3DC2C8 /* Bolts */;
+			targetProxy = 1630EE0BAD7C670BB80F7BDF2A1806CB /* PBXContainerItemProxy */;
 		};
-		5C14A7D7D7CC750F1A62E459EB1F16F7 /* PBXTargetDependency */ = {
+		5C92FCDC23AA36FEAB5C2BAB0C04BC13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SSKeychain;
+			target = EB2AAD02A07866A64E4F7F9973B1FF6B /* SSKeychain */;
+			targetProxy = E6C0FAEB4DC29A9D1D6BA12E56A53AB3 /* PBXContainerItemProxy */;
+		};
+		5CCBDF685030660AC02ABBCCA9CCCF7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CMDQueryStringSerialization;
+			target = 627E1DD8BE6720B2B7BEB5F4AF99114B /* CMDQueryStringSerialization */;
+			targetProxy = 8F587D42531DF15D15F480C641CF8533 /* PBXContainerItemProxy */;
+		};
+		676591A9FB82EBCFF849D96F0CED653E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VENCore;
+			target = 518EBA6CFAF98CC6281F09C17FFA94BD /* VENCore */;
+			targetProxy = 354C2818ED45776E0067FA614958CE49 /* PBXContainerItemProxy */;
+		};
+		8D1FEA8E1F07EE9527F8B6154978E76A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VENCore;
+			target = 518EBA6CFAF98CC6281F09C17FFA94BD /* VENCore */;
+			targetProxy = 78146B7677220E45F6DCEB86BEEE1909 /* PBXContainerItemProxy */;
+		};
+		99CF71CBD1C104CECF9DA344FE23DFB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SSKeychain;
+			target = EB2AAD02A07866A64E4F7F9973B1FF6B /* SSKeychain */;
+			targetProxy = C4172AFF5ADA3EFBC6CD9BC491CC39E7 /* PBXContainerItemProxy */;
+		};
+		A878DAF7A6CD9BB2E35B7BEB5F68B878 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Bolts;
-			target = B1E794783C7E7925A3AA1354B19D4B91 /* Bolts */;
-			targetProxy = 4421C4161E17C8C521F95970B08B2739 /* PBXContainerItemProxy */;
+			target = 9E7CB72C96163B00609C671FCF3DC2C8 /* Bolts */;
+			targetProxy = 40E48804805E2665078720E5B17D593B /* PBXContainerItemProxy */;
 		};
-		A49FA6C813086E9DC78715A7D76D7993 /* PBXTargetDependency */ = {
+		D4F90A8579A79DEB2EC90FA4C59B39C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Parse;
-			target = 23E000C4DC578FA98ABD3FB4ACAC1469 /* Parse */;
-			targetProxy = C2CCDE24BD4B993F613D545ACFCB9224 /* PBXContainerItemProxy */;
+			target = DDBFC77CECFE46AA49DFDBD8A12E06FF /* Parse */;
+			targetProxy = 866225D1D73DEDD8F446E3B470440D3C /* PBXContainerItemProxy */;
+		};
+		DFBDDC8513DB42129F59B828FBEB20D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CMDQueryStringSerialization;
+			target = 627E1DD8BE6720B2B7BEB5F4AF99114B /* CMDQueryStringSerialization */;
+			targetProxy = 8394929F9482A5AF52CF1EA58BAF5502 /* PBXContainerItemProxy */;
+		};
+		FD53EE8B89ADDB5D14EE535DC7FF90A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Venmo-iOS-SDK";
+			target = 5D090B2DC1CA6472ADFFB771E5C640E1 /* Venmo-iOS-SDK */;
+			targetProxy = 149C3D8701F2A93156DEAD059723793E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		112592C41207E8D2DDD03186EEC8FAA7 /* Release */ = {
+		03CBFBB2737FA636A3C46095C22E4C5B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E6628D8C4B7B9F786F7FFFC2D2CB307 /* Parse-Private.xcconfig */;
+			baseConfigurationReference = DDFBE3B7F82A68402AE5E8F1B9838D3E /* Venmo-iOS-SDK-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.7.5;
+				CURRENT_PROJECT_VERSION = 1.3.0;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Parse/Parse-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Parse/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Venmo-iOS-SDK/Venmo-iOS-SDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Venmo-iOS-SDK/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Parse/Parse.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Venmo-iOS-SDK/Venmo-iOS-SDK.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Parse;
+				PRODUCT_NAME = Venmo_iOS_SDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0FF332945CB1D2EAB60CD5242FE0DD56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1910C2582AEF8CB53E1462D0311B930E /* CMDQueryStringSerialization-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.2.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CMDQueryStringSerialization/CMDQueryStringSerialization-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CMDQueryStringSerialization/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CMDQueryStringSerialization/CMDQueryStringSerialization.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CMDQueryStringSerialization;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		341B34B26933F675CD66DCF9550C6C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3BE2F583A9C464E8ED31FF5DB46BA72 /* SSKeychain-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.2.3;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SSKeychain/SSKeychain-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SSKeychain/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SSKeychain/SSKeychain.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SSKeychain;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		481A1015B5420EB4D27046D3F83E33CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8EE894B3C17D08A969FA193B700B60D /* Bolts-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.2.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Bolts/Bolts-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Bolts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Bolts/Bolts.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Bolts;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -660,38 +1517,9 @@
 			};
 			name = Release;
 		};
-		7C622ABDCEB04A9113FCFB9164A4BE13 /* Release */ = {
+		614F2293A5779ADF4F5003F9D7E82322 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2EB1C31FAF7D8D1A96D862E5D452310 /* Pods-uSell.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-uSell/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-uSell/Pods-uSell.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_uSell;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9F5B851E89642F06005B07E2BF718B39 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E6628D8C4B7B9F786F7FFFC2D2CB307 /* Parse-Private.xcconfig */;
+			baseConfigurationReference = B16A766A3899F71285867DD15ECF4890 /* Parse-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1.7.5;
@@ -706,8 +1534,89 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Parse/Parse.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Parse;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		729A04B635124598473A7CCFEC07ED0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F1C9414563DC7CEFD4ABA38ED52C74E /* VENCore-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 3.0.1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 3;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/VENCore/VENCore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VENCore/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/VENCore/VENCore.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = VENCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		80B8AF24093D5D742A3E9D0C63587E90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1910C2582AEF8CB53E1462D0311B930E /* CMDQueryStringSerialization-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.2.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CMDQueryStringSerialization/CMDQueryStringSerialization-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CMDQueryStringSerialization/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CMDQueryStringSerialization/CMDQueryStringSerialization.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CMDQueryStringSerialization;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8E1D48C7167E8260CDCBCEA6F735170E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F1C9414563DC7CEFD4ABA38ED52C74E /* VENCore-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 3.0.1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 3;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/VENCore/VENCore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VENCore/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/VENCore/VENCore.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = VENCore;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -755,25 +1664,27 @@
 			};
 			name = Debug;
 		};
-		B3654BD3EE249B45B50BCA6665463BB2 /* Release */ = {
+		B1407FB01BE1D412309B57D6A71B51A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E38A55032DDA740C40E021D9E4D36E6 /* Bolts-Private.xcconfig */;
+			baseConfigurationReference = 4B5F533B8476E82D6E54B463EE586632 /* Pods-uSell.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.2.0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Bolts/Bolts-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Bolts/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-uSell/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Bolts/Bolts.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-uSell/Pods-uSell.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Bolts;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_uSell;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -782,9 +1693,9 @@
 			};
 			name = Release;
 		};
-		F419102BAA7A791B702F07E58CA2133B /* Debug */ = {
+		C1F0D422DF42237882D176D81A973978 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E3C14F7675B36294D88647C348A2BD7 /* Pods-uSell.debug.xcconfig */;
+			baseConfigurationReference = CA94AE39AF29486BFB984DCE63B108FB /* Pods-uSell.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -811,9 +1722,36 @@
 			};
 			name = Debug;
 		};
-		F8EDFB0F6422C597D2199F41651BA9BD /* Debug */ = {
+		D45FACA9A5361FD116485B92A3E608A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E38A55032DDA740C40E021D9E4D36E6 /* Bolts-Private.xcconfig */;
+			baseConfigurationReference = B16A766A3899F71285867DD15ECF4890 /* Parse-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.7.5;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Parse/Parse-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Parse/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Parse/Parse.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Parse;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DD8CC54067D63FA3604FF7AE8DCA35F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8EE894B3C17D08A969FA193B700B60D /* Bolts-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1.2.0;
@@ -838,9 +1776,81 @@
 			};
 			name = Debug;
 		};
+		E69E697A11889DA294A0DF27EFD4E3A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3BE2F583A9C464E8ED31FF5DB46BA72 /* SSKeychain-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.2.3;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SSKeychain/SSKeychain-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SSKeychain/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SSKeychain/SSKeychain.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SSKeychain;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F7BF588272B76CCD0D8EF06B90903871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDFBE3B7F82A68402AE5E8F1B9838D3E /* Venmo-iOS-SDK-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.3.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Venmo-iOS-SDK/Venmo-iOS-SDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Venmo-iOS-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Venmo-iOS-SDK/Venmo-iOS-SDK.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Venmo_iOS_SDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		13A668718DB747525608B74385DF509F /* Build configuration list for PBXNativeTarget "SSKeychain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E69E697A11889DA294A0DF27EFD4E3A0 /* Debug */,
+				341B34B26933F675CD66DCF9550C6C10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15E4416F46924F2033F624884FDC1862 /* Build configuration list for PBXNativeTarget "Venmo-iOS-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7BF588272B76CCD0D8EF06B90903871 /* Debug */,
+				03CBFBB2737FA636A3C46095C22E4C5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -850,29 +1860,47 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B4CF94C6B7E621B0D857A5A9EB683D0 /* Build configuration list for PBXNativeTarget "Bolts" */ = {
+		39665CC94F93945115CE2ADDA25F7179 /* Build configuration list for PBXNativeTarget "Bolts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F8EDFB0F6422C597D2199F41651BA9BD /* Debug */,
-				B3654BD3EE249B45B50BCA6665463BB2 /* Release */,
+				DD8CC54067D63FA3604FF7AE8DCA35F3 /* Debug */,
+				481A1015B5420EB4D27046D3F83E33CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E443C223DF5DF73407FF93316D42A0B2 /* Build configuration list for PBXNativeTarget "Pods-uSell" */ = {
+		50458C710A9AEF65B71A800476745CEB /* Build configuration list for PBXNativeTarget "VENCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F419102BAA7A791B702F07E58CA2133B /* Debug */,
-				7C622ABDCEB04A9113FCFB9164A4BE13 /* Release */,
+				8E1D48C7167E8260CDCBCEA6F735170E /* Debug */,
+				729A04B635124598473A7CCFEC07ED0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F8A3A7E5112E19EF536061251067E148 /* Build configuration list for PBXNativeTarget "Parse" */ = {
+		50DD6D99FA1DAD0689506568CBDC361B /* Build configuration list for PBXNativeTarget "Parse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F5B851E89642F06005B07E2BF718B39 /* Debug */,
-				112592C41207E8D2DDD03186EEC8FAA7 /* Release */,
+				D45FACA9A5361FD116485B92A3E608A6 /* Debug */,
+				614F2293A5779ADF4F5003F9D7E82322 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C69306AF957752E0D252588B3CC2433 /* Build configuration list for PBXNativeTarget "CMDQueryStringSerialization" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FF332945CB1D2EAB60CD5242FE0DD56 /* Debug */,
+				80B8AF24093D5D742A3E9D0C63587E90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C961D0E57D306D12DCC945F06F1FBB96 /* Build configuration list for PBXNativeTarget "Pods-uSell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1F0D422DF42237882D176D81A973978 /* Debug */,
+				B1407FB01BE1D412309B57D6A71B51A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

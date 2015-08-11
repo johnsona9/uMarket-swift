@@ -26,6 +26,9 @@ class RegisterPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancelButtonTouch(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     @IBAction func registerButtonTouch(sender: AnyObject) {
         
@@ -44,6 +47,10 @@ class RegisterPageViewController: UIViewController {
             displayAlertMessage("All fields are required");
             return;
         }
+
+        else if (userEmail.rangeOfString("@union.edu") == nil ) {
+            displayAlertMessage("We currently only support union email addresses, sorry!")
+        }
         
         else if (userPassword != userConfirmPassword) {
             
@@ -52,19 +59,19 @@ class RegisterPageViewController: UIViewController {
             return;
             
         }
-        
+            
         else {
             let createdUser = PFUser()
             createdUser.email = userEmail
             createdUser.password = userPassword
-            createdUser.username = username
+            createdUser.username = userEmail.componentsSeparatedByString("@")[0]
             
             createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
                 if (error == nil) {
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }
                 else {
-                    
+                    self.displayAlertMessage("\(error)")
                 }
             })
             

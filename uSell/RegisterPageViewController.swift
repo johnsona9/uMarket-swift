@@ -9,8 +9,13 @@
 import UIKit
 import Parse
 
+protocol RegisterPageViewControllerDelegate {
+    func userRegistered(controller: RegisterPageViewController)
+}
+
 class RegisterPageViewController: UIViewController {
 
+    var delegate: RegisterPageViewControllerDelegate?
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var userConfirmPasswordTextField: UITextField!
@@ -65,7 +70,9 @@ class RegisterPageViewController: UIViewController {
             
             createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
                 if (error == nil) {
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        self.delegate!.userRegistered(self)
+                    })
                 }
                 else {
                     self.displayAlertMessage("\(error)")

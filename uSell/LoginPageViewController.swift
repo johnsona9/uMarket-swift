@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class LoginPageViewController: UIViewController {
+class LoginPageViewController: UIViewController, RegisterPageViewControllerDelegate {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -18,7 +18,7 @@ class LoginPageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         if (PFUser.currentUser()?.username != nil) {
-            self.performSegueWithIdentifier("loginToMainSegue", sender: nil)
+            self.performSegueWithIdentifier("loginToMainSegue", sender: self)
         }
     }
     
@@ -32,7 +32,13 @@ class LoginPageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func userRegistered(controller: RegisterPageViewController) {
+        self.performSegueWithIdentifier("loginToMainSegue", sender: self)
+    }
+    @IBAction func RegisterButtonTouch(sender: AnyObject) {
+        self.performSegueWithIdentifier("loginToRegisterSegue", sender: self)
+        
+    }
     @IBAction func LoginButtonTouch(sender: AnyObject) {
         
         let username = usernameTextField.text
@@ -40,7 +46,7 @@ class LoginPageViewController: UIViewController {
         if (username != "" && password != "") {
             PFUser.logInWithUsernameInBackground(username, password: password) { (user: PFUser?, error: NSError?) -> Void in
                 if(PFUser.currentUser()?.username != nil) {
-                    self.performSegueWithIdentifier("loginToMainSegue", sender: nil)
+                    self.performSegueWithIdentifier("loginToMainSegue", sender: self)
                 }
                 else {
                     
@@ -53,14 +59,18 @@ class LoginPageViewController: UIViewController {
         
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "loginToRegisterSegue") {
+            var svc = segue.destinationViewController as! RegisterPageViewController
+            svc.delegate = self
+        }
     }
-    */
+
 
 }

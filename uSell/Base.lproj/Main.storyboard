@@ -25,7 +25,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XLg-dD-LLa" kind="presentation" id="PQY-aC-G01"/>
+                                    <action selector="RegisterButtonTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V5h-Vl-FC3"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zit-q0-Oij">
@@ -69,6 +69,7 @@
                         <outlet property="passwordTextField" destination="52h-Jr-DUq" id="GhU-tl-bgZ"/>
                         <outlet property="usernameTextField" destination="Zit-q0-Oij" id="N0r-bL-PaV"/>
                         <segue destination="lXc-U5-ZWe" kind="presentation" identifier="loginToMainSegue" id="kPh-oz-brl"/>
+                        <segue destination="XLg-dD-LLa" kind="presentation" identifier="loginToRegisterSegue" id="QbD-0k-mzJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

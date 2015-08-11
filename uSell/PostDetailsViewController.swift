@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class PostDetailsViewController: UIViewController {
-
+    
+    var post:PFObject!
     override func viewDidLoad() {
         super.viewDidLoad()
 

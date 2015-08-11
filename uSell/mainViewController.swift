@@ -12,7 +12,6 @@ import Parse
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var postsList = [PFObject]()
-
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -29,8 +28,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
 
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("mainToPostDetailsSegue", sender: indexPath)
+    
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -64,14 +64,19 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+//     MARK: - Navigation
+//
+//     In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//         Get the new view controller using segue.destinationViewController.
+//         Pass the selected object to the new view controller.
+        if (segue.identifier == "mainToPostDetailsSegue") {
+            var svc = segue.destinationViewController as! PostDetailsViewController
+            svc.post = self.postsList[(sender as! NSIndexPath).row]
+        }
+    
     }
-    */
+
 
 }

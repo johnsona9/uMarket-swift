@@ -13,6 +13,7 @@
 		CA23D5D31B7449A100515812 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */; };
 		CA8B37E51B74578100813C1C /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B37E41B74578100813C1C /* LoginPageViewController.swift */; };
 		CAAFAD541B797C8E00E369A6 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */; };
+		CAAFAD561B798B5D00E369A6 /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */; };
 		CAFB578C1B743366006791EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB578B1B743366006791EC /* AppDelegate.swift */; };
 		CAFB578E1B743366006791EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB578D1B743366006791EC /* ViewController.swift */; };
 		CAFB57911B743366006791EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFB578F1B743366006791EC /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		CA8B37E41B74578100813C1C /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsViewController.swift; sourceTree = "<group>"; };
 		CAFB57861B743366006791EC /* uSell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uSell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB578A1B743366006791EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAFB578B1B743366006791EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */,
 				CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */,
 				CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */,
+				CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				CAFB578E1B743366006791EC /* ViewController.swift in Sources */,
 				CAAFAD541B797C8E00E369A6 /* PostDetailsViewController.swift in Sources */,
 				CA8B37E51B74578100813C1C /* LoginPageViewController.swift in Sources */,
+				CAAFAD561B798B5D00E369A6 /* MyPostsViewController.swift in Sources */,
 				CA00C1B91B794BD9003F6DA8 /* MainViewController.swift in Sources */,
 				CAFB578C1B743366006791EC /* AppDelegate.swift in Sources */,
 				CA23D5D31B7449A100515812 /* RegisterPageViewController.swift in Sources */,

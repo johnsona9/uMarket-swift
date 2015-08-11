@@ -46,7 +46,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func postSegue() {
-        performSegueWithIdentifier("mainToPostSegue", sender: self)
+        performSegueWithIdentifier("mainToMyPostsSegue", sender: self)
     }
     
     private func getPosts() {

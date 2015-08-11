@@ -112,7 +112,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="ZS6-Br-0TI" id="QYB-Wt-HrW"/>
-                        <segue destination="3Zr-kk-GTx" kind="presentation" identifier="mainToPostSegue" id="uod-qQ-bAe"/>
                         <segue destination="eQ9-7e-mpW" kind="show" identifier="mainToPostDetailsSegue" id="8oV-Cf-auQ"/>
                         <segue destination="2Bm-HW-e0W" kind="show" identifier="mainToMyPostsSegue" id="fdE-V2-QaE"/>
                     </connections>
@@ -261,10 +260,10 @@
             </objects>
             <point key="canvasLocation" x="3164" y="-515"/>
         </scene>
-        <!--View Controller-->
+        <!--My Posts View Controller-->
         <scene sceneID="EtX-3K-BxC">
             <objects>
-                <viewController id="2Bm-HW-e0W" sceneMemberID="viewController">
+                <viewController id="2Bm-HW-e0W" customClass="MyPostsViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UDp-yc-vcT"/>
                         <viewControllerLayoutGuide type="bottom" id="Rpt-NG-yBn"/>
@@ -388,7 +387,4 @@
             <point key="canvasLocation" x="2352" y="315"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="z89-Lu-ahb"/>
-    </inferredMetricsTieBreakers>
 </document>

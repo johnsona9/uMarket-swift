@@ -113,11 +113,30 @@
                     <connections>
                         <outlet property="tableView" destination="ZS6-Br-0TI" id="QYB-Wt-HrW"/>
                         <segue destination="3Zr-kk-GTx" kind="presentation" identifier="mainToPostSegue" id="uod-qQ-bAe"/>
+                        <segue destination="eQ9-7e-mpW" kind="show" identifier="mainToPostDetailsSegue" id="8oV-Cf-auQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0t-7z-mY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3164" y="315"/>
+        </scene>
+        <!--Post Details View Controller-->
+        <scene sceneID="uHJ-yr-NUq">
+            <objects>
+                <viewController id="eQ9-7e-mpW" customClass="PostDetailsViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lu9-YX-Qkt"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tjf-lq-B1r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nBu-Lw-Q7d">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDS-Vy-VE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4031" y="315"/>
         </scene>
         <!--Create Post View Controller-->
         <scene sceneID="rl1-bM-ElT">

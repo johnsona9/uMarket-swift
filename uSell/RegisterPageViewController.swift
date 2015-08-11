@@ -14,7 +14,6 @@ class RegisterPageViewController: UIViewController {
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var userConfirmPasswordTextField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +34,6 @@ class RegisterPageViewController: UIViewController {
         let userEmail = emailAddressTextField.text;
         let userPassword = userPasswordTextField.text;
         let userConfirmPassword = userConfirmPasswordTextField.text;
-        let username = usernameTextField.text;
         
         //check for empty fields
         
@@ -62,9 +60,8 @@ class RegisterPageViewController: UIViewController {
             
         else {
             let createdUser = PFUser()
-            createdUser.email = userEmail
             createdUser.password = userPassword
-            createdUser.username = userEmail.componentsSeparatedByString("@")[0]
+            createdUser.username = userEmail
             
             createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
                 if (error == nil) {

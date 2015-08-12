@@ -17,9 +17,9 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if (PFUser.currentUser()?.username != nil) {
-            self.performSegueWithIdentifier("loginToMainSegue", sender: self)
-        }
+//        if (PFUser.currentUser()?.username != nil) {
+//            self.performSegueWithIdentifier("loginToMainSegue", sender: self)
+//        }
     }
     
     override func viewWillAppear(animated: Bool) {

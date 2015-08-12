@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="4031" y="315"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="VhS-VB-uji">
             <objects>
-                <viewController id="lCv-YA-j05" sceneMemberID="viewController">
+                <viewController id="lCv-YA-j05" customClass="ChatViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V6F-Gs-d28"/>
                         <viewControllerLayoutGuide type="bottom" id="pfy-Ux-N7e"/>

@@ -63,7 +63,6 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             queryCombined.includeKey("user1")
             queryCombined.includeKey("user2")
             var testChatRoom = queryCombined.getFirstObject()
-            println(testChatRoom)
             if (testChatRoom != nil) {
                 svc!.chatRoom = testChatRoom!
             }
@@ -71,7 +70,6 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                 var newChatRoom = PFObject(className: "chatRoom")
                 newChatRoom.setObject(PFUser.currentUser()!, forKey: "user1")
                 newChatRoom.setObject(otherUsers[(sender as! NSIndexPath).row], forKey: "user2")
-                println(newChatRoom)
                 newChatRoom.saveInBackground()
                 svc!.chatRoom = newChatRoom
             }
@@ -89,31 +87,20 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             if error == nil {
                 self.chatRooms = objects as! [PFObject]
                 var length:Int = objects!.count as Int
-                println(length)
                 for x in 0..<length {
                     var object = (objects as! [PFObject])[x]
-                    println(object)
                     var user1 = object["user1"] as! PFUser
                     var user2 = object["user2"] as! PFUser
-                    println(user1)
-                    println(PFUser.currentUser()!.isEqual(user1))
-                    println(PFUser.currentUser()!.isEqual(user2))
                     
                     if (PFUser.currentUser()!.isEqual(user1)) {
                         self.otherUsers.append(user2)
-                        println(self.otherUsers)
                         
                     }
                     else if (PFUser.currentUser()!.isEqual(user2)){
-                        println("user1")
                         self.otherUsers.append(user1)
-                        println(self.otherUsers)
                         
                     }
                 }
-                println("reload")
-                println(self.otherUsers)
-                println(self.chatRooms)
                 self.chatRoomsTableView.reloadData()
             }
             else {

@@ -55,7 +55,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
         var data = self.chats![indexPath.row]
-        if (data["sender"] as? String == PFUser.currentUser()?.objectId) {
+        if (PFUser.currentUser()!.isEqual(data["sender"])) {
             return self.outgoingBubble
         } else {
             return self.incomingBubble

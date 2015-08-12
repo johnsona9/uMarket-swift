@@ -19,7 +19,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.getPosts()
         var rightItem:UIBarButtonItem = UIBarButtonItem(title: "post", style: .Plain, target: self, action: "postSegue")
-        self.navigationItem.rightBarButtonItem = rightItem
+        var chatsItem:UIBarButtonItem = UIBarButtonItem(title: "chats", style: .Plain, target: self, action: "chatsSegue")
+        self.navigationItem.rightBarButtonItems = [rightItem, chatsItem]
         var leftItem:UIBarButtonItem = UIBarButtonItem(title: "logout", style: .Plain, target: self, action: "logoutUser")
         self.navigationItem.leftBarButtonItem = leftItem
         // Do any additional setup after loading the view.
@@ -32,7 +33,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("mainToPostDetailsSegue", sender: indexPath)
-    
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -48,6 +48,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func postSegue() {
         performSegueWithIdentifier("mainToMyPostsSegue", sender: self)
+    }
+    
+    func chatsSegue() {
+        performSegueWithIdentifier("mainToChatsSegue", sender: self)
     }
     
     func logoutUser() {

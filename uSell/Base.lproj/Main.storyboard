@@ -116,6 +116,7 @@
                         <outlet property="tableView" destination="ZS6-Br-0TI" id="QYB-Wt-HrW"/>
                         <segue destination="eQ9-7e-mpW" kind="show" identifier="mainToPostDetailsSegue" id="8oV-Cf-auQ"/>
                         <segue destination="2Bm-HW-e0W" kind="show" identifier="mainToMyPostsSegue" id="fdE-V2-QaE"/>
+                        <segue destination="GYZ-Sr-CJg" kind="show" identifier="mainToChatsSegue" id="HPK-fe-uaJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0t-7z-mY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,6 +182,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDS-Vy-VE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4031" y="315"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BVG-rj-8gQ">
+            <objects>
+                <viewController id="GYZ-Sr-CJg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eT2-d3-ThU"/>
+                        <viewControllerLayoutGuide type="bottom" id="UC1-qz-3jd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ohp-hh-HSr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feN-hU-VAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4031" y="1117"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="VhS-VB-uji">

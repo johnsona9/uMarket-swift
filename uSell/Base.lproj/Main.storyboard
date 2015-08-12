@@ -158,6 +158,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q66-3X-Q9c">
+                                <rect key="frame" x="69" y="334" width="46" height="30"/>
+                                <state key="normal" title="Chat">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chatButtonTouch:" destination="eQ9-7e-mpW" eventType="touchUpInside" id="lS5-Ko-jrF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -166,11 +175,30 @@
                         <outlet property="costLabel" destination="eOG-D5-OpF" id="O3Q-6j-1gw"/>
                         <outlet property="editionLabel" destination="Mo9-Eh-II9" id="li9-Ma-qwQ"/>
                         <outlet property="titleLabel" destination="FN5-P2-pDP" id="r2x-db-MeJ"/>
+                        <segue destination="lCv-YA-j05" kind="show" identifier="postDetailsToChatSegue" id="ho5-uz-ve7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDS-Vy-VE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4031" y="315"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VhS-VB-uji">
+            <objects>
+                <viewController id="lCv-YA-j05" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V6F-Gs-d28"/>
+                        <viewControllerLayoutGuide type="bottom" id="pfy-Ux-N7e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5hD-cB-5La">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lFB-xe-atT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4944" y="315"/>
         </scene>
         <!--Create Post View Controller-->
         <scene sceneID="rl1-bM-ElT">

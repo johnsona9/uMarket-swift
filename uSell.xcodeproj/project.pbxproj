@@ -15,6 +15,7 @@
 		CAAFAD541B797C8E00E369A6 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */; };
 		CAAFAD561B798B5D00E369A6 /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */; };
 		CAAFAD581B79913A00E369A6 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD571B79913A00E369A6 /* EditPostViewController.swift */; };
+		CAF7D7A71B7AC69A00F3E8F0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */; };
 		CAFB578C1B743366006791EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB578B1B743366006791EC /* AppDelegate.swift */; };
 		CAFB578E1B743366006791EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB578D1B743366006791EC /* ViewController.swift */; };
 		CAFB57911B743366006791EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFB578F1B743366006791EC /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsViewController.swift; sourceTree = "<group>"; };
 		CAAFAD571B79913A00E369A6 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
+		CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CAFB57861B743366006791EC /* uSell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uSell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB578A1B743366006791EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAFB578B1B743366006791EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */,
 				CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */,
 				CAAFAD571B79913A00E369A6 /* EditPostViewController.swift */,
+				CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				CA00C1B91B794BD9003F6DA8 /* MainViewController.swift in Sources */,
 				CAFB578C1B743366006791EC /* AppDelegate.swift in Sources */,
 				CAAFAD581B79913A00E369A6 /* EditPostViewController.swift in Sources */,
+				CAF7D7A71B7AC69A00F3E8F0 /* ChatViewController.swift in Sources */,
 				CA23D5D31B7449A100515812 /* RegisterPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,8 +23,8 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.senderId = "penis"//PFUser.currentUser()["username"] as String
-        self.senderDisplayName = "penis2"//PFUser.currentUser()["username"] as! String
+        self.senderId = PFUser.currentUser()?.objectId
+        self.senderDisplayName = PFUser.currentUser()?.username
         var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!)
 //        chatsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
 //            if error == nil {
@@ -48,16 +48,13 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
 
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
         var data = self.chats![indexPath.row]
-        var tempUser: AnyObject? = data["sender"]
-        var tempUser2 = tempUser as! PFUser
-        println(tempUser2)
-        var message = JSQMessage(senderId: tempUser2["username"] as! String, displayName: tempUser2["username"] as! String, text: data["text"] as! String)
+        var tempUser = data["sender"] as! PFUser
+        var message = JSQMessage(senderId: tempUser["username"] as! String, displayName: tempUser["username"] as! String, text: data["text"] as! String)
         return message
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
         var data = self.chats![indexPath.row]
-        println(data)
         if (data["sender"] as? String == PFUser.currentUser()?.objectId) {
             return self.outgoingBubble
         } else {
@@ -76,7 +73,9 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         var newChat = PFObject(className: "chat")
         newChat.setObject(text, forKey: "text")
-        newChat.setObject(senderId, forKey: "sender")
+        var user = PFUser.query()?.whereKey("objectId", equalTo: senderId).getFirstObject()
+        newChat.setObject(user!, forKey: "sender")
+        newChat.setObject(self.chatRoom!, forKey: "chatRoom")
         self.chats!.append(newChat)
         newChat.saveInBackground()
         self.finishSendingMessage()

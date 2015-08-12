@@ -67,6 +67,7 @@ class RegisterPageViewController: UIViewController {
             let createdUser = PFUser()
             createdUser.password = userPassword
             createdUser.username = userEmail
+            createdUser.email = userEmail
             
             createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
                 if (error == nil) {

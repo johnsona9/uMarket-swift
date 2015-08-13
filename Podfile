@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'uSell' do
   pod 'Parse'
+  pod 'JSQMessagesViewController', '~> 7.1'
 end

@@ -25,6 +25,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         super.viewDidLoad()
         self.senderId = PFUser.currentUser()?.objectId
         self.senderDisplayName = PFUser.currentUser()?.username
+        self.loadChatRoom()
 //        chatsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
 //            if error == nil {
 //                self.chats = objects as? [PFObject]
@@ -48,6 +49,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         var data = self.chats![indexPath.row]
         var tempUser = data["sender"] as! PFUser
         var message = JSQMessage(senderId: tempUser["username"] as! String, displayName: tempUser["username"] as! String, text: data["text"] as! String)
+        println(message)
         return message
     }
     
@@ -82,11 +84,12 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     override func didPressAccessoryButton(sender: UIButton!) {
     }
     
-    func loadChatRoom() {
+    private func loadChatRoom() {
         var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!)
         self.chats = chatsQuery.findObjects() as? [PFObject]
 
         self.collectionView.reloadData()
+        println("got here")
     }
     
     /*

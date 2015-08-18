@@ -67,7 +67,6 @@ class PostDetailsViewController: UIViewController {
                 newChatRoom.saveInBackgroundWithBlock({ (success, error) -> Void in
                     if error == nil {
                         svc!.chatRoom = newChatRoom
-                        svc?.loadChatRoom()
                     }
                 })
                 

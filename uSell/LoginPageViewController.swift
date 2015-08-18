@@ -39,6 +39,12 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
         self.performSegueWithIdentifier("loginToRegisterSegue", sender: self)
         
     }
+    
+    @IBAction func ForgotPasswordButtonTouch(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("loginToPasswordResetSegue", sender: self)
+    }
+    
     @IBAction func LoginButtonTouch(sender: AnyObject) {
         
         let username = usernameTextField.text

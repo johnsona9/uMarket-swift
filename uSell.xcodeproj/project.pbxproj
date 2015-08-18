@@ -10,6 +10,7 @@
 		863C95A3EE332A25BFAD119C /* Pods_uSell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0CC35EB4FAE8E2B39B6F81 /* Pods_uSell.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CA00C1B51B794132003F6DA8 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */; };
 		CA00C1B91B794BD9003F6DA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */; };
+		CA2066A31B82D1D000EF29F9 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2066A21B82D1D000EF29F9 /* PasswordResetViewController.swift */; };
 		CA23D5D31B7449A100515812 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */; };
 		CA8B37E51B74578100813C1C /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B37E41B74578100813C1C /* LoginPageViewController.swift */; };
 		CAAD38621B7C040F00B1375C /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD38611B7C040F00B1375C /* ChatRoomsViewController.swift */; };
@@ -41,6 +42,7 @@
 		5CF8D96BC705FDB58C5228C9 /* Pods-uSell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSell.release.xcconfig"; path = "Pods/Target Support Files/Pods-uSell/Pods-uSell.release.xcconfig"; sourceTree = "<group>"; };
 		CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CA2066A21B82D1D000EF29F9 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		CA8B37E41B74578100813C1C /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		CAAD38611B7C040F00B1375C /* ChatRoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomsViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				CAAFAD571B79913A00E369A6 /* EditPostViewController.swift */,
 				CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */,
 				CAAD38611B7C040F00B1375C /* ChatRoomsViewController.swift */,
+				CA2066A21B82D1D000EF29F9 /* PasswordResetViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				CA8B37E51B74578100813C1C /* LoginPageViewController.swift in Sources */,
 				CAAFAD561B798B5D00E369A6 /* MyPostsViewController.swift in Sources */,
 				CA00C1B91B794BD9003F6DA8 /* MainViewController.swift in Sources */,
+				CA2066A31B82D1D000EF29F9 /* PasswordResetViewController.swift in Sources */,
 				CAFB578C1B743366006791EC /* AppDelegate.swift in Sources */,
 				CAAFAD581B79913A00E369A6 /* EditPostViewController.swift in Sources */,
 				CAF7D7A71B7AC69A00F3E8F0 /* ChatViewController.swift in Sources */,

@@ -15,7 +15,7 @@ import JSQSystemSoundPlayer
 
 class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var chats:[PFObject]?
+    var chats:[PFObject]? = []
     var chatRoom:PFObject?
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
@@ -25,7 +25,6 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         super.viewDidLoad()
         self.senderId = PFUser.currentUser()?.objectId
         self.senderDisplayName = PFUser.currentUser()?.username
-        var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!)
 //        chatsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
 //            if error == nil {
 //                self.chats = objects as? [PFObject]
@@ -33,7 +32,6 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
 //                self.collectionView.reloadData()
 //            }
 //        }
-        self.chats = chatsQuery.findObjects() as? [PFObject]
         
         
         
@@ -82,6 +80,13 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     }
     
     override func didPressAccessoryButton(sender: UIButton!) {
+    }
+    
+    func loadChatRoom() {
+        var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!)
+        self.chats = chatsQuery.findObjects() as? [PFObject]
+
+        self.collectionView.reloadData()
     }
     
     /*

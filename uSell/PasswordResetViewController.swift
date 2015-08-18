@@ -11,10 +11,13 @@ import Parse
 
 class PasswordResetViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.emailTextField.delegate = self
+        self.handleColors()
         // Do any additional setup after loading the view.
     }
 
@@ -42,6 +45,14 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    private func handleColors() {
+        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.cancelButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
+        self.resetButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
+        self.emailTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.emailTextField.textColor = GlobalConstants.Colors.goldColor
     }
     /*
     // MARK: - Navigation

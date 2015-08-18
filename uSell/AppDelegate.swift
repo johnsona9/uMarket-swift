@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
+        UINavigationBar.appearance().barTintColor = GlobalConstants.Colors.garnetColor
+        UINavigationBar.appearance().tintColor = GlobalConstants.Colors.goldColor
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : GlobalConstants.Colors.goldColor]
+        
         return true
     }
 

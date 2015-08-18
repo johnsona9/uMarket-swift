@@ -23,6 +23,8 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.collectionView.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.senderId = PFUser.currentUser()?.username
         self.senderDisplayName = PFUser.currentUser()?.username
         self.loadChatRoom()
@@ -49,7 +51,6 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         var data = self.chats![indexPath.row]
         var tempUser = data["sender"] as! PFUser
         var message = JSQMessage(senderId: tempUser["username"] as! String, displayName: tempUser["username"] as! String, text: data["text"] as! String)
-        println(message)
         return message
     }
     
@@ -89,7 +90,6 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         self.chats = chatsQuery.findObjects() as? [PFObject]
 
         self.collectionView.reloadData()
-        println("got here")
     }
     
     /*

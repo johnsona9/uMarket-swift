@@ -12,6 +12,7 @@ import JSQMessagesViewController
 
 class PostDetailsViewController: UIViewController {
     
+    @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var editionLabel: UILabel!
     @IBOutlet weak var classLabel: UILabel!
@@ -20,6 +21,7 @@ class PostDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.handleColors()
         self.titleLabel.text = self.post["postTitle"] as? String
         self.editionLabel.text = self.post["postEdition"] as? String
         self.classLabel.text = self.post["postClass"] as? String
@@ -73,6 +75,15 @@ class PostDetailsViewController: UIViewController {
             }
             
         }
+    }
+    
+    private func handleColors() {
+        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.titleLabel.textColor = GlobalConstants.Colors.goldColor
+        self.editionLabel.textColor = GlobalConstants.Colors.goldColor
+        self.classLabel.textColor = GlobalConstants.Colors.goldColor
+        self.costLabel.textColor = GlobalConstants.Colors.goldColor
+        self.chatButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
     }
     
 

@@ -11,12 +11,16 @@ import Parse
 
 class LoginPageViewController: UIViewController, RegisterPageViewControllerDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
+        self.handleColors()
         // Do any additional setup after loading the view.
 //        if (PFUser.currentUser()?.username != nil) {
 //            self.performSegueWithIdentifier("loginToMainSegue", sender: self)
@@ -82,6 +86,17 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
             var svc = segue.destinationViewController as! RegisterPageViewController
             svc.delegate = self
         }
+    }
+    
+    private func handleColors() {
+        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.logInButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
+        self.registerButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
+        self.forgotPasswordButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
+        self.usernameTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.usernameTextField.textColor = GlobalConstants.Colors.goldColor
+        self.passwordTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.passwordTextField.textColor = GlobalConstants.Colors.goldColor
     }
 
 

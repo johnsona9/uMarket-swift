@@ -19,6 +19,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         self.chatRoomsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.getChatRooms()
+        self.handleColors()
         // Do any additional setup after loading the view.
     }
 
@@ -35,6 +36,8 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         var cell:UITableViewCell = self.chatRoomsTableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         var username = self.otherUsers[indexPath.row].fetchIfNeeded()
         cell.textLabel?.text = username!["username"] as? String
+        cell.textLabel?.textColor = GlobalConstants.Colors.goldColor
+        cell.backgroundColor = GlobalConstants.Colors.garnetColor
         return cell
     }
     
@@ -107,6 +110,12 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                 println("\(error)")
             }
         }
+    }
+    
+    private func handleColors() {
+        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.chatRoomsTableView.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.chatRoomsTableView.separatorColor = GlobalConstants.Colors.goldColor
     }
 
 }

@@ -16,6 +16,7 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getPosts()
+        self.handleColors()
         self.myPostsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         var rightItem:UIBarButtonItem = UIBarButtonItem(title: "New", style: .Plain, target: self, action: "newPostSegue")
         self.navigationItem.rightBarButtonItem = rightItem
@@ -41,7 +42,8 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.myPostsTableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         cell.textLabel?.text = postsList[indexPath.row]["postTitle"] as? String
-        
+        cell.textLabel?.textColor = GlobalConstants.Colors.goldColor
+        cell.backgroundColor = GlobalConstants.Colors.garnetColor
         return cell
     }
     
@@ -109,6 +111,12 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         
+    }
+    
+    private func handleColors() {
+        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.myPostsTableView.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.myPostsTableView.separatorColor = GlobalConstants.Colors.goldColor
     }
 
 }

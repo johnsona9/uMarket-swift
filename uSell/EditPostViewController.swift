@@ -12,12 +12,16 @@ import Parse
 class EditPostViewController: UIViewController, UITextFieldDelegate {
 
     var initialObject:PFObject!
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var editionTextField: UITextField!
     @IBOutlet weak var classTextField: UITextField!
     @IBOutlet weak var costTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.handleColors()
         self.titleTextField.delegate = self
         self.editionTextField.delegate = self
         self.classTextField.delegate = self
@@ -67,6 +71,20 @@ class EditPostViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    private func handleColors() {
+        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.cancelButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
+        self.saveButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
+        self.titleTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.titleTextField.textColor = GlobalConstants.Colors.goldColor
+        self.editionTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.editionTextField.textColor = GlobalConstants.Colors.goldColor
+        self.classTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.classTextField.textColor = GlobalConstants.Colors.goldColor
+        self.costTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.costTextField.textColor = GlobalConstants.Colors.goldColor
     }
     /*
     // MARK: - Navigation

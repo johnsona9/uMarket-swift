@@ -16,11 +16,15 @@ protocol RegisterPageViewControllerDelegate {
 class RegisterPageViewController: UIViewController, UITextFieldDelegate {
 
     var delegate: RegisterPageViewControllerDelegate?
+    
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var userConfirmPasswordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.handleColors()
         self.emailAddressTextField.delegate = self
         self.userPasswordTextField.delegate = self
         self.userConfirmPasswordTextField.delegate = self
@@ -119,7 +123,17 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
+    private func handleColors() {
+        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.registerButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
+        self.cancelButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
+        self.userPasswordTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.userPasswordTextField.textColor = GlobalConstants.Colors.goldColor
+        self.userConfirmPasswordTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.userConfirmPasswordTextField.textColor = GlobalConstants.Colors.goldColor
+        self.emailAddressTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.emailAddressTextField.textColor = GlobalConstants.Colors.goldColor
+    }
     
     
     

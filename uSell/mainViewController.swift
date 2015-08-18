@@ -18,6 +18,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.getPosts()
+        self.handleColors()
         var rightItem:UIBarButtonItem = UIBarButtonItem(title: "post", style: .Plain, target: self, action: "postSegue")
         var chatsItem:UIBarButtonItem = UIBarButtonItem(title: "chats", style: .Plain, target: self, action: "chatsSegue")
         self.navigationItem.rightBarButtonItems = [rightItem, chatsItem]
@@ -38,6 +39,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         cell.textLabel?.text = postsList[indexPath.row]["postTitle"] as? String
+        cell.textLabel?.textColor = GlobalConstants.Colors.goldColor
+        cell.backgroundColor = GlobalConstants.Colors.garnetColor
         return cell
     }
     
@@ -75,6 +78,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
+    }
+    
+    private func handleColors() {
+        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.tableView.backgroundColor = GlobalConstants.Colors.backgroundColor
+        self.tableView.separatorColor = GlobalConstants.Colors.goldColor
     }
     
     

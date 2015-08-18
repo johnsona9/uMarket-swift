@@ -78,7 +78,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="L0W-dl-lMl"/>
                     <connections>
+                        <outlet property="forgotPasswordButton" destination="cte-c0-Zaj" id="D48-3Q-IEU"/>
+                        <outlet property="logInButton" destination="rUR-5F-zUg" id="M7a-ZW-SZ4"/>
                         <outlet property="passwordTextField" destination="52h-Jr-DUq" id="GhU-tl-bgZ"/>
+                        <outlet property="registerButton" destination="J3D-cB-PGl" id="BOs-bi-vWf"/>
                         <outlet property="usernameTextField" destination="Zit-q0-Oij" id="N0r-bL-PaV"/>
                         <segue destination="lXc-U5-ZWe" kind="presentation" identifier="loginToMainSegue" id="kPh-oz-brl"/>
                         <segue destination="XLg-dD-LLa" kind="presentation" identifier="loginToRegisterSegue" id="QbD-0k-mzJ"/>
@@ -184,6 +187,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="chatButton" destination="Q66-3X-Q9c" id="yY2-S2-KFm"/>
                         <outlet property="classLabel" destination="PCt-Sv-gbW" id="VVa-4g-0s0"/>
                         <outlet property="costLabel" destination="eOG-D5-OpF" id="O3Q-6j-1gw"/>
                         <outlet property="editionLabel" destination="Mo9-Eh-II9" id="li9-Ma-qwQ"/>
@@ -287,18 +291,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-n8-eaJ">
-                                <rect key="frame" x="375" y="384" width="60" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="RAS-3w-BeL"/>
-                                </constraints>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelButtonTouch:" destination="3Zr-kk-GTx" eventType="touchUpInside" id="NKA-j8-Y1N"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpg-aL-rr4">
                                 <rect key="frame" x="165" y="384" width="46" height="30"/>
                                 <constraints>
@@ -316,6 +308,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-n8-eaJ">
+                                <rect key="frame" x="375" y="384" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="RAS-3w-BeL"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonTouch:" destination="3Zr-kk-GTx" eventType="touchUpInside" id="NKA-j8-Y1N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -336,9 +340,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="pVe-n8-eaJ" id="XPY-NX-FvH"/>
                         <outlet property="classTextField" destination="Z24-Qw-4Qz" id="ZXa-de-ysE"/>
                         <outlet property="costTextField" destination="GoC-Fs-n4c" id="u72-37-Py9"/>
                         <outlet property="editionTextField" destination="RDH-qW-B4E" id="Y0r-lK-jDB"/>
+                        <outlet property="postButton" destination="Bpg-aL-rr4" id="zeu-gv-eW0"/>
                         <outlet property="titleTextField" destination="yeo-xM-EMb" id="0Oe-RX-GhZ"/>
                     </connections>
                 </viewController>
@@ -400,9 +406,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="jJJ-OD-lk6" id="hAc-Hi-QPv"/>
                         <outlet property="classTextField" destination="9lE-6H-pYV" id="GYl-K3-zTG"/>
                         <outlet property="costTextField" destination="MaQ-8h-xOk" id="qSS-jv-A61"/>
                         <outlet property="editionTextField" destination="6nn-Vu-GcW" id="44I-dk-hX1"/>
+                        <outlet property="saveButton" destination="yJM-Tk-hfE" id="jd3-BQ-89H"/>
                         <outlet property="titleTextField" destination="K9f-Yo-GmB" id="LXd-iP-1On"/>
                     </connections>
                 </viewController>
@@ -530,7 +538,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="KfX-hJ-vAF" id="7t8-5W-iD9"/>
                         <outlet property="emailAddressTextField" destination="NBP-1y-H0P" id="HIY-kn-g1U"/>
+                        <outlet property="registerButton" destination="rap-Y9-Wc6" id="VNl-Hj-3KL"/>
                         <outlet property="userConfirmPasswordTextField" destination="cMi-NU-FFM" id="toK-il-VPY"/>
                         <outlet property="userPasswordTextField" destination="Ikk-7V-inW" id="nMk-ak-mbj"/>
                     </connections>
@@ -595,6 +605,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNI-w4-bxr">
+                                <rect key="frame" x="200" y="329" width="40" height="30"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonTouch:" destination="CE9-CD-0zD" eventType="touchUpInside" id="pZY-cG-Z7x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -608,7 +627,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="BSK-lb-jiG" id="7RN-Kl-K3P"/>
                         <outlet property="emailTextField" destination="33i-pa-rtf" id="qC8-QH-bto"/>
+                        <outlet property="resetButton" destination="VNI-w4-bxr" id="qev-Uj-BxN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eb5-Kc-o1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -617,6 +638,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WTM-Xp-0jg"/>
+        <segue reference="ho5-uz-ve7"/>
     </inferredMetricsTieBreakers>
 </document>

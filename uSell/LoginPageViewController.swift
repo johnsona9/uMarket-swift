@@ -9,13 +9,14 @@
 import UIKit
 import Parse
 
-class LoginPageViewController: UIViewController, RegisterPageViewControllerDelegate {
+class LoginPageViewController: UIViewController, RegisterPageViewControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.usernameTextField.delegate = self
+        self.passwordTextField.delegate = self
         // Do any additional setup after loading the view.
 //        if (PFUser.currentUser()?.username != nil) {
 //            self.performSegueWithIdentifier("loginToMainSegue", sender: self)
@@ -63,6 +64,11 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
             //show some alert saying they're dumb
         }
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     

@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class EditPostViewController: UIViewController {
+class EditPostViewController: UIViewController, UITextFieldDelegate {
 
     var initialObject:PFObject!
     @IBOutlet weak var titleTextField: UITextField!
@@ -18,6 +18,10 @@ class EditPostViewController: UIViewController {
     @IBOutlet weak var costTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.titleTextField.delegate = self
+        self.editionTextField.delegate = self
+        self.classTextField.delegate = self
+        self.costTextField.delegate = self
         self.titleTextField.text = self.initialObject["postTitle"] as? String
         self.editionTextField.text = self.initialObject["postEdition"] as? String
         self.classTextField.text = self.initialObject["postClass"] as? String
@@ -58,6 +62,11 @@ class EditPostViewController: UIViewController {
     @IBAction func cancelButtonTouch(sender: AnyObject) {
         
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     /*
     // MARK: - Navigation

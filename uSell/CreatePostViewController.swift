@@ -13,7 +13,7 @@ protocol CreatePostViewControllerDelegate {
     func updateTableView(controller: CreatePostViewController, object: PFObject)
 }
 
-class CreatePostViewController: UIViewController {
+class CreatePostViewController: UIViewController, UITextFieldDelegate {
 
     var delegate: CreatePostViewControllerDelegate?
     @IBOutlet weak var titleTextField: UITextField!
@@ -22,7 +22,10 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var costTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.titleTextField.delegate = self
+        self.classTextField.delegate = self
+        self.editionTextField.delegate = self
+        self.costTextField.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -66,6 +69,11 @@ class CreatePostViewController: UIViewController {
         
         self.dismissViewControllerAnimated(true, completion: nil)
 
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     /*
     // MARK: - Navigation

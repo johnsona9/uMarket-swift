@@ -9,12 +9,12 @@
 import UIKit
 import Parse
 
-class PasswordResetViewController: UIViewController {
+class PasswordResetViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.emailTextField.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -39,6 +39,10 @@ class PasswordResetViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     /*
     // MARK: - Navigation
 

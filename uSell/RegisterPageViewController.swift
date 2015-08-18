@@ -13,7 +13,7 @@ protocol RegisterPageViewControllerDelegate {
     func userRegistered(controller: RegisterPageViewController)
 }
 
-class RegisterPageViewController: UIViewController {
+class RegisterPageViewController: UIViewController, UITextFieldDelegate {
 
     var delegate: RegisterPageViewControllerDelegate?
     @IBOutlet weak var emailAddressTextField: UITextField!
@@ -21,7 +21,9 @@ class RegisterPageViewController: UIViewController {
     @IBOutlet weak var userConfirmPasswordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.emailAddressTextField.delegate = self
+        self.userPasswordTextField.delegate = self
+        self.userConfirmPasswordTextField.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -90,6 +92,12 @@ class RegisterPageViewController: UIViewController {
         //display success once data has been sent to parse
         
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     /*
     // MARK: - Navigation
 

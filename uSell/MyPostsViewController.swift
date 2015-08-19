@@ -75,7 +75,11 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     
     func newPostSegue() {
-        self.performSegueWithIdentifier("myPostsToCreatePostSegue", sender: self)
+        if (PFUser.currentUser()?.objectForKey("emailVerified") as! Bool) {
+            self.performSegueWithIdentifier("myPostsToCreatePostSegue", sender: self)
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You can't create posts until you've verified your email!", view: self)
+        }
     }
 
     

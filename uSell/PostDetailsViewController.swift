@@ -35,7 +35,11 @@ class PostDetailsViewController: UIViewController {
     }
     
     @IBAction func chatButtonTouch(sender: AnyObject) {
-        self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
+        if (PFUser.currentUser()?.objectForKey("emailVerified") as! Bool) {
+            self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You can't chat with other users until you've verified your email!", view: self)
+        }
     }
 
     

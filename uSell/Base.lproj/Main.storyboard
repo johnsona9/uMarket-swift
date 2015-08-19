@@ -292,9 +292,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpg-aL-rr4">
-                                <rect key="frame" x="165" y="384" width="46" height="30"/>
+                                <rect key="frame" x="99" y="385" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="S7w-ZC-OFb"/>
+                                    <constraint firstAttribute="width" constant="46" id="uIg-uX-gKZ"/>
                                 </constraints>
                                 <state key="normal" title="Post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -309,9 +309,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-n8-eaJ">
-                                <rect key="frame" x="375" y="384" width="60" height="30"/>
+                                <rect key="frame" x="477" y="385" width="60" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="RAS-3w-BeL"/>
+                                    <constraint firstAttribute="width" constant="60" id="aS1-ar-8L8"/>
                                 </constraints>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -323,20 +323,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Bpg-aL-rr4" firstAttribute="leading" secondItem="hPr-qZ-ga0" secondAttribute="leading" constant="165" id="E8F-DT-3EP"/>
+                            <constraint firstItem="Bpg-aL-rr4" firstAttribute="leading" secondItem="RDH-qW-B4E" secondAttribute="leading" id="4B4-iu-wc3"/>
+                            <constraint firstItem="Bpg-aL-rr4" firstAttribute="baseline" secondItem="pVe-n8-eaJ" secondAttribute="baseline" id="9RL-i8-JUi"/>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="top" secondItem="zbP-bM-TZK" secondAttribute="bottom" constant="99" id="F0I-mC-pjC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z24-Qw-4Qz" secondAttribute="trailing" constant="47" id="HHt-s5-vGb"/>
-                            <constraint firstItem="IU0-E6-UgW" firstAttribute="top" secondItem="Bpg-aL-rr4" secondAttribute="bottom" constant="186" id="KWd-4b-WVU"/>
                             <constraint firstItem="GoC-Fs-n4c" firstAttribute="baseline" secondItem="RDH-qW-B4E" secondAttribute="baseline" id="QVN-pf-afK"/>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="leading" secondItem="RDH-qW-B4E" secondAttribute="leading" id="SjE-b2-rse"/>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="baseline" secondItem="Z24-Qw-4Qz" secondAttribute="baseline" id="WHb-FP-Uc8"/>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="leading" secondItem="hPr-qZ-ga0" secondAttribute="leadingMargin" constant="83" id="Xrd-ly-jBJ"/>
-                            <constraint firstAttribute="trailing" secondItem="pVe-n8-eaJ" secondAttribute="trailing" constant="165" id="Ygt-aT-EAi"/>
                             <constraint firstItem="RDH-qW-B4E" firstAttribute="trailing" secondItem="yeo-xM-EMb" secondAttribute="trailing" id="aAD-zX-2OB"/>
+                            <constraint firstItem="IU0-E6-UgW" firstAttribute="top" secondItem="Bpg-aL-rr4" secondAttribute="bottom" constant="185" id="as4-Fu-Rvq"/>
                             <constraint firstItem="GoC-Fs-n4c" firstAttribute="leading" secondItem="Z24-Qw-4Qz" secondAttribute="leading" id="dWk-I6-vzc"/>
                             <constraint firstItem="RDH-qW-B4E" firstAttribute="top" secondItem="yeo-xM-EMb" secondAttribute="bottom" constant="52" id="iej-WW-VOd"/>
                             <constraint firstItem="GoC-Fs-n4c" firstAttribute="trailing" secondItem="Z24-Qw-4Qz" secondAttribute="trailing" id="mCe-Cb-Sbn"/>
-                            <constraint firstItem="Bpg-aL-rr4" firstAttribute="baseline" secondItem="pVe-n8-eaJ" secondAttribute="baseline" id="rET-gs-8xG"/>
+                            <constraint firstItem="pVe-n8-eaJ" firstAttribute="trailing" secondItem="GoC-Fs-n4c" secondAttribute="trailing" id="mIi-pm-FIA"/>
                         </constraints>
                     </view>
                     <connections>

@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 
+
 protocol RegisterPageViewControllerDelegate {
     func userRegistered(controller: RegisterPageViewController)
 }
@@ -53,18 +54,18 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         
         if (userEmail.isEmpty || userPassword.isEmpty || userConfirmPassword.isEmpty) {
             //display bad stuff
-            displayAlertMessage("All fields are required");
+            GlobalConstants.AlertMessage.displayAlertMessage("All fields are required", view: self)
             return;
         }
 
         else if (userEmail.rangeOfString("@union.edu") == nil ) {
-            displayAlertMessage("We currently only support union email addresses, sorry!")
+            GlobalConstants.AlertMessage.displayAlertMessage("We currently only support union email addresses, sorry!", view: self)
         }
         
         else if (userPassword != userConfirmPassword) {
             
             //passwords don't match, complain to them
-            displayAlertMessage("Passwords do not match");
+            GlobalConstants.AlertMessage.displayAlertMessage("Passwords do not match", view: self)
             return;
             
         }
@@ -74,25 +75,27 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             createdUser.password = userPassword
             createdUser.username = userEmail
             createdUser.email = userEmail
-            
-            createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
-                if (error == nil) {
-                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                        self.delegate!.userRegistered(self)
-                    })
-                }
-                else {
-                    self.displayAlertMessage("\(error)")
-                }
-            })
+            let reachability = Reachability.reachabilityForInternetConnection()
+            if (reachability.isReachable()) {
+                createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
+                    if (error == nil) {
+                        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                            self.delegate!.userRegistered(self)
+                        })
+                    }
+                    else {
+                        GlobalConstants.AlertMessage.displayAlertMessage("\(error)", view: self)
+                    }
+                })
+            } else {
+                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            }
             
             
             
             
         }
-        
-        
-        
+
         //display success once data has been sent to parse
         
     }
@@ -100,27 +103,6 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    func displayAlertMessage(userMessage:String) {
-        
-        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.Alert);
-        
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil);
-        myAlert.addAction(okAction);
-        
-        self.presentViewController(myAlert, animated: true, completion: nil);
-        
     }
     
     private func handleColors() {

@@ -54,27 +54,31 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "chatRoomsToChatSegue" {
-            
-            var svc = segue.destinationViewController as? ChatViewController
-            var query = PFQuery(className: "chatRoom")
-            query.whereKey("user1", equalTo: PFUser.currentUser()!)
-            query.whereKey("user2", equalTo: otherUsers[(sender as! NSIndexPath).row])
-            var inverseQuery = PFQuery(className: "chatRoom")
-            inverseQuery.whereKey("user2", equalTo: PFUser.currentUser()!)
-            inverseQuery.whereKey("user1", equalTo: otherUsers[(sender as! NSIndexPath).row])
-            var queryCombined = PFQuery.orQueryWithSubqueries([query, inverseQuery])
-            queryCombined.includeKey("user1")
-            queryCombined.includeKey("user2")
-            var testChatRoom = queryCombined.getFirstObject()
-            if (testChatRoom != nil) {
-                svc!.chatRoom = testChatRoom!
-            }
-            else {
-                var newChatRoom = PFObject(className: "chatRoom")
-                newChatRoom.setObject(PFUser.currentUser()!, forKey: "user1")
-                newChatRoom.setObject(otherUsers[(sender as! NSIndexPath).row], forKey: "user2")
-                newChatRoom.saveInBackground()
-                svc!.chatRoom = newChatRoom
+            let reachability = Reachability.reachabilityForInternetConnection()
+            if (reachability.isReachable()) {
+                var svc = segue.destinationViewController as? ChatViewController
+                var query = PFQuery(className: "chatRoom")
+                query.whereKey("user1", equalTo: PFUser.currentUser()!)
+                query.whereKey("user2", equalTo: otherUsers[(sender as! NSIndexPath).row])
+                var inverseQuery = PFQuery(className: "chatRoom")
+                inverseQuery.whereKey("user2", equalTo: PFUser.currentUser()!)
+                inverseQuery.whereKey("user1", equalTo: otherUsers[(sender as! NSIndexPath).row])
+                var queryCombined = PFQuery.orQueryWithSubqueries([query, inverseQuery])
+                queryCombined.includeKey("user1")
+                queryCombined.includeKey("user2")
+                var testChatRoom = queryCombined.getFirstObject()
+                if (testChatRoom != nil) {
+                    svc!.chatRoom = testChatRoom!
+                }
+                else {
+                    var newChatRoom = PFObject(className: "chatRoom")
+                    newChatRoom.setObject(PFUser.currentUser()!, forKey: "user1")
+                    newChatRoom.setObject(otherUsers[(sender as! NSIndexPath).row], forKey: "user2")
+                    newChatRoom.saveInBackground()
+                    svc!.chatRoom = newChatRoom
+                }
+            } else {
+                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
             }
             
         }
@@ -83,32 +87,37 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     private func getChatRooms() {
-        var query = PFQuery(className: "chatRoom").whereKey("user1", equalTo: PFUser.currentUser()!)
-        var queryInverse = PFQuery(className: "chatRoom").whereKey("user2", equalTo: PFUser.currentUser()!)
-        var queryCombined = PFQuery.orQueryWithSubqueries([query, queryInverse])
-        queryCombined.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            if error == nil {
-                self.chatRooms = objects as! [PFObject]
-                var length:Int = objects!.count as Int
-                for x in 0..<length {
-                    var object = (objects as! [PFObject])[x]
-                    var user1 = object["user1"] as! PFUser
-                    var user2 = object["user2"] as! PFUser
-                    
-                    if (PFUser.currentUser()!.isEqual(user1)) {
-                        self.otherUsers.append(user2)
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+            var query = PFQuery(className: "chatRoom").whereKey("user1", equalTo: PFUser.currentUser()!)
+            var queryInverse = PFQuery(className: "chatRoom").whereKey("user2", equalTo: PFUser.currentUser()!)
+            var queryCombined = PFQuery.orQueryWithSubqueries([query, queryInverse])
+            queryCombined.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+                if error == nil {
+                    self.chatRooms = objects as! [PFObject]
+                    var length:Int = objects!.count as Int
+                    for x in 0..<length {
+                        var object = (objects as! [PFObject])[x]
+                        var user1 = object["user1"] as! PFUser
+                        var user2 = object["user2"] as! PFUser
                         
+                        if (PFUser.currentUser()!.isEqual(user1)) {
+                            self.otherUsers.append(user2)
+                            
+                        }
+                        else if (PFUser.currentUser()!.isEqual(user2)){
+                            self.otherUsers.append(user1)
+                            
+                        }
                     }
-                    else if (PFUser.currentUser()!.isEqual(user2)){
-                        self.otherUsers.append(user1)
-                        
-                    }
+                    self.chatRoomsTableView.reloadData()
                 }
-                self.chatRoomsTableView.reloadData()
+                else {
+                    println("\(error)")
+                }
             }
-            else {
-                println("\(error)")
-            }
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }
     }
     

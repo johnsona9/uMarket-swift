@@ -10,6 +10,7 @@
 		863C95A3EE332A25BFAD119C /* Pods_uSell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0CC35EB4FAE8E2B39B6F81 /* Pods_uSell.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CA00C1B51B794132003F6DA8 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */; };
 		CA00C1B91B794BD9003F6DA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */; };
+		CA13DF971B8414880099F08C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA13DF961B8414880099F08C /* Reachability.swift */; };
 		CA2066A31B82D1D000EF29F9 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2066A21B82D1D000EF29F9 /* PasswordResetViewController.swift */; };
 		CA2066A51B82E37D00EF29F9 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2066A41B82E37D00EF29F9 /* GlobalConstants.swift */; };
 		CA23D5D31B7449A100515812 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */; };
@@ -43,6 +44,7 @@
 		5CF8D96BC705FDB58C5228C9 /* Pods-uSell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSell.release.xcconfig"; path = "Pods/Target Support Files/Pods-uSell/Pods-uSell.release.xcconfig"; sourceTree = "<group>"; };
 		CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CA13DF961B8414880099F08C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CA2066A21B82D1D000EF29F9 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		CA2066A41B82E37D00EF29F9 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				CAFB578A1B743366006791EC /* Info.plist */,
+				CA13DF961B8414880099F08C /* Reachability.swift */,
 				CA2066A41B82E37D00EF29F9 /* GlobalConstants.swift */,
 			);
 			name = "Supporting Files";
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA13DF971B8414880099F08C /* Reachability.swift in Sources */,
 				CA00C1B51B794132003F6DA8 /* CreatePostViewController.swift in Sources */,
 				CAFB578E1B743366006791EC /* ViewController.swift in Sources */,
 				CAAD38621B7C040F00B1375C /* ChatRoomsViewController.swift in Sources */,

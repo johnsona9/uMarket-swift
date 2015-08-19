@@ -29,9 +29,14 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func resetButtonTouch(sender: AnyObject) {
         if emailTextField.text != "" {
-            PFUser.requestPasswordResetForEmailInBackground(emailTextField.text, block: { (success, error) -> Void in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            })
+            let reachability = Reachability.reachabilityForInternetConnection()
+            if (reachability.isReachable()) {
+                PFUser.requestPasswordResetForEmailInBackground(emailTextField.text, block: { (success, error) -> Void in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                })
+            } else {
+                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            }
         }
         
     }
@@ -54,14 +59,6 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
         self.emailTextField.backgroundColor = GlobalConstants.Colors.garnetColor
         self.emailTextField.textColor = GlobalConstants.Colors.goldColor
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

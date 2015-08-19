@@ -58,24 +58,34 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func logoutUser() {
-        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
-            if error == nil {
-                self.dismissViewControllerAnimated(true, completion: nil)
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+            PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+                if error == nil {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
             }
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }
     }
     
     private func getPosts() {
         var postsQuery = PFQuery(className: "post").whereKey("poster", notEqualTo: PFUser.currentUser()!)
-        postsQuery.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-            if (error == nil) {
-                if let postObjects = objects as? [PFObject] {
-                    for post in postObjects {
-                        self.postsList.append(post)
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+            postsQuery.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+                if (error == nil) {
+                    if let postObjects = objects as? [PFObject] {
+                        for post in postObjects {
+                            self.postsList.append(post)
+                        }
+                        self.tableView.reloadData()
                     }
-                    self.tableView.reloadData()
                 }
             }
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }
         
     }

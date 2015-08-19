@@ -45,26 +45,32 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
         let postCost = costTextField.text
         
         if (postClass != "" && postTitle != "" && postCost != "") {
+            let reachability = Reachability.reachabilityForInternetConnection()
+            if (reachability.isReachable()) {
+                var newPost = PFObject(className: "post")
+                newPost.setObject(postTitle, forKey: "postTitle")
+                newPost.setObject(postClass, forKey: "postClass")
+                newPost.setObject(postEdition, forKey: "postEdition")
+                newPost.setObject(postCost, forKey: "postCost")
+                newPost.setObject(PFUser.currentUser()!, forKey: "poster")
+                newPost.saveInBackgroundWithBlock({ (success: Bool, error: NSError? ) -> Void in
+                    
+                    if (error == nil) {
+                        self.delegate!.updateTableView(self, object: newPost)
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    else {
+                        //put an alert in here
+                    }
+                    
+                })
+            } else {
+                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            }
             
-            var newPost = PFObject(className: "post")
-            newPost.setObject(postTitle, forKey: "postTitle")
-            newPost.setObject(postClass, forKey: "postClass")
-            newPost.setObject(postEdition, forKey: "postEdition")
-            newPost.setObject(postCost, forKey: "postCost")
-            newPost.setObject(PFUser.currentUser()!, forKey: "poster")
-            newPost.saveInBackgroundWithBlock({ (success: Bool, error: NSError? ) -> Void in
-                
-                if (error == nil) {
-                    self.delegate!.updateTableView(self, object: newPost)
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                }
-                else {
-                    //put an alert in here
-                }
-                
-            })
             
-            
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You are missing some necessary fields", view: self)
         }
 
     }

@@ -54,19 +54,25 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
         
         let username = usernameTextField.text
         let password = passwordTextField.text
-        if (username != "" && password != "") {
-            PFUser.logInWithUsernameInBackground(username, password: password) { (user: PFUser?, error: NSError?) -> Void in
-                if(PFUser.currentUser()?.username != nil) {
-                    self.performSegueWithIdentifier("loginToMainSegue", sender: self)
-                }
-                else {
-                    
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+            if (username != "" && password != "") {
+                PFUser.logInWithUsernameInBackground(username, password: password) { (user: PFUser?, error: NSError?) -> Void in
+                    if(PFUser.currentUser()?.username != nil) {
+                        self.performSegueWithIdentifier("loginToMainSegue", sender: self)
+                    }
+                    else {
+                        
+                    }
                 }
             }
+            else {
+                GlobalConstants.AlertMessage.displayAlertMessage("Your login information is incorrect, please double check and try again", view: self)
+            }
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }
-        else {
-            //show some alert saying they're dumb
-        }
+        
         
     }
     

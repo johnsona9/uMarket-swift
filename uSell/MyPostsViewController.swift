@@ -48,7 +48,12 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+            return true
+        } else {
+            return false
+        }
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -99,16 +104,21 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     private func getPosts() {
-        var postsQuery = PFQuery(className: "post").whereKey("poster", equalTo: PFUser.currentUser()!)
-        postsQuery.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-            if (error == nil) {
-                if let postObjects = objects as? [PFObject] {
-                    for post in postObjects {
-                        self.postsList.append(post)
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+            var postsQuery = PFQuery(className: "post").whereKey("poster", equalTo: PFUser.currentUser()!)
+            postsQuery.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+                if (error == nil) {
+                    if let postObjects = objects as? [PFObject] {
+                        for post in postObjects {
+                            self.postsList.append(post)
+                        }
+                        self.myPostsTableView.reloadData()
                     }
-                    self.myPostsTableView.reloadData()
                 }
             }
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }
         
     }

@@ -72,24 +72,34 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     }
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
-        var newChat = PFObject(className: "chat")
-        newChat.setObject(text, forKey: "text")
-        var user = PFUser.query()?.whereKey("username", equalTo: senderId).getFirstObject()
-        newChat.setObject(user!, forKey: "sender")
-        newChat.setObject(self.chatRoom!, forKey: "chatRoom")
-        self.chats!.append(newChat)
-        newChat.saveInBackground()
-        self.finishSendingMessage()
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+            var newChat = PFObject(className: "chat")
+            newChat.setObject(text, forKey: "text")
+            var user = PFUser.query()?.whereKey("username", equalTo: senderId).getFirstObject()
+            newChat.setObject(user!, forKey: "sender")
+            newChat.setObject(self.chatRoom!, forKey: "chatRoom")
+            self.chats!.append(newChat)
+            newChat.saveInBackground()
+            self.finishSendingMessage()
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+        }
     }
     
     override func didPressAccessoryButton(sender: UIButton!) {
     }
     
     private func loadChatRoom() {
-        var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!)
-        self.chats = chatsQuery.findObjects() as? [PFObject]
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+            var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!)
+            self.chats = chatsQuery.findObjects() as? [PFObject]
 
-        self.collectionView.reloadData()
+            self.collectionView.reloadData()
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+        }
     }
     
     /*

@@ -63,20 +63,19 @@ class PostDetailsViewController: UIViewController {
                 var queryCombined = PFQuery.orQueryWithSubqueries([query, inverseQuery])
                 queryCombined.includeKey("user1")
                 queryCombined.includeKey("user2")
+                
                 var testChatRoom = queryCombined.getFirstObject()
                 
                 if (testChatRoom != nil) {
                     svc!.chatRoom = testChatRoom!
                 }
                 else {
+                    
                     var newChatRoom = PFObject(className: "chatRoom")
                     newChatRoom.setObject(PFUser.currentUser()!, forKey: "user1")
                     newChatRoom.setObject(self.post["poster"]!, forKey: "user2")
-                    newChatRoom.saveInBackgroundWithBlock({ (success, error) -> Void in
-                        if error == nil {
-                            svc!.chatRoom = newChatRoom
-                        }
-                    })
+                    newChatRoom.save()
+                    svc!.chatRoom = newChatRoom
                     
                 }
             } else {

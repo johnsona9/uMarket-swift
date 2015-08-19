@@ -69,13 +69,17 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                 var testChatRoom = queryCombined.getFirstObject()
                 if (testChatRoom != nil) {
                     svc!.chatRoom = testChatRoom!
+                    svc!.loadChatRoom()
                 }
                 else {
                     var newChatRoom = PFObject(className: "chatRoom")
                     newChatRoom.setObject(PFUser.currentUser()!, forKey: "user1")
                     newChatRoom.setObject(otherUsers[(sender as! NSIndexPath).row], forKey: "user2")
-                    newChatRoom.saveInBackground()
-                    svc!.chatRoom = newChatRoom
+                    newChatRoom.saveInBackgroundWithBlock({ (success, error) -> Void in
+                        svc!.chatRoom = newChatRoom
+                        svc!.loadChatRoom()
+                    })
+                    
                 }
             } else {
                 GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)

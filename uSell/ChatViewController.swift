@@ -27,7 +27,6 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         self.collectionView.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.senderId = PFUser.currentUser()?.username
         self.senderDisplayName = PFUser.currentUser()?.username
-        self.loadChatRoom()
 //        chatsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
 //            if error == nil {
 //                self.chats = objects as? [PFObject]
@@ -90,7 +89,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     override func didPressAccessoryButton(sender: UIButton!) {
     }
     
-    private func loadChatRoom() {
+    func loadChatRoom() {
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
             var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!)

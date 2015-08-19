@@ -68,14 +68,20 @@ class PostDetailsViewController: UIViewController {
                 
                 if (testChatRoom != nil) {
                     svc!.chatRoom = testChatRoom!
+                    svc!.loadChatRoom()
                 }
                 else {
                     
                     var newChatRoom = PFObject(className: "chatRoom")
                     newChatRoom.setObject(PFUser.currentUser()!, forKey: "user1")
                     newChatRoom.setObject(self.post["poster"]!, forKey: "user2")
-                    newChatRoom.save()
-                    svc!.chatRoom = newChatRoom
+                    newChatRoom.saveInBackgroundWithBlock({ (success, error) -> Void in
+                        if (error == nil) {
+                            svc!.chatRoom = newChatRoom
+                        } else {
+                            println("\(error)")
+                        }
+                    })
                     
                 }
             } else {

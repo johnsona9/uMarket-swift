@@ -22,6 +22,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var editionTextField: UITextField!
+    @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var costTextField: UITextField!
     let pickerData = ["ECE", "CSC", "ECO", "PSY", "OTHER"]
     var pickerSelection = "ECE"
@@ -31,6 +32,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         self.titleTextField.delegate = self
         self.editionTextField.delegate = self
         self.costTextField.delegate = self
+        self.authorTextField.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -44,8 +46,9 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         let postTitle = titleTextField.text
         let postEdition = editionTextField.text
         let postCost = costTextField.text
+        let postAuthor = authorTextField.text
         
-        if (postTitle != "" && postCost != "") {
+        if (postTitle != "" && postCost != "" && postAuthor != "") {
             let reachability = Reachability.reachabilityForInternetConnection()
             if (reachability.isReachable()) {
                 var newPost = PFObject(className: "post")
@@ -53,6 +56,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
                 newPost.setObject(self.pickerSelection, forKey: "postDepartment")
                 newPost.setObject(postEdition, forKey: "postEdition")
                 newPost.setObject(postCost, forKey: "postCost")
+                newPost.setObject(postAuthor, forKey: "postAuthor")
                 newPost.setObject(PFUser.currentUser()!, forKey: "poster")
                 newPost.saveInBackgroundWithBlock({ (success: Bool, error: NSError? ) -> Void in
                     
@@ -114,6 +118,8 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         self.editionTextField.textColor = GlobalConstants.Colors.goldColor
         self.costTextField.backgroundColor = GlobalConstants.Colors.garnetColor
         self.costTextField.textColor = GlobalConstants.Colors.goldColor
+        self.authorTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.authorTextField.textColor = GlobalConstants.Colors.goldColor
     }
     
     /*

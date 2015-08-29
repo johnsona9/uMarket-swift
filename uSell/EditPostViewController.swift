@@ -18,6 +18,7 @@ class EditPostViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var editionTextField: UITextField!
+    @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var costTextField: UITextField!
     let pickerData = ["ECE", "CSC", "ECO", "PSY", "OTHER"]
     var pickerSelection = "ECE"
@@ -27,9 +28,11 @@ class EditPostViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         self.titleTextField.delegate = self
         self.editionTextField.delegate = self
         self.costTextField.delegate = self
+        self.authorTextField.delegate = self
         self.titleTextField.text = self.initialObject["postTitle"] as? String
         self.editionTextField.text = self.initialObject["postEdition"] as? String
         self.costTextField.text = self.initialObject["postCost"] as? String
+        self.authorTextField.text = self.initialObject["postAuthor"] as? String
         departmentPickerView.selectRow(find(pickerData, (self.initialObject["postDepartment"] as? String)!)!, inComponent: 0, animated: false)
         
         
@@ -43,29 +46,37 @@ class EditPostViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
 
     @IBAction func saveButtonTouch(sender: AnyObject) {
-        let reachability = Reachability.reachabilityForInternetConnection()
-        if (reachability.isReachable()) {
-            PFQuery(className: "post").getObjectInBackgroundWithId(self.initialObject.objectId!, block: { (object, error) -> Void in
-                if (error == nil) {
-                    object!["postTitle"] = self.titleTextField.text
-                    object!["postEdition"] = self.editionTextField.text
-                    object!["postClass"] = self.pickerSelection
-                    object!["postCost"] = self.costTextField.text
-                    object!.saveInBackgroundWithBlock { (success, error) -> Void in
-                        if (success == true) {
-                            if (error == nil) {
-                                self.dismissViewControllerAnimated(true, completion: nil)
+        let title = self.titleTextField.text
+        let author = self.authorTextField.text
+        let cost = self.costTextField.text
+        
+        if (cost != "" && title != "" && author != "") {
+        
+            let reachability = Reachability.reachabilityForInternetConnection()
+            if (reachability.isReachable()) {
+                PFQuery(className: "post").getObjectInBackgroundWithId(self.initialObject.objectId!, block: { (object, error) -> Void in
+                    if (error == nil) {
+                        object!["postTitle"] = title
+                        object!["postEdition"] = self.editionTextField.text
+                        object!["postClass"] = self.pickerSelection
+                        object!["postCost"] = cost
+                        object!["postAuthor"] = author
+                        object!.saveInBackgroundWithBlock { (success, error) -> Void in
+                            if (success == true) {
+                                if (error == nil) {
+                                    self.dismissViewControllerAnimated(true, completion: nil)
+                                }
                             }
+                            else {
+                                println("error updating object")
+                            }
+                            
                         }
-                        else {
-                            println("error updating object")
-                        }
-                        
                     }
-                }
-            })
-        } else {
-            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+                })
+            } else {
+                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            }
         }
     }
     
@@ -108,6 +119,8 @@ class EditPostViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         self.editionTextField.textColor = GlobalConstants.Colors.goldColor
         self.costTextField.backgroundColor = GlobalConstants.Colors.garnetColor
         self.costTextField.textColor = GlobalConstants.Colors.goldColor
+        self.authorTextField.backgroundColor = GlobalConstants.Colors.garnetColor
+        self.authorTextField.textColor = GlobalConstants.Colors.goldColor
     }
     /*
     // MARK: - Navigation

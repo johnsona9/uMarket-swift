@@ -230,6 +230,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authorLabel" destination="BOs-zx-IQN" id="6B8-RR-jUo"/>
                         <outlet property="chatButton" destination="Q66-3X-Q9c" id="yY2-S2-KFm"/>
                         <outlet property="costLabel" destination="eOG-D5-OpF" id="O3Q-6j-1gw"/>
                         <outlet property="departmentLabel" destination="PCt-Sv-gbW" id="1az-dt-iSG"/>
@@ -338,15 +339,18 @@
                                     <action selector="postButtonTouch:" destination="3Zr-kk-GTx" eventType="touchUpInside" id="Jxd-4I-v4K"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GoC-Fs-n4c">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GoC-Fs-n4c">
                                 <rect key="frame" x="440" y="201" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="UiZ-no-8Az"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-n8-eaJ">
                                 <rect key="frame" x="470" y="291" width="60" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="PQC-w4-ABT"/>
+                                    <constraint firstAttribute="width" constant="60" id="aS4-HT-MIO"/>
                                 </constraints>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -365,17 +369,26 @@
                                     <outlet property="delegate" destination="3Zr-kk-GTx" id="ZWc-Rf-Wac"/>
                                 </connections>
                             </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="author" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqx-vJ-b7P">
+                                <rect key="frame" x="440" y="119" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="apb-Am-HHO" firstAttribute="centerX" secondItem="hPr-qZ-ga0" secondAttribute="centerX" id="756-MH-Ppb"/>
-                            <constraint firstItem="Bpg-aL-rr4" firstAttribute="baseline" secondItem="pVe-n8-eaJ" secondAttribute="baseline" id="9Pk-DM-VdU"/>
                             <constraint firstItem="RDH-qW-B4E" firstAttribute="top" secondItem="yeo-xM-EMb" secondAttribute="bottom" constant="52" id="HZe-La-vqg"/>
+                            <constraint firstItem="GoC-Fs-n4c" firstAttribute="baseline" secondItem="RDH-qW-B4E" secondAttribute="baseline" id="QaA-by-ssb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pVe-n8-eaJ" secondAttribute="trailing" constant="54" id="QhI-Rp-p1i"/>
                             <constraint firstItem="Bpg-aL-rr4" firstAttribute="leading" secondItem="RDH-qW-B4E" secondAttribute="leading" id="S71-Cc-OY6"/>
-                            <constraint firstItem="GoC-Fs-n4c" firstAttribute="baseline" secondItem="RDH-qW-B4E" secondAttribute="baseline" id="Zig-Pk-6qD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pVe-n8-eaJ" secondAttribute="trailing" constant="54" id="bqT-8x-W2D"/>
+                            <constraint firstItem="pVe-n8-eaJ" firstAttribute="baseline" secondItem="Bpg-aL-rr4" secondAttribute="baseline" id="SSH-CP-HE0"/>
+                            <constraint firstItem="jqx-vJ-b7P" firstAttribute="trailing" secondItem="GoC-Fs-n4c" secondAttribute="trailing" id="TpH-LQ-Pn3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GoC-Fs-n4c" secondAttribute="trailing" constant="47" id="XSC-RA-rlb"/>
                             <constraint firstItem="IU0-E6-UgW" firstAttribute="top" secondItem="apb-Am-HHO" secondAttribute="bottom" constant="45" id="eB5-lh-gYl"/>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="top" secondItem="zbP-bM-TZK" secondAttribute="bottom" constant="99" id="j8g-aD-O0x"/>
+                            <constraint firstItem="jqx-vJ-b7P" firstAttribute="leading" secondItem="GoC-Fs-n4c" secondAttribute="leading" id="jhQ-d9-bXw"/>
+                            <constraint firstItem="jqx-vJ-b7P" firstAttribute="baseline" secondItem="yeo-xM-EMb" secondAttribute="baseline" id="kDe-kd-PM3"/>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="leading" secondItem="hPr-qZ-ga0" secondAttribute="leadingMargin" constant="83" id="rux-E3-CYa"/>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="trailing" secondItem="RDH-qW-B4E" secondAttribute="trailing" id="tnI-2c-n4e"/>
                             <constraint firstItem="RDH-qW-B4E" firstAttribute="leading" secondItem="yeo-xM-EMb" secondAttribute="leading" id="wFV-Jm-L3J"/>
@@ -383,6 +396,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authorTextField" destination="jqx-vJ-b7P" id="3Rr-Lq-Wkc"/>
                         <outlet property="cancelButton" destination="pVe-n8-eaJ" id="XPY-NX-FvH"/>
                         <outlet property="costTextField" destination="GoC-Fs-n4c" id="u72-37-Py9"/>
                         <outlet property="departmentPickerView" destination="apb-Am-HHO" id="Esj-oN-RV2"/>
@@ -407,7 +421,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-Yo-GmB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-Yo-GmB">
                                 <rect key="frame" x="106" y="91" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="p5U-Sj-z0P"/>
@@ -415,12 +429,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nn-Vu-GcW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="edition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nn-Vu-GcW">
                                 <rect key="frame" x="106" y="150" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MaQ-8h-xOk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MaQ-8h-xOk">
                                 <rect key="frame" x="106" y="272" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -435,6 +449,11 @@
                                     <outlet property="delegate" destination="uAU-2n-vr2" id="J5T-lh-qUu"/>
                                 </connections>
                             </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="author" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K42-lC-f3j">
+                                <rect key="frame" x="106" y="212" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJM-Tk-hfE">
                                 <rect key="frame" x="70" y="475" width="46" height="30"/>
                                 <constraints>
@@ -479,6 +498,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authorTextField" destination="K42-lC-f3j" id="D9s-aw-8nd"/>
                         <outlet property="cancelButton" destination="jJJ-OD-lk6" id="hAc-Hi-QPv"/>
                         <outlet property="costTextField" destination="MaQ-8h-xOk" id="qSS-jv-A61"/>
                         <outlet property="departmentPickerView" destination="Kpf-wc-318" id="9mU-0u-f7N"/>

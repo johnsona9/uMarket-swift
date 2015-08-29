@@ -9,28 +9,31 @@
 import UIKit
 import Parse
 
-class EditPostViewController: UIViewController, UITextFieldDelegate {
+class EditPostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var initialObject:PFObject!
     
+    @IBOutlet weak var departmentPickerView: UIPickerView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var editionTextField: UITextField!
-    @IBOutlet weak var classTextField: UITextField!
     @IBOutlet weak var costTextField: UITextField!
+    let pickerData = ["ECE", "CSC", "ECO", "PSY", "OTHER"]
+    var pickerSelection = "ECE"
     override func viewDidLoad() {
         super.viewDidLoad()
         self.handleColors()
         self.titleTextField.delegate = self
         self.editionTextField.delegate = self
-        self.classTextField.delegate = self
         self.costTextField.delegate = self
         self.titleTextField.text = self.initialObject["postTitle"] as? String
         self.editionTextField.text = self.initialObject["postEdition"] as? String
-        self.classTextField.text = self.initialObject["postClass"] as? String
         self.costTextField.text = self.initialObject["postCost"] as? String
-        // Do any additional setup after loading the view.
+        departmentPickerView.selectRow(find(pickerData, (self.initialObject["postDepartment"] as? String)!)!, inComponent: 0, animated: false)
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +49,7 @@ class EditPostViewController: UIViewController, UITextFieldDelegate {
                 if (error == nil) {
                     object!["postTitle"] = self.titleTextField.text
                     object!["postEdition"] = self.editionTextField.text
-                    object!["postClass"] = self.classTextField.text
+                    object!["postClass"] = self.pickerSelection
                     object!["postCost"] = self.costTextField.text
                     object!.saveInBackgroundWithBlock { (success, error) -> Void in
                         if (success == true) {
@@ -77,6 +80,24 @@ class EditPostViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.pickerData.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName :GlobalConstants.Colors.goldColor])
+        return attString
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerSelection = pickerData[row]
+    }
+    
     private func handleColors() {
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.cancelButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
@@ -85,8 +106,6 @@ class EditPostViewController: UIViewController, UITextFieldDelegate {
         self.titleTextField.textColor = GlobalConstants.Colors.goldColor
         self.editionTextField.backgroundColor = GlobalConstants.Colors.garnetColor
         self.editionTextField.textColor = GlobalConstants.Colors.goldColor
-        self.classTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.classTextField.textColor = GlobalConstants.Colors.goldColor
         self.costTextField.backgroundColor = GlobalConstants.Colors.garnetColor
         self.costTextField.textColor = GlobalConstants.Colors.goldColor
     }

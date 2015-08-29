@@ -15,7 +15,7 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var editionLabel: UILabel!
-    @IBOutlet weak var classLabel: UILabel!
+    @IBOutlet weak var departmentLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     var post:PFObject!
     
@@ -24,7 +24,7 @@ class PostDetailsViewController: UIViewController {
         self.handleColors()
         self.titleLabel.text = self.post["postTitle"] as? String
         self.editionLabel.text = self.post["postEdition"] as? String
-        self.classLabel.text = self.post["postClass"] as? String
+        self.departmentLabel.text = self.post["postDepartment"] as? String
         self.costLabel.text = self.post["postCost"] as? String
         // Do any additional setup after loading the view.
     }
@@ -95,7 +95,7 @@ class PostDetailsViewController: UIViewController {
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.titleLabel.textColor = GlobalConstants.Colors.goldColor
         self.editionLabel.textColor = GlobalConstants.Colors.goldColor
-        self.classLabel.textColor = GlobalConstants.Colors.goldColor
+        self.departmentLabel.textColor = GlobalConstants.Colors.goldColor
         self.costLabel.textColor = GlobalConstants.Colors.goldColor
         self.chatButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
     }

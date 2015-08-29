@@ -36,6 +36,7 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("myPostsToEditPostSegue", sender: indexPath)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
     

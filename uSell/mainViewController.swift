@@ -34,6 +34,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("mainToPostDetailsSegue", sender: indexPath)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

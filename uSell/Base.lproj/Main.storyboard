@@ -104,7 +104,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZS6-Br-0TI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZS6-Br-0TI">
                                 <rect key="frame" x="0.0" y="72" width="600" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -121,13 +121,28 @@
                                     <outlet property="delegate" destination="JsX-4n-PHc" id="3Jb-kq-Vzu"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="search by title" translatesAutoresizingMaskIntoConstraints="NO" id="sEw-0W-JBf">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JsX-4n-PHc" id="zf9-mP-6sX"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sEw-0W-JBf" firstAttribute="leading" secondItem="ZS6-Br-0TI" secondAttribute="leading" id="E0g-9V-9eU"/>
+                            <constraint firstItem="sEw-0W-JBf" firstAttribute="top" secondItem="UUi-Hk-bHP" secondAttribute="bottom" id="Rsq-0D-xwc"/>
+                            <constraint firstItem="sEw-0W-JBf" firstAttribute="trailing" secondItem="ZS6-Br-0TI" secondAttribute="trailing" id="a3o-tR-WTJ"/>
+                            <constraint firstAttribute="trailing" secondItem="sEw-0W-JBf" secondAttribute="trailing" id="kQv-dX-AKl"/>
+                            <constraint firstItem="sEw-0W-JBf" firstAttribute="leading" secondItem="ooW-ww-bvP" secondAttribute="leading" id="rpb-9i-X08"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="WX0-6l-cDs"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="9gX-2A-qAA" id="5Hg-Gm-pLR"/>
                         <outlet property="tableView" destination="ZS6-Br-0TI" id="QYB-Wt-HrW"/>
                         <segue destination="eQ9-7e-mpW" kind="show" identifier="mainToPostDetailsSegue" id="8oV-Cf-auQ"/>
                         <segue destination="2Bm-HW-e0W" kind="show" identifier="mainToMyPostsSegue" id="fdE-V2-QaE"/>
@@ -135,6 +150,15 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0t-7z-mY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="9gX-2A-qAA">
+                    <connections>
+                        <outlet property="delegate" destination="JsX-4n-PHc" id="c3a-VZ-Myn"/>
+                        <outlet property="searchBar" destination="sEw-0W-JBf" id="Ymh-C8-hfN"/>
+                        <outlet property="searchContentsController" destination="JsX-4n-PHc" id="W0W-Eb-zzo"/>
+                        <outlet property="searchResultsDataSource" destination="JsX-4n-PHc" id="xcw-lH-Xdu"/>
+                        <outlet property="searchResultsDelegate" destination="JsX-4n-PHc" id="OMQ-1r-S6O"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="3164" y="315"/>
         </scene>

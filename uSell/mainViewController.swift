@@ -9,9 +9,10 @@
 import UIKit
 import Parse
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate {
     
     var postsList = [PFObject]()
+    var filteredPostsList = [PFObject]()
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -39,15 +40,22 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        cell.textLabel?.text = postsList[indexPath.row]["postTitle"] as? String
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            cell.textLabel?.text = filteredPostsList[indexPath.row]["postTitle"] as? String
+        } else {
+            cell.textLabel?.text = postsList[indexPath.row]["postTitle"] as? String
+        }
         cell.textLabel?.textColor = GlobalConstants.Colors.goldColor
         cell.backgroundColor = GlobalConstants.Colors.garnetColor
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.postsList.count
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return self.filteredPostsList.count
+        } else {
+            return self.postsList.count
+        }
     }
     
     func postSegue() {
@@ -69,6 +77,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }
+    }
+    
+    func filterContentForSearchText(searchText: String) {
+        
+        self.filteredPostsList = self.postsList.filter {
+            ($0.objectForKey("postTitle")! as! String).rangeOfString(searchText) != nil
+        }
+        
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        self.filterContentForSearchText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return true
     }
     
     private func getPosts() {
@@ -96,14 +122,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.tableView.separatorColor = GlobalConstants.Colors.goldColor
     }
-    
-    
-//     MARK: - Navigation
-//
-//     In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//         Get the new view controller using segue.destinationViewController.
-//         Pass the selected object to the new view controller.
         if (segue.identifier == "mainToPostDetailsSegue") {
             var svc = segue.destinationViewController as! PostDetailsViewController
             svc.post = self.postsList[(sender as! NSIndexPath).row]

@@ -54,14 +54,14 @@
 		CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsViewController.swift; sourceTree = "<group>"; };
 		CAAFAD571B79913A00E369A6 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		CAFB57861B743366006791EC /* uSell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uSell.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAFB57861B743366006791EC /* uMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB578A1B743366006791EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAFB578B1B743366006791EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAFB578D1B743366006791EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CAFB57901B743366006791EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAFB57921B743366006791EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CAFB57951B743366006791EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CAFB579B1B743366006791EC /* uSellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uSellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAFB579B1B743366006791EC /* uMarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uMarketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB57A01B743366006791EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAFB57A11B743366006791EC /* uSellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uSellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,8 +124,8 @@
 		CAFB57871B743366006791EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CAFB57861B743366006791EC /* uSell.app */,
-				CAFB579B1B743366006791EC /* uSellTests.xctest */,
+				CAFB57861B743366006791EC /* uMarket.app */,
+				CAFB579B1B743366006791EC /* uMarketTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,9 +183,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CAFB57851B743366006791EC /* uSell */ = {
+		CAFB57851B743366006791EC /* uMarket */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CAFB57A51B743366006791EC /* Build configuration list for PBXNativeTarget "uSell" */;
+			buildConfigurationList = CAFB57A51B743366006791EC /* Build configuration list for PBXNativeTarget "uMarket" */;
 			buildPhases = (
 				079832DBA35DAD34BB4369BE /* Check Pods Manifest.lock */,
 				CAFB57821B743366006791EC /* Sources */,
@@ -198,14 +198,14 @@
 			);
 			dependencies = (
 			);
-			name = uSell;
+			name = uMarket;
 			productName = uSell;
-			productReference = CAFB57861B743366006791EC /* uSell.app */;
+			productReference = CAFB57861B743366006791EC /* uMarket.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CAFB579A1B743366006791EC /* uSellTests */ = {
+		CAFB579A1B743366006791EC /* uMarketTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CAFB57A81B743366006791EC /* Build configuration list for PBXNativeTarget "uSellTests" */;
+			buildConfigurationList = CAFB57A81B743366006791EC /* Build configuration list for PBXNativeTarget "uMarketTests" */;
 			buildPhases = (
 				CAFB57971B743366006791EC /* Sources */,
 				CAFB57981B743366006791EC /* Frameworks */,
@@ -216,9 +216,9 @@
 			dependencies = (
 				CAFB579D1B743366006791EC /* PBXTargetDependency */,
 			);
-			name = uSellTests;
+			name = uMarketTests;
 			productName = uSellTests;
-			productReference = CAFB579B1B743366006791EC /* uSellTests.xctest */;
+			productReference = CAFB579B1B743366006791EC /* uMarketTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -231,6 +231,7 @@
 				TargetAttributes = {
 					CAFB57851B743366006791EC = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = QJEA5Z7B7H;
 					};
 					CAFB579A1B743366006791EC = {
 						CreatedOnToolsVersion = 6.4;
@@ -238,7 +239,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CAFB57811B743366006791EC /* Build configuration list for PBXProject "uSell" */;
+			buildConfigurationList = CAFB57811B743366006791EC /* Build configuration list for PBXProject "uMarket" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -251,8 +252,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CAFB57851B743366006791EC /* uSell */,
-				CAFB579A1B743366006791EC /* uSellTests */,
+				CAFB57851B743366006791EC /* uMarket */,
+				CAFB579A1B743366006791EC /* uMarketTests */,
 			);
 		};
 /* End PBXProject section */
@@ -360,7 +361,7 @@
 /* Begin PBXTargetDependency section */
 		CAFB579D1B743366006791EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CAFB57851B743366006791EC /* uSell */;
+			target = CAFB57851B743366006791EC /* uMarket */;
 			targetProxy = CAFB579C1B743366006791EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -474,7 +475,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = uSell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = uMarket;
 			};
 			name = Debug;
 		};
@@ -486,7 +487,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = uSell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = uMarket;
 			};
 			name = Release;
 		};
@@ -504,7 +505,7 @@
 				);
 				INFOPLIST_FILE = uSellTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = uMarketTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/uSell.app/uSell";
 			};
 			name = Debug;
@@ -519,7 +520,7 @@
 				);
 				INFOPLIST_FILE = uSellTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = uMarketTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/uSell.app/uSell";
 			};
 			name = Release;
@@ -527,7 +528,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CAFB57811B743366006791EC /* Build configuration list for PBXProject "uSell" */ = {
+		CAFB57811B743366006791EC /* Build configuration list for PBXProject "uMarket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAFB57A31B743366006791EC /* Debug */,
@@ -536,7 +537,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CAFB57A51B743366006791EC /* Build configuration list for PBXNativeTarget "uSell" */ = {
+		CAFB57A51B743366006791EC /* Build configuration list for PBXNativeTarget "uMarket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAFB57A61B743366006791EC /* Debug */,
@@ -545,7 +546,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CAFB57A81B743366006791EC /* Build configuration list for PBXNativeTarget "uSellTests" */ = {
+		CAFB57A81B743366006791EC /* Build configuration list for PBXNativeTarget "uMarketTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAFB57A91B743366006791EC /* Debug */,

@@ -24,7 +24,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var editionTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var costTextField: UITextField!
-    let pickerData = ["ECE", "CSC", "ECO", "PSY", "OTHER"]
+    let pickerData = GlobalConstants.Departments.departments
     var pickerSelection = "ECE"
     override func viewDidLoad() {
         super.viewDidLoad()

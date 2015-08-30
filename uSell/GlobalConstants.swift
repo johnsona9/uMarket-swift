@@ -28,4 +28,8 @@ struct GlobalConstants {
             
         }
     }
+    
+    struct Departments {
+        static let departments = ["ECE", "CSC", "ECO", "PSY", "OTHER"]
+    }
 }

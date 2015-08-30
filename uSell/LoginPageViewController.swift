@@ -95,14 +95,31 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
     }
     
     private func handleColors() {
-        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
-        self.logInButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.registerButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.forgotPasswordButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.usernameTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.usernameTextField.textColor = GlobalConstants.Colors.goldColor
-        self.passwordTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.passwordTextField.textColor = GlobalConstants.Colors.goldColor
+        self.view.backgroundColor = GlobalConstants.Colors.primaryFirst
+        self.logInButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.registerButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.forgotPasswordButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        
+        self.forgotPasswordButton.backgroundColor = GlobalConstants.Colors.secondarySecond
+        self.forgotPasswordButton.layer.cornerRadius = 5
+        self.forgotPasswordButton.layer.borderWidth = 1
+        self.forgotPasswordButton.layer.borderColor = GlobalConstants.Colors.secondarySecond.CGColor
+        
+        
+        self.logInButton.backgroundColor = GlobalConstants.Colors.secondarySecond
+        self.logInButton.layer.cornerRadius = 5
+        self.logInButton.layer.borderWidth = 1
+        self.logInButton.layer.borderColor = GlobalConstants.Colors.secondarySecond.CGColor
+        
+        self.registerButton.backgroundColor = GlobalConstants.Colors.secondarySecond
+        self.registerButton.layer.cornerRadius = 5
+        self.registerButton.layer.borderWidth = 1
+        self.registerButton.layer.borderColor = GlobalConstants.Colors.secondarySecond.CGColor
+        
+        self.usernameTextField.backgroundColor = UIColor.whiteColor()
+        self.usernameTextField.textColor = GlobalConstants.Colors.secondarySecond
+        self.passwordTextField.backgroundColor = UIColor.whiteColor()
+        self.passwordTextField.textColor = GlobalConstants.Colors.secondarySecond
     }
 
 

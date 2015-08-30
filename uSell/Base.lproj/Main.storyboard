@@ -8,7 +8,7 @@
         <!--Login Page View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="LoginPageViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="LoginPageViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -95,7 +95,7 @@
         <!--Main View Controller-->
         <scene sceneID="5sg-W5-aNw">
             <objects>
-                <viewController id="JsX-4n-PHc" customClass="MainViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JsX-4n-PHc" customClass="MainViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UUi-Hk-bHP"/>
                         <viewControllerLayoutGuide type="bottom" id="G30-ri-jFm"/>
@@ -150,7 +150,7 @@
         <!--Post Details View Controller-->
         <scene sceneID="uHJ-yr-NUq">
             <objects>
-                <viewController id="eQ9-7e-mpW" customClass="PostDetailsViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eQ9-7e-mpW" customClass="PostDetailsViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lu9-YX-Qkt"/>
                         <viewControllerLayoutGuide type="bottom" id="Tjf-lq-B1r"/>
@@ -255,7 +255,7 @@
         <!--Chat Rooms View Controller-->
         <scene sceneID="BVG-rj-8gQ">
             <objects>
-                <viewController id="GYZ-Sr-CJg" customClass="ChatRoomsViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GYZ-Sr-CJg" customClass="ChatRoomsViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eT2-d3-ThU"/>
                         <viewControllerLayoutGuide type="bottom" id="UC1-qz-3jd"/>
@@ -296,7 +296,7 @@
         <!--Chat View Controller-->
         <scene sceneID="VhS-VB-uji">
             <objects>
-                <viewController id="lCv-YA-j05" customClass="ChatViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lCv-YA-j05" customClass="ChatViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V6F-Gs-d28"/>
                         <viewControllerLayoutGuide type="bottom" id="pfy-Ux-N7e"/>
@@ -314,7 +314,7 @@
         <!--Create Post View Controller-->
         <scene sceneID="rl1-bM-ElT">
             <objects>
-                <viewController id="3Zr-kk-GTx" customClass="CreatePostViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3Zr-kk-GTx" customClass="CreatePostViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zbP-bM-TZK"/>
                         <viewControllerLayoutGuide type="bottom" id="IU0-E6-UgW"/>
@@ -421,7 +421,7 @@
         <!--Edit Post View Controller-->
         <scene sceneID="f3c-Fu-UZv">
             <objects>
-                <viewController id="uAU-2n-vr2" customClass="EditPostViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uAU-2n-vr2" customClass="EditPostViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZFw-oq-IiZ"/>
                         <viewControllerLayoutGuide type="bottom" id="okg-AC-KUg"/>
@@ -523,7 +523,7 @@
         <!--My Posts View Controller-->
         <scene sceneID="EtX-3K-BxC">
             <objects>
-                <viewController id="2Bm-HW-e0W" customClass="MyPostsViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Bm-HW-e0W" customClass="MyPostsViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UDp-yc-vcT"/>
                         <viewControllerLayoutGuide type="bottom" id="Rpt-NG-yBn"/>
@@ -571,7 +571,7 @@
         <!--Register Page View Controller-->
         <scene sceneID="r5C-Ts-dnq">
             <objects>
-                <viewController id="XLg-dD-LLa" customClass="RegisterPageViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XLg-dD-LLa" customClass="RegisterPageViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fsd-5A-46b"/>
                         <viewControllerLayoutGuide type="bottom" id="eVy-wB-6YD"/>
@@ -672,7 +672,7 @@
         <!--Password Reset View Controller-->
         <scene sceneID="bz4-1s-ffF">
             <objects>
-                <viewController id="CE9-CD-0zD" customClass="PasswordResetViewController" customModule="uSell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CE9-CD-0zD" customClass="PasswordResetViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8ga-fL-H1g"/>
                         <viewControllerLayoutGuide type="bottom" id="x9c-Qg-XXT"/>

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CAFB57851B743366006791EC"
-               BuildableName = "uSell.app"
-               BlueprintName = "uSell"
-               ReferencedContainer = "container:uSell.xcodeproj">
+               BuildableName = "uMarket.app"
+               BlueprintName = "uMarket"
+               ReferencedContainer = "container:uMarket.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CAFB579A1B743366006791EC"
-               BuildableName = "uSellTests.xctest"
-               BlueprintName = "uSellTests"
-               ReferencedContainer = "container:uSell.xcodeproj">
+               BuildableName = "uMarketTests.xctest"
+               BlueprintName = "uMarketTests"
+               ReferencedContainer = "container:uMarket.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CAFB579A1B743366006791EC"
-               BuildableName = "uSellTests.xctest"
-               BlueprintName = "uSellTests"
-               ReferencedContainer = "container:uSell.xcodeproj">
+               BuildableName = "uMarketTests.xctest"
+               BlueprintName = "uMarketTests"
+               ReferencedContainer = "container:uMarket.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAFB57851B743366006791EC"
-            BuildableName = "uSell.app"
-            BlueprintName = "uSell"
-            ReferencedContainer = "container:uSell.xcodeproj">
+            BuildableName = "uMarket.app"
+            BlueprintName = "uMarket"
+            ReferencedContainer = "container:uMarket.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAFB57851B743366006791EC"
-            BuildableName = "uSell.app"
-            BlueprintName = "uSell"
-            ReferencedContainer = "container:uSell.xcodeproj">
+            BuildableName = "uMarket.app"
+            BlueprintName = "uMarket"
+            ReferencedContainer = "container:uMarket.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAFB57851B743366006791EC"
-            BuildableName = "uSell.app"
-            BlueprintName = "uSell"
-            ReferencedContainer = "container:uSell.xcodeproj">
+            BuildableName = "uMarket.app"
+            BlueprintName = "uMarket"
+            ReferencedContainer = "container:uMarket.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

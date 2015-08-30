@@ -9,14 +9,27 @@
 import UIKit
 import Parse
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
     var postsList = [PFObject]()
     var filteredPostsList = [PFObject]()
+    var searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "search by title"
+        
+        // Make sure the that the search bar is visible within the navigation bar.
+        //searchController.searchBar.sizeToFit()
+        searchController.searchBar.frame = CGRectMake(0, 0, 50, 50)
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
+        
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.getPosts()
         self.handleColors()
@@ -40,10 +53,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        if tableView == self.searchDisplayController!.searchResultsTableView {
-            cell.textLabel?.text = filteredPostsList[indexPath.row]["postTitle"] as? String
-        } else {
+        if searchController.searchBar.text == "" {
             cell.textLabel?.text = postsList[indexPath.row]["postTitle"] as? String
+        } else {
+            cell.textLabel?.text = filteredPostsList[indexPath.row]["postTitle"] as? String
         }
         cell.textLabel?.textColor = GlobalConstants.Colors.goldColor
         cell.backgroundColor = GlobalConstants.Colors.garnetColor
@@ -51,10 +64,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.searchDisplayController!.searchResultsTableView {
-            return self.filteredPostsList.count
-        } else {
+        if searchController.searchBar.text == "" {
             return self.postsList.count
+        } else {
+            return self.filteredPostsList.count
         }
     }
     
@@ -75,7 +88,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
         } else {
-            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
         }
     }
     
@@ -87,14 +100,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
-        self.filterContentForSearchText(searchString)
-        return true
-    }
-    
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
-        return true
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        filterContentForSearchText(searchController.searchBar.text)
+        tableView.reloadData()
     }
     
     private func getPosts() {

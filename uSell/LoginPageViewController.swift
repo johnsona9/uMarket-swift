@@ -62,7 +62,7 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
                         self.performSegueWithIdentifier("loginToMainSegue", sender: self)
                     }
                     else {
-                        
+                        GlobalConstants.AlertMessage.displayAlertMessage("Your login information is incorrect, please try again", view: self)
                     }
                 }
             }

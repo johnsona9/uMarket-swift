@@ -79,7 +79,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             if (reachability.isReachable()) {
                 createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
                     if (error == nil) {
-                        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        self.dismissViewControllerAnimated(false, completion: { () -> Void in
                             self.delegate!.userRegistered(self)
                         })
                     }
@@ -88,7 +88,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
                     }
                 })
             } else {
-                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
             }
             
             
@@ -115,6 +115,9 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         self.userConfirmPasswordTextField.textColor = GlobalConstants.Colors.goldColor
         self.emailAddressTextField.backgroundColor = GlobalConstants.Colors.garnetColor
         self.emailAddressTextField.textColor = GlobalConstants.Colors.goldColor
+        self.emailAddressTextField.attributedPlaceholder = GlobalConstants.Colors.setPlaceholderColor("email", color: GlobalConstants.Colors.goldColor)
+        self.userPasswordTextField.attributedPlaceholder = GlobalConstants.Colors.setPlaceholderColor("password", color: GlobalConstants.Colors.goldColor)
+        self.userConfirmPasswordTextField.attributedPlaceholder = GlobalConstants.Colors.setPlaceholderColor("password", color: GlobalConstants.Colors.goldColor)
     }
     
     

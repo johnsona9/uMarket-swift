@@ -18,17 +18,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //self.setUpSearchController()
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "search by title"
         
-        // Make sure the that the search bar is visible within the navigation bar.
-        //searchController.searchBar.sizeToFit()
-        searchController.searchBar.frame = CGRectMake(0, 0, 50, 50)
+        searchController.searchBar.sizeToFit()
+
         tableView.tableHeaderView = searchController.searchBar
-        definesPresentationContext = true
+        
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.getPosts()
@@ -124,6 +123,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }
         
+    }
+    
+    private func setUpSearchController() {
+        let controller = UISearchController(searchResultsController: nil)
+        controller.searchResultsUpdater = self
+        controller.dimsBackgroundDuringPresentation = false
+        controller.searchBar.sizeToFit()
+        self.tableView.tableHeaderView = controller.searchBar
+        self.searchController = controller
     }
     
     private func handleColors() {

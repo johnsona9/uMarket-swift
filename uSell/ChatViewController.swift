@@ -27,6 +27,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         self.collectionView.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.senderId = PFUser.currentUser()?.username
         self.senderDisplayName = PFUser.currentUser()?.username
+        var fetchNewChatsTimer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: Selector("getNewChats"), userInfo: nil, repeats: true)
 //        chatsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
 //            if error == nil {
 //                self.chats = objects as? [PFObject]
@@ -91,12 +92,19 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     override func didPressAccessoryButton(sender: UIButton!) {
     }
     
+    private func getNewChats() {
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+            var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!).orderByAscending("createdAt")
+            self.chats = chatsQuery.findObjects() as? [PFObject]
+        }
+    }
+    
     func loadChatRoom() {
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
-            var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!)
+            var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!).orderByAscending("createdAt")
             self.chats = chatsQuery.findObjects() as? [PFObject]
-//            self.collectionView.reloadData()
         } else {
             GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }

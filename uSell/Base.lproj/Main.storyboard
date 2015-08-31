@@ -319,24 +319,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yeo-xM-EMb">
-                                <rect key="frame" x="99" y="119" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="UtD-Nw-uhY"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yeo-xM-EMb">
+                                <rect key="frame" x="99" y="119" width="402" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="edition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDH-qW-B4E">
-                                <rect key="frame" x="99" y="201" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="edition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDH-qW-B4E">
+                                <rect key="frame" x="99" y="270" width="147" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpg-aL-rr4">
-                                <rect key="frame" x="124" y="423" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="Ftv-NC-D1h"/>
-                                </constraints>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apb-Am-HHO">
+                                <rect key="frame" x="234" y="329" width="132" height="123"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3Zr-kk-GTx" id="KE3-Xd-oWS"/>
+                                    <outlet property="delegate" destination="3Zr-kk-GTx" id="ZWc-Rf-Wac"/>
+                                </connections>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="author" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqx-vJ-b7P">
+                                <rect key="frame" x="99" y="193" width="402" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GoC-Fs-n4c">
+                                <rect key="frame" x="354" y="270" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpg-aL-rr4">
+                                <rect key="frame" x="103" y="465" width="46" height="30"/>
                                 <state key="normal" title="Post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -344,31 +355,8 @@
                                     <action selector="postButtonTouch:" destination="3Zr-kk-GTx" eventType="touchUpInside" id="Jxd-4I-v4K"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apb-Am-HHO">
-                                <rect key="frame" x="234" y="238" width="132" height="123"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="132" id="bWP-2x-fyi"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="3Zr-kk-GTx" id="KE3-Xd-oWS"/>
-                                    <outlet property="delegate" destination="3Zr-kk-GTx" id="ZWc-Rf-Wac"/>
-                                </connections>
-                            </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="author" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqx-vJ-b7P">
-                                <rect key="frame" x="440" y="119" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GoC-Fs-n4c">
-                                <rect key="frame" x="440" y="201" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-n8-eaJ">
-                                <rect key="frame" x="458" y="423" width="60" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="8fw-zv-Qe5"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-n8-eaJ">
+                                <rect key="frame" x="437" y="465" width="60" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -378,25 +366,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="RDH-qW-B4E" firstAttribute="top" secondItem="yeo-xM-EMb" secondAttribute="bottom" constant="52" id="15o-e2-1DR"/>
-                            <constraint firstItem="apb-Am-HHO" firstAttribute="centerX" secondItem="hPr-qZ-ga0" secondAttribute="centerX" id="298-e5-wER"/>
-                            <constraint firstItem="yeo-xM-EMb" firstAttribute="baseline" secondItem="jqx-vJ-b7P" secondAttribute="baseline" id="2TH-rz-zAN"/>
-                            <constraint firstItem="GoC-Fs-n4c" firstAttribute="centerX" secondItem="pVe-n8-eaJ" secondAttribute="centerX" id="2V7-fP-L5B"/>
-                            <constraint firstItem="GoC-Fs-n4c" firstAttribute="trailing" secondItem="jqx-vJ-b7P" secondAttribute="trailing" id="7OL-Pg-TPB"/>
-                            <constraint firstItem="GoC-Fs-n4c" firstAttribute="baseline" secondItem="RDH-qW-B4E" secondAttribute="baseline" id="E9G-nK-1zl"/>
-                            <constraint firstItem="Bpg-aL-rr4" firstAttribute="centerX" secondItem="RDH-qW-B4E" secondAttribute="centerX" id="Fi3-p5-4hl"/>
-                            <constraint firstItem="yeo-xM-EMb" firstAttribute="top" secondItem="zbP-bM-TZK" secondAttribute="bottom" constant="99" id="G3l-i2-b6b"/>
-                            <constraint firstItem="Bpg-aL-rr4" firstAttribute="baseline" secondItem="pVe-n8-eaJ" secondAttribute="baseline" id="Hhk-xS-Xxd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pVe-n8-eaJ" secondAttribute="trailing" constant="66" id="Kig-33-MmN"/>
-                            <constraint firstItem="GoC-Fs-n4c" firstAttribute="leading" secondItem="jqx-vJ-b7P" secondAttribute="leading" id="Uf5-uJ-JEE"/>
-                            <constraint firstItem="IU0-E6-UgW" firstAttribute="top" secondItem="Bpg-aL-rr4" secondAttribute="bottom" constant="147" id="XFq-Bo-y8h"/>
-                            <constraint firstItem="IU0-E6-UgW" firstAttribute="top" secondItem="apb-Am-HHO" secondAttribute="bottom" constant="200" id="gLo-2G-uMx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jqx-vJ-b7P" secondAttribute="trailing" constant="47" id="kCm-Xp-W7T"/>
-                            <constraint firstItem="RDH-qW-B4E" firstAttribute="trailing" secondItem="yeo-xM-EMb" secondAttribute="trailing" id="prH-ky-2xw"/>
-                            <constraint firstItem="yeo-xM-EMb" firstAttribute="leading" secondItem="hPr-qZ-ga0" secondAttribute="leadingMargin" constant="83" id="tfJ-4J-3is"/>
-                            <constraint firstItem="yeo-xM-EMb" firstAttribute="leading" secondItem="RDH-qW-B4E" secondAttribute="leading" id="zh4-C0-zbX"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="authorTextField" destination="jqx-vJ-b7P" id="3Rr-Lq-Wkc"/>
@@ -424,37 +393,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-Yo-GmB">
-                                <rect key="frame" x="106" y="91" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="rVE-XH-Dfe"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-Yo-GmB">
+                                <rect key="frame" x="100" y="90" width="400" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="edition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nn-Vu-GcW">
-                                <rect key="frame" x="106" y="188" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="edition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nn-Vu-GcW">
+                                <rect key="frame" x="100" y="285" width="147" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MaQ-8h-xOk">
-                                <rect key="frame" x="410" y="188" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MaQ-8h-xOk">
+                                <rect key="frame" x="353" y="285" width="147" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="author" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K42-lC-f3j">
-                                <rect key="frame" x="410" y="91" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="8Ne-Pw-UKJ"/>
-                                </constraints>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-wc-318">
+                                <rect key="frame" x="237" y="347" width="126" height="112"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uAU-2n-vr2" id="6w8-ed-0D5"/>
+                                    <outlet property="delegate" destination="uAU-2n-vr2" id="J5T-lh-qUu"/>
+                                </connections>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="author" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K42-lC-f3j">
+                                <rect key="frame" x="100" y="187" width="400" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJM-Tk-hfE">
-                                <rect key="frame" x="101" y="424" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="0cb-SS-ckr"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJM-Tk-hfE">
+                                <rect key="frame" x="97" y="492" width="46" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -462,11 +429,8 @@
                                     <action selector="saveButtonTouch:" destination="uAU-2n-vr2" eventType="touchUpInside" id="dh9-73-GOD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJJ-OD-lk6">
-                                <rect key="frame" x="429" y="424" width="78" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="78" id="HRo-RY-dsX"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJJ-OD-lk6">
+                                <rect key="frame" x="425" y="492" width="78" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -474,36 +438,8 @@
                                     <action selector="cancelButtonTouch:" destination="uAU-2n-vr2" eventType="touchUpInside" id="V40-ic-E5L"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-wc-318">
-                                <rect key="frame" x="237" y="244" width="126" height="112"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="126" id="DZp-79-QWz"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="uAU-2n-vr2" id="6w8-ed-0D5"/>
-                                    <outlet property="delegate" destination="uAU-2n-vr2" id="J5T-lh-qUu"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yJM-Tk-hfE" firstAttribute="leading" secondItem="fOc-J2-uao" secondAttribute="leadingMargin" constant="85" id="3Cs-Rv-2yg"/>
-                            <constraint firstItem="MaQ-8h-xOk" firstAttribute="baseline" secondItem="6nn-Vu-GcW" secondAttribute="baseline" id="4mo-rf-2jn"/>
-                            <constraint firstItem="yJM-Tk-hfE" firstAttribute="baseline" secondItem="jJJ-OD-lk6" secondAttribute="baseline" id="8YO-0c-YiF"/>
-                            <constraint firstItem="K9f-Yo-GmB" firstAttribute="trailing" secondItem="6nn-Vu-GcW" secondAttribute="trailing" id="CUA-pv-Qat"/>
-                            <constraint firstItem="MaQ-8h-xOk" firstAttribute="leading" secondItem="K42-lC-f3j" secondAttribute="leading" id="KGB-9z-nUp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="K42-lC-f3j" secondAttribute="trailing" constant="77" id="P17-dd-H8Y"/>
-                            <constraint firstItem="K9f-Yo-GmB" firstAttribute="top" secondItem="ZFw-oq-IiZ" secondAttribute="bottom" constant="71" id="Pqr-Cg-ldU"/>
-                            <constraint firstItem="K42-lC-f3j" firstAttribute="trailing" secondItem="MaQ-8h-xOk" secondAttribute="trailing" id="Tpo-hv-VgZ"/>
-                            <constraint firstItem="K9f-Yo-GmB" firstAttribute="leading" secondItem="6nn-Vu-GcW" secondAttribute="leading" id="dy5-ba-L9X"/>
-                            <constraint firstItem="Kpf-wc-318" firstAttribute="centerX" secondItem="fOc-J2-uao" secondAttribute="centerX" id="i43-Kq-l7U"/>
-                            <constraint firstItem="jJJ-OD-lk6" firstAttribute="trailing" secondItem="MaQ-8h-xOk" secondAttribute="trailing" id="iAx-3w-uDS"/>
-                            <constraint firstItem="K9f-Yo-GmB" firstAttribute="leading" secondItem="fOc-J2-uao" secondAttribute="leadingMargin" constant="90" id="ims-6n-nO0"/>
-                            <constraint firstItem="okg-AC-KUg" firstAttribute="top" secondItem="yJM-Tk-hfE" secondAttribute="bottom" constant="146" id="pC9-27-wdr"/>
-                            <constraint firstItem="6nn-Vu-GcW" firstAttribute="top" secondItem="K9f-Yo-GmB" secondAttribute="bottom" constant="67" id="q0s-MA-JJu"/>
-                            <constraint firstItem="okg-AC-KUg" firstAttribute="top" secondItem="Kpf-wc-318" secondAttribute="bottom" constant="194" id="uBS-vT-bjY"/>
-                            <constraint firstItem="K9f-Yo-GmB" firstAttribute="baseline" secondItem="K42-lC-f3j" secondAttribute="baseline" id="wKs-hF-N6z"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="authorTextField" destination="K42-lC-f3j" id="D9s-aw-8nd"/>

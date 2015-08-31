@@ -37,6 +37,7 @@ class PostDetailsViewController: UIViewController {
     }
     
     @IBAction func chatButtonTouch(sender: AnyObject) {
+        self.chatButton.enabled = false
         var userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
         userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
             if error == nil {
@@ -44,15 +45,19 @@ class PostDetailsViewController: UIViewController {
                     println(currentUser)
                     if currentUser.objectForKey("emailVerified") as! Bool {
                         self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
+                        self.chatButton.enabled = true
                     } else {
                         GlobalConstants.AlertMessage.displayAlertMessage("You can't chat until you've verified your email!", view: self)
+                        self.chatButton.enabled = true
                     }
                 }
             }
             else {
                 GlobalConstants.AlertMessage.displayAlertMessage("There was an error finding you in our database, please try again", view: self)
+                self.chatButton.enabled = true
             }
         })
+        
     }
 
     
@@ -66,7 +71,9 @@ class PostDetailsViewController: UIViewController {
         if segue.identifier == "postDetailsToChatSegue" {
             let reachability = Reachability.reachabilityForInternetConnection()
             if (reachability.isReachable()) {
+                
                 var svc = segue.destinationViewController as? ChatViewController
+                
                 var query = PFQuery(className: "chatRoom")
                 query.whereKey("user1", equalTo: PFUser.currentUser()!)
                 query.whereKey("user2", equalTo: self.post["poster"]!)
@@ -82,15 +89,14 @@ class PostDetailsViewController: UIViewController {
                 if (testChatRoom != nil) {
                     svc!.chatRoom = testChatRoom!
                     svc!.loadChatRoom()
-                }
-                else {
-                    
+                } else {
                     var newChatRoom = PFObject(className: "chatRoom")
                     newChatRoom.setObject(PFUser.currentUser()!, forKey: "user1")
                     newChatRoom.setObject(self.post["poster"]!, forKey: "user2")
                     newChatRoom.saveInBackgroundWithBlock({ (success, error) -> Void in
                         if (error == nil) {
                             svc!.chatRoom = newChatRoom
+                            svc!.loadChatRoom()
                         } else {
                             println("\(error)")
                         }

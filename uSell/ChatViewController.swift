@@ -56,8 +56,10 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
         var data = self.chats![indexPath.row]
         if (PFUser.currentUser()!.isEqual(data["sender"])) {
+
             return self.outgoingBubble
         } else {
+
             return self.incomingBubble
         }
     }
@@ -92,10 +94,10 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     func loadChatRoom() {
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
+            println(self.chatRoom)
             var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!)
             self.chats = chatsQuery.findObjects() as? [PFObject]
-
-            self.collectionView.reloadData()
+//            self.collectionView.reloadData()
         } else {
             GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }

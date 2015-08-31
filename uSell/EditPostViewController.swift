@@ -68,7 +68,7 @@ class EditPostViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                                 }
                             }
                             else {
-                                println("error updating object")
+                                GlobalConstants.AlertMessage.displayAlertMessage("error updating object", view: self)
                             }
                             
                         }

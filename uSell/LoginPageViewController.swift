@@ -58,7 +58,7 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
         if (reachability.isReachable()) {
             if (username != "" && password != "") {
                 PFUser.logInWithUsernameInBackground(username, password: password) { (user: PFUser?, error: NSError?) -> Void in
-                    if(PFUser.currentUser()?.username != nil) {
+                    if(PFUser.currentUser()?.username != nil && error == nil) {
                         self.performSegueWithIdentifier("loginToMainSegue", sender: self)
                     }
                     else {
@@ -95,14 +95,31 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
     }
     
     private func handleColors() {
-        self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
-        self.logInButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.registerButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.forgotPasswordButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.usernameTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.usernameTextField.textColor = GlobalConstants.Colors.goldColor
-        self.passwordTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.passwordTextField.textColor = GlobalConstants.Colors.goldColor
+        self.view.backgroundColor = UIColor(red: 200/255, green: 220/255, blue: 220/255, alpha: 1.0)
+        self.logInButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.registerButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.forgotPasswordButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        
+        self.forgotPasswordButton.backgroundColor = GlobalConstants.Colors.secondaryFirst
+        self.forgotPasswordButton.layer.cornerRadius = 5
+        self.forgotPasswordButton.layer.borderWidth = 1
+        self.forgotPasswordButton.layer.borderColor = GlobalConstants.Colors.secondaryFirst.CGColor
+        
+        
+        self.logInButton.backgroundColor = GlobalConstants.Colors.secondaryFirst
+        self.logInButton.layer.cornerRadius = 5
+        self.logInButton.layer.borderWidth = 1
+        self.logInButton.layer.borderColor = GlobalConstants.Colors.secondaryFirst.CGColor
+        
+        self.registerButton.backgroundColor = GlobalConstants.Colors.secondaryFirst
+        self.registerButton.layer.cornerRadius = 5
+        self.registerButton.layer.borderWidth = 1
+        self.registerButton.layer.borderColor = GlobalConstants.Colors.secondaryFirst.CGColor
+        
+        self.usernameTextField.backgroundColor = UIColor.whiteColor()
+        self.usernameTextField.textColor = GlobalConstants.Colors.primaryFirst
+        self.passwordTextField.backgroundColor = UIColor.whiteColor()
+        self.passwordTextField.textColor = GlobalConstants.Colors.primaryFirst
     }
 
 

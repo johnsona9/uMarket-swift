@@ -80,7 +80,6 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
         userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
             if error == nil {
                 if let currentUser : PFUser = user as? PFUser {
-                    println(currentUser)
                     if currentUser.objectForKey("emailVerified") as! Bool {
                         self.performSegueWithIdentifier("myPostsToCreatePostSegue", sender: self)
                     } else {

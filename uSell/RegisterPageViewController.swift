@@ -68,39 +68,43 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             return;
             
         }
-            
         else {
-            let createdUser = PFUser()
-            createdUser.password = userPassword
-            createdUser.username = userEmail
-            createdUser.email = userEmail
-            let reachability = Reachability.reachabilityForInternetConnection()
-            if (reachability.isReachable()) {
-                createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
-                    if (error == nil) {
-                        var myAlert = UIAlertController(title: "Alert", message: "Please confirm your email address before you can use all of the features", preferredStyle: UIAlertControllerStyle.Alert);
-                        
-                        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (action) in
-                            self.dismissViewControllerAnimated(false, completion: { () -> Void in
-                                self.delegate!.userRegistered(self)
+            var query = PFUser.query()!.whereKey("email", equalTo: userEmail)
+            query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+                if error == nil {
+                    if objects!.count > 0 {
+                        GlobalConstants.AlertMessage.displayAlertMessage("This email address is already in use", view: self)
+                    } else {
+                        let createdUser = PFUser()
+                        createdUser.password = userPassword
+                        createdUser.username = userEmail
+                        createdUser.email = userEmail
+                        let reachability = Reachability.reachabilityForInternetConnection()
+                        if (reachability.isReachable()) {
+                            createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
+                                if (error == nil) {
+                                    var myAlert = UIAlertController(title: "Alert", message: "Please confirm your email address before you can use all of the features", preferredStyle: UIAlertControllerStyle.Alert);
+                                    
+                                    let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (action) in
+                                        self.dismissViewControllerAnimated(false, completion: { () -> Void in
+                                            self.delegate!.userRegistered(self)
+                                        })
+                                    }
+                                    myAlert.addAction(okAction);
+                                    self.presentViewController(myAlert, animated: true, completion: nil)
+                                    
+                                    
+                                }
+                                else {
+                                    GlobalConstants.AlertMessage.displayAlertMessage("\(error)", view: self)
+                                }
                             })
+                        } else {
+                            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
                         }
-                        myAlert.addAction(okAction);
-                        self.presentViewController(myAlert, animated: true, completion: nil)
-                        
-                        
                     }
-                    else {
-                        GlobalConstants.AlertMessage.displayAlertMessage("\(error)", view: self)
-                    }
-                })
-            } else {
-                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
+                }
             }
-            
-            
-            
-            
         }
 
         //display success once data has been sent to parse

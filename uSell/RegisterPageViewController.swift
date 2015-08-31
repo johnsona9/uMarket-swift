@@ -46,7 +46,6 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         let userEmail = emailAddressTextField.text;
         let userPassword = userPasswordTextField.text;
         let userConfirmPassword = userConfirmPasswordTextField.text;
-        
         //check for empty fields
         
         
@@ -79,9 +78,17 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             if (reachability.isReachable()) {
                 createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
                     if (error == nil) {
-                        self.dismissViewControllerAnimated(false, completion: { () -> Void in
-                            self.delegate!.userRegistered(self)
-                        })
+                        var myAlert = UIAlertController(title: "Alert", message: "Please confirm your email address before you can use all of the features", preferredStyle: UIAlertControllerStyle.Alert);
+                        
+                        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (action) in
+                            self.dismissViewControllerAnimated(false, completion: { () -> Void in
+                                self.delegate!.userRegistered(self)
+                            })
+                        }
+                        myAlert.addAction(okAction);
+                        self.presentViewController(myAlert, animated: true, completion: nil)
+                        
+                        
                     }
                     else {
                         GlobalConstants.AlertMessage.displayAlertMessage("\(error)", view: self)

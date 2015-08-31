@@ -37,7 +37,6 @@ class PostDetailsViewController: UIViewController {
     }
     
     @IBAction func chatButtonTouch(sender: AnyObject) {
-        self.chatButton.enabled = false
         var userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
         userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
             if error == nil {
@@ -45,16 +44,13 @@ class PostDetailsViewController: UIViewController {
                     println(currentUser)
                     if currentUser.objectForKey("emailVerified") as! Bool {
                         self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
-                        self.chatButton.enabled = true
                     } else {
                         GlobalConstants.AlertMessage.displayAlertMessage("You can't chat until you've verified your email!", view: self)
-                        self.chatButton.enabled = true
                     }
                 }
             }
             else {
                 GlobalConstants.AlertMessage.displayAlertMessage("There was an error finding you in our database, please try again", view: self)
-                self.chatButton.enabled = true
             }
         })
         

@@ -23,11 +23,16 @@ class PostDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.handleColors()
-        self.titleLabel.text = self.post["postTitle"] as? String
-        self.editionLabel.text = self.post["postEdition"] as? String
-        self.departmentLabel.text = self.post["postDepartment"] as? String
-        self.costLabel.text = self.post["postCost"] as? String
-        self.authorLabel.text = self.post["postAuthor"] as? String
+        let title = self.post["postTitle"] as? String
+        let edition = self.post["postEdition"] as? String
+        let department = self.post["postDepartment"] as? String
+        let cost = self.post["postCost"] as? String
+        let author = self.post["postAuthor"] as? String
+        self.titleLabel.text = "Title: \(title!)"
+        self.editionLabel.text = "Edition: \(edition!)"
+        self.departmentLabel.text = "Department: \(department!)"
+        self.costLabel.text = "Cost: \(cost!)"
+        self.authorLabel.text = "By: \(author!)"
         // Do any additional setup after loading the view.
     }
 
@@ -41,7 +46,6 @@ class PostDetailsViewController: UIViewController {
         userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
             if error == nil {
                 if let currentUser : PFUser = user as? PFUser {
-                    println(currentUser)
                     if currentUser.objectForKey("emailVerified") as! Bool {
                         self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
                     } else {

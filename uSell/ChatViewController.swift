@@ -94,7 +94,6 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     func loadChatRoom() {
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
-            println(self.chatRoom)
             var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!)
             self.chats = chatsQuery.findObjects() as? [PFObject]
 //            self.collectionView.reloadData()

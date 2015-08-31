@@ -94,7 +94,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func filterContentForSearchText(searchText: String) {
         
         self.filteredPostsList = self.postsList.filter {
-            ($0.objectForKey("postTitle")! as! String).rangeOfString(searchText) != nil
+            ($0.objectForKey("postTitle")! as! String).lowercaseString.rangeOfString(searchText.lowercaseString) != nil
         }
         
     }
@@ -123,15 +123,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }
         
-    }
-    
-    private func setUpSearchController() {
-        let controller = UISearchController(searchResultsController: nil)
-        controller.searchResultsUpdater = self
-        controller.dimsBackgroundDuringPresentation = false
-        controller.searchBar.sizeToFit()
-        self.tableView.tableHeaderView = controller.searchBar
-        self.searchController = controller
     }
     
     private func handleColors() {

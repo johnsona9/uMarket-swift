@@ -37,11 +37,22 @@ class PostDetailsViewController: UIViewController {
     }
     
     @IBAction func chatButtonTouch(sender: AnyObject) {
-        if (PFUser.currentUser()?.objectForKey("emailVerified") as! Bool) {
-            self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
-        } else {
-            GlobalConstants.AlertMessage.displayAlertMessage("You can't chat with other users until you've verified your email!", view: self)
-        }
+        var userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
+        userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
+            if error == nil {
+                if let currentUser : PFUser = user as? PFUser {
+                    println(currentUser)
+                    if currentUser.objectForKey("emailVerified") as! Bool {
+                        self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
+                    } else {
+                        GlobalConstants.AlertMessage.displayAlertMessage("You can't chat until you've verified your email!", view: self)
+                    }
+                }
+            }
+            else {
+                GlobalConstants.AlertMessage.displayAlertMessage("There was an error finding you in our database, please try again", view: self)
+            }
+        })
     }
 
     

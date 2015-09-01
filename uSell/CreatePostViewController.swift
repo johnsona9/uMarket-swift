@@ -16,7 +16,8 @@ protocol CreatePostViewControllerDelegate {
 class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var delegate: CreatePostViewControllerDelegate?
-    
+    var create = true
+    var initialObject : PFObject!
     @IBOutlet weak var departmentPickerView: UIPickerView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var postButton: UIButton!
@@ -25,7 +26,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var costTextField: UITextField!
     let pickerData = GlobalConstants.Departments.departments
-    var pickerSelection = "ECE"
+    var pickerSelection: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.handleColors()
@@ -33,6 +34,9 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         self.editionTextField.delegate = self
         self.costTextField.delegate = self
         self.authorTextField.delegate = self
+        self.pickerSelection = pickerData[0]
+        handleEditing()
+        
         
         // Do any additional setup after loading the view.
     }
@@ -43,39 +47,10 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     @IBAction func postButtonTouch(sender: AnyObject) {
-        let postTitle = titleTextField.text
-        let postEdition = editionTextField.text
-        let postCost = costTextField.text
-        let postAuthor = authorTextField.text
-        
-        if (postTitle != "" && postCost != "" && postAuthor != "") {
-            let reachability = Reachability.reachabilityForInternetConnection()
-            if (reachability.isReachable()) {
-                var newPost = PFObject(className: "post")
-                newPost.setObject(postTitle, forKey: "postTitle")
-                newPost.setObject(self.pickerSelection, forKey: "postDepartment")
-                newPost.setObject(postEdition, forKey: "postEdition")
-                newPost.setObject(postCost, forKey: "postCost")
-                newPost.setObject(postAuthor, forKey: "postAuthor")
-                newPost.setObject(PFUser.currentUser()!, forKey: "poster")
-                newPost.saveInBackgroundWithBlock({ (success: Bool, error: NSError? ) -> Void in
-                    
-                    if (error == nil) {
-                        self.delegate!.updateTableView(self, object: newPost)
-                        self.dismissViewControllerAnimated(true, completion: nil)
-                    }
-                    else {
-                        //put an alert in here
-                    }
-                    
-                })
-            } else {
-                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
-            }
-            
-            
+        if self.create {
+            self.doCreate()
         } else {
-            GlobalConstants.AlertMessage.displayAlertMessage("You are missing some necessary fields", view: self)
+            self.doEdit()
         }
 
     }
@@ -120,16 +95,95 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         self.costTextField.textColor = GlobalConstants.Colors.goldColor
         self.authorTextField.backgroundColor = GlobalConstants.Colors.garnetColor
         self.authorTextField.textColor = GlobalConstants.Colors.goldColor
+        
+        
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func handleEditing() {
+        if !self.create {
+            self.postButton.setTitle("Save", forState: .Normal)
+            
+            self.titleTextField.text = self.initialObject["postTitle"] as? String
+            self.editionTextField.text = self.initialObject["postEdition"] as? String
+            self.costTextField.text = self.initialObject["postCost"] as? String
+            self.authorTextField.text = self.initialObject["postAuthor"] as? String
+            self.departmentPickerView.selectRow(find(pickerData, (self.initialObject["postDepartment"] as? String)!)!, inComponent: 0, animated: false)
+            
+            
+        }
     }
-    */
+    
+    private func doEdit() {
+        let title = self.titleTextField.text
+        let author = self.authorTextField.text
+        let cost = self.costTextField.text
+        
+        if (cost != "" && title != "" && author != "") {
+            
+            let reachability = Reachability.reachabilityForInternetConnection()
+            if (reachability.isReachable()) {
+                PFQuery(className: "post").getObjectInBackgroundWithId(self.initialObject.objectId!, block: { (object, error) -> Void in
+                    if (error == nil) {
+                        object!["postTitle"] = title
+                        object!["postEdition"] = self.editionTextField.text
+                        object!["postDepartment"] = self.pickerSelection
+                        object!["postCost"] = cost
+                        object!["postAuthor"] = author
+                        object!.saveInBackgroundWithBlock { (success, error) -> Void in
+                            if (success == true) {
+                                if (error == nil) {
+                                    self.dismissViewControllerAnimated(true, completion: nil)
+                                }
+                            }
+                            else {
+                                GlobalConstants.AlertMessage.displayAlertMessage("error updating object", view: self)
+                            }
+                            
+                        }
+                    }
+                })
+            } else {
+                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            }
+        }
+    }
+    
+    private func doCreate() {
+        let postTitle = titleTextField.text
+        let postEdition = editionTextField.text
+        let postCost = costTextField.text
+        let postAuthor = authorTextField.text
+        
+        if (postTitle != "" && postCost != "" && postAuthor != "") {
+            let reachability = Reachability.reachabilityForInternetConnection()
+            if (reachability.isReachable()) {
+                var newPost = PFObject(className: "post")
+                newPost.setObject(postTitle, forKey: "postTitle")
+                newPost.setObject(self.pickerSelection, forKey: "postDepartment")
+                newPost.setObject(postEdition, forKey: "postEdition")
+                newPost.setObject(postCost, forKey: "postCost")
+                newPost.setObject(postAuthor, forKey: "postAuthor")
+                newPost.setObject(PFUser.currentUser()!, forKey: "poster")
+                newPost.saveInBackgroundWithBlock({ (success: Bool, error: NSError? ) -> Void in
+                    
+                    if (error == nil) {
+                        self.delegate!.updateTableView(self, object: newPost)
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    else {
+                        //put an alert in here
+                    }
+                    
+                })
+            } else {
+                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            }
+            
+            
+        } else {
+            GlobalConstants.AlertMessage.displayAlertMessage("You are missing some necessary fields", view: self)
+        }
+    }
 
 }

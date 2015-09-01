@@ -375,80 +375,6 @@
             </objects>
             <point key="canvasLocation" x="3164" y="-515"/>
         </scene>
-        <!--Edit Post View Controller-->
-        <scene sceneID="f3c-Fu-UZv">
-            <objects>
-                <viewController id="uAU-2n-vr2" customClass="EditPostViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZFw-oq-IiZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="okg-AC-KUg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fOc-J2-uao">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-Yo-GmB">
-                                <rect key="frame" x="100" y="90" width="400" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="edition" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nn-Vu-GcW">
-                                <rect key="frame" x="100" y="285" width="147" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cost" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MaQ-8h-xOk">
-                                <rect key="frame" x="353" y="285" width="147" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-wc-318">
-                                <rect key="frame" x="237" y="347" width="126" height="112"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="uAU-2n-vr2" id="6w8-ed-0D5"/>
-                                    <outlet property="delegate" destination="uAU-2n-vr2" id="J5T-lh-qUu"/>
-                                </connections>
-                            </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="author" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K42-lC-f3j">
-                                <rect key="frame" x="100" y="187" width="400" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJM-Tk-hfE">
-                                <rect key="frame" x="97" y="492" width="46" height="30"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonTouch:" destination="uAU-2n-vr2" eventType="touchUpInside" id="dh9-73-GOD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJJ-OD-lk6">
-                                <rect key="frame" x="425" y="492" width="78" height="30"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelButtonTouch:" destination="uAU-2n-vr2" eventType="touchUpInside" id="V40-ic-E5L"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="authorTextField" destination="K42-lC-f3j" id="D9s-aw-8nd"/>
-                        <outlet property="cancelButton" destination="jJJ-OD-lk6" id="hAc-Hi-QPv"/>
-                        <outlet property="costTextField" destination="MaQ-8h-xOk" id="qSS-jv-A61"/>
-                        <outlet property="departmentPickerView" destination="Kpf-wc-318" id="9mU-0u-f7N"/>
-                        <outlet property="editionTextField" destination="6nn-Vu-GcW" id="44I-dk-hX1"/>
-                        <outlet property="saveButton" destination="yJM-Tk-hfE" id="jd3-BQ-89H"/>
-                        <outlet property="titleTextField" destination="K9f-Yo-GmB" id="LXd-iP-1On"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ggv-sA-OjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3170" y="-1261"/>
-        </scene>
         <!--My Posts View Controller-->
         <scene sceneID="EtX-3K-BxC">
             <objects>
@@ -490,7 +416,7 @@
                     <connections>
                         <outlet property="myPostsTableView" destination="qUl-UE-y2X" id="nPS-Zd-gJP"/>
                         <segue destination="3Zr-kk-GTx" kind="presentation" identifier="myPostsToCreatePostSegue" id="z89-Lu-ahb"/>
-                        <segue destination="uAU-2n-vr2" kind="presentation" identifier="myPostsToEditPostSegue" id="4Pa-c5-1Nf"/>
+                        <segue destination="3Zr-kk-GTx" kind="presentation" identifier="myPostsToEditPostSegue" id="Ff5-Oa-UbX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nbh-g8-gAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -669,6 +595,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Ff5-Oa-UbX"/>
         <segue reference="WTM-Xp-0jg"/>
     </inferredMetricsTieBreakers>
 </document>

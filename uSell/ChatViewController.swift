@@ -19,7 +19,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     var chatRoom:PFObject?
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
-    
+    var fetchNewChatsTimer: NSTimer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         self.collectionView.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.senderId = PFUser.currentUser()?.username
         self.senderDisplayName = PFUser.currentUser()?.username
-        var fetchNewChatsTimer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: Selector("getNewChats"), userInfo: nil, repeats: true)
+        self.fetchNewChatsTimer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: Selector("getNewChats"), userInfo: nil, repeats: true)
 //        chatsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
 //            if error == nil {
 //                self.chats = objects as? [PFObject]
@@ -44,6 +44,11 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.fetchNewChatsTimer.invalidate()
     }
     
 
@@ -92,11 +97,18 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     override func didPressAccessoryButton(sender: UIButton!) {
     }
     
-    private func getNewChats() {
+    func getNewChats() {
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
             var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!).orderByAscending("createdAt")
-            self.chats = chatsQuery.findObjects() as? [PFObject]
+            chatsQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                if error == nil {
+                    if let newChats = objects as? [PFObject] {
+                        self.chats = newChats
+                        self.collectionView.reloadData()
+                    }
+                }
+            })
         }
     }
     

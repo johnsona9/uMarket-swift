@@ -28,13 +28,6 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         self.senderId = PFUser.currentUser()?.username
         self.senderDisplayName = PFUser.currentUser()?.username
         self.fetchNewChatsTimer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: Selector("getNewChats"), userInfo: nil, repeats: true)
-//        chatsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-//            if error == nil {
-//                self.chats = objects as? [PFObject]
-//                println(self.chats)
-//                self.collectionView.reloadData()
-//            }
-//        }
         
         
         
@@ -83,10 +76,11 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         if (reachability.isReachable()) {
             var newChat = PFObject(className: "chat")
             newChat.setObject(text, forKey: "text")
-            var user = PFUser.query()?.whereKey("username", equalTo: senderId).getFirstObject()
-            newChat.setObject(user!, forKey: "sender")
+            newChat.setObject(PFUser.currentUser()!, forKey: "sender")
             newChat.setObject(self.chatRoom!, forKey: "chatRoom")
             self.chats!.append(newChat)
+            self.chatRoom?.setObject(NSDate(), forKey: "updatedAt")
+            self.chatRoom?.saveInBackground()
             newChat.saveInBackground()
             self.finishSendingMessage()
         } else {
@@ -100,36 +94,29 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     func getNewChats() {
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
-            var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!).orderByAscending("createdAt")
-            chatsQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-                if error == nil {
-                    if let newChats = objects as? [PFObject] {
-                        self.chats = newChats
-                        self.collectionView.reloadData()
-                    }
-                }
-            })
+            self.getChatsInBackground()
         }
     }
     
     func loadChatRoom() {
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
-            var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!).orderByAscending("createdAt")
-            self.chats = chatsQuery.findObjects() as? [PFObject]
+            self.getChatsInBackground()
         } else {
             GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func getChatsInBackground() {
+        var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!).orderByAscending("createdAt")
+        chatsQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            if error == nil {
+                if let newChats = objects as? [PFObject] {
+                    self.chats = newChats
+                    self.collectionView.reloadData()
+                }
+            }
+        })
     }
-    */
 
 }

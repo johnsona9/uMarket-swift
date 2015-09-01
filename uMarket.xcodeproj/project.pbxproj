@@ -18,7 +18,6 @@
 		CAAD38621B7C040F00B1375C /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD38611B7C040F00B1375C /* ChatRoomsViewController.swift */; };
 		CAAFAD541B797C8E00E369A6 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */; };
 		CAAFAD561B798B5D00E369A6 /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */; };
-		CAAFAD581B79913A00E369A6 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD571B79913A00E369A6 /* EditPostViewController.swift */; };
 		CAEDBBA51B9523C600C2F871 /* ChatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEDBBA41B9523C600C2F871 /* ChatsTableViewCell.swift */; };
 		CAF7D7A71B7AC69A00F3E8F0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */; };
 		CAFB578C1B743366006791EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB578B1B743366006791EC /* AppDelegate.swift */; };
@@ -53,7 +52,6 @@
 		CAAD38611B7C040F00B1375C /* ChatRoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomsViewController.swift; sourceTree = "<group>"; };
 		CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsViewController.swift; sourceTree = "<group>"; };
-		CAAFAD571B79913A00E369A6 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		CAEDBBA41B9523C600C2F871 /* ChatsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewCell.swift; sourceTree = "<group>"; };
 		CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CAFB57861B743366006791EC /* uMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +103,6 @@
 				CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */,
 				CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */,
 				CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */,
-				CAAFAD571B79913A00E369A6 /* EditPostViewController.swift */,
 				CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */,
 				CAAD38611B7C040F00B1375C /* ChatRoomsViewController.swift */,
 			);
@@ -346,7 +343,6 @@
 				CA2066A51B82E37D00EF29F9 /* GlobalConstants.swift in Sources */,
 				CA2066A31B82D1D000EF29F9 /* PasswordResetViewController.swift in Sources */,
 				CAFB578C1B743366006791EC /* AppDelegate.swift in Sources */,
-				CAAFAD581B79913A00E369A6 /* EditPostViewController.swift in Sources */,
 				CAF7D7A71B7AC69A00F3E8F0 /* ChatViewController.swift in Sources */,
 				CA23D5D31B7449A100515812 /* RegisterPageViewController.swift in Sources */,
 			);

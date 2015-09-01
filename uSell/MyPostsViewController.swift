@@ -105,8 +105,9 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
             svc.delegate = self
         }
         else if (segue.identifier == "myPostsToEditPostSegue") {
-            var svc = segue.destinationViewController as! EditPostViewController
+            var svc = segue.destinationViewController as! CreatePostViewController
             svc.initialObject = self.postsList[(sender as! NSIndexPath).row]
+            svc.create = false
         }
         
     }

@@ -39,8 +39,12 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
         }
         
-        var username = self.otherUsers[indexPath.row].fetchIfNeeded()
-        cell!.textLabel?.text = username!["username"] as? String
+        self.otherUsers[indexPath.row].fetchIfNeededInBackgroundWithBlock { (object, error) -> Void in
+            if error == nil {
+                cell!.textLabel?.text = object!["username"] as? String
+            }
+        }
+        
         cell!.textLabel?.textColor = GlobalConstants.Colors.goldColor
         
         var queryForChat: PFQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRooms[indexPath.row]).orderByDescending("createdAt")
@@ -66,8 +70,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
         if segue.identifier == "chatRoomsToChatSegue" {
             let reachability = Reachability.reachabilityForInternetConnection()
             if (reachability.isReachable()) {
@@ -81,21 +84,16 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                 var queryCombined = PFQuery.orQueryWithSubqueries([query, inverseQuery])
                 queryCombined.includeKey("user1")
                 queryCombined.includeKey("user2")
-                var testChatRoom = queryCombined.getFirstObject()
-                if (testChatRoom != nil) {
-                    svc!.chatRoom = testChatRoom!
-                    svc!.loadChatRoom()
-                }
-                else {
-                    var newChatRoom = PFObject(className: "chatRoom")
-                    newChatRoom.setObject(PFUser.currentUser()!, forKey: "user1")
-                    newChatRoom.setObject(otherUsers[(sender as! NSIndexPath).row], forKey: "user2")
-                    newChatRoom.saveInBackgroundWithBlock({ (success, error) -> Void in
-                        svc!.chatRoom = newChatRoom
-                        svc!.loadChatRoom()
-                    })
-                    
-                }
+                
+                queryCombined.getFirstObjectInBackgroundWithBlock({ (object, error) -> Void in
+                    if error == nil {
+                        if let testChatRoom = object as PFObject? {
+                            svc!.chatRoom = testChatRoom
+                            svc!.loadChatRoom()
+                        } 
+                    }
+                })
+                
             } else {
                 GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
             }
@@ -110,7 +108,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         if (reachability.isReachable()) {
             var query = PFQuery(className: "chatRoom").whereKey("user1", equalTo: PFUser.currentUser()!)
             var queryInverse = PFQuery(className: "chatRoom").whereKey("user2", equalTo: PFUser.currentUser()!)
-            var queryCombined = PFQuery.orQueryWithSubqueries([query, queryInverse])
+            var queryCombined = PFQuery.orQueryWithSubqueries([query, queryInverse]).orderByDescending("updatedAt")
             queryCombined.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
                 if error == nil {
                     self.chatRooms = objects as! [PFObject]

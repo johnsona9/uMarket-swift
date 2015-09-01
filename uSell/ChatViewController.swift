@@ -87,6 +87,8 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
             newChat.setObject(user!, forKey: "sender")
             newChat.setObject(self.chatRoom!, forKey: "chatRoom")
             self.chats!.append(newChat)
+            self.chatRoom?.setObject(NSDate(), forKey: "updatedAt")
+            self.chatRoom?.saveInBackground()
             newChat.saveInBackground()
             self.finishSendingMessage()
         } else {

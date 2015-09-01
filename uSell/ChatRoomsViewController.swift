@@ -110,7 +110,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         if (reachability.isReachable()) {
             var query = PFQuery(className: "chatRoom").whereKey("user1", equalTo: PFUser.currentUser()!)
             var queryInverse = PFQuery(className: "chatRoom").whereKey("user2", equalTo: PFUser.currentUser()!)
-            var queryCombined = PFQuery.orQueryWithSubqueries([query, queryInverse])
+            var queryCombined = PFQuery.orQueryWithSubqueries([query, queryInverse]).orderByDescending("updatedAt")
             queryCombined.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
                 if error == nil {
                     self.chatRooms = objects as! [PFObject]

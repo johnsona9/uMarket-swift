@@ -81,21 +81,16 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                 var queryCombined = PFQuery.orQueryWithSubqueries([query, inverseQuery])
                 queryCombined.includeKey("user1")
                 queryCombined.includeKey("user2")
-                var testChatRoom = queryCombined.getFirstObject()
-                if (testChatRoom != nil) {
-                    svc!.chatRoom = testChatRoom!
-                    svc!.loadChatRoom()
-                }
-                else {
-                    var newChatRoom = PFObject(className: "chatRoom")
-                    newChatRoom.setObject(PFUser.currentUser()!, forKey: "user1")
-                    newChatRoom.setObject(otherUsers[(sender as! NSIndexPath).row], forKey: "user2")
-                    newChatRoom.saveInBackgroundWithBlock({ (success, error) -> Void in
-                        svc!.chatRoom = newChatRoom
-                        svc!.loadChatRoom()
-                    })
-                    
-                }
+                
+                queryCombined.getFirstObjectInBackgroundWithBlock({ (object, error) -> Void in
+                    if error == nil {
+                        if let testChatRoom = object as PFObject? {
+                            svc!.chatRoom = testChatRoom
+                            svc!.loadChatRoom()
+                        } 
+                    }
+                })
+                
             } else {
                 GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
             }

@@ -29,7 +29,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.tableHeaderView = searchController.searchBar
         
         
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.getPosts()
         self.handleColors()
         var rightItem:UIBarButtonItem = UIBarButtonItem(title: "post", style: .Plain, target: self, action: "postSegue")
@@ -51,15 +50,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        if searchController.searchBar.text == "" {
-            cell.textLabel?.text = postsList[indexPath.row]["postTitle"] as? String
-        } else {
-            cell.textLabel?.text = filteredPostsList[indexPath.row]["postTitle"] as? String
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
         }
-        cell.textLabel?.textColor = GlobalConstants.Colors.goldColor
-        cell.backgroundColor = GlobalConstants.Colors.garnetColor
-        return cell
+        if searchController.searchBar.text == "" {
+            cell!.textLabel?.text = postsList[indexPath.row]["postTitle"] as? String
+            cell!.detailTextLabel?.text = postsList[indexPath.row]["postAuthor"] as? String
+        } else {
+            cell!.textLabel?.text = filteredPostsList[indexPath.row]["postTitle"] as? String
+            cell!.detailTextLabel?.text = filteredPostsList[indexPath.row]["postAuthor"] as? String
+        }
+        cell!.textLabel?.textColor = GlobalConstants.Colors.goldColor
+        cell!.backgroundColor = GlobalConstants.Colors.garnetColor
+        return cell!
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

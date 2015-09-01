@@ -13,8 +13,12 @@ import Parse
 import JSQMessagesViewController
 import JSQSystemSoundPlayer
 
+protocol ChatViewControllerDelegate {
+    func updateMostRecentChat(controller: ChatViewController, object: PFObject)
+}
+
 class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    var delegate: ChatViewControllerDelegate?
     var chats:[PFObject]? = []
     var chatRoom:PFObject?
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
@@ -42,6 +46,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         self.fetchNewChatsTimer.invalidate()
+        self.delegate?.updateMostRecentChat(self, object: self.chats!.last!)
     }
     
 
@@ -79,10 +84,10 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
             newChat.setObject(PFUser.currentUser()!, forKey: "sender")
             newChat.setObject(self.chatRoom!, forKey: "chatRoom")
             self.chats!.append(newChat)
+            self.finishSendingMessage()
             self.chatRoom?.setObject(NSDate(), forKey: "updatedAt")
             self.chatRoom?.saveInBackground()
             newChat.saveInBackground()
-            self.finishSendingMessage()
         } else {
             GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
         }
@@ -114,6 +119,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
                 if let newChats = objects as? [PFObject] {
                     self.chats = newChats
                     self.collectionView.reloadData()
+                    self.scrollToBottomAnimated(true)
                 }
             }
         })

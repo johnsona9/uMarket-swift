@@ -19,6 +19,7 @@
 		CAAFAD541B797C8E00E369A6 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */; };
 		CAAFAD561B798B5D00E369A6 /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */; };
 		CAAFAD581B79913A00E369A6 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD571B79913A00E369A6 /* EditPostViewController.swift */; };
+		CAEDBBA51B9523C600C2F871 /* ChatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEDBBA41B9523C600C2F871 /* ChatsTableViewCell.swift */; };
 		CAF7D7A71B7AC69A00F3E8F0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */; };
 		CAFB578C1B743366006791EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB578B1B743366006791EC /* AppDelegate.swift */; };
 		CAFB578E1B743366006791EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFB578D1B743366006791EC /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 		CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsViewController.swift; sourceTree = "<group>"; };
 		CAAFAD571B79913A00E369A6 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
+		CAEDBBA41B9523C600C2F871 /* ChatsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewCell.swift; sourceTree = "<group>"; };
 		CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CAFB57861B743366006791EC /* uMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFB578A1B743366006791EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				CAFB578A1B743366006791EC /* Info.plist */,
 				CA13DF961B8414880099F08C /* Reachability.swift */,
 				CA2066A41B82E37D00EF29F9 /* GlobalConstants.swift */,
+				CAEDBBA41B9523C600C2F871 /* ChatsTableViewCell.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA13DF971B8414880099F08C /* Reachability.swift in Sources */,
+				CAEDBBA51B9523C600C2F871 /* ChatsTableViewCell.swift in Sources */,
 				CA00C1B51B794132003F6DA8 /* CreatePostViewController.swift in Sources */,
 				CAFB578E1B743366006791EC /* ViewController.swift in Sources */,
 				CAAD38621B7C040F00B1375C /* ChatRoomsViewController.swift in Sources */,

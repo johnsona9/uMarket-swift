@@ -17,7 +17,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var chatRoomsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.chatRoomsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+       // self.chatRoomsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.getChatRooms()
         self.handleColors()
         // Do any additional setup after loading the view.
@@ -34,12 +34,26 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.chatRoomsTableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
+        }
+        
         var username = self.otherUsers[indexPath.row].fetchIfNeeded()
-        cell.textLabel?.text = username!["username"] as? String
-        cell.textLabel?.textColor = GlobalConstants.Colors.goldColor
-        cell.backgroundColor = GlobalConstants.Colors.garnetColor
-        return cell
+        cell!.textLabel?.text = username!["username"] as? String
+        cell!.textLabel?.textColor = GlobalConstants.Colors.goldColor
+        
+        var queryForChat: PFQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRooms[indexPath.row]).orderByDescending("createdAt")
+        queryForChat.getFirstObjectInBackgroundWithBlock { (object, error) -> Void in
+            if error == nil {
+                if let chat = object as PFObject? {
+                    cell!.detailTextLabel?.text = chat["text"] as? String
+                }
+            }
+        }
+        
+        cell!.backgroundColor = GlobalConstants.Colors.garnetColor
+        return cell!
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

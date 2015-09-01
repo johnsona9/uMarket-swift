@@ -39,8 +39,12 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
         }
         
-        var username = self.otherUsers[indexPath.row].fetchIfNeeded()
-        cell!.textLabel?.text = username!["username"] as? String
+        self.otherUsers[indexPath.row].fetchIfNeededInBackgroundWithBlock { (object, error) -> Void in
+            if error == nil {
+                cell!.textLabel?.text = object!["username"] as? String
+            }
+        }
+        
         cell!.textLabel?.textColor = GlobalConstants.Colors.goldColor
         
         var queryForChat: PFQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRooms[indexPath.row]).orderByDescending("createdAt")
@@ -66,8 +70,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
         if segue.identifier == "chatRoomsToChatSegue" {
             let reachability = Reachability.reachabilityForInternetConnection()
             if (reachability.isReachable()) {

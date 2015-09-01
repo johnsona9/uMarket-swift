@@ -9,10 +9,11 @@
 import UIKit
 import Parse
 
-class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChatViewControllerDelegate {
 
     var chatRooms = [PFObject]()
     var otherUsers = [PFUser]()
+    var selectedRow: NSIndexPath?
     
     @IBOutlet weak var chatRoomsTableView: UITableView!
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("chatRoomsToChatSegue", sender: indexPath)
+        self.selectedRow = indexPath
         chatRoomsTableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
@@ -64,11 +66,11 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         return self.otherUsers.count
     }
     
-
+    func updateMostRecentChat(controller: ChatViewController, object: PFObject) {
+        self.chatRoomsTableView.cellForRowAtIndexPath(self.selectedRow!)?.detailTextLabel?.text = object["text"] as? String
+        self.selectedRow = nil
+    }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         if segue.identifier == "chatRoomsToChatSegue" {
@@ -89,6 +91,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                     if error == nil {
                         if let testChatRoom = object as PFObject? {
                             svc!.chatRoom = testChatRoom
+                            svc!.delegate = self
                             svc!.loadChatRoom()
                         } 
                     }
@@ -101,7 +104,6 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
     }
-    
     
     private func getChatRooms() {
         let reachability = Reachability.reachabilityForInternetConnection()

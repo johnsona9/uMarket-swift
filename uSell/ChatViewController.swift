@@ -76,8 +76,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         if (reachability.isReachable()) {
             var newChat = PFObject(className: "chat")
             newChat.setObject(text, forKey: "text")
-            var user = PFUser.query()?.whereKey("username", equalTo: senderId).getFirstObject()
-            newChat.setObject(user!, forKey: "sender")
+            newChat.setObject(PFUser.currentUser()!, forKey: "sender")
             newChat.setObject(self.chatRoom!, forKey: "chatRoom")
             self.chats!.append(newChat)
             self.chatRoom?.setObject(NSDate(), forKey: "updatedAt")

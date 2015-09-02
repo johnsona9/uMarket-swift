@@ -99,7 +99,6 @@ class PostDetailsViewController: UIViewController {
                         
                     } else if error == nil {
                         if object != nil {
-                            println("expected chatroom")
                             svc!.chatRoom = object!
                             svc!.loadChatRoom()
                         }

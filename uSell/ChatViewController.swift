@@ -155,7 +155,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
                     self.chats = newChats
                     self.chats = self.chats?.reverse()
                     self.collectionView.reloadData()
-                    self.scrollToBottomAnimated(true)
+                    self.scrollToBottomAnimated(false)
                 }
             }
         })

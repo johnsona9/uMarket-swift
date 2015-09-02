@@ -113,13 +113,22 @@ class PostDetailsViewController: UIViewController {
     }
     
     private func handleColors() {
+        
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
-        self.titleLabel.textColor = GlobalConstants.Colors.goldColor
-        self.editionLabel.textColor = GlobalConstants.Colors.goldColor
-        self.departmentLabel.textColor = GlobalConstants.Colors.goldColor
-        self.costLabel.textColor = GlobalConstants.Colors.goldColor
-        self.chatButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.authorLabel.textColor = GlobalConstants.Colors.goldColor
+        
+        self.titleLabel.textColor = GlobalConstants.Colors.pickerViewTextColor
+        self.editionLabel.textColor = GlobalConstants.Colors.pickerViewTextColor
+        self.departmentLabel.textColor = GlobalConstants.Colors.pickerViewTextColor
+        self.costLabel.textColor = GlobalConstants.Colors.pickerViewTextColor
+        self.authorLabel.textColor = GlobalConstants.Colors.pickerViewTextColor
+        
+        self.chatButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
+        self.chatButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
+        self.chatButton.layer.cornerRadius = 5
+        self.chatButton.layer.borderWidth = 1
+        self.chatButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
+        
+        
     }
     
 

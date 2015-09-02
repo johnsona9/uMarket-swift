@@ -61,8 +61,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell!.textLabel?.text = filteredPostsList[indexPath.row]["postTitle"] as? String
             cell!.detailTextLabel?.text = filteredPostsList[indexPath.row]["postAuthor"] as? String
         }
-        cell!.textLabel?.textColor = GlobalConstants.Colors.goldColor
-        cell!.backgroundColor = GlobalConstants.Colors.garnetColor
+        cell!.textLabel?.textColor = GlobalConstants.Colors.cellTextColor
+        cell!.detailTextLabel?.textColor = GlobalConstants.Colors.cellDetailTextColor
+        cell!.backgroundColor = GlobalConstants.Colors.cellBackgroundColor
         return cell!
     }
     
@@ -132,7 +133,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     private func handleColors() {
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.tableView.backgroundColor = GlobalConstants.Colors.backgroundColor
-        self.tableView.separatorColor = GlobalConstants.Colors.goldColor
+        self.tableView.separatorColor = GlobalConstants.Colors.tableViewSeparatorColor
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

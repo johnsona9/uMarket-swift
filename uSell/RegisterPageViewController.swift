@@ -118,17 +118,34 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
     private func handleColors() {
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
-        self.registerButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.cancelButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.userPasswordTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.userPasswordTextField.textColor = GlobalConstants.Colors.goldColor
-        self.userConfirmPasswordTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.userConfirmPasswordTextField.textColor = GlobalConstants.Colors.goldColor
-        self.emailAddressTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.emailAddressTextField.textColor = GlobalConstants.Colors.goldColor
-        self.emailAddressTextField.attributedPlaceholder = GlobalConstants.Colors.setPlaceholderColor("email", color: GlobalConstants.Colors.goldColor)
-        self.userPasswordTextField.attributedPlaceholder = GlobalConstants.Colors.setPlaceholderColor("password", color: GlobalConstants.Colors.goldColor)
-        self.userConfirmPasswordTextField.attributedPlaceholder = GlobalConstants.Colors.setPlaceholderColor("password", color: GlobalConstants.Colors.goldColor)
+        
+        
+        
+        
+        self.registerButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
+        self.registerButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
+        self.registerButton.layer.cornerRadius = 5
+        self.registerButton.layer.borderWidth = 1
+        self.registerButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
+        
+        self.cancelButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
+        self.cancelButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
+        self.cancelButton.layer.cornerRadius = 5
+        self.cancelButton.layer.borderWidth = 1
+        self.cancelButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
+        
+        self.userPasswordTextField.backgroundColor = GlobalConstants.Colors.textFieldBackgroundColor
+        self.userPasswordTextField.textColor = GlobalConstants.Colors.textFieldTextColor
+        
+        self.userConfirmPasswordTextField.backgroundColor = GlobalConstants.Colors.textFieldBackgroundColor
+        self.userConfirmPasswordTextField.textColor = GlobalConstants.Colors.textFieldTextColor
+        
+        self.emailAddressTextField.backgroundColor = GlobalConstants.Colors.textFieldBackgroundColor
+        self.emailAddressTextField.textColor = GlobalConstants.Colors.textFieldTextColor
+        
+//        self.emailAddressTextField.attributedPlaceholder = GlobalConstants.Colors.setPlaceholderColor("email", color: GlobalConstants.Colors.goldColor)
+//        self.userPasswordTextField.attributedPlaceholder = GlobalConstants.Colors.setPlaceholderColor("password", color: GlobalConstants.Colors.goldColor)
+//        self.userConfirmPasswordTextField.attributedPlaceholder = GlobalConstants.Colors.setPlaceholderColor("password", color: GlobalConstants.Colors.goldColor)
     }
     
     

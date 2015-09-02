@@ -32,7 +32,7 @@
                                     <action selector="RegisterButtonTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V5h-Vl-FC3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="52h-Jr-DUq">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="52h-Jr-DUq">
                                 <rect key="frame" x="155" y="200" width="290" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="52h-Jr-DUq" secondAttribute="height" multiplier="29:3" id="Aba-fx-pRo"/>
@@ -71,7 +71,7 @@
                                     <action selector="ForgotPasswordButtonTouch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WMa-Wq-TCZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zit-q0-Oij">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zit-q0-Oij">
                                 <rect key="frame" x="155" y="125" width="290" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zit-q0-Oij" secondAttribute="height" multiplier="29:3" id="JD6-7D-bvC"/>

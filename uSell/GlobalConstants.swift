@@ -12,18 +12,24 @@ import UIKit
 struct GlobalConstants {
     struct Colors {
         
-        static let primarySecond = UIColor(red: 27/255.0, green: 194/255.0, blue: 229/255.0, alpha: 1.0)
-        static let primaryFirst = UIColor(red: 45/255.0, green: 104/255.0, blue: 231/255.0, alpha: 1.0)
-        static let secondaryFirst = UIColor(red: 236/255.0, green: 148/255.0, blue: 89/255.0, alpha: 1.0)
-        static let secondarySecond = UIColor(red: 234/255.0, green: 96/255.0, blue: 4/255.0, alpha: 1.0)
+        static let backgroundColor = UIColor(red: 200/255, green: 220/255, blue: 220/255, alpha: 1.0)
         
+        static let buttonBackgroundColor = UIColor(red: 236/255.0, green: 148/255.0, blue: 89/255.0, alpha: 1.0)
+        static let buttonTextColor = UIColor.whiteColor()
         
-        static let backgroundColor = UIColor(red: 80/255.0, green: 10/255.0, blue: 10/255.0, alpha: 1.0)
-        static let garnetColor = UIColor(red: 99/255.0, green: 20/255.0, blue: 20/255.0, alpha: 1.0)
-        static let goldColor = UIColor(red: 220/255.0, green: 175/255.0, blue: 90/255.0, alpha: 1.0)
-        static func setPlaceholderColor(string: String, color: UIColor) -> NSAttributedString {
-            return NSAttributedString(string: string, attributes: [NSForegroundColorAttributeName: color])
-        }
+        static let textFieldBackgroundColor = UIColor.whiteColor()
+        static let textFieldTextColor = UIColor(red: 45/255.0, green: 104/255.0, blue: 231/255.0, alpha: 1.0)
+        
+        static let cellBackgroundColor = UIColor(red: 27/255.0, green: 194/255.0, blue: 229/255.0, alpha: 1.0)
+        static let cellTextColor = UIColor(red: 45/255.0, green: 104/255.0, blue: 231/255.0, alpha: 1.0)
+        static let cellDetailTextColor = UIColor(red: 45/255.0, green: 104/255.0, blue: 231/255.0, alpha: 1.0)
+        static let tableViewSeparatorColor = UIColor(red: 236/255.0, green: 148/255.0, blue: 89/255.0, alpha: 1.0)
+        
+        static let navigatorBarBackgroundColor = UIColor(red: 200/255, green: 220/255, blue: 220/255, alpha: 1.0)
+        static let navigatorBarTextColor = UIColor(red: 236/255.0, green: 148/255.0, blue: 89/255.0, alpha: 1.0)
+        
+        static let pickerViewTextColor = UIColor(red: 236/255.0, green: 148/255.0, blue: 89/255.0, alpha: 1.0)
+        
     }
     
     struct AlertMessage {

@@ -47,7 +47,6 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
         
-        cell!.textLabel?.textColor = GlobalConstants.Colors.goldColor
         
         var queryForChat: PFQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRooms[indexPath.row]).orderByDescending("createdAt")
         queryForChat.getFirstObjectInBackgroundWithBlock { (object, error) -> Void in
@@ -58,7 +57,9 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
         
-        cell!.backgroundColor = GlobalConstants.Colors.garnetColor
+        cell!.textLabel?.textColor = GlobalConstants.Colors.cellTextColor
+        cell!.detailTextLabel?.textColor = GlobalConstants.Colors.cellDetailTextColor
+        cell!.backgroundColor = GlobalConstants.Colors.cellBackgroundColor
         return cell!
     }
     
@@ -143,7 +144,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     private func handleColors() {
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.chatRoomsTableView.backgroundColor = GlobalConstants.Colors.backgroundColor
-        self.chatRoomsTableView.separatorColor = GlobalConstants.Colors.goldColor
+        self.chatRoomsTableView.separatorColor = GlobalConstants.Colors.tableViewSeparatorColor
     }
 
 }

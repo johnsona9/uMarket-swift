@@ -43,8 +43,8 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.myPostsTableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         cell.textLabel?.text = postsList[indexPath.row]["postTitle"] as? String
-        cell.textLabel?.textColor = GlobalConstants.Colors.goldColor
-        cell.backgroundColor = GlobalConstants.Colors.garnetColor
+        cell.textLabel?.textColor = GlobalConstants.Colors.cellTextColor
+        cell.backgroundColor = GlobalConstants.Colors.cellBackgroundColor
         return cell
     }
     
@@ -140,9 +140,12 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func handleColors() {
+        
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
+        
         self.myPostsTableView.backgroundColor = GlobalConstants.Colors.backgroundColor
-        self.myPostsTableView.separatorColor = GlobalConstants.Colors.goldColor
+        
+        self.myPostsTableView.separatorColor = GlobalConstants.Colors.tableViewSeparatorColor
     }
 
 }

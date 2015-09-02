@@ -22,7 +22,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     var chats:[PFObject]? = []
     var chatRoom:PFObject?
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
-    let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
+    let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(GlobalConstants.Colors.buttonBackgroundColor)
     var fetchNewChatsTimer: NSTimer = NSTimer()
     
     override func viewDidLoad() {

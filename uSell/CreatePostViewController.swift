@@ -75,7 +75,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName :GlobalConstants.Colors.goldColor])
+        let attString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName :GlobalConstants.Colors.pickerViewTextColor])
         return attString
     }
     
@@ -85,16 +85,30 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     private func handleColors() {
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
-        self.cancelButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.postButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.titleTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.titleTextField.textColor = GlobalConstants.Colors.goldColor
-        self.editionTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.editionTextField.textColor = GlobalConstants.Colors.goldColor
-        self.costTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.costTextField.textColor = GlobalConstants.Colors.goldColor
-        self.authorTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.authorTextField.textColor = GlobalConstants.Colors.goldColor
+        
+        self.cancelButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
+        self.cancelButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
+        self.cancelButton.layer.cornerRadius = 5
+        self.cancelButton.layer.borderWidth = 1
+        self.cancelButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
+        
+        self.postButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
+        self.postButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
+        self.postButton.layer.cornerRadius = 5
+        self.postButton.layer.borderWidth = 1
+        self.postButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
+        
+        self.titleTextField.backgroundColor = GlobalConstants.Colors.textFieldBackgroundColor
+        self.titleTextField.textColor = GlobalConstants.Colors.textFieldTextColor
+        
+        self.editionTextField.backgroundColor = GlobalConstants.Colors.textFieldBackgroundColor
+        self.editionTextField.textColor = GlobalConstants.Colors.textFieldTextColor
+        
+        self.costTextField.backgroundColor = GlobalConstants.Colors.textFieldBackgroundColor
+        self.costTextField.textColor = GlobalConstants.Colors.textFieldTextColor
+        
+        self.authorTextField.backgroundColor = GlobalConstants.Colors.textFieldBackgroundColor
+        self.authorTextField.textColor = GlobalConstants.Colors.textFieldTextColor
         
         
         
@@ -118,33 +132,39 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         let title = self.titleTextField.text
         let author = self.authorTextField.text
         let cost = self.costTextField.text
+        let edition = self.editionTextField.text
         
-        if (cost != "" && title != "" && author != "") {
-            
-            let reachability = Reachability.reachabilityForInternetConnection()
-            if (reachability.isReachable()) {
-                PFQuery(className: "post").getObjectInBackgroundWithId(self.initialObject.objectId!, block: { (object, error) -> Void in
-                    if (error == nil) {
-                        object!["postTitle"] = title
-                        object!["postEdition"] = self.editionTextField.text
-                        object!["postDepartment"] = self.pickerSelection
-                        object!["postCost"] = cost
-                        object!["postAuthor"] = author
-                        object!.saveInBackgroundWithBlock { (success, error) -> Void in
-                            if (success == true) {
-                                if (error == nil) {
-                                    self.dismissViewControllerAnimated(true, completion: nil)
+        if (cost.toInt() as Int!) == nil || (edition.toInt() as Int!) == nil {
+            GlobalConstants.AlertMessage.displayAlertMessage("Your cost and or edition input is not in the correct form. Make sure they're whole numbers and submit again.", view: self)
+        } else {
+        
+            if (cost != "" && title != "" && author != "") {
+                
+                let reachability = Reachability.reachabilityForInternetConnection()
+                if (reachability.isReachable()) {
+                    PFQuery(className: "post").getObjectInBackgroundWithId(self.initialObject.objectId!, block: { (object, error) -> Void in
+                        if (error == nil) {
+                            object!["postTitle"] = title
+                            object!["postEdition"] = edition
+                            object!["postDepartment"] = self.pickerSelection
+                            object!["postCost"] = cost
+                            object!["postAuthor"] = author
+                            object!.saveInBackgroundWithBlock { (success, error) -> Void in
+                                if (success == true) {
+                                    if (error == nil) {
+                                        self.dismissViewControllerAnimated(true, completion: nil)
+                                    }
                                 }
+                                else {
+                                    GlobalConstants.AlertMessage.displayAlertMessage("error updating object", view: self)
+                                }
+                                
                             }
-                            else {
-                                GlobalConstants.AlertMessage.displayAlertMessage("error updating object", view: self)
-                            }
-                            
                         }
-                    }
-                })
-            } else {
-                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+                    })
+                } else {
+                    GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+                }
             }
         }
     }
@@ -154,35 +174,39 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         let postEdition = editionTextField.text
         let postCost = costTextField.text
         let postAuthor = authorTextField.text
-        
-        if (postTitle != "" && postCost != "" && postAuthor != "") {
-            let reachability = Reachability.reachabilityForInternetConnection()
-            if (reachability.isReachable()) {
-                var newPost = PFObject(className: "post")
-                newPost.setObject(postTitle, forKey: "postTitle")
-                newPost.setObject(self.pickerSelection, forKey: "postDepartment")
-                newPost.setObject(postEdition, forKey: "postEdition")
-                newPost.setObject(postCost, forKey: "postCost")
-                newPost.setObject(postAuthor, forKey: "postAuthor")
-                newPost.setObject(PFUser.currentUser()!, forKey: "poster")
-                newPost.saveInBackgroundWithBlock({ (success: Bool, error: NSError? ) -> Void in
-                    
-                    if (error == nil) {
-                        self.delegate!.updateTableView(self, object: newPost)
-                        self.dismissViewControllerAnimated(true, completion: nil)
-                    }
-                    else {
-                        //put an alert in here
-                    }
-                    
-                })
-            } else {
-                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
-            }
-            
-            
+        if (postCost.toInt() as Int!) == nil || (postEdition.toInt() as Int!) == nil {
+            GlobalConstants.AlertMessage.displayAlertMessage("Your cost and or edition input is not in the correct form. Make sure they're whole numbers and submit again.", view: self)
         } else {
-            GlobalConstants.AlertMessage.displayAlertMessage("You are missing some necessary fields", view: self)
+        
+            if (postTitle != "" && postCost != "" && postAuthor != "") {
+                let reachability = Reachability.reachabilityForInternetConnection()
+                if (reachability.isReachable()) {
+                    var newPost = PFObject(className: "post")
+                    newPost.setObject(postTitle, forKey: "postTitle")
+                    newPost.setObject(self.pickerSelection, forKey: "postDepartment")
+                    newPost.setObject(postEdition, forKey: "postEdition")
+                    newPost.setObject(postCost, forKey: "postCost")
+                    newPost.setObject(postAuthor, forKey: "postAuthor")
+                    newPost.setObject(PFUser.currentUser()!, forKey: "poster")
+                    newPost.saveInBackgroundWithBlock({ (success: Bool, error: NSError? ) -> Void in
+                        
+                        if (error == nil) {
+                            self.delegate!.updateTableView(self, object: newPost)
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        }
+                        else {
+                            //put an alert in here
+                        }
+                        
+                    })
+                } else {
+                    GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+                }
+                
+                
+            } else {
+                GlobalConstants.AlertMessage.displayAlertMessage("You are missing some necessary fields", view: self)
+            }
         }
     }
 

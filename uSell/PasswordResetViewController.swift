@@ -54,10 +54,22 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     
     private func handleColors() {
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
-        self.cancelButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.resetButton.setTitleColor(GlobalConstants.Colors.goldColor, forState: UIControlState.Normal)
-        self.emailTextField.backgroundColor = GlobalConstants.Colors.garnetColor
-        self.emailTextField.textColor = GlobalConstants.Colors.goldColor
+        
+        self.cancelButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
+        self.cancelButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
+        self.cancelButton.layer.cornerRadius = 5
+        self.cancelButton.layer.borderWidth = 1
+        self.cancelButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
+        
+        self.resetButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
+        self.resetButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
+        self.resetButton.layer.cornerRadius = 5
+        self.resetButton.layer.borderWidth = 1
+        self.resetButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
+        
+        
+        self.emailTextField.backgroundColor = GlobalConstants.Colors.textFieldBackgroundColor
+        self.emailTextField.textColor = GlobalConstants.Colors.textFieldTextColor
     }
 
 

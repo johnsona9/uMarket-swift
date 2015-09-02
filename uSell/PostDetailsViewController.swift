@@ -30,7 +30,7 @@ class PostDetailsViewController: UIViewController {
         let author = self.post["postAuthor"] as? String
         self.titleLabel.text = "Title: \(title!)"
         self.editionLabel.text = "Edition: \(edition!)"
-        self.departmentLabel.text = "Department: \(department!)"
+        self.departmentLabel.text = "Dept: \(department!)"
         self.costLabel.text = "Cost: \(cost!)"
         self.authorLabel.text = "By: \(author!)"
         // Do any additional setup after loading the view.

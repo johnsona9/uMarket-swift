@@ -232,7 +232,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FN5-P2-pDP" secondAttribute="height" multiplier="58:11" constant="-64.454545454545439" id="sEQ-ab-0nq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -241,7 +241,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="BOs-zx-IQN" secondAttribute="height" multiplier="58:11" constant="-64.454545454545439" id="AKm-lM-Hhf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

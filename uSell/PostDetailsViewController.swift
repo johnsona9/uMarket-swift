@@ -12,16 +12,19 @@ import JSQMessagesViewController
 
 class PostDetailsViewController: UIViewController {
     
-    @IBOutlet weak var chatButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var editionLabel: UILabel!
-    @IBOutlet weak var departmentLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var costLabel: UILabel!
+    var titleLabel :UILabel!
+    var authorLabel : UILabel!
+    var editionLabel: UILabel!
+    var departmentLabel: UILabel!
+    var costLabel: UILabel!
+    var chatButton: UIButton!
+    
     var post:PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.createFrames()
         self.handleColors()
         let title = self.post["postTitle"] as? String
         let edition = self.post["postEdition"] as? String
@@ -40,26 +43,6 @@ class PostDetailsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func chatButtonTouch(sender: AnyObject) {
-        var userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
-        userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
-            if error == nil {
-                if let currentUser : PFUser = user as? PFUser {
-                    if currentUser.objectForKey("emailVerified") as! Bool {
-                        self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
-                    } else {
-                        GlobalConstants.AlertMessage.displayAlertMessage("You can't chat until you've verified your email!", view: self)
-                    }
-                }
-            }
-            else {
-                GlobalConstants.AlertMessage.displayAlertMessage("There was an error finding you in our database, please try again", view: self)
-            }
-        })
-        
-    }
-
     
     // MARK: - Navigation
 
@@ -112,6 +95,24 @@ class PostDetailsViewController: UIViewController {
         }
     }
     
+    func chatButtonTouch() {
+        var userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
+        userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
+            if error == nil {
+                if let currentUser : PFUser = user as? PFUser {
+                    if currentUser.objectForKey("emailVerified") as! Bool {
+                        self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
+                    } else {
+                        GlobalConstants.AlertMessage.displayAlertMessage("You can't chat until you've verified your email!", view: self)
+                    }
+                }
+            }
+            else {
+                GlobalConstants.AlertMessage.displayAlertMessage("There was an error finding you in our database, please try again", view: self)
+            }
+        })
+    }
+    
     private func handleColors() {
         
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
@@ -129,6 +130,35 @@ class PostDetailsViewController: UIViewController {
         self.chatButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
         
         
+    }
+    
+    private func createFrames() {
+        var frame = self.view.frame
+        self.titleLabel = UILabel(frame: CGRectMake(frame.width / 16, frame.height * 1.2 / 8, frame.width * 14 / 16, frame.height * 1 / 8))
+        self.titleLabel.text = "Title"
+        self.view.addSubview(self.titleLabel)
+        
+        self.authorLabel = UILabel(frame: CGRectMake(frame.width / 16, frame.height * 1.2 / 4, frame.width * 14 / 16, frame.height / 8))
+        self.authorLabel.text = "Author"
+        self.view.addSubview(self.authorLabel)
+        
+        self.editionLabel = UILabel(frame: CGRectMake(frame.width / 15, frame.height * 1.8 / 4, frame.width * 6 / 15, frame.height / 16))
+        self.editionLabel.text = "Edition"
+        self.view.addSubview(self.editionLabel)
+        
+        self.departmentLabel = UILabel(frame: CGRectMake(frame.width * 8 / 15, frame.height * 1.8 / 4, frame.width * 6 / 15, frame.height / 16))
+        self.departmentLabel.text = "Dept"
+        self.view.addSubview(self.departmentLabel)
+        
+        self.costLabel = UILabel(frame: CGRectMake(frame.width / 15, frame.height * 2.2 / 4, frame.width * 6 / 15, frame.height / 16))
+        self.costLabel.text = "Cost"
+        self.view.addSubview(self.costLabel)
+        
+        
+        self.chatButton = UIButton(frame: CGRectMake(frame.width * 8 / 15, frame.height * 2.2 / 4, frame.width * 6 / 15, frame.height / 16))
+        self.chatButton.setTitle("Chat", forState: .Normal)
+        self.chatButton.addTarget(self, action: Selector("chatButtonTouch"), forControlEvents: .TouchUpInside)
+        self.view.addSubview(self.chatButton)
     }
     
 

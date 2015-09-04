@@ -188,29 +188,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dept" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCt-Sv-gbW">
-                                <rect key="frame" x="46" y="366" width="250" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="PCt-Sv-gbW" secondAttribute="height" multiplier="128:39" constant="122" id="cPf-RG-8EJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOG-D5-OpF">
-                                <rect key="frame" x="46" y="452" width="128" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="eOG-D5-OpF" secondAttribute="height" multiplier="128:39" id="n71-8C-2Yb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q66-3X-Q9c">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q66-3X-Q9c">
                                 <rect key="frame" x="420" y="452" width="134" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Q66-3X-Q9c" secondAttribute="height" multiplier="134:39" id="eMU-EJ-Ceu"/>
-                                </constraints>
                                 <state key="normal" title="Chat">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -218,63 +197,11 @@
                                     <action selector="chatButtonTouch:" destination="eQ9-7e-mpW" eventType="touchUpInside" id="lS5-Ko-jrF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edition" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo9-Eh-II9">
-                                <rect key="frame" x="304" y="366" width="250" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Mo9-Eh-II9" secondAttribute="height" multiplier="89:39" constant="161" id="ZuT-OU-JSV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FN5-P2-pDP">
-                                <rect key="frame" x="106" y="120" width="389" height="86"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="FN5-P2-pDP" secondAttribute="height" multiplier="58:11" constant="-64.454545454545439" id="sEQ-ab-0nq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOs-zx-IQN">
-                                <rect key="frame" x="106" y="244" width="389" height="86"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BOs-zx-IQN" secondAttribute="height" multiplier="58:11" constant="-64.454545454545439" id="AKm-lM-Hhf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Mo9-Eh-II9" firstAttribute="baseline" secondItem="PCt-Sv-gbW" secondAttribute="baseline" id="3yc-ra-3oj"/>
-                            <constraint firstItem="PCt-Sv-gbW" firstAttribute="leading" secondItem="eOG-D5-OpF" secondAttribute="leading" id="5rw-Cz-soo"/>
-                            <constraint firstItem="eOG-D5-OpF" firstAttribute="trailing" secondItem="PCt-Sv-gbW" secondAttribute="trailing" constant="-122" id="6Ga-Tj-hYl"/>
-                            <constraint firstItem="FN5-P2-pDP" firstAttribute="top" secondItem="Lu9-YX-Qkt" secondAttribute="bottom" constant="56" id="7lJ-LX-9sq"/>
-                            <constraint firstItem="Q66-3X-Q9c" firstAttribute="top" secondItem="eOG-D5-OpF" secondAttribute="top" id="Cl4-LJ-X5m"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Mo9-Eh-II9" secondAttribute="trailing" constant="30" id="Esf-ov-zfx"/>
-                            <constraint firstItem="PCt-Sv-gbW" firstAttribute="leading" secondItem="nBu-Lw-Q7d" secondAttribute="leadingMargin" constant="30" id="MOu-OE-KcU"/>
-                            <constraint firstItem="eOG-D5-OpF" firstAttribute="top" secondItem="PCt-Sv-gbW" secondAttribute="bottom" constant="47" id="Mbf-p3-puQ"/>
-                            <constraint firstAttribute="centerX" secondItem="FN5-P2-pDP" secondAttribute="centerX" id="PqD-o4-f8t"/>
-                            <constraint firstAttribute="centerX" secondItem="BOs-zx-IQN" secondAttribute="centerX" id="Qro-2p-8Su"/>
-                            <constraint firstItem="BOs-zx-IQN" firstAttribute="top" secondItem="FN5-P2-pDP" secondAttribute="bottom" constant="38" id="UE4-tL-8qB"/>
-                            <constraint firstItem="Q66-3X-Q9c" firstAttribute="trailing" secondItem="Mo9-Eh-II9" secondAttribute="trailing" id="UKD-14-Utx"/>
-                            <constraint firstItem="Q66-3X-Q9c" firstAttribute="bottom" secondItem="eOG-D5-OpF" secondAttribute="bottom" id="aub-S5-UX0"/>
-                            <constraint firstItem="BOs-zx-IQN" firstAttribute="leading" secondItem="FN5-P2-pDP" secondAttribute="leading" id="baN-KU-8Ro"/>
-                            <constraint firstItem="PCt-Sv-gbW" firstAttribute="firstBaseline" secondItem="Mo9-Eh-II9" secondAttribute="firstBaseline" id="dFp-rB-edG"/>
-                            <constraint firstItem="Mo9-Eh-II9" firstAttribute="top" secondItem="BOs-zx-IQN" secondAttribute="bottom" constant="36" id="lHJ-JU-jyn"/>
-                            <constraint firstItem="Tjf-lq-B1r" firstAttribute="top" secondItem="Mo9-Eh-II9" secondAttribute="bottom" constant="151" id="uU9-ZS-Ape"/>
-                            <constraint firstItem="Tjf-lq-B1r" firstAttribute="top" secondItem="eOG-D5-OpF" secondAttribute="bottom" constant="65" id="zd4-hC-zdV"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="authorLabel" destination="BOs-zx-IQN" id="6B8-RR-jUo"/>
                         <outlet property="chatButton" destination="Q66-3X-Q9c" id="yY2-S2-KFm"/>
-                        <outlet property="costLabel" destination="eOG-D5-OpF" id="O3Q-6j-1gw"/>
-                        <outlet property="departmentLabel" destination="PCt-Sv-gbW" id="1az-dt-iSG"/>
-                        <outlet property="editionLabel" destination="Mo9-Eh-II9" id="li9-Ma-qwQ"/>
-                        <outlet property="titleLabel" destination="FN5-P2-pDP" id="r2x-db-MeJ"/>
                         <segue destination="lCv-YA-j05" kind="show" identifier="postDetailsToChatSegue" id="ho5-uz-ve7"/>
                     </connections>
                 </viewController>
@@ -660,7 +587,7 @@
                                     <constraint firstAttribute="width" constant="290" id="v4R-a8-xd0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -689,6 +616,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Ff5-Oa-UbX"/>
-        <segue reference="WTM-Xp-0jg"/>
+        <segue reference="ho5-uz-ve7"/>
     </inferredMetricsTieBreakers>
 </document>

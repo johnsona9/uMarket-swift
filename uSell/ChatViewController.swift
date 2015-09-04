@@ -30,8 +30,8 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.collectionView.backgroundColor = GlobalConstants.Colors.backgroundColor
         self.showLoadEarlierMessagesHeader = true
-        self.senderId = PFUser.currentUser()?.username
-        self.senderDisplayName = PFUser.currentUser()?.username
+        self.senderId = PFUser.currentUser()?.username!
+        self.senderDisplayName = PFUser.currentUser()?.username!
         self.fetchNewChatsTimer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: Selector("getNewChats"), userInfo: nil, repeats: true)
         
         
@@ -47,14 +47,16 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         self.fetchNewChatsTimer.invalidate()
-        self.delegate?.updateMostRecentChat(self, object: self.chats!.last!)
+        if self.delegate != nil {
+            self.delegate?.updateMostRecentChat(self, object: self.chats!.last!)
+        }
     }
     
 
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
         var data = self.chats![indexPath.row]
         var tempUser = data["sender"] as! PFUser
-        var message = JSQMessage(senderId: tempUser["username"] as! String, displayName: tempUser["username"] as! String, text: data["text"] as! String)
+        var message = JSQMessage(senderId: tempUser.username!, displayName: tempUser.username!, text: data["text"] as! String)
         return message
     }
     
@@ -85,7 +87,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
                 }
             }
         } else {
-            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
         }
         
     }
@@ -111,12 +113,14 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
             self.chatRoom?.saveInBackground()
             newChat.saveInBackground()
         } else {
-            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
         }
     }
     
     override func didPressAccessoryButton(sender: UIButton!) {
     }
+    
+    
     
     func getNewChats() {
         let reachability = Reachability.reachabilityForInternetConnection()
@@ -142,7 +146,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         if (reachability.isReachable()) {
             self.getChatsInBackground()
         } else {
-            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
         }
     }
     

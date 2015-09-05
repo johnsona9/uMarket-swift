@@ -20,7 +20,7 @@ protocol ChatViewControllerDelegate {
 class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var delegate: ChatViewControllerDelegate?
     var chats:[PFObject]? = []
-    var chatRoom:PFObject?
+    var chatRoom:PFObject!
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(GlobalConstants.Colors.buttonBackgroundColor)
     var fetchNewChatsTimer: NSTimer = NSTimer()
@@ -32,7 +32,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
         self.showLoadEarlierMessagesHeader = true
         self.senderId = PFUser.currentUser()?.username!
         self.senderDisplayName = PFUser.currentUser()?.username!
-        self.fetchNewChatsTimer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: Selector("getNewChats"), userInfo: nil, repeats: true)
+        
         
         
         
@@ -123,21 +123,25 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     
     
     func getNewChats() {
-        let reachability = Reachability.reachabilityForInternetConnection()
-        if (reachability.isReachable()) {
-            var chatIds = self.chats!.map({ ($0 as PFObject).objectId! })
-            var mostRecentDate = self.chats?.first!.createdAt!
-            var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!).whereKey("objectId", notContainedIn: chatIds)
-                chatsQuery.whereKey("createdAt", greaterThanOrEqualTo: mostRecentDate!).orderByAscending("createdAt")
-                chatsQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-                if error == nil {
-                    if let newChats = objects as? [PFObject] {
-                        self.chats = self.chats! + newChats
-                        self.collectionView.reloadData()
-                        self.scrollToBottomAnimated(true)
-                    }
+        if self.chatRoom != nil {
+            let reachability = Reachability.reachabilityForInternetConnection()
+            if (reachability.isReachable()) {
+                if self.chats?.count > 0 {
+                    var chatIds = self.chats!.map({ ($0 as PFObject).objectId! })
+                    var mostRecentDate = self.chats?.first!.createdAt!
+                    var chatsQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRoom!).whereKey("objectId", notContainedIn: chatIds)
+                        chatsQuery.whereKey("createdAt", greaterThanOrEqualTo: mostRecentDate!).orderByAscending("createdAt")
+                        chatsQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                        if error == nil {
+                            if let newChats = objects as? [PFObject] {
+                                self.chats = self.chats! + newChats
+                                self.collectionView.reloadData()
+                                self.scrollToBottomAnimated(true)
+                            }
+                        }
+                    })
                 }
-            })
+            }
         }
     }
     
@@ -159,6 +163,8 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
                     self.chats = newChats
                     self.chats = self.chats?.reverse()
                     self.collectionView.reloadData()
+                    self.fetchNewChatsTimer = NSTimer.scheduledTimerWithTimeInterval(15.0, target: self, selector: Selector("getNewChats"), userInfo: nil, repeats: true)
+                    
                     self.scrollToBottomAnimated(false)
                 }
             }

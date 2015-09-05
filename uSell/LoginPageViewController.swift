@@ -21,10 +21,8 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
         self.handleColors()
-        // Do any additional setup after loading the view.
-//        if (PFUser.currentUser()?.username != nil) {
-//            self.performSegueWithIdentifier("loginToMainSegue", sender: self)
-//        }
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -32,7 +30,15 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
         usernameTextField.text = ""
         passwordTextField.text = ""
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if (PFUser.currentUser() != nil) {
+            println(PFUser.currentUser())
+            self.performSegueWithIdentifier("loginToMainSegue", sender: self)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

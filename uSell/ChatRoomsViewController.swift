@@ -130,6 +130,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                             
                         }
                     }
+                    println(self.chatRooms)
                     self.chatRoomsTableView.reloadData()
                 }
                 else {

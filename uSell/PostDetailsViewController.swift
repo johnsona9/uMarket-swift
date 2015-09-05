@@ -76,6 +76,7 @@ class PostDetailsViewController: UIViewController {
                         svc!.chatRoom = newChatRoom
                         newChatRoom.saveInBackgroundWithBlock({ (success, error) -> Void in
                             if error == nil {
+                                //svc!.chatRoom = newChatRoom
                                 svc!.loadChatRoom()
                             }
                         })
@@ -89,7 +90,7 @@ class PostDetailsViewController: UIViewController {
                 })
                 
             } else {
-                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
             }
             
         }

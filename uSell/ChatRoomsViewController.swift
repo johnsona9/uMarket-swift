@@ -53,6 +53,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             if error == nil {
                 if let chat = object as PFObject? {
                     cell!.detailTextLabel?.text = chat["text"] as? String
+                    println(chat)
                 }
             }
         }

@@ -47,7 +47,7 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         self.fetchNewChatsTimer.invalidate()
-        if self.delegate != nil {
+        if self.delegate != nil  && self.chats?.count > 0{
             self.delegate?.updateMostRecentChat(self, object: self.chats!.last!)
         }
     }

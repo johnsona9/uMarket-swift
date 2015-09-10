@@ -76,21 +76,26 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     
     func newPostSegue() {
-        var userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
-        userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
-            if error == nil {
-                if let currentUser : PFUser = user as? PFUser {
-                    if currentUser.objectForKey("emailVerified") as! Bool {
-                        self.performSegueWithIdentifier("myPostsToCreatePostSegue", sender: self)
-                    } else {
-                        GlobalConstants.AlertMessage.displayAlertMessage("You can't create posts until you've verified your email!", view: self)
+        if !(PFUser.currentUser()?.objectForKey("emailVerified") as! Bool) {
+        
+            var userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
+            userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
+                if error == nil {
+                    if let currentUser : PFUser = user as? PFUser {
+                        if currentUser.objectForKey("emailVerified") as! Bool {
+                            self.performSegueWithIdentifier("myPostsToCreatePostSegue", sender: self)
+                        } else {
+                            GlobalConstants.AlertMessage.displayAlertMessage("You can't create posts until you've verified your email!", view: self)
+                        }
                     }
                 }
-            }
-            else {
-                GlobalConstants.AlertMessage.displayAlertMessage("There was an error finding you in our database, please try again", view: self)
-            }
-        })
+                else {
+                    GlobalConstants.AlertMessage.displayAlertMessage("There was an error finding you in our database, please try again", view: self)
+                }
+            })
+        } else if PFUser.currentUser()?.objectForKey("emailVerified") as! Bool {
+            self.performSegueWithIdentifier("myPostsToCreatePostSegue", sender: self)
+        }
     }
 
     

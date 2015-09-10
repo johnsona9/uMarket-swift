@@ -14,7 +14,7 @@ import Bolts
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+   // var pushNotificationController : PushNotificationController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -24,6 +24,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientKey: "fDl4Uz9sM3D9VzC5eFrW9PLK5vdSbUW9JU0Gucec")
         
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+            var userNotificationTypes : UIUserNotificationType = (UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound)
+            var settings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+            println("1")
+            application.registerUserNotificationSettings(settings)
+            println("2")
+            application.registerForRemoteNotifications()
+            println("3")
+
+        } else {
+            println("not connected to internet")
+        }
         
         UINavigationBar.appearance().barTintColor = GlobalConstants.Colors.navigatorBarBackgroundColor
         UINavigationBar.appearance().tintColor = GlobalConstants.Colors.navigatorBarTextColor
@@ -54,6 +67,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
+        let reachability = Reachability.reachabilityForInternetConnection()
+        if (reachability.isReachable()) {
+        var currentInstallation : PFInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        //currentInstallation.channels = ["global"]
+        currentInstallation.saveInBackground()
+        } else {
+            println("not connected to internet")
+        }
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println("failed to register")
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
+    }
 
 }
 

@@ -89,6 +89,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             PFUser.logOutInBackgroundWithBlock { (error) -> Void in
                 if error == nil {
                     self.dismissViewControllerAnimated(true, completion: nil)
+                    var installation : PFInstallation = PFInstallation.currentInstallation()
+                    installation["user"] = nil
+                    installation.saveInBackground()
                 }
             }
         } else {

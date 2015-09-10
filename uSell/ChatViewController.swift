@@ -116,9 +116,9 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
             var user1: PFUser = self.chatRoom["user1"] as! PFUser
             var user2: PFUser = self.chatRoom["user2"] as! PFUser
             if user1.username! == self.senderId {
-                pushQuery.whereKey("email", equalTo: user2.username!)
+                pushQuery.whereKey("user", equalTo: user2)
             } else {
-                pushQuery.whereKey("email", equalTo: user1.username!)
+                pushQuery.whereKey("user", equalTo: user1)
             }
             PFPush.sendPushMessageToQueryInBackground(pushQuery, withMessage: "\(self.senderId): \(text)")
         } else {

@@ -34,8 +34,10 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if (PFUser.currentUser() != nil) {
-            println(PFUser.currentUser())
             self.performSegueWithIdentifier("loginToMainSegue", sender: self)
+            var installation : PFInstallation = PFInstallation.currentInstallation()
+            installation["user"] = PFUser.currentUser()
+            installation.saveInBackground()
         }
     }
     
@@ -66,6 +68,10 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
                 PFUser.logInWithUsernameInBackground(username, password: password) { (user: PFUser?, error: NSError?) -> Void in
                     if(PFUser.currentUser()?.username != nil && error == nil) {
                         self.performSegueWithIdentifier("loginToMainSegue", sender: self)
+                        // need to register device with user's "devices"
+                        var installation : PFInstallation = PFInstallation.currentInstallation()
+                        installation["user"] = PFUser.currentUser()
+                        installation.saveInBackground()
                     }
                     else {
                         GlobalConstants.AlertMessage.displayAlertMessage("Your login information is incorrect, please try again", view: self)

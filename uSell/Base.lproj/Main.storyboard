@@ -187,21 +187,9 @@
                     <view key="view" contentMode="scaleToFill" id="nBu-Lw-Q7d">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q66-3X-Q9c">
-                                <rect key="frame" x="420" y="452" width="134" height="39"/>
-                                <state key="normal" title="Chat">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="chatButtonTouch:" destination="eQ9-7e-mpW" eventType="touchUpInside" id="lS5-Ko-jrF"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="chatButton" destination="Q66-3X-Q9c" id="yY2-S2-KFm"/>
                         <segue destination="lCv-YA-j05" kind="show" identifier="postDetailsToChatSegue" id="ho5-uz-ve7"/>
                     </connections>
                 </viewController>

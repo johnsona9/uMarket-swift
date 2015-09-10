@@ -112,6 +112,15 @@ class ChatViewController: JSQMessagesViewController, UICollectionViewDataSource,
             self.chatRoom?.setObject(NSDate(), forKey: "updatedAt")
             self.chatRoom?.saveInBackground()
             newChat.saveInBackground()
+            var pushQuery : PFQuery = PFInstallation.query()!
+            var user1: PFUser = self.chatRoom["user1"] as! PFUser
+            var user2: PFUser = self.chatRoom["user2"] as! PFUser
+            if user1.username! == self.senderId {
+                pushQuery.whereKey("email", equalTo: user2.username!)
+            } else {
+                pushQuery.whereKey("email", equalTo: user1.username!)
+            }
+            PFPush.sendPushMessageToQueryInBackground(pushQuery, withMessage: "\(self.senderId): \(text)")
         } else {
             GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
         }

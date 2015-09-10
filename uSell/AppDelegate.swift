@@ -28,11 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (reachability.isReachable()) {
             var userNotificationTypes : UIUserNotificationType = (UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound)
             var settings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
-            println("1")
             application.registerUserNotificationSettings(settings)
-            println("2")
             application.registerForRemoteNotifications()
-            println("3")
 
         } else {
             println("not connected to internet")

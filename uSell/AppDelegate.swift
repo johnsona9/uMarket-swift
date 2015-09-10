@@ -68,10 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
-        var currentInstallation : PFInstallation = PFInstallation.currentInstallation()
-        currentInstallation.setDeviceTokenFromData(deviceToken)
-        //currentInstallation.channels = ["global"]
-        currentInstallation.saveInBackground()
+            var currentInstallation : PFInstallation = PFInstallation.currentInstallation()
+            currentInstallation.setDeviceTokenFromData(deviceToken)
+            currentInstallation.saveInBackground()
         } else {
             println("not connected to internet")
         }

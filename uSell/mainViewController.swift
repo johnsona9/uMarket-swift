@@ -90,7 +90,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if error == nil {
                     self.dismissViewControllerAnimated(true, completion: nil)
                     var installation : PFInstallation = PFInstallation.currentInstallation()
-                    installation["user"] = nil
+                    installation["user"] = NSNull()
                     installation.saveInBackground()
                 }
             }

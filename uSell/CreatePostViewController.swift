@@ -130,6 +130,12 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         self.postButton.layer.borderWidth = 1
         self.postButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
         
+        self.scanBarcodeButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
+        self.scanBarcodeButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
+        self.scanBarcodeButton.layer.cornerRadius = 5
+        self.scanBarcodeButton.layer.borderWidth = 1
+        self.scanBarcodeButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
+        
         self.titleTextField.backgroundColor = GlobalConstants.Colors.textFieldBackgroundColor
         self.titleTextField.textColor = GlobalConstants.Colors.textFieldTextColor
         

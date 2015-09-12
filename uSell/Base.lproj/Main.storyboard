@@ -333,7 +333,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEN-IY-mbf">
-                                <rect key="frame" x="252" y="488" width="97" height="30"/>
+                                <rect key="frame" x="222" y="488" width="157" height="30"/>
                                 <state key="normal" title="Scan Barcode">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -364,6 +364,7 @@
                             <constraint firstItem="RDH-qW-B4E" firstAttribute="top" secondItem="jqx-vJ-b7P" secondAttribute="bottom" constant="47" id="hhM-tS-mHs"/>
                             <constraint firstItem="GoC-Fs-n4c" firstAttribute="trailing" secondItem="jqx-vJ-b7P" secondAttribute="trailing" id="qTM-Zd-0BK"/>
                             <constraint firstItem="RDH-qW-B4E" firstAttribute="centerX" secondItem="Bpg-aL-rr4" secondAttribute="centerX" id="rHz-Ng-J3g"/>
+                            <constraint firstItem="PEN-IY-mbf" firstAttribute="width" secondItem="hPr-qZ-ga0" secondAttribute="height" multiplier="157:600" id="t55-bF-tCe"/>
                             <constraint firstItem="GoC-Fs-n4c" firstAttribute="leading" secondItem="RDH-qW-B4E" secondAttribute="trailing" constant="40" id="zzA-ig-ezn"/>
                         </constraints>
                         <variation key="default">

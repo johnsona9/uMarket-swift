@@ -20,12 +20,12 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
     var highlightView   : UIView = UIView()
     var json : String = ""
     var delegate: BarcodeScannerViewControllerDelegate?
-    
-    var backButton: UIButton = UIButton()
+    var backButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.handleColors()
+        self.handleBackButton()
         // Allow the view to resize freely
         self.highlightView.autoresizingMask =   UIViewAutoresizing.FlexibleTopMargin |
             UIViewAutoresizing.FlexibleBottomMargin |
@@ -65,7 +65,7 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         
         
         previewLayer = AVCaptureVideoPreviewLayer.layerWithSession(session) as! AVCaptureVideoPreviewLayer
-        previewLayer.frame = self.view.bounds
+        previewLayer.frame = CGRectMake(0, self.view.frame.height * 3 / 25, self.view.frame.width, self.view.frame.height - self.view.frame.height * 3 / 25)
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         self.view.layer.addSublayer(previewLayer)
         
@@ -164,6 +164,28 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
             
             
         })
+    }
+    
+    func backButtonTouch () {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    private func handleColors() {
+        self.backButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
+        self.backButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
+//        self.backButton.layer.cornerRadius = 5
+//        self.backButton.layer.borderWidth = 1
+//        self.backButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
+    }
+    
+    private func handleBackButton() {
+        var frame = self.view.frame
+        self.backButton.setTitle("Back", forState: .Normal)
+        self.backButton.titleLabel?.font = self.backButton.titleLabel?.font.fontWithSize(24)
+        self.backButton.frame = CGRectMake(0, 0, frame.width, frame.height * 3 / 25)
+        self.backButton.addTarget(self, action: Selector("backButtonTouch"), forControlEvents: .TouchUpInside)
+        self.view.addSubview(self.backButton)
+        
     }
     
 }

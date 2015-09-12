@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -282,7 +282,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apb-Am-HHO">
-                                <rect key="frame" x="164" y="279" width="272" height="100"/>
+                                <rect key="frame" x="164" y="279" width="272" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="272" id="QXA-qS-gpE"/>
                                     <constraint firstAttribute="height" constant="100" id="YLa-p4-Qn2"/>
@@ -332,6 +332,15 @@
                                     <action selector="cancelButtonTouch:" destination="3Zr-kk-GTx" eventType="touchUpInside" id="NKA-j8-Y1N"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEN-IY-mbf">
+                                <rect key="frame" x="252" y="488" width="97" height="30"/>
+                                <state key="normal" title="Scan Barcode">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanBarcodeButtonTouch:" destination="3Zr-kk-GTx" eventType="touchUpInside" id="ac6-wJ-954"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -344,10 +353,12 @@
                             <constraint firstAttribute="centerX" secondItem="yeo-xM-EMb" secondAttribute="centerX" id="Q95-Ft-g1Y"/>
                             <constraint firstItem="apb-Am-HHO" firstAttribute="top" secondItem="GoC-Fs-n4c" secondAttribute="bottom" constant="28" id="Ruw-af-Kf8"/>
                             <constraint firstItem="jqx-vJ-b7P" firstAttribute="leading" secondItem="RDH-qW-B4E" secondAttribute="leading" id="XIo-Dr-H4O"/>
+                            <constraint firstItem="PEN-IY-mbf" firstAttribute="centerX" secondItem="apb-Am-HHO" secondAttribute="centerX" id="Xj8-MP-GTd"/>
                             <constraint firstAttribute="centerX" secondItem="apb-Am-HHO" secondAttribute="centerX" id="Xwc-Xv-KPA"/>
                             <constraint firstItem="jqx-vJ-b7P" firstAttribute="top" secondItem="yeo-xM-EMb" secondAttribute="bottom" constant="38" id="XzA-Re-54l"/>
                             <constraint firstItem="jqx-vJ-b7P" firstAttribute="leading" secondItem="yeo-xM-EMb" secondAttribute="leading" id="Yox-k2-1Vu"/>
                             <constraint firstItem="GoC-Fs-n4c" firstAttribute="bottom" secondItem="RDH-qW-B4E" secondAttribute="bottom" id="bhu-Hq-phY"/>
+                            <constraint firstItem="PEN-IY-mbf" firstAttribute="top" secondItem="pVe-n8-eaJ" secondAttribute="bottom" constant="29" id="dyu-H7-9oj"/>
                             <constraint firstItem="yeo-xM-EMb" firstAttribute="top" secondItem="zbP-bM-TZK" secondAttribute="bottom" constant="56" id="fTw-CA-6WX"/>
                             <constraint firstItem="Bpg-aL-rr4" firstAttribute="top" secondItem="apb-Am-HHO" secondAttribute="bottom" constant="50" id="gEK-UI-7BV"/>
                             <constraint firstItem="RDH-qW-B4E" firstAttribute="top" secondItem="jqx-vJ-b7P" secondAttribute="bottom" constant="47" id="hhM-tS-mHs"/>
@@ -369,12 +380,32 @@
                         <outlet property="departmentPickerView" destination="apb-Am-HHO" id="Esj-oN-RV2"/>
                         <outlet property="editionTextField" destination="RDH-qW-B4E" id="Y0r-lK-jDB"/>
                         <outlet property="postButton" destination="Bpg-aL-rr4" id="zeu-gv-eW0"/>
+                        <outlet property="scanBarcodeButton" destination="PEN-IY-mbf" id="QJG-Xe-Fjh"/>
                         <outlet property="titleTextField" destination="yeo-xM-EMb" id="0Oe-RX-GhZ"/>
+                        <segue destination="X4s-QN-hTj" kind="presentation" identifier="createPostToBarcodeScannerSegue" id="xiz-AW-Sw6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9XR-af-wne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3164" y="-515"/>
+        </scene>
+        <!--Barcode Scanner View Controller-->
+        <scene sceneID="vo5-Hf-T7F">
+            <objects>
+                <viewController id="X4s-QN-hTj" customClass="BarcodeScannerViewController" customModule="uMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LoU-sM-NAP"/>
+                        <viewControllerLayoutGuide type="bottom" id="tVU-iT-22j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jF6-KD-LPV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1SK-wG-Cb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4031" y="-515"/>
         </scene>
         <!--My Posts View Controller-->
         <scene sceneID="EtX-3K-BxC">

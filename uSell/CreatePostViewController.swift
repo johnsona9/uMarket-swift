@@ -13,11 +13,14 @@ protocol CreatePostViewControllerDelegate {
     func updateTableView(controller: CreatePostViewController, object: PFObject)
 }
 
-class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, BarcodeScannerViewControllerDelegate {
 
     var delegate: CreatePostViewControllerDelegate?
     var create = true
     var initialObject : PFObject!
+    
+    @IBOutlet weak var scanBarcodeButton: UIButton!
+    
     @IBOutlet weak var departmentPickerView: UIPickerView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var postButton: UIButton!
@@ -81,6 +84,28 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerSelection = pickerData[row]
+    }
+    
+    @IBAction func scanBarcodeButtonTouch(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("createPostToBarcodeScannerSegue", sender: self)
+    }
+    
+    func readInJSON(controller: UIViewController, title: String, author: String, imageLink: String) {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.titleTextField.text = title
+            self.authorTextField.text = author
+        }
+        
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "createPostToBarcodeScannerSegue" {
+            var svc = segue.destinationViewController as! BarcodeScannerViewController
+            svc.delegate = self
+        }
     }
     
     private func handleColors() {

@@ -18,6 +18,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
     var delegate: CreatePostViewControllerDelegate?
     var create = true
     var initialObject : PFObject!
+    var image : PFFile?
     
     @IBOutlet weak var scanBarcodeButton: UIButton!
     
@@ -98,6 +99,12 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
             self.authorTextField.text = author
         }
         
+        if let url = NSURL(string: imageLink) {
+            if let data = NSData(contentsOfURL: url){
+                self.image = PFFile(data: data)
+            }
+        }
+        
         
     }
     
@@ -148,6 +155,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
             self.costTextField.text = self.initialObject["postCost"] as? String
             self.authorTextField.text = self.initialObject["postAuthor"] as? String
             self.departmentPickerView.selectRow(find(pickerData, (self.initialObject["postDepartment"] as? String)!)!, inComponent: 0, animated: false)
+            self.image = self.initialObject["image"] as? PFFile
             
             
         }
@@ -174,6 +182,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
                             object!["postDepartment"] = self.pickerSelection
                             object!["postCost"] = cost
                             object!["postAuthor"] = author
+                            object!["image"] = self.image
                             object!.saveInBackgroundWithBlock { (success, error) -> Void in
                                 if (success == true) {
                                     if (error == nil) {
@@ -213,6 +222,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
                     newPost.setObject(postCost, forKey: "postCost")
                     newPost.setObject(postAuthor, forKey: "postAuthor")
                     newPost.setObject(PFUser.currentUser()!, forKey: "poster")
+                    newPost.setObject(self.image!, forKey: "image")
                     newPost.saveInBackgroundWithBlock({ (success: Bool, error: NSError? ) -> Void in
                         
                         if (error == nil) {

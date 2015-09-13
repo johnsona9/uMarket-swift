@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		863C95A3EE332A25BFAD119C /* Pods_uSell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0CC35EB4FAE8E2B39B6F81 /* Pods_uSell.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9A3C6CC0C8852686529B07E4 /* Pods_uMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3DDE4B92E5F55D3DC058F4 /* Pods_uMarket.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CA00C1B51B794132003F6DA8 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */; };
 		CA00C1B91B794BD9003F6DA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */; };
 		CA13DF971B8414880099F08C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA13DF961B8414880099F08C /* Reachability.swift */; };
@@ -39,9 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4F0CC35EB4FAE8E2B39B6F81 /* Pods_uSell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uSell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		58E10F49539A97BE4CE80743 /* Pods-uSell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uSell/Pods-uSell.debug.xcconfig"; sourceTree = "<group>"; };
-		5CF8D96BC705FDB58C5228C9 /* Pods-uSell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSell.release.xcconfig"; path = "Pods/Target Support Files/Pods-uSell/Pods-uSell.release.xcconfig"; sourceTree = "<group>"; };
+		354EF48EB67AB38C9388DFA7 /* Pods-uMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uMarket.release.xcconfig"; path = "Pods/Target Support Files/Pods-uMarket/Pods-uMarket.release.xcconfig"; sourceTree = "<group>"; };
+		3C3DDE4B92E5F55D3DC058F4 /* Pods_uMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B95FFB164B3621946ACB53E8 /* Pods-uMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uMarket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uMarket/Pods-uMarket.debug.xcconfig"; sourceTree = "<group>"; };
 		CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CA13DF961B8414880099F08C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863C95A3EE332A25BFAD119C /* Pods_uSell.framework in Frameworks */,
+				9A3C6CC0C8852686529B07E4 /* Pods_uMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,10 +85,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		82DFBD7FE1648FAFC9A0AE06 /* Frameworks */ = {
+		5029AF1C74DA4F9C973A4288 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4F0CC35EB4FAE8E2B39B6F81 /* Pods_uSell.framework */,
+				B95FFB164B3621946ACB53E8 /* Pods-uMarket.debug.xcconfig */,
+				354EF48EB67AB38C9388DFA7 /* Pods-uMarket.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5BC3537E9CA988669C2FEB5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C3DDE4B92E5F55D3DC058F4 /* Pods_uMarket.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,11 +122,11 @@
 		CAFB577D1B743366006791EC = {
 			isa = PBXGroup;
 			children = (
-				CAFB57881B743366006791EC /* uSell */,
+				CAFB57881B743366006791EC /* uMarket */,
 				CAFB579E1B743366006791EC /* uSellTests */,
 				CAFB57871B743366006791EC /* Products */,
-				E607825395E540A01CF24CBB /* Pods */,
-				82DFBD7FE1648FAFC9A0AE06 /* Frameworks */,
+				5029AF1C74DA4F9C973A4288 /* Pods */,
+				5BC3537E9CA988669C2FEB5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,7 +139,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CAFB57881B743366006791EC /* uSell */ = {
+		CAFB57881B743366006791EC /* uMarket */ = {
 			isa = PBXGroup;
 			children = (
 				CA8B37E61B74578600813C1C /* Controllers */,
@@ -141,6 +150,7 @@
 				CAFB57941B743366006791EC /* LaunchScreen.xib */,
 				CAFB57891B743366006791EC /* Supporting Files */,
 			);
+			name = uMarket;
 			path = uSell;
 			sourceTree = "<group>";
 		};
@@ -171,15 +181,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E607825395E540A01CF24CBB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				58E10F49539A97BE4CE80743 /* Pods-uSell.debug.xcconfig */,
-				5CF8D96BC705FDB58C5228C9 /* Pods-uSell.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,12 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAFB57A51B743366006791EC /* Build configuration list for PBXNativeTarget "uMarket" */;
 			buildPhases = (
-				079832DBA35DAD34BB4369BE /* Check Pods Manifest.lock */,
+				D4AABC72BD07A76ABC8A9DA3 /* Check Pods Manifest.lock */,
 				CAFB57821B743366006791EC /* Sources */,
 				CAFB57831B743366006791EC /* Frameworks */,
 				CAFB57841B743366006791EC /* Resources */,
-				3563A53BE6ADF32B60FC141C /* Embed Pods Frameworks */,
-				8E4EDEC7EBB51D3CDC956906 /* Copy Pods Resources */,
+				606C18BB875E8175FE190BEF /* Embed Pods Frameworks */,
+				9B8F2BD52B5D205AC0B67F57 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,7 +280,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		079832DBA35DAD34BB4369BE /* Check Pods Manifest.lock */ = {
+		606C18BB875E8175FE190BEF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uMarket/Pods-uMarket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B8F2BD52B5D205AC0B67F57 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uMarket/Pods-uMarket-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4AABC72BD07A76ABC8A9DA3 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -292,36 +323,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3563A53BE6ADF32B60FC141C /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uSell/Pods-uSell-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8E4EDEC7EBB51D3CDC956906 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uSell/Pods-uSell-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -469,7 +470,7 @@
 		};
 		CAFB57A61B743366006791EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58E10F49539A97BE4CE80743 /* Pods-uSell.debug.xcconfig */;
+			baseConfigurationReference = B95FFB164B3621946ACB53E8 /* Pods-uMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -482,7 +483,7 @@
 		};
 		CAFB57A71B743366006791EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5CF8D96BC705FDB58C5228C9 /* Pods-uSell.release.xcconfig */;
+			baseConfigurationReference = 354EF48EB67AB38C9388DFA7 /* Pods-uMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

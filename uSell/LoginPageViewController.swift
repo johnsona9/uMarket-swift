@@ -82,7 +82,7 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
                 GlobalConstants.AlertMessage.displayAlertMessage("Your login information is incorrect, please double check and try again", view: self)
             }
         } else {
-            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+            GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
         }
         
         

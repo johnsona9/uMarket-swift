@@ -1,0 +1,6 @@
+framework module Pods_uMarket {
+  umbrella header "Pods-uMarket-umbrella.h"
+
+  export *
+  module * { export * }
+}

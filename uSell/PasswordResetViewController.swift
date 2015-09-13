@@ -35,7 +35,7 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
                     self.dismissViewControllerAnimated(true, completion: nil)
                 })
             } else {
-                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+                GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
             }
         }
         

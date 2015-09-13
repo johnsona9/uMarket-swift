@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftyJSON
 
 protocol BarcodeScannerViewControllerDelegate {
     func readInJSON(controller: UIViewController, title: String, author: String, imageLink: String)
@@ -134,6 +135,8 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue(), completionHandler:{ (response:NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             var error: AutoreleasingUnsafeMutablePointer<NSError?> = nil
             if let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: error) as? NSDictionary {
+                
+                
                 if let arrayOfTitles = jsonResult.valueForKeyPath("items.volumeInfo.title") as? [String] {
                     titles = ", ".join(arrayOfTitles)
                     println("titles: \(titles)")
@@ -146,7 +149,7 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
                     println("authors: \(authors)")
                 } else {
                     println("authors error")
-                    println(jsonResult.valueForKeyPath("items.volumeInfo.authors")![0])
+                    println(jsonResult.valueForKeyPath("items.volumeInfo.authors")?[0])
                 }
                 if let imageLinks = jsonResult.valueForKeyPath("items.volumeInfo.imageLinks.smallThumbnail") as? [String] {
                     imageLink = ", ".join(imageLinks)

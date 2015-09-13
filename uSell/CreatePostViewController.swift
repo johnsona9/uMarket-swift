@@ -93,7 +93,10 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     func readInJSON(controller: UIViewController, title: String, author: String, imageLink: String) {
-        
+        if title == "" || author == "" || imageLink == "" {
+            GlobalConstants.AlertMessage.displayAlertMessage("There was an issue finding some or all of this book's information", view: self)
+            
+        }
         dispatch_async(dispatch_get_main_queue()) {
             self.titleTextField.text = title
             self.authorTextField.text = author
@@ -104,7 +107,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
                 self.image = PFFile(data: data)
             }
         }
-        
+    
         
     }
     
@@ -203,7 +206,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
                         }
                     })
                 } else {
-                    GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+                    GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
                 }
             }
         }
@@ -241,7 +244,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
                         
                     })
                 } else {
-                    GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internect, please check your connection and try again.", view: self)
+                    GlobalConstants.AlertMessage.displayAlertMessage("You aren't connected to the internet, please check your connection and try again.", view: self)
                 }
                 
                 

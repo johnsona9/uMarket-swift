@@ -24,7 +24,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-uSell.xcscheme</key>
+		<key>Pods-uMarket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>448C557AE2FFCE4E4617EB01877A1C6E</key>
+		<key>45D90F0B45546C8F2189F331524729BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B003013B9E63910F65411707BAAA663</key>
+		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>845211BCD6992526A85867F8216402D2</key>
+		<key>BD6159CAD297D52AAC95FF027DDE40BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A98B4A3F711FC877ED9A201D3D88FE5A</key>
+		<key>C6A30B888BE65037C3B4EF127FAC8561</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD183C53CA01719BF42FEE2F0D3633E8</key>
+		<key>F4B6774BA477C362EEE647E9BE2F381D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7F5C46CE77714EC1074B6B496B3D755</key>
 		<dict>
 			<key>primary</key>
 			<true/>

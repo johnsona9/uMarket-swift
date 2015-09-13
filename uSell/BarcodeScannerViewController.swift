@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftyJSON
 
 protocol BarcodeScannerViewControllerDelegate {
     func readInJSON(controller: UIViewController, title: String, author: String, imageLink: String)

@@ -52,14 +52,16 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework 'Pods-uSell/Bolts.framework'
-  install_framework 'Pods-uSell/JSQMessagesViewController.framework'
-  install_framework 'Pods-uSell/JSQSystemSoundPlayer.framework'
-  install_framework 'Pods-uSell/Parse.framework'
+  install_framework 'Pods-uMarket/Bolts.framework'
+  install_framework 'Pods-uMarket/JSQMessagesViewController.framework'
+  install_framework 'Pods-uMarket/JSQSystemSoundPlayer.framework'
+  install_framework 'Pods-uMarket/Parse.framework'
+  install_framework 'Pods-uMarket/SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework 'Pods-uSell/Bolts.framework'
-  install_framework 'Pods-uSell/JSQMessagesViewController.framework'
-  install_framework 'Pods-uSell/JSQSystemSoundPlayer.framework'
-  install_framework 'Pods-uSell/Parse.framework'
+  install_framework 'Pods-uMarket/Bolts.framework'
+  install_framework 'Pods-uMarket/JSQMessagesViewController.framework'
+  install_framework 'Pods-uMarket/JSQSystemSoundPlayer.framework'
+  install_framework 'Pods-uMarket/Parse.framework'
+  install_framework 'Pods-uMarket/SwiftyJSON.framework'
 fi

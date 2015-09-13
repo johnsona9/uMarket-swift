@@ -66,7 +66,7 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         
         
         previewLayer = AVCaptureVideoPreviewLayer.layerWithSession(session) as! AVCaptureVideoPreviewLayer
-        previewLayer.frame = CGRectMake(0, self.view.frame.height * 3 / 25, self.view.frame.width, self.view.frame.height - self.view.frame.height * 3 / 25)
+        previewLayer.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - self.view.frame.height * 3 / 25)
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         self.view.layer.addSublayer(previewLayer)
         
@@ -185,7 +185,7 @@ class BarcodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         var frame = self.view.frame
         self.backButton.setTitle("Back", forState: .Normal)
         self.backButton.titleLabel?.font = self.backButton.titleLabel?.font.fontWithSize(24)
-        self.backButton.frame = CGRectMake(0, 0, frame.width, frame.height * 3 / 25)
+        self.backButton.frame = CGRectMake(0, frame.height * 22 / 25, frame.width, frame.height * 3 / 25)
         self.backButton.addTarget(self, action: Selector("backButtonTouch"), forControlEvents: .TouchUpInside)
         self.view.addSubview(self.backButton)
         

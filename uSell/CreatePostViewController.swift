@@ -191,7 +191,11 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
                             object!["postDepartment"] = self.pickerSelection
                             object!["postCost"] = cost
                             object!["postAuthor"] = author
-                            object!["image"] = self.image
+                            if self.image == nil {
+                                object!["image"] = NSNull()
+                            } else {
+                                object!["image"] = self.image
+                            }
                             object!.saveInBackgroundWithBlock { (success, error) -> Void in
                                 if (success == true) {
                                     if (error == nil) {
@@ -231,7 +235,11 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
                     newPost.setObject(postCost, forKey: "postCost")
                     newPost.setObject(postAuthor, forKey: "postAuthor")
                     newPost.setObject(PFUser.currentUser()!, forKey: "poster")
-                    newPost.setObject(self.image!, forKey: "image")
+                    if self.image == nil {
+                        newPost.setObject(NSNull(), forKey: "image")
+                    } else {
+                        newPost.setObject(self.image!, forKey: "image")
+                    }
                     newPost.saveInBackgroundWithBlock({ (success: Bool, error: NSError? ) -> Void in
                         
                         if (error == nil) {

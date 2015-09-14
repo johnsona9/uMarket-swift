@@ -97,12 +97,13 @@ class PostDetailsViewController: UIViewController {
     }
     
     func chatButtonTouch() {
-        
-        if !(PFUser.currentUser()?.objectForKey("emailVerified") as! Bool) {
+        var verified: AnyObject? = PFUser.currentUser()?.objectForKey("emailVerified")
+        if (verified == nil || verified as! Bool == false) {
             var userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
             userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
                 if error == nil {
                     if let currentUser : PFUser = user as? PFUser {
+                        println(currentUser)
                         if currentUser.objectForKey("emailVerified") as! Bool {
                             self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
                         } else {
@@ -114,7 +115,7 @@ class PostDetailsViewController: UIViewController {
                     GlobalConstants.AlertMessage.displayAlertMessage("There was an error finding you in our database, please try again", view: self)
                 }
             })
-        } else if PFUser.currentUser()?.objectForKey("emailVerified") as! Bool {
+        } else {
             self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
         }
         

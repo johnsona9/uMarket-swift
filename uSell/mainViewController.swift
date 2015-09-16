@@ -61,6 +61,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell!.textLabel?.text = filteredPostsList[indexPath.row]["postTitle"] as? String
             cell!.detailTextLabel?.text = filteredPostsList[indexPath.row]["postAuthor"] as? String
         }
+        if indexPath.row == self.postsList.count - 1 {
+            self.loadMorePosts()
+        }
         cell!.textLabel?.textColor = GlobalConstants.Colors.cellTextColor
         cell!.detailTextLabel?.textColor = GlobalConstants.Colors.cellDetailTextColor
         cell!.backgroundColor = GlobalConstants.Colors.cellBackgroundColor
@@ -113,8 +116,30 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
+    private func loadMorePosts() {
+        var postIds = self.postsList.map({ ($0 as PFObject).objectId! })
+    
+        var postsQuery : PFQuery = PFQuery(className: "post").whereKey("poster", notEqualTo: PFUser.currentUser()!)
+        postsQuery.whereKey("objectId", notContainedIn: postIds)
+        postsQuery.limit = 20
+        postsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                if let newPosts = objects as? [PFObject] {
+                    for post in newPosts {
+                        self.postsList.append(post)
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+
+        }
+
+    }
+    
+    
     private func getPosts() {
         var postsQuery = PFQuery(className: "post").whereKey("poster", notEqualTo: PFUser.currentUser()!)
+        postsQuery.limit = 20
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
             postsQuery.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in

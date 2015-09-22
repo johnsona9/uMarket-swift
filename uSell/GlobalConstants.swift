@@ -35,7 +35,7 @@ struct GlobalConstants {
     struct AlertMessage {
         static func displayAlertMessage(userMessage:String, view:UIViewController) -> UIAlertController {
             
-            var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.Alert);
+            let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.Alert);
             
             let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil);
             myAlert.addAction(okAction);
@@ -46,6 +46,6 @@ struct GlobalConstants {
     }
     
     struct Departments {
-        static let departments = ["AAH", "ACC", "AFR", "AIS", "ADA", "ANT", "ARB", "AST", "ATH", "AVA", "BCH", "BIO", "BNG", "CHM", "CHN", "CLS", "CSC", "ECE", "ECO", "EGL", "ENS", "ESC", "FLM", "FPR", "FRN", "GEO", "GER", "GRK", "HCM", "HEB", "HBR", "HST", "IDM", "ITL", "JPN", "LAS", "LAT", "MTH", "MBA", "MER", "MLL", "AMU", "PHL", "IMP", "PHY", "POR", "PSC", "PSY", "REL", "MLT", "RUS", "SMT", "SOC", "SPN", "SRS", "GSW", "OTHER"].sorted { $0 < $1 }
+        static let departments = ["AAH", "ACC", "AFR", "AIS", "ADA", "ANT", "ARB", "AST", "ATH", "AVA", "BCH", "BIO", "BNG", "CHM", "CHN", "CLS", "CSC", "ECE", "ECO", "EGL", "ENS", "ESC", "FLM", "FPR", "FRN", "GEO", "GER", "GRK", "HCM", "HEB", "HBR", "HST", "IDM", "ITL", "JPN", "LAS", "LAT", "MTH", "MBA", "MER", "MLL", "AMU", "PHL", "IMP", "PHY", "POR", "PSC", "PSY", "REL", "MLT", "RUS", "SMT", "SOC", "SPN", "SRS", "GSW", "OTHER"].sort() { $0 < $1 }
     }
 }

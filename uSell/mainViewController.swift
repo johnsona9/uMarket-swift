@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Reachability
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
@@ -31,10 +32,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.getPosts()
         self.handleColors()
-        var rightItem:UIBarButtonItem = UIBarButtonItem(title: "post", style: .Plain, target: self, action: "postSegue")
-        var chatsItem:UIBarButtonItem = UIBarButtonItem(title: "chats", style: .Plain, target: self, action: "chatsSegue")
+        let rightItem:UIBarButtonItem = UIBarButtonItem(title: "post", style: .Plain, target: self, action: "postSegue")
+        let chatsItem:UIBarButtonItem = UIBarButtonItem(title: "chats", style: .Plain, target: self, action: "chatsSegue")
         self.navigationItem.rightBarButtonItems = [rightItem, chatsItem]
-        var leftItem:UIBarButtonItem = UIBarButtonItem(title: "logout", style: .Plain, target: self, action: "logoutUser")
+        let leftItem:UIBarButtonItem = UIBarButtonItem(title: "logout", style: .Plain, target: self, action: "logoutUser")
         self.navigationItem.leftBarButtonItem = leftItem
         // Do any additional setup after loading the view.
     }
@@ -50,7 +51,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
         }
@@ -92,7 +93,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             PFUser.logOutInBackgroundWithBlock { (error) -> Void in
                 if error == nil {
                     self.dismissViewControllerAnimated(true, completion: nil)
-                    var installation : PFInstallation = PFInstallation.currentInstallation()
+                    let installation : PFInstallation = PFInstallation.currentInstallation()
                     installation["user"] = NSNull()
                     installation.saveInBackground()
                 }
@@ -112,14 +113,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
-        filterContentForSearchText(searchController.searchBar.text)
+        filterContentForSearchText(searchController.searchBar.text!)
         tableView.reloadData()
     }
     
     private func loadMorePosts() {
-        var postIds = self.postsList.map({ ($0 as PFObject).objectId! })
+        let postIds = self.postsList.map({ ($0 as PFObject).objectId! })
     
-        var postsQuery : PFQuery = PFQuery(className: "post").whereKey("poster", notEqualTo: PFUser.currentUser()!)
+        let postsQuery : PFQuery = PFQuery(className: "post").whereKey("poster", notEqualTo: PFUser.currentUser()!)
         postsQuery.whereKey("objectId", notContainedIn: postIds)
         postsQuery.limit = 20
         postsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
@@ -138,7 +139,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     private func getPosts() {
-        var postsQuery = PFQuery(className: "post").whereKey("poster", notEqualTo: PFUser.currentUser()!)
+        let postsQuery = PFQuery(className: "post").whereKey("poster", notEqualTo: PFUser.currentUser()!)
         postsQuery.limit = 20
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
@@ -166,7 +167,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "mainToPostDetailsSegue") {
-            var svc = segue.destinationViewController as! PostDetailsViewController
+            let svc = segue.destinationViewController as! PostDetailsViewController
             svc.post = self.postsList[(sender as! NSIndexPath).row]
         }
     

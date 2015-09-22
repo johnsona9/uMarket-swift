@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Reachability
 
 class PasswordResetViewController: UIViewController, UITextFieldDelegate {
 
@@ -31,7 +32,7 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
         if emailTextField.text != "" {
             let reachability = Reachability.reachabilityForInternetConnection()
             if (reachability.isReachable()) {
-                PFUser.requestPasswordResetForEmailInBackground(emailTextField.text, block: { (success, error) -> Void in
+                PFUser.requestPasswordResetForEmailInBackground(emailTextField.text!, block: { (success, error) -> Void in
                     self.dismissViewControllerAnimated(true, completion: nil)
                 })
             } else {

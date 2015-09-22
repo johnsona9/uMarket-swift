@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import JSQMessagesViewController
+import Reachability
 
 class PostDetailsViewController: UIViewController {
     
@@ -55,21 +56,21 @@ class PostDetailsViewController: UIViewController {
             let reachability = Reachability.reachabilityForInternetConnection()
             if (reachability.isReachable()) {
                 
-                var svc = segue.destinationViewController as? ChatViewController
+                let svc = segue.destinationViewController as? ChatViewController
                 
-                var query = PFQuery(className: "chatRoom")
+                let query = PFQuery(className: "chatRoom")
                 query.whereKey("user1", equalTo: PFUser.currentUser()!)
                 query.whereKey("user2", equalTo: self.post["poster"]!)
-                var inverseQuery = PFQuery(className: "chatRoom")
+                let inverseQuery = PFQuery(className: "chatRoom")
                 inverseQuery.whereKey("user2", equalTo: PFUser.currentUser()!)
                 inverseQuery.whereKey("user1", equalTo: self.post["poster"]!)
-                var queryCombined = PFQuery.orQueryWithSubqueries([query, inverseQuery])
+                let queryCombined = PFQuery.orQueryWithSubqueries([query, inverseQuery])
                 queryCombined.includeKey("user1")
                 queryCombined.includeKey("user2")
                 
                 queryCombined.getFirstObjectInBackgroundWithBlock({ (object, error) -> Void in
                     if object == nil && error != nil {
-                        var newChatRoom = PFObject(className: "chatRoom")
+                        let newChatRoom = PFObject(className: "chatRoom")
                         newChatRoom.setObject(PFUser.currentUser()!, forKey: "user1")
                         newChatRoom.setObject(self.post["poster"]!, forKey: "user2")
                         
@@ -97,13 +98,13 @@ class PostDetailsViewController: UIViewController {
     }
     
     func chatButtonTouch() {
-        var verified: AnyObject? = PFUser.currentUser()?.objectForKey("emailVerified")
+        let verified: AnyObject? = PFUser.currentUser()?.objectForKey("emailVerified")
         if (verified == nil || verified as! Bool == false) {
-            var userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
+            let userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
             userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
                 if error == nil {
                     if let currentUser : PFUser = user as? PFUser {
-                        println(currentUser)
+                        print(currentUser)
                         if currentUser.objectForKey("emailVerified") as! Bool {
                             self.performSegueWithIdentifier("postDetailsToChatSegue", sender: self)
                         } else {
@@ -142,7 +143,7 @@ class PostDetailsViewController: UIViewController {
     }
     
     private func createFrames() {
-        var frame = self.view.frame
+        let frame = self.view.frame
         self.titleLabel = UILabel(frame: CGRectMake(frame.width / 16, frame.height * 1.2 / 8, frame.width * 14 / 16, frame.height * 1 / 8))
         self.titleLabel.text = "Title"
         self.view.addSubview(self.titleLabel)

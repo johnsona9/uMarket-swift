@@ -56,12 +56,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-uMarket/JSQMessagesViewController.framework'
   install_framework 'Pods-uMarket/JSQSystemSoundPlayer.framework'
   install_framework 'Pods-uMarket/Parse.framework'
-  install_framework 'Pods-uMarket/SwiftyJSON.framework'
+  install_framework 'Pods-uMarket/Reachability.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-uMarket/Bolts.framework'
   install_framework 'Pods-uMarket/JSQMessagesViewController.framework'
   install_framework 'Pods-uMarket/JSQSystemSoundPlayer.framework'
   install_framework 'Pods-uMarket/Parse.framework'
-  install_framework 'Pods-uMarket/SwiftyJSON.framework'
+  install_framework 'Pods-uMarket/Reachability.framework'
 fi

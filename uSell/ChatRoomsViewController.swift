@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Reachability
 
 class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChatViewControllerDelegate {
 
@@ -36,7 +37,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
         }
@@ -48,12 +49,12 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         
-        var queryForChat: PFQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRooms[indexPath.row]).orderByDescending("createdAt")
+        let queryForChat: PFQuery = PFQuery(className: "chat").whereKey("chatRoom", equalTo: self.chatRooms[indexPath.row]).orderByDescending("createdAt")
         queryForChat.getFirstObjectInBackgroundWithBlock { (object, error) -> Void in
             if error == nil {
                 if let chat = object as PFObject? {
                     cell!.detailTextLabel?.text = chat["text"] as? String
-                    println(chat)
+                    print(chat)
                 }
             }
         }
@@ -78,14 +79,14 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         if segue.identifier == "chatRoomsToChatSegue" {
             let reachability = Reachability.reachabilityForInternetConnection()
             if (reachability.isReachable()) {
-                var svc = segue.destinationViewController as? ChatViewController
-                var query = PFQuery(className: "chatRoom")
+                let svc = segue.destinationViewController as? ChatViewController
+                let query = PFQuery(className: "chatRoom")
                 query.whereKey("user1", equalTo: PFUser.currentUser()!)
                 query.whereKey("user2", equalTo: otherUsers[(sender as! NSIndexPath).row])
-                var inverseQuery = PFQuery(className: "chatRoom")
+                let inverseQuery = PFQuery(className: "chatRoom")
                 inverseQuery.whereKey("user2", equalTo: PFUser.currentUser()!)
                 inverseQuery.whereKey("user1", equalTo: otherUsers[(sender as! NSIndexPath).row])
-                var queryCombined = PFQuery.orQueryWithSubqueries([query, inverseQuery])
+                let queryCombined = PFQuery.orQueryWithSubqueries([query, inverseQuery])
                 queryCombined.includeKey("user1")
                 queryCombined.includeKey("user2")
                 
@@ -110,17 +111,17 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     private func getChatRooms() {
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
-            var query = PFQuery(className: "chatRoom").whereKey("user1", equalTo: PFUser.currentUser()!)
-            var queryInverse = PFQuery(className: "chatRoom").whereKey("user2", equalTo: PFUser.currentUser()!)
-            var queryCombined = PFQuery.orQueryWithSubqueries([query, queryInverse]).orderByDescending("updatedAt")
+            let query = PFQuery(className: "chatRoom").whereKey("user1", equalTo: PFUser.currentUser()!)
+            let queryInverse = PFQuery(className: "chatRoom").whereKey("user2", equalTo: PFUser.currentUser()!)
+            let queryCombined = PFQuery.orQueryWithSubqueries([query, queryInverse]).orderByDescending("updatedAt")
             queryCombined.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
                 if error == nil {
                     self.chatRooms = objects as! [PFObject]
-                    var length:Int = objects!.count as Int
+                    let length:Int = objects!.count as Int
                     for x in 0..<length {
-                        var object = (objects as! [PFObject])[x]
-                        var user1 = object["user1"] as! PFUser
-                        var user2 = object["user2"] as! PFUser
+                        let object = (objects as! [PFObject])[x]
+                        let user1 = object["user1"] as! PFUser
+                        let user2 = object["user2"] as! PFUser
                         
                         if (PFUser.currentUser()!.isEqual(user1)) {
                             self.otherUsers.append(user2)
@@ -131,11 +132,11 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                             
                         }
                     }
-                    println(self.chatRooms)
+                    print(self.chatRooms)
                     self.chatRoomsTableView.reloadData()
                 }
                 else {
-                    println("\(error)")
+                    print("\(error)")
                 }
             }
         } else {

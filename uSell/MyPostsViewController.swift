@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Reachability
 
 class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CreatePostViewControllerDelegate {
     var postsList = [PFObject]()
@@ -18,7 +19,7 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.getPosts()
         self.handleColors()
         self.myPostsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        var rightItem:UIBarButtonItem = UIBarButtonItem(title: "New", style: .Plain, target: self, action: "newPostSegue")
+        let rightItem:UIBarButtonItem = UIBarButtonItem(title: "New", style: .Plain, target: self, action: "newPostSegue")
         self.navigationItem.rightBarButtonItem = rightItem
         // Do any additional setup after loading the view.
     }
@@ -41,7 +42,7 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.myPostsTableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell:UITableViewCell = self.myPostsTableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
         cell.textLabel?.text = postsList[indexPath.row]["postTitle"] as? String
         cell.textLabel?.textColor = GlobalConstants.Colors.cellTextColor
         cell.backgroundColor = GlobalConstants.Colors.cellBackgroundColor
@@ -76,10 +77,10 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     
     func newPostSegue() {
-        var verified: AnyObject? = PFUser.currentUser()?.objectForKey("emailVerified")
+        let verified: AnyObject? = PFUser.currentUser()?.objectForKey("emailVerified")
         if (verified == nil || verified as! Bool == false) {
         
-            var userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
+            let userQuery = PFUser.query()?.whereKey("objectId", equalTo: PFUser.currentUser()!.objectId!)
             userQuery?.getFirstObjectInBackgroundWithBlock({ (user, error) -> Void in
                 if error == nil {
                     if let currentUser : PFUser = user as? PFUser {
@@ -107,11 +108,11 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "myPostsToCreatePostSegue") {
-            var svc = segue.destinationViewController as! CreatePostViewController
+            let svc = segue.destinationViewController as! CreatePostViewController
             svc.delegate = self
         }
         else if (segue.identifier == "myPostsToEditPostSegue") {
-            var svc = segue.destinationViewController as! CreatePostViewController
+            let svc = segue.destinationViewController as! CreatePostViewController
             svc.initialObject = self.postsList[(sender as! NSIndexPath).row]
             svc.create = false
         }
@@ -128,7 +129,7 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func getPosts() {
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
-            var postsQuery = PFQuery(className: "post").whereKey("poster", equalTo: PFUser.currentUser()!)
+            let postsQuery = PFQuery(className: "post").whereKey("poster", equalTo: PFUser.currentUser()!)
             postsQuery.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
                 if (error == nil) {
                     if let postObjects = objects as? [PFObject] {

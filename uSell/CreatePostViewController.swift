@@ -8,12 +8,13 @@
 
 import UIKit
 import Parse
+import Reachability
 
 protocol CreatePostViewControllerDelegate {
     func updateTableView(controller: CreatePostViewController, object: PFObject)
 }
 
-class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, BarcodeScannerViewControllerDelegate {
+class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var delegate: CreatePostViewControllerDelegate?
     var create = true
@@ -111,13 +112,6 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "createPostToBarcodeScannerSegue" {
-            var svc = segue.destinationViewController as! BarcodeScannerViewController
-            svc.delegate = self
-        }
-    }
-    
     private func handleColors() {
         self.view.backgroundColor = GlobalConstants.Colors.backgroundColor
         
@@ -133,11 +127,11 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         self.postButton.layer.borderWidth = 1
         self.postButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
         
-        self.scanBarcodeButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
-        self.scanBarcodeButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
-        self.scanBarcodeButton.layer.cornerRadius = 5
-        self.scanBarcodeButton.layer.borderWidth = 1
-        self.scanBarcodeButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
+        //self.scanBarcodeButton.setTitleColor(GlobalConstants.Colors.buttonTextColor, forState: UIControlState.Normal)
+        //self.scanBarcodeButton.backgroundColor = GlobalConstants.Colors.buttonBackgroundColor
+        //self.scanBarcodeButton.layer.cornerRadius = 5
+        //self.scanBarcodeButton.layer.borderWidth = 1
+        //self.scanBarcodeButton.layer.borderColor = GlobalConstants.Colors.buttonBackgroundColor.CGColor
         
         self.titleTextField.backgroundColor = GlobalConstants.Colors.textFieldBackgroundColor
         self.titleTextField.textColor = GlobalConstants.Colors.textFieldTextColor
@@ -163,7 +157,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
             self.editionTextField.text = self.initialObject["postEdition"] as? String
             self.costTextField.text = self.initialObject["postCost"] as? String
             self.authorTextField.text = self.initialObject["postAuthor"] as? String
-            self.departmentPickerView.selectRow(find(pickerData, (self.initialObject["postDepartment"] as? String)!)!, inComponent: 0, animated: false)
+            self.departmentPickerView.selectRow(pickerData.indexOf((self.initialObject["postDepartment"] as? String)!)!, inComponent: 0, animated: false)
             self.image = self.initialObject["image"] as? PFFile
             
             
@@ -176,7 +170,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         let cost = self.costTextField.text
         let edition = self.editionTextField.text
         
-        if (cost.toInt() as Int!) == nil || (edition.toInt() as Int!) == nil {
+        if (Int(cost!)) == nil || (Int(edition!)) == nil {
             GlobalConstants.AlertMessage.displayAlertMessage("Your cost and or edition input is not in the correct form. Make sure they're whole numbers and submit again.", view: self)
         } else {
         
@@ -221,19 +215,19 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate, UIPickerV
         let postEdition = editionTextField.text
         let postCost = costTextField.text
         let postAuthor = authorTextField.text
-        if (postCost.toInt() as Int!) == nil || (postEdition.toInt() as Int!) == nil {
+        if (Int(postCost!) == nil) || (Int(postEdition!) == nil) {
             GlobalConstants.AlertMessage.displayAlertMessage("Your cost and or edition input is not in the correct form. Make sure they're whole numbers and submit again.", view: self)
         } else {
         
             if (postTitle != "" && postCost != "" && postAuthor != "") {
                 let reachability = Reachability.reachabilityForInternetConnection()
                 if (reachability.isReachable()) {
-                    var newPost = PFObject(className: "post")
-                    newPost.setObject(postTitle, forKey: "postTitle")
+                    let newPost = PFObject(className: "post")
+                    newPost.setObject(postTitle!, forKey: "postTitle")
                     newPost.setObject(self.pickerSelection, forKey: "postDepartment")
-                    newPost.setObject(postEdition, forKey: "postEdition")
-                    newPost.setObject(postCost, forKey: "postCost")
-                    newPost.setObject(postAuthor, forKey: "postAuthor")
+                    newPost.setObject(postEdition!, forKey: "postEdition")
+                    newPost.setObject(postCost!, forKey: "postCost")
+                    newPost.setObject(postAuthor!, forKey: "postAuthor")
                     newPost.setObject(PFUser.currentUser()!, forKey: "poster")
                     if self.image == nil {
                         newPost.setObject(NSNull(), forKey: "image")

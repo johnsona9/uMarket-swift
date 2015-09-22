@@ -2,34 +2,67 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSQMessagesViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uMarket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Reachability.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>45D90F0B45546C8F2189F331524729BD</key>
+		<key>199D4806D0A74FD949E1A46E003BF215</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
+		<key>3C722174EAFE6D219BA4EF43DAB262CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD6159CAD297D52AAC95FF027DDE40BF</key>
+		<key>3D70FB5ECE3A140C9EB02CD776B9E0B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C6A30B888BE65037C3B4EF127FAC8561</key>
+		<key>72ED1B2FCD1A7B77F8B33503BCBFBA02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F4B6774BA477C362EEE647E9BE2F381D</key>
+		<key>CB197C904F8FA1D65EA77C1A3821DF3A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7F5C46CE77714EC1074B6B496B3D755</key>
+		<key>E6BB5899C6622B5C1BBCE7C478138F7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,22 +1,22 @@
 PODS:
   - Bolts/Tasks (1.2.0)
-  - JSQMessagesViewController (7.1.0):
+  - JSQMessagesViewController (7.2.0):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - Parse (1.7.5.3):
     - Bolts/Tasks (>= 1.2.0)
-  - SwiftyJSON (2.2.1)
+  - Reachability (3.2)
 
 DEPENDENCIES:
-  - JSQMessagesViewController (~> 7.1)
+  - JSQMessagesViewController (~> 7.2)
   - Parse
-  - SwiftyJSON (~> 2.2.1)
+  - Reachability (~> 3.2)
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
-  JSQMessagesViewController: ca11f86fa68ca70835f05e169df9244147c1dc40
+  JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
-  SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
 COCOAPODS: 0.38.2

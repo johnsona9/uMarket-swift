@@ -3,6 +3,6 @@ use_frameworks!
 
 target 'uMarket' do
   pod 'Parse'
-  pod 'JSQMessagesViewController', '~> 7.1'
-  pod 'SwiftyJSON', '~> 2.2.1'
+  pod 'JSQMessagesViewController', '~> 7.2'
+  pod 'Reachability', '~> 3.2'
 end

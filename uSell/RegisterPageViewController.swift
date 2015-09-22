@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Reachability
 
 
 protocol RegisterPageViewControllerDelegate {
@@ -51,13 +52,13 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         
         //confirm passwords to make sure they are identical
         
-        if (userEmail.isEmpty || userPassword.isEmpty || userConfirmPassword.isEmpty) {
+        if (userEmail!.isEmpty || userPassword!.isEmpty || userConfirmPassword!.isEmpty) {
             //display bad stuff
             GlobalConstants.AlertMessage.displayAlertMessage("All fields are required", view: self)
             return;
         }
 
-        else if (userEmail.rangeOfString("@union.edu") == nil ) {
+        else if (userEmail!.rangeOfString("@union.edu") == nil ) {
             GlobalConstants.AlertMessage.displayAlertMessage("We currently only support union email addresses, sorry!", view: self)
         }
         
@@ -69,7 +70,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             
         }
         else {
-            var query = PFUser.query()!.whereKey("email", equalTo: userEmail)
+            let query = PFUser.query()!.whereKey("email", equalTo: userEmail!)
             query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
                 if error == nil {
                     if objects!.count > 0 {
@@ -83,7 +84,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
                         if (reachability.isReachable()) {
                             createdUser.signUpInBackgroundWithBlock({ (suceeded: Bool, error: NSError?) -> Void in
                                 if (error == nil) {
-                                    var myAlert = UIAlertController(title: "Alert", message: "Please confirm your email address before you can use all of the features", preferredStyle: UIAlertControllerStyle.Alert);
+                                    let myAlert = UIAlertController(title: "Alert", message: "Please confirm your email address before you can use all of the features", preferredStyle: UIAlertControllerStyle.Alert);
                                     
                                     let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (action) in
                                         self.dismissViewControllerAnimated(false, completion: { () -> Void in

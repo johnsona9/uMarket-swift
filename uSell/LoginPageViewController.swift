@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Reachability
 
 class LoginPageViewController: UIViewController, RegisterPageViewControllerDelegate, UITextFieldDelegate {
 
@@ -35,7 +36,7 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
         super.viewDidAppear(animated)
         if (PFUser.currentUser() != nil) {
             self.performSegueWithIdentifier("loginToMainSegue", sender: self)
-            var installation : PFInstallation = PFInstallation.currentInstallation()
+            let installation : PFInstallation = PFInstallation.currentInstallation()
             installation["user"] = PFUser.currentUser()
             installation.saveInBackground()
         }
@@ -65,11 +66,11 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
             if (username != "" && password != "") {
-                PFUser.logInWithUsernameInBackground(username, password: password) { (user: PFUser?, error: NSError?) -> Void in
+                PFUser.logInWithUsernameInBackground(username!, password: password!) { (user: PFUser?, error: NSError?) -> Void in
                     if(PFUser.currentUser()?.username != nil && error == nil) {
                         self.performSegueWithIdentifier("loginToMainSegue", sender: self)
                         // need to register device with user's "devices"
-                        var installation : PFInstallation = PFInstallation.currentInstallation()
+                        let installation : PFInstallation = PFInstallation.currentInstallation()
                         installation["user"] = PFUser.currentUser()
                         installation.saveInBackground()
                     }
@@ -101,7 +102,7 @@ class LoginPageViewController: UIViewController, RegisterPageViewControllerDeleg
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "loginToRegisterSegue") {
-            var svc = segue.destinationViewController as! RegisterPageViewController
+            let svc = segue.destinationViewController as! RegisterPageViewController
             svc.delegate = self
         }
     }

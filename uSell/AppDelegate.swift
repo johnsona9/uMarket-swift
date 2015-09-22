@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Bolts
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,13 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
-            var userNotificationTypes : UIUserNotificationType = (UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound)
-            var settings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+            let settings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
             application.registerUserNotificationSettings(settings)
             application.registerForRemoteNotifications()
 
         } else {
-            println("not connected to internet")
+            print("not connected to internet")
         }
         
         UINavigationBar.appearance().barTintColor = GlobalConstants.Colors.navigatorBarBackgroundColor
@@ -68,16 +68,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let reachability = Reachability.reachabilityForInternetConnection()
         if (reachability.isReachable()) {
-            var currentInstallation : PFInstallation = PFInstallation.currentInstallation()
+            let currentInstallation : PFInstallation = PFInstallation.currentInstallation()
             currentInstallation.setDeviceTokenFromData(deviceToken)
             currentInstallation.saveInBackground()
         } else {
-            println("not connected to internet")
+            print("not connected to internet")
         }
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        println("failed to register: \(error)")
+        print("failed to register: \(error)")
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {

@@ -10,11 +10,9 @@
 		9A3C6CC0C8852686529B07E4 /* Pods_uMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3DDE4B92E5F55D3DC058F4 /* Pods_uMarket.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CA00C1B51B794132003F6DA8 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */; };
 		CA00C1B91B794BD9003F6DA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */; };
-		CA13DF971B8414880099F08C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA13DF961B8414880099F08C /* Reachability.swift */; };
 		CA2066A31B82D1D000EF29F9 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2066A21B82D1D000EF29F9 /* PasswordResetViewController.swift */; };
 		CA2066A51B82E37D00EF29F9 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2066A41B82E37D00EF29F9 /* GlobalConstants.swift */; };
 		CA23D5D31B7449A100515812 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */; };
-		CA70AD6D1BA4A18F0023EBC3 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA70AD6C1BA4A18F0023EBC3 /* BarcodeScannerViewController.swift */; };
 		CA8B37E51B74578100813C1C /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B37E41B74578100813C1C /* LoginPageViewController.swift */; };
 		CAAD38621B7C040F00B1375C /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD38611B7C040F00B1375C /* ChatRoomsViewController.swift */; };
 		CAAFAD541B797C8E00E369A6 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */; };
@@ -44,11 +42,9 @@
 		B95FFB164B3621946ACB53E8 /* Pods-uMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uMarket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uMarket/Pods-uMarket.debug.xcconfig"; sourceTree = "<group>"; };
 		CA00C1B41B794132003F6DA8 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		CA00C1B81B794BD9003F6DA8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		CA13DF961B8414880099F08C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		CA2066A21B82D1D000EF29F9 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		CA2066A41B82E37D00EF29F9 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		CA23D5D21B7449A100515812 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
-		CA70AD6C1BA4A18F0023EBC3 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
 		CA8B37E41B74578100813C1C /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		CAAD38611B7C040F00B1375C /* ChatRoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomsViewController.swift; sourceTree = "<group>"; };
 		CAAFAD531B797C8E00E369A6 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +110,6 @@
 				CAAFAD551B798B5D00E369A6 /* MyPostsViewController.swift */,
 				CAF7D7A61B7AC69A00F3E8F0 /* ChatViewController.swift */,
 				CAAD38611B7C040F00B1375C /* ChatRoomsViewController.swift */,
-				CA70AD6C1BA4A18F0023EBC3 /* BarcodeScannerViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -158,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				CAFB578A1B743366006791EC /* Info.plist */,
-				CA13DF961B8414880099F08C /* Reachability.swift */,
 				CA2066A41B82E37D00EF29F9 /* GlobalConstants.swift */,
 			);
 			name = "Supporting Files";
@@ -228,6 +222,7 @@
 		CAFB577E1B743366006791EC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				TargetAttributes = {
 					CAFB57851B743366006791EC = {
@@ -332,13 +327,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA13DF971B8414880099F08C /* Reachability.swift in Sources */,
 				CA00C1B51B794132003F6DA8 /* CreatePostViewController.swift in Sources */,
 				CAFB578E1B743366006791EC /* ViewController.swift in Sources */,
 				CAAD38621B7C040F00B1375C /* ChatRoomsViewController.swift in Sources */,
 				CAAFAD541B797C8E00E369A6 /* PostDetailsViewController.swift in Sources */,
 				CA8B37E51B74578100813C1C /* LoginPageViewController.swift in Sources */,
-				CA70AD6D1BA4A18F0023EBC3 /* BarcodeScannerViewController.swift in Sources */,
 				CAAFAD561B798B5D00E369A6 /* MyPostsViewController.swift in Sources */,
 				CA00C1B91B794BD9003F6DA8 /* MainViewController.swift in Sources */,
 				CA2066A51B82E37D00EF29F9 /* GlobalConstants.swift in Sources */,

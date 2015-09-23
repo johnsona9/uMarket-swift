@@ -116,10 +116,10 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             let queryCombined = PFQuery.orQueryWithSubqueries([query, queryInverse]).orderByDescending("updatedAt")
             queryCombined.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
                 if error == nil {
-                    self.chatRooms = objects as! [PFObject]
+                    self.chatRooms = objects as [PFObject]!
                     let length:Int = objects!.count as Int
                     for x in 0..<length {
-                        let object = (objects as! [PFObject])[x]
+                        let object = (objects as [PFObject]!)[x]
                         let user1 = object["user1"] as! PFUser
                         let user2 = object["user2"] as! PFUser
                         

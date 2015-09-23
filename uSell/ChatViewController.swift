@@ -80,7 +80,7 @@ class ChatViewController: JSQMessagesViewController, UIActionSheetDelegate, UIIm
             moreChatsQuery.limit = 10
             moreChatsQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
                 if error == nil {
-                    if var moreChats = objects as? [PFObject] {
+                    if var moreChats = objects as [PFObject]! {
                         moreChats = moreChats.reverse()
                         self.chats = moreChats + self.chats!
                         self.collectionView!.reloadData()
@@ -143,7 +143,7 @@ class ChatViewController: JSQMessagesViewController, UIActionSheetDelegate, UIIm
                         chatsQuery.whereKey("createdAt", greaterThanOrEqualTo: mostRecentDate!).orderByAscending("createdAt")
                         chatsQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                         if error == nil {
-                            if let newChats = objects as? [PFObject] {
+                            if let newChats = objects as [PFObject]! {
                                 self.chats = self.chats! + newChats
                                 self.collectionView!.reloadData()
                                 self.scrollToBottomAnimated(true)
@@ -169,7 +169,7 @@ class ChatViewController: JSQMessagesViewController, UIActionSheetDelegate, UIIm
         chatsQuery.limit = 20
         chatsQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if error == nil {
-                if let newChats = objects as? [PFObject] {
+                if let newChats = objects as [PFObject]! {
                     self.chats = newChats
                     self.chats = self.chats?.reverse()
                     self.collectionView!.reloadData()
